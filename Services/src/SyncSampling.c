@@ -125,7 +125,7 @@ ES_Event RunSyncSamplingService(ES_Event ThisEvent)
     static uint8_t curLEDState = ON; // LED Starts as on (in init function).
     static int16_t adcValOn[NUM_LEDS], adcValOff[NUM_LEDS], adcDiff[NUM_LEDS];
     static ES_EventTyp_t lastEvent [NUM_LEDS] = {OFF_TAPE,OFF_TAPE,OFF_TAPE,OFF_TAPE};
-    ES_EventTyp_t curEvent [4];
+    ES_EventTyp_t curEvent [NUM_LEDS];
 
     switch (ThisEvent.EventType) 
     {
@@ -238,7 +238,7 @@ ES_Event RunSyncSamplingService(ES_Event ThisEvent)
             break;
 
         default:
-            printf("\r\nRecieved Event: %s\twith Param: 0x%X",
+            printf("\r\nRecieved Event: %s with Param: 0x%X",
                     EventNames[ThisEvent.EventType], ThisEvent.EventParam);
             break;
     }
