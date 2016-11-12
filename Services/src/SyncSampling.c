@@ -191,7 +191,6 @@ ES_Event RunSyncSamplingService(ES_Event ThisEvent)
                         curEvent[i] = ON_TAPE;
                     }
                     // if we get into this condition, a tape sensor was triggered either on or off
-                    // this is where we can post events to our fsm
                     if (curEvent[i] != lastEvent[i])
                     {
                         tapeTriggered = TRUE;
@@ -211,6 +210,14 @@ ES_Event RunSyncSamplingService(ES_Event ThisEvent)
                 // On further thought, we decided posting one event with curLevel of each sensor is a better idea
                 if (tapeTriggered)
                 {   
+                    /*
+                     * This bit mask returned in EventParam is 
+                     * Bit 0 - FR Tape Sensor
+                     * Bit 1 - FL Tape Sensor 
+                     * Bit 2 - FM Tape Sensor
+                     * Bit 3 - BR Tape Sensor
+                     * Bit 4 - BL Tape Sensor
+                     */
                     PostEvent.EventParam = 0;
                     PostEvent.EventType = TAPE_TRIGGERED;
                     for(i = 0;i < NUM_LEDS;i++)

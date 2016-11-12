@@ -103,7 +103,6 @@ uint8_t PostAmmoLoadSubHSM(ES_Event ThisEvent)
 ES_Event RunAmmoLoadSubHSM(ES_Event ThisEvent)
 {
     uint8_t makeTransition = FALSE; // use to flag transition
-    static uint8_t turnParam; // use this flag to turnCW or turnCCW
     HSMState_t nextState; // <- change type to correct enum
 
     ES_Tattle(); // trace call stack
@@ -128,6 +127,7 @@ ES_Event RunAmmoLoadSubHSM(ES_Event ThisEvent)
     case TankTurn:
         switch (ThisEvent.EventType) {  
             case ES_ENTRY:
+                // We love tank turning cw
                 tankTurnRight();
                 break;
             case TW_TRIGGERED:

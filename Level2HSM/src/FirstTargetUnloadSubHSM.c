@@ -133,12 +133,13 @@ ES_Event RunFirstTargetUnloadSubHSM(ES_Event ThisEvent)
                 pivotTurnRight();
                 break;
             case TAPE_TRIGGERED:
-                if (((ThisEvent.EventParam) >> 1) && ((ThisEvent.EventParam) >> 2))
+                if (((ThisEvent.EventParam & TS_FR) >> FR_SH) && ((ThisEvent.EventParam & TS_FL) >> FL_SH))
                 {
                     nextState = Forward;
                     makeTransition = TRUE;
                 }
-                else if (ThisEvent.EventParam == 0)
+                else if (!(((ThisEvent.EventParam & TS_FR) >> FR_SH) && ((ThisEvent.EventParam & TS_FL) >> FL_SH)
+                        && ((ThisEvent.EventParam & TS_FM) >> FM_SH)))
                 {
                     nextState = Forward;
                     makeTransition = TRUE;
@@ -156,17 +157,17 @@ ES_Event RunFirstTargetUnloadSubHSM(ES_Event ThisEvent)
                 moveForward();
                 break;
             case TAPE_TRIGGERED:
-                if(!((ThisEvent.EventParam) >> 1))
+                if(!((ThisEvent.EventParam & TS_FR) >> FR_SH))
                 {
                     nextState = Forward;
                     makeTransition = TRUE;
                 }
-                else if(!((ThisEvent.EventParam) >> 1))
+                else if(!((ThisEvent.EventParam & TS_FL) >> FL_SH))
                 {
                     nextState = Forward;
                     makeTransition = TRUE;
                 }
-                else if((ThisEvent.EventParam) >> 1)
+                else if(((ThisEvent.EventParam & TS_FM) >> FM_SH))
                 {
                     nextState = Unload;
                     makeTransition = TRUE;

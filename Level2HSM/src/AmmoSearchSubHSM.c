@@ -136,7 +136,13 @@ ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
         switch (ThisEvent.EventType) {
             // fl triggered then turn right, else if fr triggered turn left
             case TAPE_TRIGGERED:
-                if (ThisEvent.EventParam)
+                if (((ThisEvent.EventParam & TS_FR) >> FR_SH))
+                {
+                    turnParam = 0;
+                    nextState = Backward;
+                    makeTransition = TRUE;
+                } 
+                else if (((ThisEvent.EventParam & TS_FL) >> FL_SH))
                 {
                     turnParam = 1;
                     nextState = Backward;

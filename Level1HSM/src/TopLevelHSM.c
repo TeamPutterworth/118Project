@@ -27,7 +27,6 @@
  ******************************************************************************/
 #define PLUNGER_BUMPER 0x4
 
-
 typedef enum {
     InitPState,
     AmmoSearch,
@@ -181,7 +180,7 @@ ES_Event RunTopLevelHSM(ES_Event ThisEvent)
                     //TS_FL_TRIGGERED for either go to firstargetunload
                     //TS_FR_TRIGGERED
             case TAPE_TRIGGERED:
-                if(ThisEvent.EventParam && readBeaconDetector())
+                if(((ThisEvent.EventParam & TS_FR) >> FR_SH) && ((ThisEvent.EventParam & TS_FL) >> FL_SH))
                 {
                     nextState = FirstTargetUnload;
                     makeTransition = TRUE;
@@ -210,9 +209,9 @@ ES_Event RunTopLevelHSM(ES_Event ThisEvent)
                     //TS_FL_TRIGGERED for either go to secondtargetunload
                     //TS_FR_TRIGGERED
             case TAPE_TRIGGERED:
-                if(ThisEvent.EventParam && readBeaconDetector())
+                if(((ThisEvent.EventParam & TS_FR) >> FR_SH) && ((ThisEvent.EventParam & TS_FL) >> FL_SH))
                 {
-                    nextState = FirstTargetUnload;
+                    nextState = SecondTargetUnload;
                     makeTransition = TRUE;
                 }
                 break;

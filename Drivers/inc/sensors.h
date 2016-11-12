@@ -10,6 +10,19 @@
 #ifndef _SENSORS_H   
 #define _SENSORS_H
 
+#define TS_FR 0x01
+#define TS_FL 0x02
+#define TS_FM 0x04
+#define TS_BR 0x08
+#define TS_BL 0x10
+#define FR_SH 0
+#define FL_SH 1
+#define FM_SH 2
+#define BR_SH 3
+#define BL_SH 4
+
+
+
 void sensorsInit(); 
 
 uint8_t readTrackWire();
