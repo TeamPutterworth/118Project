@@ -15,7 +15,7 @@ towers. There it will load ammo (three ping pong balls) and then it must navigat
 
 # Directory Structure
 Organization of the directory should be maintained to follow these general rules: 
-* Drivers for various peripherals (drivers and sensors) are located in the Drivers folder. 
+* Drivers for various peripherals (actuators and sensors) are located in the Drivers folder. 
 * Services for synchronous sampling and motor control in the services folder.
 * EventCheckers for beacon, track wire, and bump detection in the EventCheckers folder.
 
