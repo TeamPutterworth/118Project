@@ -11,8 +11,7 @@ Repository for the UCSC 118 Project.
 
 This is the code-base for Team 6th Order Putterworth's robot to participate in UCSC's CMPE-118 Slug-O-Lympics Competition.
 In this competition an autonomous robot must navigate an arena to navigate to one of potentially four active loading 
-towers. There it will load ammo (three ping pong balls) and then it must navigate to a target and score a goal
-on at least two seperate targets. 
+towers. There it will load ammo (three ping pong balls) and then it must navigate to and unload into at least two seperate targets.
 
 # Directory Structure
 Organization of the directory should be maintained to follow these general rules: 
