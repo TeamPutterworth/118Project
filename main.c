@@ -10,7 +10,7 @@
 #include "sensors.h"
 
 #ifdef JANKY_TEST_HARNESS
-void testTapeSensors(); 
+void testTrackWire(); 
 void testBeaconDetector(); 
 void testMotors(); 
 void testServos();
@@ -28,6 +28,7 @@ void main(void)
     LED_Init();
     AD_Init();
     PWM_Init();
+    RC_Init();
     motorInit();
     sensorsInit();
     
@@ -63,18 +64,19 @@ void main(void)
 #else
     while (1) {
         switch(readBumpers()){
-            case (0x01): // Front-Left Bumper
+            case (0x01): // Front-Right Bumper
                 testMotors();
                 break;
-            case (0x02): // Front-Right Bumper
-                testTapeSensors();
+            case (0x02): // Front-Left Bumper
+                testTrackWire();
                 break;
-            case (0x04): // Back-Left Bumper
+            case (0x03): // Both Front Bumpers!
                 testBeaconDetector();
                 break;
-            case (0x08): // Back-Right Bumper
+            case (0x04): // Plunger Bumper
                 testServos();
                 break;
+            
             default: // No bumpers or multiple bumpers
                 break;
        }
@@ -85,20 +87,24 @@ void main(void)
 #ifdef JANKY_TEST_HARNESS
 void testMotors()
 {
-    moveForward();
+    tankTurnRight();
     setMoveSpeed(50);
     delay(1000000);
+    tankTurnLeft();
     setMoveSpeed(35);
     delay(1000000);
+    moveBackward();
     setMoveSpeed(15);
     delay(1000000);
     stopMoving();
-    moveBackward();
-    delay(1000000);
+    delay(100000);
+    moveForward();
     setMoveSpeed(50);
     delay(1000000);
+    pivotTurnRight();
     setMoveSpeed(35);
     delay(1000000);
+    pivotTurnLeft();
     setMoveSpeed(15);
     delay(1000000);
     stopMoving();
@@ -106,18 +112,56 @@ void testMotors()
     return;
 }
 
-void testTapeSensors() 
+void testTrackWire() 
 {
+    // Set to pass through track wire 0
+    muxSelTrackWire(0x0);
+    delay(100); // Propagation time is very quick (ns), this is probably overkill
+    if (readTrackWire())
+    {
+        LED_SetBank(LED_BANK1,0xF);
+    }
+    
+    // Set to pass through track wire 1
+    muxSelTrackWire(0x1);
+    delay(100); // Propagation time is very quick (ns), this is probably overkill
+    if (readTrackWire())
+    {
+        LED_SetBank(LED_BANK2,0xF);
+    }
+    
+    delay(10000);
+    LED_SetBank(LED_BANK1,0x0);
+    LED_SetBank(LED_BANK2,0x0);
+    LED_SetBank(LED_BANK3,0x0);
     return;
 }
 
 void testBeaconDetector()
 {
+    if (readBeaconDetector())
+    {
+        LED_SetBank(LED_BANK1,0xF);
+        LED_SetBank(LED_BANK2,0xF);
+        LED_SetBank(LED_BANK3,0xF);
+    }
+   
+    delay(1000000);
+    LED_SetBank(LED_BANK1,0x0);
+    LED_SetBank(LED_BANK2,0x0);
+    LED_SetBank(LED_BANK3,0x0);
     return;
 }
 
 void testServos()
 {
+    int i;
+    for (i=1000;i<2000;i=+50)
+    {
+        setPulseUnloadingServo(i);
+        setPulseBridgeServo(i);
+        delay(1000);
+    }
     return;
 }
 

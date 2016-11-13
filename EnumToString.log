@@ -96278,3 +96278,4489 @@ static const char *StateNames[] = {
 [DEBUG]2016-11-12 18:32:08,575: None
 [DEBUG]2016-11-12 18:32:08,575: None
 [DEBUG]2016-11-12 18:32:08,575: None
+[DEBUG]2016-11-13 11:41:17,431: <_sre.SRE_Match object; span=(1088, 1944), match='typedef enum {\n    ES_NO_EVENT, ES_ERROR, /* use>
+[DEBUG]2016-11-13 11:41:17,431: ['ES_NO_EVENT', 'ES_ERROR', 'ES_INIT', 'ES_ENTRY', 'ES_EXIT', 'ES_KEYINPUT', 'ES_LISTEVENTS', 'ES_TIMEOUT', 'ES_TIMERACTIVE', 'ES_TIMERSTOPPED', 'OFF_TAPE', 'ON_TAPE', 'TAPE_TRIGGERED', 'TW_TRIGGERED', 'TRACK_WIRE_ON', 'TRACK_WIRE_OFF', 'BEACON_OFF', 'BEACON_ON', 'BUMPED', 'UNLOADED', 'BATTERY_CONNECTED', 'BATTERY_DISCONNECTED', 'NUMBEROFEVENTS']
+[DEBUG]2016-11-13 11:41:17,431: 
+static const char *EventNames[] = {
+	"ES_NO_EVENT",
+	"ES_ERROR",
+	"ES_INIT",
+	"ES_ENTRY",
+	"ES_EXIT",
+	"ES_KEYINPUT",
+	"ES_LISTEVENTS",
+	"ES_TIMEOUT",
+	"ES_TIMERACTIVE",
+	"ES_TIMERSTOPPED",
+	"OFF_TAPE",
+	"ON_TAPE",
+	"TAPE_TRIGGERED",
+	"TW_TRIGGERED",
+	"TRACK_WIRE_ON",
+	"TRACK_WIRE_OFF",
+	"BEACON_OFF",
+	"BEACON_ON",
+	"BUMPED",
+	"UNLOADED",
+	"BATTERY_CONNECTED",
+	"BATTERY_DISCONNECTED",
+	"NUMBEROFEVENTS",
+};
+
+
+[DEBUG]2016-11-13 11:41:17,433: <_sre.SRE_Match object; span=(1173, 1349), match='typedef enum {\n    InitPState,\n    AmmoSearch,\>
+[DEBUG]2016-11-13 11:41:17,433: <_sre.SRE_Match object; span=(1173, 1349), match='typedef enum {\n    InitPState,\n    AmmoSearch,\>
+[DEBUG]2016-11-13 11:41:17,434: ['InitPState', 'AmmoSearch', 'AmmoLoad', 'FirstTargetSearch', 'FirstTargetUnload', 'SecondTargetSearch', 'SecondTargetUnload']
+[DEBUG]2016-11-13 11:41:17,434: ['InitPState', 'AmmoSearch', 'AmmoLoad', 'FirstTargetSearch', 'FirstTargetUnload', 'SecondTargetSearch', 'SecondTargetUnload']
+[DEBUG]2016-11-13 11:41:17,434: 
+static const char *StateNames[] = {
+	"InitPState",
+	"AmmoSearch",
+	"AmmoLoad",
+	"FirstTargetSearch",
+	"FirstTargetUnload",
+	"SecondTargetSearch",
+	"SecondTargetUnload",
+};
+
+
+[DEBUG]2016-11-13 11:41:17,434: 
+static const char *StateNames[] = {
+	"InitPState",
+	"AmmoSearch",
+	"AmmoLoad",
+	"FirstTargetSearch",
+	"FirstTargetUnload",
+	"SecondTargetSearch",
+	"SecondTargetUnload",
+};
+
+
+[DEBUG]2016-11-13 11:41:17,435: <_sre.SRE_Match object; span=(1176, 1261), match='typedef enum {\n    InitPState,\n    Forward,\n  >
+[DEBUG]2016-11-13 11:41:17,435: <_sre.SRE_Match object; span=(1176, 1261), match='typedef enum {\n    InitPState,\n    Forward,\n  >
+[DEBUG]2016-11-13 11:41:17,435: <_sre.SRE_Match object; span=(1176, 1261), match='typedef enum {\n    InitPState,\n    Forward,\n  >
+[DEBUG]2016-11-13 11:41:17,435: ['InitPState', 'Forward', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:41:17,435: ['InitPState', 'Forward', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:41:17,435: ['InitPState', 'Forward', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:41:17,436: 
+static const char *StateNames[] = {
+	"InitPState",
+	"Forward",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:41:17,436: 
+static const char *StateNames[] = {
+	"InitPState",
+	"Forward",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:41:17,436: 
+static const char *StateNames[] = {
+	"InitPState",
+	"Forward",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:41:17,436: <_sre.SRE_Match object; span=(1171, 1243), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 11:41:17,436: <_sre.SRE_Match object; span=(1171, 1243), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 11:41:17,436: <_sre.SRE_Match object; span=(1171, 1243), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 11:41:17,436: <_sre.SRE_Match object; span=(1171, 1243), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 11:41:17,437: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:41:17,437: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:41:17,437: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:41:17,437: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:41:17,437: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:41:17,437: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:41:17,437: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:41:17,437: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:41:17,438: <_sre.SRE_Match object; span=(1183, 1255), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 11:41:17,438: <_sre.SRE_Match object; span=(1183, 1255), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 11:41:17,438: <_sre.SRE_Match object; span=(1183, 1255), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 11:41:17,438: <_sre.SRE_Match object; span=(1183, 1255), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 11:41:17,438: <_sre.SRE_Match object; span=(1183, 1255), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 11:41:17,438: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:41:17,438: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:41:17,438: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:41:17,438: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:41:17,438: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:41:17,438: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:41:17,438: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:41:17,438: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:41:17,438: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:41:17,438: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:41:17,440: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 11:41:17,440: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 11:41:17,440: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 11:41:17,440: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 11:41:17,440: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 11:41:17,440: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 11:41:17,440: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 11:41:17,440: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 11:41:17,440: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 11:41:17,440: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 11:41:17,440: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 11:41:17,440: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 11:41:17,440: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 11:41:17,440: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 11:41:17,440: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 11:41:17,440: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 11:41:17,440: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 11:41:17,440: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 11:41:17,441: None
+[DEBUG]2016-11-13 11:41:17,441: None
+[DEBUG]2016-11-13 11:41:17,441: None
+[DEBUG]2016-11-13 11:41:17,441: None
+[DEBUG]2016-11-13 11:41:17,441: None
+[DEBUG]2016-11-13 11:41:17,441: None
+[DEBUG]2016-11-13 11:41:17,441: None
+[DEBUG]2016-11-13 11:41:17,442: None
+[DEBUG]2016-11-13 11:41:17,442: None
+[DEBUG]2016-11-13 11:41:17,442: None
+[DEBUG]2016-11-13 11:41:17,442: None
+[DEBUG]2016-11-13 11:41:17,442: None
+[DEBUG]2016-11-13 11:41:17,442: None
+[DEBUG]2016-11-13 11:41:17,442: None
+[DEBUG]2016-11-13 11:41:17,442: None
+[DEBUG]2016-11-13 11:41:17,443: None
+[DEBUG]2016-11-13 11:41:17,443: None
+[DEBUG]2016-11-13 11:41:17,443: None
+[DEBUG]2016-11-13 11:41:17,443: None
+[DEBUG]2016-11-13 11:41:17,443: None
+[DEBUG]2016-11-13 11:41:17,443: None
+[DEBUG]2016-11-13 11:41:17,443: None
+[DEBUG]2016-11-13 11:41:17,443: None
+[DEBUG]2016-11-13 11:41:17,443: None
+[DEBUG]2016-11-13 11:41:17,445: None
+[DEBUG]2016-11-13 11:41:17,445: None
+[DEBUG]2016-11-13 11:41:17,445: None
+[DEBUG]2016-11-13 11:41:17,445: None
+[DEBUG]2016-11-13 11:41:17,445: None
+[DEBUG]2016-11-13 11:41:17,445: None
+[DEBUG]2016-11-13 11:41:17,445: None
+[DEBUG]2016-11-13 11:41:17,445: None
+[DEBUG]2016-11-13 11:41:17,445: None
+[DEBUG]2016-11-13 11:41:17,445: None
+[DEBUG]2016-11-13 11:41:17,446: None
+[DEBUG]2016-11-13 11:41:17,446: None
+[DEBUG]2016-11-13 11:41:17,446: None
+[DEBUG]2016-11-13 11:41:17,446: None
+[DEBUG]2016-11-13 11:41:17,446: None
+[DEBUG]2016-11-13 11:41:17,446: None
+[DEBUG]2016-11-13 11:41:17,446: None
+[DEBUG]2016-11-13 11:41:17,446: None
+[DEBUG]2016-11-13 11:41:17,446: None
+[DEBUG]2016-11-13 11:41:17,446: None
+[DEBUG]2016-11-13 11:41:17,446: None
+[DEBUG]2016-11-13 11:41:17,447: None
+[DEBUG]2016-11-13 11:41:17,447: None
+[DEBUG]2016-11-13 11:41:17,447: None
+[DEBUG]2016-11-13 11:41:17,447: None
+[DEBUG]2016-11-13 11:41:17,447: None
+[DEBUG]2016-11-13 11:41:17,447: None
+[DEBUG]2016-11-13 11:41:17,447: None
+[DEBUG]2016-11-13 11:41:17,447: None
+[DEBUG]2016-11-13 11:41:17,447: None
+[DEBUG]2016-11-13 11:41:17,447: None
+[DEBUG]2016-11-13 11:41:17,447: None
+[DEBUG]2016-11-13 11:41:17,447: None
+[DEBUG]2016-11-13 11:41:17,448: None
+[DEBUG]2016-11-13 11:41:17,448: None
+[DEBUG]2016-11-13 11:41:17,448: None
+[DEBUG]2016-11-13 11:41:17,448: None
+[DEBUG]2016-11-13 11:41:17,448: None
+[DEBUG]2016-11-13 11:41:17,448: None
+[DEBUG]2016-11-13 11:41:17,448: None
+[DEBUG]2016-11-13 11:41:17,448: None
+[DEBUG]2016-11-13 11:41:17,448: None
+[DEBUG]2016-11-13 11:41:17,448: None
+[DEBUG]2016-11-13 11:41:17,448: None
+[DEBUG]2016-11-13 11:41:17,448: None
+[DEBUG]2016-11-13 11:41:17,448: None
+[DEBUG]2016-11-13 11:41:17,450: None
+[DEBUG]2016-11-13 11:41:17,450: None
+[DEBUG]2016-11-13 11:41:17,450: None
+[DEBUG]2016-11-13 11:41:17,450: None
+[DEBUG]2016-11-13 11:41:17,450: None
+[DEBUG]2016-11-13 11:41:17,450: None
+[DEBUG]2016-11-13 11:41:17,450: None
+[DEBUG]2016-11-13 11:41:17,450: None
+[DEBUG]2016-11-13 11:41:17,450: None
+[DEBUG]2016-11-13 11:41:17,450: None
+[DEBUG]2016-11-13 11:41:17,450: None
+[DEBUG]2016-11-13 11:41:17,450: None
+[DEBUG]2016-11-13 11:41:17,450: None
+[DEBUG]2016-11-13 11:41:17,450: None
+[DEBUG]2016-11-13 11:41:17,451: None
+[DEBUG]2016-11-13 11:41:17,451: None
+[DEBUG]2016-11-13 11:41:17,451: None
+[DEBUG]2016-11-13 11:41:17,451: None
+[DEBUG]2016-11-13 11:41:17,451: None
+[DEBUG]2016-11-13 11:41:17,451: None
+[DEBUG]2016-11-13 11:41:17,451: None
+[DEBUG]2016-11-13 11:41:17,451: None
+[DEBUG]2016-11-13 11:41:17,451: None
+[DEBUG]2016-11-13 11:41:17,451: None
+[DEBUG]2016-11-13 11:41:17,451: None
+[DEBUG]2016-11-13 11:41:17,451: None
+[DEBUG]2016-11-13 11:41:17,451: None
+[DEBUG]2016-11-13 11:41:17,451: None
+[DEBUG]2016-11-13 11:41:17,451: None
+[DEBUG]2016-11-13 11:41:17,452: None
+[DEBUG]2016-11-13 11:41:17,452: None
+[DEBUG]2016-11-13 11:41:17,452: None
+[DEBUG]2016-11-13 11:41:17,452: None
+[DEBUG]2016-11-13 11:41:17,452: None
+[DEBUG]2016-11-13 11:41:17,452: None
+[DEBUG]2016-11-13 11:41:17,452: None
+[DEBUG]2016-11-13 11:41:17,452: None
+[DEBUG]2016-11-13 11:41:17,452: None
+[DEBUG]2016-11-13 11:41:17,452: None
+[DEBUG]2016-11-13 11:41:17,452: None
+[DEBUG]2016-11-13 11:41:17,452: None
+[DEBUG]2016-11-13 11:41:17,452: None
+[DEBUG]2016-11-13 11:41:17,452: None
+[DEBUG]2016-11-13 11:41:17,452: None
+[DEBUG]2016-11-13 11:41:17,452: None
+[DEBUG]2016-11-13 11:41:17,454: None
+[DEBUG]2016-11-13 11:41:17,454: None
+[DEBUG]2016-11-13 11:41:17,454: None
+[DEBUG]2016-11-13 11:41:17,454: None
+[DEBUG]2016-11-13 11:41:17,454: None
+[DEBUG]2016-11-13 11:41:17,454: None
+[DEBUG]2016-11-13 11:41:17,454: None
+[DEBUG]2016-11-13 11:41:17,454: None
+[DEBUG]2016-11-13 11:41:17,454: None
+[DEBUG]2016-11-13 11:41:17,454: None
+[DEBUG]2016-11-13 11:41:17,454: None
+[DEBUG]2016-11-13 11:41:17,454: None
+[DEBUG]2016-11-13 11:41:17,454: None
+[DEBUG]2016-11-13 11:41:17,454: None
+[DEBUG]2016-11-13 11:41:17,454: None
+[DEBUG]2016-11-13 11:41:17,454: None
+[DEBUG]2016-11-13 11:41:17,454: None
+[DEBUG]2016-11-13 11:41:17,455: None
+[DEBUG]2016-11-13 11:41:17,455: None
+[DEBUG]2016-11-13 11:41:17,455: None
+[DEBUG]2016-11-13 11:41:17,455: None
+[DEBUG]2016-11-13 11:41:17,455: None
+[DEBUG]2016-11-13 11:41:17,455: None
+[DEBUG]2016-11-13 11:41:17,455: None
+[DEBUG]2016-11-13 11:41:17,455: None
+[DEBUG]2016-11-13 11:41:17,455: None
+[DEBUG]2016-11-13 11:41:17,455: None
+[DEBUG]2016-11-13 11:41:17,455: None
+[DEBUG]2016-11-13 11:41:17,455: None
+[DEBUG]2016-11-13 11:41:17,455: None
+[DEBUG]2016-11-13 11:41:17,455: None
+[DEBUG]2016-11-13 11:41:17,455: None
+[DEBUG]2016-11-13 11:41:17,455: None
+[DEBUG]2016-11-13 11:41:17,455: None
+[DEBUG]2016-11-13 11:41:17,455: None
+[DEBUG]2016-11-13 11:41:17,457: None
+[DEBUG]2016-11-13 11:41:17,457: None
+[DEBUG]2016-11-13 11:41:17,457: None
+[DEBUG]2016-11-13 11:41:17,457: None
+[DEBUG]2016-11-13 11:41:17,457: None
+[DEBUG]2016-11-13 11:41:17,457: None
+[DEBUG]2016-11-13 11:41:17,457: None
+[DEBUG]2016-11-13 11:41:17,457: None
+[DEBUG]2016-11-13 11:41:17,457: None
+[DEBUG]2016-11-13 11:41:17,457: None
+[DEBUG]2016-11-13 11:41:17,457: None
+[DEBUG]2016-11-13 11:41:17,457: None
+[DEBUG]2016-11-13 11:41:17,457: None
+[DEBUG]2016-11-13 11:41:17,457: None
+[DEBUG]2016-11-13 11:41:17,457: None
+[DEBUG]2016-11-13 11:41:17,457: None
+[DEBUG]2016-11-13 11:41:17,457: None
+[DEBUG]2016-11-13 11:41:17,457: None
+[DEBUG]2016-11-13 11:41:17,457: None
+[DEBUG]2016-11-13 11:41:17,458: None
+[DEBUG]2016-11-13 11:41:17,458: None
+[DEBUG]2016-11-13 11:41:17,458: None
+[DEBUG]2016-11-13 11:41:17,458: None
+[DEBUG]2016-11-13 11:41:17,458: None
+[DEBUG]2016-11-13 11:41:17,458: None
+[DEBUG]2016-11-13 11:41:17,458: None
+[DEBUG]2016-11-13 11:41:17,458: None
+[DEBUG]2016-11-13 11:41:17,458: None
+[DEBUG]2016-11-13 11:41:17,458: None
+[DEBUG]2016-11-13 11:41:17,458: None
+[DEBUG]2016-11-13 11:41:17,458: None
+[DEBUG]2016-11-13 11:41:17,458: None
+[DEBUG]2016-11-13 11:41:17,458: None
+[DEBUG]2016-11-13 11:41:17,458: None
+[DEBUG]2016-11-13 11:41:17,458: None
+[DEBUG]2016-11-13 11:41:17,458: None
+[DEBUG]2016-11-13 11:41:17,458: None
+[DEBUG]2016-11-13 11:41:17,458: None
+[DEBUG]2016-11-13 11:41:17,458: None
+[DEBUG]2016-11-13 11:41:17,460: None
+[DEBUG]2016-11-13 11:41:17,460: None
+[DEBUG]2016-11-13 11:41:17,460: None
+[DEBUG]2016-11-13 11:41:17,460: None
+[DEBUG]2016-11-13 11:41:17,460: None
+[DEBUG]2016-11-13 11:41:17,460: None
+[DEBUG]2016-11-13 11:41:17,460: None
+[DEBUG]2016-11-13 11:41:17,460: None
+[DEBUG]2016-11-13 11:41:17,460: None
+[DEBUG]2016-11-13 11:41:17,460: None
+[DEBUG]2016-11-13 11:41:17,460: None
+[DEBUG]2016-11-13 11:41:17,460: None
+[DEBUG]2016-11-13 11:41:17,460: None
+[DEBUG]2016-11-13 11:41:17,460: None
+[DEBUG]2016-11-13 11:41:17,460: None
+[DEBUG]2016-11-13 11:41:17,460: None
+[DEBUG]2016-11-13 11:41:17,460: None
+[DEBUG]2016-11-13 11:41:17,460: None
+[DEBUG]2016-11-13 11:41:17,460: None
+[DEBUG]2016-11-13 11:41:17,460: None
+[DEBUG]2016-11-13 11:41:17,460: None
+[DEBUG]2016-11-13 11:41:17,461: None
+[DEBUG]2016-11-13 11:41:17,461: None
+[DEBUG]2016-11-13 11:41:17,461: None
+[DEBUG]2016-11-13 11:41:17,461: None
+[DEBUG]2016-11-13 11:41:17,461: None
+[DEBUG]2016-11-13 11:41:17,461: None
+[DEBUG]2016-11-13 11:41:17,461: None
+[DEBUG]2016-11-13 11:41:17,461: None
+[DEBUG]2016-11-13 11:41:17,461: None
+[DEBUG]2016-11-13 11:41:17,461: None
+[DEBUG]2016-11-13 11:41:17,461: None
+[DEBUG]2016-11-13 11:41:17,461: None
+[DEBUG]2016-11-13 11:41:17,461: None
+[DEBUG]2016-11-13 11:41:17,461: None
+[DEBUG]2016-11-13 11:41:17,461: None
+[DEBUG]2016-11-13 11:41:17,461: None
+[DEBUG]2016-11-13 11:41:17,461: None
+[DEBUG]2016-11-13 11:41:17,461: None
+[DEBUG]2016-11-13 11:41:17,461: None
+[DEBUG]2016-11-13 11:41:17,461: None
+[DEBUG]2016-11-13 11:41:17,461: None
+[DEBUG]2016-11-13 11:41:17,461: None
+[DEBUG]2016-11-13 11:41:17,463: None
+[DEBUG]2016-11-13 11:41:17,463: None
+[DEBUG]2016-11-13 11:41:17,463: None
+[DEBUG]2016-11-13 11:41:17,463: None
+[DEBUG]2016-11-13 11:41:17,463: None
+[DEBUG]2016-11-13 11:41:17,463: None
+[DEBUG]2016-11-13 11:41:17,463: None
+[DEBUG]2016-11-13 11:41:17,463: None
+[DEBUG]2016-11-13 11:41:17,463: None
+[DEBUG]2016-11-13 11:41:17,463: None
+[DEBUG]2016-11-13 11:41:17,463: None
+[DEBUG]2016-11-13 11:41:17,463: None
+[DEBUG]2016-11-13 11:41:17,463: None
+[DEBUG]2016-11-13 11:41:17,463: None
+[DEBUG]2016-11-13 11:41:17,463: None
+[DEBUG]2016-11-13 11:41:17,463: None
+[DEBUG]2016-11-13 11:41:17,463: None
+[DEBUG]2016-11-13 11:41:17,463: None
+[DEBUG]2016-11-13 11:41:17,463: None
+[DEBUG]2016-11-13 11:41:17,463: None
+[DEBUG]2016-11-13 11:41:17,463: None
+[DEBUG]2016-11-13 11:41:17,463: None
+[DEBUG]2016-11-13 11:41:17,463: None
+[DEBUG]2016-11-13 11:41:17,465: None
+[DEBUG]2016-11-13 11:41:17,465: None
+[DEBUG]2016-11-13 11:41:17,465: None
+[DEBUG]2016-11-13 11:41:17,465: None
+[DEBUG]2016-11-13 11:41:17,465: None
+[DEBUG]2016-11-13 11:41:17,465: None
+[DEBUG]2016-11-13 11:41:17,465: None
+[DEBUG]2016-11-13 11:41:17,465: None
+[DEBUG]2016-11-13 11:41:17,465: None
+[DEBUG]2016-11-13 11:41:17,465: None
+[DEBUG]2016-11-13 11:41:17,465: None
+[DEBUG]2016-11-13 11:41:17,465: None
+[DEBUG]2016-11-13 11:41:17,465: None
+[DEBUG]2016-11-13 11:41:17,465: None
+[DEBUG]2016-11-13 11:41:17,465: None
+[DEBUG]2016-11-13 11:41:17,465: None
+[DEBUG]2016-11-13 11:41:17,465: None
+[DEBUG]2016-11-13 11:41:17,465: None
+[DEBUG]2016-11-13 11:41:17,465: None
+[DEBUG]2016-11-13 11:41:17,465: None
+[DEBUG]2016-11-13 11:41:17,465: None
+[DEBUG]2016-11-13 11:41:17,465: None
+[DEBUG]2016-11-13 11:41:17,465: None
+[DEBUG]2016-11-13 11:41:17,465: None
+[DEBUG]2016-11-13 11:41:17,466: None
+[DEBUG]2016-11-13 11:41:17,466: None
+[DEBUG]2016-11-13 11:41:17,466: None
+[DEBUG]2016-11-13 11:41:17,466: None
+[DEBUG]2016-11-13 11:41:17,466: None
+[DEBUG]2016-11-13 11:41:17,466: None
+[DEBUG]2016-11-13 11:41:17,466: None
+[DEBUG]2016-11-13 11:41:17,466: None
+[DEBUG]2016-11-13 11:41:17,466: None
+[DEBUG]2016-11-13 11:41:17,466: None
+[DEBUG]2016-11-13 11:41:17,466: None
+[DEBUG]2016-11-13 11:41:17,466: None
+[DEBUG]2016-11-13 11:41:17,466: None
+[DEBUG]2016-11-13 11:41:17,466: None
+[DEBUG]2016-11-13 11:41:17,466: None
+[DEBUG]2016-11-13 11:41:17,466: None
+[DEBUG]2016-11-13 11:41:17,466: None
+[DEBUG]2016-11-13 11:41:17,466: None
+[DEBUG]2016-11-13 11:41:17,466: None
+[DEBUG]2016-11-13 11:41:17,466: None
+[DEBUG]2016-11-13 11:41:17,466: None
+[DEBUG]2016-11-13 11:41:17,466: None
+[DEBUG]2016-11-13 11:41:17,466: None
+[DEBUG]2016-11-13 11:41:17,466: None
+[DEBUG]2016-11-13 11:41:17,466: None
+[DEBUG]2016-11-13 11:50:18,188: <_sre.SRE_Match object; span=(1088, 1944), match='typedef enum {\n    ES_NO_EVENT, ES_ERROR, /* use>
+[DEBUG]2016-11-13 11:50:18,188: ['ES_NO_EVENT', 'ES_ERROR', 'ES_INIT', 'ES_ENTRY', 'ES_EXIT', 'ES_KEYINPUT', 'ES_LISTEVENTS', 'ES_TIMEOUT', 'ES_TIMERACTIVE', 'ES_TIMERSTOPPED', 'OFF_TAPE', 'ON_TAPE', 'TAPE_TRIGGERED', 'TW_TRIGGERED', 'TRACK_WIRE_ON', 'TRACK_WIRE_OFF', 'BEACON_OFF', 'BEACON_ON', 'BUMPED', 'UNLOADED', 'BATTERY_CONNECTED', 'BATTERY_DISCONNECTED', 'NUMBEROFEVENTS']
+[DEBUG]2016-11-13 11:50:18,188: 
+static const char *EventNames[] = {
+	"ES_NO_EVENT",
+	"ES_ERROR",
+	"ES_INIT",
+	"ES_ENTRY",
+	"ES_EXIT",
+	"ES_KEYINPUT",
+	"ES_LISTEVENTS",
+	"ES_TIMEOUT",
+	"ES_TIMERACTIVE",
+	"ES_TIMERSTOPPED",
+	"OFF_TAPE",
+	"ON_TAPE",
+	"TAPE_TRIGGERED",
+	"TW_TRIGGERED",
+	"TRACK_WIRE_ON",
+	"TRACK_WIRE_OFF",
+	"BEACON_OFF",
+	"BEACON_ON",
+	"BUMPED",
+	"UNLOADED",
+	"BATTERY_CONNECTED",
+	"BATTERY_DISCONNECTED",
+	"NUMBEROFEVENTS",
+};
+
+
+[DEBUG]2016-11-13 11:50:18,191: <_sre.SRE_Match object; span=(1173, 1349), match='typedef enum {\n    InitPState,\n    AmmoSearch,\>
+[DEBUG]2016-11-13 11:50:18,191: <_sre.SRE_Match object; span=(1173, 1349), match='typedef enum {\n    InitPState,\n    AmmoSearch,\>
+[DEBUG]2016-11-13 11:50:18,191: ['InitPState', 'AmmoSearch', 'AmmoLoad', 'FirstTargetSearch', 'FirstTargetUnload', 'SecondTargetSearch', 'SecondTargetUnload']
+[DEBUG]2016-11-13 11:50:18,191: ['InitPState', 'AmmoSearch', 'AmmoLoad', 'FirstTargetSearch', 'FirstTargetUnload', 'SecondTargetSearch', 'SecondTargetUnload']
+[DEBUG]2016-11-13 11:50:18,191: 
+static const char *StateNames[] = {
+	"InitPState",
+	"AmmoSearch",
+	"AmmoLoad",
+	"FirstTargetSearch",
+	"FirstTargetUnload",
+	"SecondTargetSearch",
+	"SecondTargetUnload",
+};
+
+
+[DEBUG]2016-11-13 11:50:18,191: 
+static const char *StateNames[] = {
+	"InitPState",
+	"AmmoSearch",
+	"AmmoLoad",
+	"FirstTargetSearch",
+	"FirstTargetUnload",
+	"SecondTargetSearch",
+	"SecondTargetUnload",
+};
+
+
+[DEBUG]2016-11-13 11:50:18,192: <_sre.SRE_Match object; span=(1176, 1261), match='typedef enum {\n    InitPState,\n    Forward,\n  >
+[DEBUG]2016-11-13 11:50:18,192: <_sre.SRE_Match object; span=(1176, 1261), match='typedef enum {\n    InitPState,\n    Forward,\n  >
+[DEBUG]2016-11-13 11:50:18,192: <_sre.SRE_Match object; span=(1176, 1261), match='typedef enum {\n    InitPState,\n    Forward,\n  >
+[DEBUG]2016-11-13 11:50:18,193: ['InitPState', 'Forward', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:50:18,193: ['InitPState', 'Forward', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:50:18,193: ['InitPState', 'Forward', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:50:18,193: 
+static const char *StateNames[] = {
+	"InitPState",
+	"Forward",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:50:18,193: 
+static const char *StateNames[] = {
+	"InitPState",
+	"Forward",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:50:18,193: 
+static const char *StateNames[] = {
+	"InitPState",
+	"Forward",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:50:18,194: <_sre.SRE_Match object; span=(1171, 1243), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 11:50:18,194: <_sre.SRE_Match object; span=(1171, 1243), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 11:50:18,194: <_sre.SRE_Match object; span=(1171, 1243), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 11:50:18,194: <_sre.SRE_Match object; span=(1171, 1243), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 11:50:18,194: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:50:18,194: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:50:18,194: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:50:18,194: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:50:18,194: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:50:18,194: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:50:18,194: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:50:18,194: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:50:18,195: <_sre.SRE_Match object; span=(1183, 1255), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 11:50:18,195: <_sre.SRE_Match object; span=(1183, 1255), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 11:50:18,195: <_sre.SRE_Match object; span=(1183, 1255), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 11:50:18,195: <_sre.SRE_Match object; span=(1183, 1255), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 11:50:18,195: <_sre.SRE_Match object; span=(1183, 1255), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 11:50:18,196: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:50:18,196: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:50:18,196: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:50:18,196: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:50:18,196: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:50:18,196: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:50:18,196: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:50:18,196: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:50:18,196: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:50:18,196: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:50:18,197: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 11:50:18,197: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 11:50:18,197: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 11:50:18,197: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 11:50:18,197: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 11:50:18,197: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 11:50:18,197: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 11:50:18,197: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 11:50:18,197: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 11:50:18,197: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 11:50:18,197: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 11:50:18,197: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 11:50:18,197: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 11:50:18,197: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 11:50:18,197: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 11:50:18,197: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 11:50:18,197: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 11:50:18,197: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 11:50:18,199: None
+[DEBUG]2016-11-13 11:50:18,199: None
+[DEBUG]2016-11-13 11:50:18,199: None
+[DEBUG]2016-11-13 11:50:18,199: None
+[DEBUG]2016-11-13 11:50:18,199: None
+[DEBUG]2016-11-13 11:50:18,199: None
+[DEBUG]2016-11-13 11:50:18,199: None
+[DEBUG]2016-11-13 11:50:18,199: None
+[DEBUG]2016-11-13 11:50:18,199: None
+[DEBUG]2016-11-13 11:50:18,199: None
+[DEBUG]2016-11-13 11:50:18,199: None
+[DEBUG]2016-11-13 11:50:18,199: None
+[DEBUG]2016-11-13 11:50:18,199: None
+[DEBUG]2016-11-13 11:50:18,199: None
+[DEBUG]2016-11-13 11:50:18,199: None
+[DEBUG]2016-11-13 11:50:18,201: None
+[DEBUG]2016-11-13 11:50:18,201: None
+[DEBUG]2016-11-13 11:50:18,201: None
+[DEBUG]2016-11-13 11:50:18,201: None
+[DEBUG]2016-11-13 11:50:18,201: None
+[DEBUG]2016-11-13 11:50:18,201: None
+[DEBUG]2016-11-13 11:50:18,201: None
+[DEBUG]2016-11-13 11:50:18,201: None
+[DEBUG]2016-11-13 11:50:18,201: None
+[DEBUG]2016-11-13 11:50:18,202: None
+[DEBUG]2016-11-13 11:50:18,202: None
+[DEBUG]2016-11-13 11:50:18,202: None
+[DEBUG]2016-11-13 11:50:18,202: None
+[DEBUG]2016-11-13 11:50:18,202: None
+[DEBUG]2016-11-13 11:50:18,202: None
+[DEBUG]2016-11-13 11:50:18,202: None
+[DEBUG]2016-11-13 11:50:18,202: None
+[DEBUG]2016-11-13 11:50:18,202: None
+[DEBUG]2016-11-13 11:50:18,202: None
+[DEBUG]2016-11-13 11:50:18,203: None
+[DEBUG]2016-11-13 11:50:18,203: None
+[DEBUG]2016-11-13 11:50:18,203: None
+[DEBUG]2016-11-13 11:50:18,203: None
+[DEBUG]2016-11-13 11:50:18,203: None
+[DEBUG]2016-11-13 11:50:18,203: None
+[DEBUG]2016-11-13 11:50:18,203: None
+[DEBUG]2016-11-13 11:50:18,203: None
+[DEBUG]2016-11-13 11:50:18,203: None
+[DEBUG]2016-11-13 11:50:18,203: None
+[DEBUG]2016-11-13 11:50:18,203: None
+[DEBUG]2016-11-13 11:50:18,205: None
+[DEBUG]2016-11-13 11:50:18,205: None
+[DEBUG]2016-11-13 11:50:18,205: None
+[DEBUG]2016-11-13 11:50:18,205: None
+[DEBUG]2016-11-13 11:50:18,205: None
+[DEBUG]2016-11-13 11:50:18,205: None
+[DEBUG]2016-11-13 11:50:18,205: None
+[DEBUG]2016-11-13 11:50:18,205: None
+[DEBUG]2016-11-13 11:50:18,205: None
+[DEBUG]2016-11-13 11:50:18,205: None
+[DEBUG]2016-11-13 11:50:18,205: None
+[DEBUG]2016-11-13 11:50:18,205: None
+[DEBUG]2016-11-13 11:50:18,206: None
+[DEBUG]2016-11-13 11:50:18,206: None
+[DEBUG]2016-11-13 11:50:18,206: None
+[DEBUG]2016-11-13 11:50:18,206: None
+[DEBUG]2016-11-13 11:50:18,206: None
+[DEBUG]2016-11-13 11:50:18,206: None
+[DEBUG]2016-11-13 11:50:18,206: None
+[DEBUG]2016-11-13 11:50:18,206: None
+[DEBUG]2016-11-13 11:50:18,206: None
+[DEBUG]2016-11-13 11:50:18,206: None
+[DEBUG]2016-11-13 11:50:18,206: None
+[DEBUG]2016-11-13 11:50:18,206: None
+[DEBUG]2016-11-13 11:50:18,206: None
+[DEBUG]2016-11-13 11:50:18,207: None
+[DEBUG]2016-11-13 11:50:18,207: None
+[DEBUG]2016-11-13 11:50:18,207: None
+[DEBUG]2016-11-13 11:50:18,207: None
+[DEBUG]2016-11-13 11:50:18,207: None
+[DEBUG]2016-11-13 11:50:18,207: None
+[DEBUG]2016-11-13 11:50:18,207: None
+[DEBUG]2016-11-13 11:50:18,207: None
+[DEBUG]2016-11-13 11:50:18,207: None
+[DEBUG]2016-11-13 11:50:18,207: None
+[DEBUG]2016-11-13 11:50:18,207: None
+[DEBUG]2016-11-13 11:50:18,207: None
+[DEBUG]2016-11-13 11:50:18,207: None
+[DEBUG]2016-11-13 11:50:18,207: None
+[DEBUG]2016-11-13 11:50:18,208: None
+[DEBUG]2016-11-13 11:50:18,208: None
+[DEBUG]2016-11-13 11:50:18,208: None
+[DEBUG]2016-11-13 11:50:18,208: None
+[DEBUG]2016-11-13 11:50:18,208: None
+[DEBUG]2016-11-13 11:50:18,208: None
+[DEBUG]2016-11-13 11:50:18,208: None
+[DEBUG]2016-11-13 11:50:18,208: None
+[DEBUG]2016-11-13 11:50:18,208: None
+[DEBUG]2016-11-13 11:50:18,208: None
+[DEBUG]2016-11-13 11:50:18,208: None
+[DEBUG]2016-11-13 11:50:18,208: None
+[DEBUG]2016-11-13 11:50:18,208: None
+[DEBUG]2016-11-13 11:50:18,208: None
+[DEBUG]2016-11-13 11:50:18,208: None
+[DEBUG]2016-11-13 11:50:18,210: None
+[DEBUG]2016-11-13 11:50:18,210: None
+[DEBUG]2016-11-13 11:50:18,210: None
+[DEBUG]2016-11-13 11:50:18,210: None
+[DEBUG]2016-11-13 11:50:18,210: None
+[DEBUG]2016-11-13 11:50:18,210: None
+[DEBUG]2016-11-13 11:50:18,210: None
+[DEBUG]2016-11-13 11:50:18,210: None
+[DEBUG]2016-11-13 11:50:18,210: None
+[DEBUG]2016-11-13 11:50:18,210: None
+[DEBUG]2016-11-13 11:50:18,210: None
+[DEBUG]2016-11-13 11:50:18,210: None
+[DEBUG]2016-11-13 11:50:18,210: None
+[DEBUG]2016-11-13 11:50:18,210: None
+[DEBUG]2016-11-13 11:50:18,210: None
+[DEBUG]2016-11-13 11:50:18,210: None
+[DEBUG]2016-11-13 11:50:18,211: None
+[DEBUG]2016-11-13 11:50:18,211: None
+[DEBUG]2016-11-13 11:50:18,211: None
+[DEBUG]2016-11-13 11:50:18,211: None
+[DEBUG]2016-11-13 11:50:18,211: None
+[DEBUG]2016-11-13 11:50:18,211: None
+[DEBUG]2016-11-13 11:50:18,211: None
+[DEBUG]2016-11-13 11:50:18,211: None
+[DEBUG]2016-11-13 11:50:18,211: None
+[DEBUG]2016-11-13 11:50:18,211: None
+[DEBUG]2016-11-13 11:50:18,211: None
+[DEBUG]2016-11-13 11:50:18,211: None
+[DEBUG]2016-11-13 11:50:18,211: None
+[DEBUG]2016-11-13 11:50:18,211: None
+[DEBUG]2016-11-13 11:50:18,211: None
+[DEBUG]2016-11-13 11:50:18,211: None
+[DEBUG]2016-11-13 11:50:18,211: None
+[DEBUG]2016-11-13 11:50:18,213: None
+[DEBUG]2016-11-13 11:50:18,213: None
+[DEBUG]2016-11-13 11:50:18,213: None
+[DEBUG]2016-11-13 11:50:18,213: None
+[DEBUG]2016-11-13 11:50:18,213: None
+[DEBUG]2016-11-13 11:50:18,213: None
+[DEBUG]2016-11-13 11:50:18,213: None
+[DEBUG]2016-11-13 11:50:18,213: None
+[DEBUG]2016-11-13 11:50:18,213: None
+[DEBUG]2016-11-13 11:50:18,213: None
+[DEBUG]2016-11-13 11:50:18,213: None
+[DEBUG]2016-11-13 11:50:18,213: None
+[DEBUG]2016-11-13 11:50:18,213: None
+[DEBUG]2016-11-13 11:50:18,213: None
+[DEBUG]2016-11-13 11:50:18,213: None
+[DEBUG]2016-11-13 11:50:18,213: None
+[DEBUG]2016-11-13 11:50:18,213: None
+[DEBUG]2016-11-13 11:50:18,213: None
+[DEBUG]2016-11-13 11:50:18,214: None
+[DEBUG]2016-11-13 11:50:18,214: None
+[DEBUG]2016-11-13 11:50:18,214: None
+[DEBUG]2016-11-13 11:50:18,214: None
+[DEBUG]2016-11-13 11:50:18,214: None
+[DEBUG]2016-11-13 11:50:18,214: None
+[DEBUG]2016-11-13 11:50:18,214: None
+[DEBUG]2016-11-13 11:50:18,214: None
+[DEBUG]2016-11-13 11:50:18,214: None
+[DEBUG]2016-11-13 11:50:18,214: None
+[DEBUG]2016-11-13 11:50:18,214: None
+[DEBUG]2016-11-13 11:50:18,214: None
+[DEBUG]2016-11-13 11:50:18,214: None
+[DEBUG]2016-11-13 11:50:18,214: None
+[DEBUG]2016-11-13 11:50:18,214: None
+[DEBUG]2016-11-13 11:50:18,214: None
+[DEBUG]2016-11-13 11:50:18,214: None
+[DEBUG]2016-11-13 11:50:18,214: None
+[DEBUG]2016-11-13 11:50:18,214: None
+[DEBUG]2016-11-13 11:50:18,216: None
+[DEBUG]2016-11-13 11:50:18,216: None
+[DEBUG]2016-11-13 11:50:18,216: None
+[DEBUG]2016-11-13 11:50:18,216: None
+[DEBUG]2016-11-13 11:50:18,216: None
+[DEBUG]2016-11-13 11:50:18,216: None
+[DEBUG]2016-11-13 11:50:18,216: None
+[DEBUG]2016-11-13 11:50:18,216: None
+[DEBUG]2016-11-13 11:50:18,216: None
+[DEBUG]2016-11-13 11:50:18,216: None
+[DEBUG]2016-11-13 11:50:18,216: None
+[DEBUG]2016-11-13 11:50:18,216: None
+[DEBUG]2016-11-13 11:50:18,216: None
+[DEBUG]2016-11-13 11:50:18,216: None
+[DEBUG]2016-11-13 11:50:18,216: None
+[DEBUG]2016-11-13 11:50:18,216: None
+[DEBUG]2016-11-13 11:50:18,216: None
+[DEBUG]2016-11-13 11:50:18,216: None
+[DEBUG]2016-11-13 11:50:18,216: None
+[DEBUG]2016-11-13 11:50:18,216: None
+[DEBUG]2016-11-13 11:50:18,217: None
+[DEBUG]2016-11-13 11:50:18,217: None
+[DEBUG]2016-11-13 11:50:18,217: None
+[DEBUG]2016-11-13 11:50:18,217: None
+[DEBUG]2016-11-13 11:50:18,217: None
+[DEBUG]2016-11-13 11:50:18,217: None
+[DEBUG]2016-11-13 11:50:18,217: None
+[DEBUG]2016-11-13 11:50:18,217: None
+[DEBUG]2016-11-13 11:50:18,217: None
+[DEBUG]2016-11-13 11:50:18,217: None
+[DEBUG]2016-11-13 11:50:18,217: None
+[DEBUG]2016-11-13 11:50:18,217: None
+[DEBUG]2016-11-13 11:50:18,217: None
+[DEBUG]2016-11-13 11:50:18,217: None
+[DEBUG]2016-11-13 11:50:18,217: None
+[DEBUG]2016-11-13 11:50:18,217: None
+[DEBUG]2016-11-13 11:50:18,217: None
+[DEBUG]2016-11-13 11:50:18,217: None
+[DEBUG]2016-11-13 11:50:18,217: None
+[DEBUG]2016-11-13 11:50:18,217: None
+[DEBUG]2016-11-13 11:50:18,217: None
+[DEBUG]2016-11-13 11:50:18,219: None
+[DEBUG]2016-11-13 11:50:18,219: None
+[DEBUG]2016-11-13 11:50:18,219: None
+[DEBUG]2016-11-13 11:50:18,219: None
+[DEBUG]2016-11-13 11:50:18,219: None
+[DEBUG]2016-11-13 11:50:18,219: None
+[DEBUG]2016-11-13 11:50:18,219: None
+[DEBUG]2016-11-13 11:50:18,219: None
+[DEBUG]2016-11-13 11:50:18,219: None
+[DEBUG]2016-11-13 11:50:18,219: None
+[DEBUG]2016-11-13 11:50:18,219: None
+[DEBUG]2016-11-13 11:50:18,219: None
+[DEBUG]2016-11-13 11:50:18,219: None
+[DEBUG]2016-11-13 11:50:18,219: None
+[DEBUG]2016-11-13 11:50:18,219: None
+[DEBUG]2016-11-13 11:50:18,219: None
+[DEBUG]2016-11-13 11:50:18,219: None
+[DEBUG]2016-11-13 11:50:18,219: None
+[DEBUG]2016-11-13 11:50:18,219: None
+[DEBUG]2016-11-13 11:50:18,219: None
+[DEBUG]2016-11-13 11:50:18,219: None
+[DEBUG]2016-11-13 11:50:18,219: None
+[DEBUG]2016-11-13 11:50:18,220: None
+[DEBUG]2016-11-13 11:50:18,220: None
+[DEBUG]2016-11-13 11:50:18,220: None
+[DEBUG]2016-11-13 11:50:18,220: None
+[DEBUG]2016-11-13 11:50:18,220: None
+[DEBUG]2016-11-13 11:50:18,220: None
+[DEBUG]2016-11-13 11:50:18,220: None
+[DEBUG]2016-11-13 11:50:18,220: None
+[DEBUG]2016-11-13 11:50:18,220: None
+[DEBUG]2016-11-13 11:50:18,220: None
+[DEBUG]2016-11-13 11:50:18,220: None
+[DEBUG]2016-11-13 11:50:18,220: None
+[DEBUG]2016-11-13 11:50:18,220: None
+[DEBUG]2016-11-13 11:50:18,220: None
+[DEBUG]2016-11-13 11:50:18,220: None
+[DEBUG]2016-11-13 11:50:18,220: None
+[DEBUG]2016-11-13 11:50:18,220: None
+[DEBUG]2016-11-13 11:50:18,220: None
+[DEBUG]2016-11-13 11:50:18,220: None
+[DEBUG]2016-11-13 11:50:18,220: None
+[DEBUG]2016-11-13 11:50:18,220: None
+[DEBUG]2016-11-13 11:50:18,220: None
+[DEBUG]2016-11-13 11:50:18,220: None
+[DEBUG]2016-11-13 11:50:18,222: None
+[DEBUG]2016-11-13 11:50:18,222: None
+[DEBUG]2016-11-13 11:50:18,222: None
+[DEBUG]2016-11-13 11:50:18,222: None
+[DEBUG]2016-11-13 11:50:18,222: None
+[DEBUG]2016-11-13 11:50:18,222: None
+[DEBUG]2016-11-13 11:50:18,222: None
+[DEBUG]2016-11-13 11:50:18,222: None
+[DEBUG]2016-11-13 11:50:18,222: None
+[DEBUG]2016-11-13 11:50:18,222: None
+[DEBUG]2016-11-13 11:50:18,222: None
+[DEBUG]2016-11-13 11:50:18,222: None
+[DEBUG]2016-11-13 11:50:18,222: None
+[DEBUG]2016-11-13 11:50:18,222: None
+[DEBUG]2016-11-13 11:50:18,222: None
+[DEBUG]2016-11-13 11:50:18,222: None
+[DEBUG]2016-11-13 11:50:18,222: None
+[DEBUG]2016-11-13 11:50:18,222: None
+[DEBUG]2016-11-13 11:50:18,222: None
+[DEBUG]2016-11-13 11:50:18,222: None
+[DEBUG]2016-11-13 11:50:18,222: None
+[DEBUG]2016-11-13 11:50:18,222: None
+[DEBUG]2016-11-13 11:50:18,222: None
+[DEBUG]2016-11-13 11:50:18,222: None
+[DEBUG]2016-11-13 11:50:18,224: None
+[DEBUG]2016-11-13 11:50:18,224: None
+[DEBUG]2016-11-13 11:50:18,224: None
+[DEBUG]2016-11-13 11:50:18,224: None
+[DEBUG]2016-11-13 11:50:18,224: None
+[DEBUG]2016-11-13 11:50:18,224: None
+[DEBUG]2016-11-13 11:50:18,224: None
+[DEBUG]2016-11-13 11:50:18,224: None
+[DEBUG]2016-11-13 11:50:18,224: None
+[DEBUG]2016-11-13 11:50:18,224: None
+[DEBUG]2016-11-13 11:50:18,224: None
+[DEBUG]2016-11-13 11:50:18,224: None
+[DEBUG]2016-11-13 11:50:18,224: None
+[DEBUG]2016-11-13 11:50:18,224: None
+[DEBUG]2016-11-13 11:50:18,224: None
+[DEBUG]2016-11-13 11:50:18,224: None
+[DEBUG]2016-11-13 11:50:18,224: None
+[DEBUG]2016-11-13 11:50:18,224: None
+[DEBUG]2016-11-13 11:50:18,224: None
+[DEBUG]2016-11-13 11:50:18,224: None
+[DEBUG]2016-11-13 11:50:18,224: None
+[DEBUG]2016-11-13 11:50:18,224: None
+[DEBUG]2016-11-13 11:50:18,224: None
+[DEBUG]2016-11-13 11:50:18,224: None
+[DEBUG]2016-11-13 11:50:18,224: None
+[DEBUG]2016-11-13 11:50:42,369: <_sre.SRE_Match object; span=(1088, 1944), match='typedef enum {\n    ES_NO_EVENT, ES_ERROR, /* use>
+[DEBUG]2016-11-13 11:50:42,369: ['ES_NO_EVENT', 'ES_ERROR', 'ES_INIT', 'ES_ENTRY', 'ES_EXIT', 'ES_KEYINPUT', 'ES_LISTEVENTS', 'ES_TIMEOUT', 'ES_TIMERACTIVE', 'ES_TIMERSTOPPED', 'OFF_TAPE', 'ON_TAPE', 'TAPE_TRIGGERED', 'TW_TRIGGERED', 'TRACK_WIRE_ON', 'TRACK_WIRE_OFF', 'BEACON_OFF', 'BEACON_ON', 'BUMPED', 'UNLOADED', 'BATTERY_CONNECTED', 'BATTERY_DISCONNECTED', 'NUMBEROFEVENTS']
+[DEBUG]2016-11-13 11:50:42,369: 
+static const char *EventNames[] = {
+	"ES_NO_EVENT",
+	"ES_ERROR",
+	"ES_INIT",
+	"ES_ENTRY",
+	"ES_EXIT",
+	"ES_KEYINPUT",
+	"ES_LISTEVENTS",
+	"ES_TIMEOUT",
+	"ES_TIMERACTIVE",
+	"ES_TIMERSTOPPED",
+	"OFF_TAPE",
+	"ON_TAPE",
+	"TAPE_TRIGGERED",
+	"TW_TRIGGERED",
+	"TRACK_WIRE_ON",
+	"TRACK_WIRE_OFF",
+	"BEACON_OFF",
+	"BEACON_ON",
+	"BUMPED",
+	"UNLOADED",
+	"BATTERY_CONNECTED",
+	"BATTERY_DISCONNECTED",
+	"NUMBEROFEVENTS",
+};
+
+
+[DEBUG]2016-11-13 11:50:42,372: <_sre.SRE_Match object; span=(1173, 1349), match='typedef enum {\n    InitPState,\n    AmmoSearch,\>
+[DEBUG]2016-11-13 11:50:42,372: <_sre.SRE_Match object; span=(1173, 1349), match='typedef enum {\n    InitPState,\n    AmmoSearch,\>
+[DEBUG]2016-11-13 11:50:42,372: ['InitPState', 'AmmoSearch', 'AmmoLoad', 'FirstTargetSearch', 'FirstTargetUnload', 'SecondTargetSearch', 'SecondTargetUnload']
+[DEBUG]2016-11-13 11:50:42,372: ['InitPState', 'AmmoSearch', 'AmmoLoad', 'FirstTargetSearch', 'FirstTargetUnload', 'SecondTargetSearch', 'SecondTargetUnload']
+[DEBUG]2016-11-13 11:50:42,372: 
+static const char *StateNames[] = {
+	"InitPState",
+	"AmmoSearch",
+	"AmmoLoad",
+	"FirstTargetSearch",
+	"FirstTargetUnload",
+	"SecondTargetSearch",
+	"SecondTargetUnload",
+};
+
+
+[DEBUG]2016-11-13 11:50:42,372: 
+static const char *StateNames[] = {
+	"InitPState",
+	"AmmoSearch",
+	"AmmoLoad",
+	"FirstTargetSearch",
+	"FirstTargetUnload",
+	"SecondTargetSearch",
+	"SecondTargetUnload",
+};
+
+
+[DEBUG]2016-11-13 11:50:42,374: <_sre.SRE_Match object; span=(1176, 1261), match='typedef enum {\n    InitPState,\n    Forward,\n  >
+[DEBUG]2016-11-13 11:50:42,374: <_sre.SRE_Match object; span=(1176, 1261), match='typedef enum {\n    InitPState,\n    Forward,\n  >
+[DEBUG]2016-11-13 11:50:42,374: <_sre.SRE_Match object; span=(1176, 1261), match='typedef enum {\n    InitPState,\n    Forward,\n  >
+[DEBUG]2016-11-13 11:50:42,374: ['InitPState', 'Forward', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:50:42,374: ['InitPState', 'Forward', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:50:42,374: ['InitPState', 'Forward', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:50:42,374: 
+static const char *StateNames[] = {
+	"InitPState",
+	"Forward",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:50:42,374: 
+static const char *StateNames[] = {
+	"InitPState",
+	"Forward",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:50:42,374: 
+static const char *StateNames[] = {
+	"InitPState",
+	"Forward",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:50:42,375: <_sre.SRE_Match object; span=(1171, 1243), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 11:50:42,375: <_sre.SRE_Match object; span=(1171, 1243), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 11:50:42,375: <_sre.SRE_Match object; span=(1171, 1243), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 11:50:42,375: <_sre.SRE_Match object; span=(1171, 1243), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 11:50:42,375: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:50:42,375: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:50:42,375: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:50:42,375: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:50:42,376: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:50:42,376: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:50:42,376: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:50:42,376: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:50:42,377: <_sre.SRE_Match object; span=(1183, 1255), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 11:50:42,377: <_sre.SRE_Match object; span=(1183, 1255), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 11:50:42,377: <_sre.SRE_Match object; span=(1183, 1255), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 11:50:42,377: <_sre.SRE_Match object; span=(1183, 1255), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 11:50:42,377: <_sre.SRE_Match object; span=(1183, 1255), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 11:50:42,377: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:50:42,377: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:50:42,377: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:50:42,377: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:50:42,377: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:50:42,377: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:50:42,377: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:50:42,377: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:50:42,377: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:50:42,377: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:50:42,378: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 11:50:42,378: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 11:50:42,378: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 11:50:42,378: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 11:50:42,378: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 11:50:42,378: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 11:50:42,379: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 11:50:42,379: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 11:50:42,379: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 11:50:42,379: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 11:50:42,379: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 11:50:42,379: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 11:50:42,379: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 11:50:42,379: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 11:50:42,379: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 11:50:42,379: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 11:50:42,379: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 11:50:42,379: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 11:50:42,380: None
+[DEBUG]2016-11-13 11:50:42,380: None
+[DEBUG]2016-11-13 11:50:42,380: None
+[DEBUG]2016-11-13 11:50:42,380: None
+[DEBUG]2016-11-13 11:50:42,380: None
+[DEBUG]2016-11-13 11:50:42,380: None
+[DEBUG]2016-11-13 11:50:42,380: None
+[DEBUG]2016-11-13 11:50:42,381: None
+[DEBUG]2016-11-13 11:50:42,381: None
+[DEBUG]2016-11-13 11:50:42,381: None
+[DEBUG]2016-11-13 11:50:42,381: None
+[DEBUG]2016-11-13 11:50:42,381: None
+[DEBUG]2016-11-13 11:50:42,381: None
+[DEBUG]2016-11-13 11:50:42,381: None
+[DEBUG]2016-11-13 11:50:42,381: None
+[DEBUG]2016-11-13 11:50:42,382: None
+[DEBUG]2016-11-13 11:50:42,382: None
+[DEBUG]2016-11-13 11:50:42,382: None
+[DEBUG]2016-11-13 11:50:42,382: None
+[DEBUG]2016-11-13 11:50:42,382: None
+[DEBUG]2016-11-13 11:50:42,382: None
+[DEBUG]2016-11-13 11:50:42,382: None
+[DEBUG]2016-11-13 11:50:42,382: None
+[DEBUG]2016-11-13 11:50:42,382: None
+[DEBUG]2016-11-13 11:50:42,383: None
+[DEBUG]2016-11-13 11:50:42,383: None
+[DEBUG]2016-11-13 11:50:42,383: None
+[DEBUG]2016-11-13 11:50:42,383: None
+[DEBUG]2016-11-13 11:50:42,383: None
+[DEBUG]2016-11-13 11:50:42,383: None
+[DEBUG]2016-11-13 11:50:42,383: None
+[DEBUG]2016-11-13 11:50:42,383: None
+[DEBUG]2016-11-13 11:50:42,383: None
+[DEBUG]2016-11-13 11:50:42,383: None
+[DEBUG]2016-11-13 11:50:42,385: None
+[DEBUG]2016-11-13 11:50:42,385: None
+[DEBUG]2016-11-13 11:50:42,385: None
+[DEBUG]2016-11-13 11:50:42,385: None
+[DEBUG]2016-11-13 11:50:42,385: None
+[DEBUG]2016-11-13 11:50:42,385: None
+[DEBUG]2016-11-13 11:50:42,385: None
+[DEBUG]2016-11-13 11:50:42,385: None
+[DEBUG]2016-11-13 11:50:42,385: None
+[DEBUG]2016-11-13 11:50:42,385: None
+[DEBUG]2016-11-13 11:50:42,385: None
+[DEBUG]2016-11-13 11:50:42,386: None
+[DEBUG]2016-11-13 11:50:42,386: None
+[DEBUG]2016-11-13 11:50:42,386: None
+[DEBUG]2016-11-13 11:50:42,386: None
+[DEBUG]2016-11-13 11:50:42,386: None
+[DEBUG]2016-11-13 11:50:42,386: None
+[DEBUG]2016-11-13 11:50:42,386: None
+[DEBUG]2016-11-13 11:50:42,386: None
+[DEBUG]2016-11-13 11:50:42,386: None
+[DEBUG]2016-11-13 11:50:42,386: None
+[DEBUG]2016-11-13 11:50:42,386: None
+[DEBUG]2016-11-13 11:50:42,386: None
+[DEBUG]2016-11-13 11:50:42,388: None
+[DEBUG]2016-11-13 11:50:42,388: None
+[DEBUG]2016-11-13 11:50:42,388: None
+[DEBUG]2016-11-13 11:50:42,388: None
+[DEBUG]2016-11-13 11:50:42,388: None
+[DEBUG]2016-11-13 11:50:42,388: None
+[DEBUG]2016-11-13 11:50:42,388: None
+[DEBUG]2016-11-13 11:50:42,388: None
+[DEBUG]2016-11-13 11:50:42,388: None
+[DEBUG]2016-11-13 11:50:42,388: None
+[DEBUG]2016-11-13 11:50:42,388: None
+[DEBUG]2016-11-13 11:50:42,388: None
+[DEBUG]2016-11-13 11:50:42,388: None
+[DEBUG]2016-11-13 11:50:42,389: None
+[DEBUG]2016-11-13 11:50:42,389: None
+[DEBUG]2016-11-13 11:50:42,389: None
+[DEBUG]2016-11-13 11:50:42,389: None
+[DEBUG]2016-11-13 11:50:42,389: None
+[DEBUG]2016-11-13 11:50:42,389: None
+[DEBUG]2016-11-13 11:50:42,389: None
+[DEBUG]2016-11-13 11:50:42,389: None
+[DEBUG]2016-11-13 11:50:42,389: None
+[DEBUG]2016-11-13 11:50:42,389: None
+[DEBUG]2016-11-13 11:50:42,389: None
+[DEBUG]2016-11-13 11:50:42,389: None
+[DEBUG]2016-11-13 11:50:42,389: None
+[DEBUG]2016-11-13 11:50:42,389: None
+[DEBUG]2016-11-13 11:50:42,391: None
+[DEBUG]2016-11-13 11:50:42,391: None
+[DEBUG]2016-11-13 11:50:42,391: None
+[DEBUG]2016-11-13 11:50:42,391: None
+[DEBUG]2016-11-13 11:50:42,391: None
+[DEBUG]2016-11-13 11:50:42,391: None
+[DEBUG]2016-11-13 11:50:42,391: None
+[DEBUG]2016-11-13 11:50:42,391: None
+[DEBUG]2016-11-13 11:50:42,391: None
+[DEBUG]2016-11-13 11:50:42,391: None
+[DEBUG]2016-11-13 11:50:42,391: None
+[DEBUG]2016-11-13 11:50:42,391: None
+[DEBUG]2016-11-13 11:50:42,391: None
+[DEBUG]2016-11-13 11:50:42,391: None
+[DEBUG]2016-11-13 11:50:42,391: None
+[DEBUG]2016-11-13 11:50:42,392: None
+[DEBUG]2016-11-13 11:50:42,392: None
+[DEBUG]2016-11-13 11:50:42,392: None
+[DEBUG]2016-11-13 11:50:42,392: None
+[DEBUG]2016-11-13 11:50:42,392: None
+[DEBUG]2016-11-13 11:50:42,392: None
+[DEBUG]2016-11-13 11:50:42,392: None
+[DEBUG]2016-11-13 11:50:42,392: None
+[DEBUG]2016-11-13 11:50:42,392: None
+[DEBUG]2016-11-13 11:50:42,392: None
+[DEBUG]2016-11-13 11:50:42,392: None
+[DEBUG]2016-11-13 11:50:42,392: None
+[DEBUG]2016-11-13 11:50:42,392: None
+[DEBUG]2016-11-13 11:50:42,392: None
+[DEBUG]2016-11-13 11:50:42,392: None
+[DEBUG]2016-11-13 11:50:42,392: None
+[DEBUG]2016-11-13 11:50:42,394: None
+[DEBUG]2016-11-13 11:50:42,394: None
+[DEBUG]2016-11-13 11:50:42,394: None
+[DEBUG]2016-11-13 11:50:42,394: None
+[DEBUG]2016-11-13 11:50:42,394: None
+[DEBUG]2016-11-13 11:50:42,394: None
+[DEBUG]2016-11-13 11:50:42,394: None
+[DEBUG]2016-11-13 11:50:42,394: None
+[DEBUG]2016-11-13 11:50:42,394: None
+[DEBUG]2016-11-13 11:50:42,394: None
+[DEBUG]2016-11-13 11:50:42,394: None
+[DEBUG]2016-11-13 11:50:42,394: None
+[DEBUG]2016-11-13 11:50:42,394: None
+[DEBUG]2016-11-13 11:50:42,394: None
+[DEBUG]2016-11-13 11:50:42,394: None
+[DEBUG]2016-11-13 11:50:42,394: None
+[DEBUG]2016-11-13 11:50:42,394: None
+[DEBUG]2016-11-13 11:50:42,395: None
+[DEBUG]2016-11-13 11:50:42,395: None
+[DEBUG]2016-11-13 11:50:42,395: None
+[DEBUG]2016-11-13 11:50:42,395: None
+[DEBUG]2016-11-13 11:50:42,395: None
+[DEBUG]2016-11-13 11:50:42,395: None
+[DEBUG]2016-11-13 11:50:42,395: None
+[DEBUG]2016-11-13 11:50:42,395: None
+[DEBUG]2016-11-13 11:50:42,395: None
+[DEBUG]2016-11-13 11:50:42,395: None
+[DEBUG]2016-11-13 11:50:42,395: None
+[DEBUG]2016-11-13 11:50:42,395: None
+[DEBUG]2016-11-13 11:50:42,395: None
+[DEBUG]2016-11-13 11:50:42,395: None
+[DEBUG]2016-11-13 11:50:42,395: None
+[DEBUG]2016-11-13 11:50:42,395: None
+[DEBUG]2016-11-13 11:50:42,395: None
+[DEBUG]2016-11-13 11:50:42,395: None
+[DEBUG]2016-11-13 11:50:42,397: None
+[DEBUG]2016-11-13 11:50:42,397: None
+[DEBUG]2016-11-13 11:50:42,397: None
+[DEBUG]2016-11-13 11:50:42,397: None
+[DEBUG]2016-11-13 11:50:42,397: None
+[DEBUG]2016-11-13 11:50:42,397: None
+[DEBUG]2016-11-13 11:50:42,397: None
+[DEBUG]2016-11-13 11:50:42,397: None
+[DEBUG]2016-11-13 11:50:42,397: None
+[DEBUG]2016-11-13 11:50:42,397: None
+[DEBUG]2016-11-13 11:50:42,397: None
+[DEBUG]2016-11-13 11:50:42,397: None
+[DEBUG]2016-11-13 11:50:42,397: None
+[DEBUG]2016-11-13 11:50:42,397: None
+[DEBUG]2016-11-13 11:50:42,397: None
+[DEBUG]2016-11-13 11:50:42,397: None
+[DEBUG]2016-11-13 11:50:42,397: None
+[DEBUG]2016-11-13 11:50:42,397: None
+[DEBUG]2016-11-13 11:50:42,397: None
+[DEBUG]2016-11-13 11:50:42,399: None
+[DEBUG]2016-11-13 11:50:42,399: None
+[DEBUG]2016-11-13 11:50:42,399: None
+[DEBUG]2016-11-13 11:50:42,399: None
+[DEBUG]2016-11-13 11:50:42,399: None
+[DEBUG]2016-11-13 11:50:42,399: None
+[DEBUG]2016-11-13 11:50:42,399: None
+[DEBUG]2016-11-13 11:50:42,399: None
+[DEBUG]2016-11-13 11:50:42,399: None
+[DEBUG]2016-11-13 11:50:42,399: None
+[DEBUG]2016-11-13 11:50:42,399: None
+[DEBUG]2016-11-13 11:50:42,399: None
+[DEBUG]2016-11-13 11:50:42,399: None
+[DEBUG]2016-11-13 11:50:42,399: None
+[DEBUG]2016-11-13 11:50:42,399: None
+[DEBUG]2016-11-13 11:50:42,399: None
+[DEBUG]2016-11-13 11:50:42,399: None
+[DEBUG]2016-11-13 11:50:42,399: None
+[DEBUG]2016-11-13 11:50:42,399: None
+[DEBUG]2016-11-13 11:50:42,399: None
+[DEBUG]2016-11-13 11:50:42,400: None
+[DEBUG]2016-11-13 11:50:42,400: None
+[DEBUG]2016-11-13 11:50:42,400: None
+[DEBUG]2016-11-13 11:50:42,400: None
+[DEBUG]2016-11-13 11:50:42,400: None
+[DEBUG]2016-11-13 11:50:42,400: None
+[DEBUG]2016-11-13 11:50:42,400: None
+[DEBUG]2016-11-13 11:50:42,400: None
+[DEBUG]2016-11-13 11:50:42,400: None
+[DEBUG]2016-11-13 11:50:42,400: None
+[DEBUG]2016-11-13 11:50:42,400: None
+[DEBUG]2016-11-13 11:50:42,400: None
+[DEBUG]2016-11-13 11:50:42,400: None
+[DEBUG]2016-11-13 11:50:42,400: None
+[DEBUG]2016-11-13 11:50:42,400: None
+[DEBUG]2016-11-13 11:50:42,400: None
+[DEBUG]2016-11-13 11:50:42,400: None
+[DEBUG]2016-11-13 11:50:42,400: None
+[DEBUG]2016-11-13 11:50:42,400: None
+[DEBUG]2016-11-13 11:50:42,400: None
+[DEBUG]2016-11-13 11:50:42,400: None
+[DEBUG]2016-11-13 11:50:42,402: None
+[DEBUG]2016-11-13 11:50:42,402: None
+[DEBUG]2016-11-13 11:50:42,402: None
+[DEBUG]2016-11-13 11:50:42,402: None
+[DEBUG]2016-11-13 11:50:42,402: None
+[DEBUG]2016-11-13 11:50:42,402: None
+[DEBUG]2016-11-13 11:50:42,402: None
+[DEBUG]2016-11-13 11:50:42,402: None
+[DEBUG]2016-11-13 11:50:42,402: None
+[DEBUG]2016-11-13 11:50:42,402: None
+[DEBUG]2016-11-13 11:50:42,402: None
+[DEBUG]2016-11-13 11:50:42,402: None
+[DEBUG]2016-11-13 11:50:42,402: None
+[DEBUG]2016-11-13 11:50:42,402: None
+[DEBUG]2016-11-13 11:50:42,402: None
+[DEBUG]2016-11-13 11:50:42,402: None
+[DEBUG]2016-11-13 11:50:42,402: None
+[DEBUG]2016-11-13 11:50:42,402: None
+[DEBUG]2016-11-13 11:50:42,402: None
+[DEBUG]2016-11-13 11:50:42,402: None
+[DEBUG]2016-11-13 11:50:42,402: None
+[DEBUG]2016-11-13 11:50:42,402: None
+[DEBUG]2016-11-13 11:50:42,404: None
+[DEBUG]2016-11-13 11:50:42,404: None
+[DEBUG]2016-11-13 11:50:42,404: None
+[DEBUG]2016-11-13 11:50:42,404: None
+[DEBUG]2016-11-13 11:50:42,404: None
+[DEBUG]2016-11-13 11:50:42,404: None
+[DEBUG]2016-11-13 11:50:42,404: None
+[DEBUG]2016-11-13 11:50:42,404: None
+[DEBUG]2016-11-13 11:50:42,404: None
+[DEBUG]2016-11-13 11:50:42,404: None
+[DEBUG]2016-11-13 11:50:42,404: None
+[DEBUG]2016-11-13 11:50:42,404: None
+[DEBUG]2016-11-13 11:50:42,404: None
+[DEBUG]2016-11-13 11:50:42,404: None
+[DEBUG]2016-11-13 11:50:42,404: None
+[DEBUG]2016-11-13 11:50:42,404: None
+[DEBUG]2016-11-13 11:50:42,404: None
+[DEBUG]2016-11-13 11:50:42,404: None
+[DEBUG]2016-11-13 11:50:42,404: None
+[DEBUG]2016-11-13 11:50:42,404: None
+[DEBUG]2016-11-13 11:50:42,404: None
+[DEBUG]2016-11-13 11:50:42,404: None
+[DEBUG]2016-11-13 11:50:42,404: None
+[DEBUG]2016-11-13 11:50:42,405: None
+[DEBUG]2016-11-13 11:50:42,405: None
+[DEBUG]2016-11-13 11:50:42,405: None
+[DEBUG]2016-11-13 11:50:42,405: None
+[DEBUG]2016-11-13 11:50:42,405: None
+[DEBUG]2016-11-13 11:50:42,405: None
+[DEBUG]2016-11-13 11:50:42,405: None
+[DEBUG]2016-11-13 11:50:42,405: None
+[DEBUG]2016-11-13 11:50:42,405: None
+[DEBUG]2016-11-13 11:50:42,405: None
+[DEBUG]2016-11-13 11:50:42,405: None
+[DEBUG]2016-11-13 11:50:42,405: None
+[DEBUG]2016-11-13 11:50:42,405: None
+[DEBUG]2016-11-13 11:50:42,405: None
+[DEBUG]2016-11-13 11:50:42,405: None
+[DEBUG]2016-11-13 11:50:42,405: None
+[DEBUG]2016-11-13 11:50:42,405: None
+[DEBUG]2016-11-13 11:50:42,405: None
+[DEBUG]2016-11-13 11:50:42,405: None
+[DEBUG]2016-11-13 11:50:42,405: None
+[DEBUG]2016-11-13 11:50:42,405: None
+[DEBUG]2016-11-13 11:50:42,405: None
+[DEBUG]2016-11-13 11:50:42,405: None
+[DEBUG]2016-11-13 11:50:42,405: None
+[DEBUG]2016-11-13 11:50:42,407: None
+[DEBUG]2016-11-13 11:50:42,407: None
+[DEBUG]2016-11-13 11:50:42,407: None
+[DEBUG]2016-11-13 11:50:42,407: None
+[DEBUG]2016-11-13 11:50:42,407: None
+[DEBUG]2016-11-13 11:50:42,407: None
+[DEBUG]2016-11-13 11:50:42,407: None
+[DEBUG]2016-11-13 11:50:42,407: None
+[DEBUG]2016-11-13 11:50:42,407: None
+[DEBUG]2016-11-13 11:50:42,407: None
+[DEBUG]2016-11-13 11:50:42,407: None
+[DEBUG]2016-11-13 11:50:42,407: None
+[DEBUG]2016-11-13 11:50:42,407: None
+[DEBUG]2016-11-13 11:50:42,407: None
+[DEBUG]2016-11-13 11:50:42,407: None
+[DEBUG]2016-11-13 11:50:42,407: None
+[DEBUG]2016-11-13 11:50:42,407: None
+[DEBUG]2016-11-13 11:50:42,407: None
+[DEBUG]2016-11-13 11:50:42,407: None
+[DEBUG]2016-11-13 11:50:42,407: None
+[DEBUG]2016-11-13 11:50:42,407: None
+[DEBUG]2016-11-13 11:50:42,407: None
+[DEBUG]2016-11-13 11:50:42,407: None
+[DEBUG]2016-11-13 11:50:42,407: None
+[DEBUG]2016-11-13 11:50:42,407: None
+[DEBUG]2016-11-13 11:51:41,094: <_sre.SRE_Match object; span=(1088, 1944), match='typedef enum {\n    ES_NO_EVENT, ES_ERROR, /* use>
+[DEBUG]2016-11-13 11:51:41,095: ['ES_NO_EVENT', 'ES_ERROR', 'ES_INIT', 'ES_ENTRY', 'ES_EXIT', 'ES_KEYINPUT', 'ES_LISTEVENTS', 'ES_TIMEOUT', 'ES_TIMERACTIVE', 'ES_TIMERSTOPPED', 'OFF_TAPE', 'ON_TAPE', 'TAPE_TRIGGERED', 'TW_TRIGGERED', 'TRACK_WIRE_ON', 'TRACK_WIRE_OFF', 'BEACON_OFF', 'BEACON_ON', 'BUMPED', 'UNLOADED', 'BATTERY_CONNECTED', 'BATTERY_DISCONNECTED', 'NUMBEROFEVENTS']
+[DEBUG]2016-11-13 11:51:41,095: 
+static const char *EventNames[] = {
+	"ES_NO_EVENT",
+	"ES_ERROR",
+	"ES_INIT",
+	"ES_ENTRY",
+	"ES_EXIT",
+	"ES_KEYINPUT",
+	"ES_LISTEVENTS",
+	"ES_TIMEOUT",
+	"ES_TIMERACTIVE",
+	"ES_TIMERSTOPPED",
+	"OFF_TAPE",
+	"ON_TAPE",
+	"TAPE_TRIGGERED",
+	"TW_TRIGGERED",
+	"TRACK_WIRE_ON",
+	"TRACK_WIRE_OFF",
+	"BEACON_OFF",
+	"BEACON_ON",
+	"BUMPED",
+	"UNLOADED",
+	"BATTERY_CONNECTED",
+	"BATTERY_DISCONNECTED",
+	"NUMBEROFEVENTS",
+};
+
+
+[DEBUG]2016-11-13 11:51:41,097: <_sre.SRE_Match object; span=(1173, 1349), match='typedef enum {\n    InitPState,\n    AmmoSearch,\>
+[DEBUG]2016-11-13 11:51:41,097: <_sre.SRE_Match object; span=(1173, 1349), match='typedef enum {\n    InitPState,\n    AmmoSearch,\>
+[DEBUG]2016-11-13 11:51:41,097: ['InitPState', 'AmmoSearch', 'AmmoLoad', 'FirstTargetSearch', 'FirstTargetUnload', 'SecondTargetSearch', 'SecondTargetUnload']
+[DEBUG]2016-11-13 11:51:41,097: ['InitPState', 'AmmoSearch', 'AmmoLoad', 'FirstTargetSearch', 'FirstTargetUnload', 'SecondTargetSearch', 'SecondTargetUnload']
+[DEBUG]2016-11-13 11:51:41,097: 
+static const char *StateNames[] = {
+	"InitPState",
+	"AmmoSearch",
+	"AmmoLoad",
+	"FirstTargetSearch",
+	"FirstTargetUnload",
+	"SecondTargetSearch",
+	"SecondTargetUnload",
+};
+
+
+[DEBUG]2016-11-13 11:51:41,097: 
+static const char *StateNames[] = {
+	"InitPState",
+	"AmmoSearch",
+	"AmmoLoad",
+	"FirstTargetSearch",
+	"FirstTargetUnload",
+	"SecondTargetSearch",
+	"SecondTargetUnload",
+};
+
+
+[DEBUG]2016-11-13 11:51:41,099: <_sre.SRE_Match object; span=(1176, 1261), match='typedef enum {\n    InitPState,\n    Forward,\n  >
+[DEBUG]2016-11-13 11:51:41,099: <_sre.SRE_Match object; span=(1176, 1261), match='typedef enum {\n    InitPState,\n    Forward,\n  >
+[DEBUG]2016-11-13 11:51:41,099: <_sre.SRE_Match object; span=(1176, 1261), match='typedef enum {\n    InitPState,\n    Forward,\n  >
+[DEBUG]2016-11-13 11:51:41,099: ['InitPState', 'Forward', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:51:41,099: ['InitPState', 'Forward', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:51:41,099: ['InitPState', 'Forward', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:51:41,099: 
+static const char *StateNames[] = {
+	"InitPState",
+	"Forward",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:51:41,099: 
+static const char *StateNames[] = {
+	"InitPState",
+	"Forward",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:51:41,099: 
+static const char *StateNames[] = {
+	"InitPState",
+	"Forward",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:51:41,100: <_sre.SRE_Match object; span=(1171, 1243), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 11:51:41,100: <_sre.SRE_Match object; span=(1171, 1243), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 11:51:41,100: <_sre.SRE_Match object; span=(1171, 1243), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 11:51:41,100: <_sre.SRE_Match object; span=(1171, 1243), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 11:51:41,100: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:51:41,100: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:51:41,100: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:51:41,100: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:51:41,101: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:51:41,101: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:51:41,101: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:51:41,101: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:51:41,102: <_sre.SRE_Match object; span=(1183, 1255), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 11:51:41,102: <_sre.SRE_Match object; span=(1183, 1255), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 11:51:41,102: <_sre.SRE_Match object; span=(1183, 1255), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 11:51:41,102: <_sre.SRE_Match object; span=(1183, 1255), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 11:51:41,102: <_sre.SRE_Match object; span=(1183, 1255), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 11:51:41,102: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:51:41,102: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:51:41,102: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:51:41,102: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:51:41,102: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:51:41,102: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:51:41,102: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:51:41,102: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:51:41,102: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:51:41,102: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:51:41,103: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 11:51:41,103: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 11:51:41,103: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 11:51:41,103: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 11:51:41,103: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 11:51:41,103: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 11:51:41,103: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 11:51:41,103: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 11:51:41,103: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 11:51:41,103: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 11:51:41,103: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 11:51:41,103: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 11:51:41,104: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 11:51:41,104: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 11:51:41,104: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 11:51:41,104: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 11:51:41,104: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 11:51:41,104: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 11:51:41,105: None
+[DEBUG]2016-11-13 11:51:41,105: None
+[DEBUG]2016-11-13 11:51:41,105: None
+[DEBUG]2016-11-13 11:51:41,105: None
+[DEBUG]2016-11-13 11:51:41,105: None
+[DEBUG]2016-11-13 11:51:41,105: None
+[DEBUG]2016-11-13 11:51:41,105: None
+[DEBUG]2016-11-13 11:51:41,106: None
+[DEBUG]2016-11-13 11:51:41,106: None
+[DEBUG]2016-11-13 11:51:41,106: None
+[DEBUG]2016-11-13 11:51:41,106: None
+[DEBUG]2016-11-13 11:51:41,106: None
+[DEBUG]2016-11-13 11:51:41,106: None
+[DEBUG]2016-11-13 11:51:41,106: None
+[DEBUG]2016-11-13 11:51:41,106: None
+[DEBUG]2016-11-13 11:51:41,107: None
+[DEBUG]2016-11-13 11:51:41,107: None
+[DEBUG]2016-11-13 11:51:41,107: None
+[DEBUG]2016-11-13 11:51:41,107: None
+[DEBUG]2016-11-13 11:51:41,107: None
+[DEBUG]2016-11-13 11:51:41,107: None
+[DEBUG]2016-11-13 11:51:41,107: None
+[DEBUG]2016-11-13 11:51:41,107: None
+[DEBUG]2016-11-13 11:51:41,107: None
+[DEBUG]2016-11-13 11:51:41,108: None
+[DEBUG]2016-11-13 11:51:41,108: None
+[DEBUG]2016-11-13 11:51:41,108: None
+[DEBUG]2016-11-13 11:51:41,108: None
+[DEBUG]2016-11-13 11:51:41,108: None
+[DEBUG]2016-11-13 11:51:41,108: None
+[DEBUG]2016-11-13 11:51:41,108: None
+[DEBUG]2016-11-13 11:51:41,108: None
+[DEBUG]2016-11-13 11:51:41,108: None
+[DEBUG]2016-11-13 11:51:41,108: None
+[DEBUG]2016-11-13 11:51:41,109: None
+[DEBUG]2016-11-13 11:51:41,109: None
+[DEBUG]2016-11-13 11:51:41,109: None
+[DEBUG]2016-11-13 11:51:41,109: None
+[DEBUG]2016-11-13 11:51:41,109: None
+[DEBUG]2016-11-13 11:51:41,109: None
+[DEBUG]2016-11-13 11:51:41,109: None
+[DEBUG]2016-11-13 11:51:41,109: None
+[DEBUG]2016-11-13 11:51:41,109: None
+[DEBUG]2016-11-13 11:51:41,109: None
+[DEBUG]2016-11-13 11:51:41,109: None
+[DEBUG]2016-11-13 11:51:41,110: None
+[DEBUG]2016-11-13 11:51:41,110: None
+[DEBUG]2016-11-13 11:51:41,110: None
+[DEBUG]2016-11-13 11:51:41,110: None
+[DEBUG]2016-11-13 11:51:41,110: None
+[DEBUG]2016-11-13 11:51:41,110: None
+[DEBUG]2016-11-13 11:51:41,110: None
+[DEBUG]2016-11-13 11:51:41,110: None
+[DEBUG]2016-11-13 11:51:41,110: None
+[DEBUG]2016-11-13 11:51:41,110: None
+[DEBUG]2016-11-13 11:51:41,110: None
+[DEBUG]2016-11-13 11:51:41,110: None
+[DEBUG]2016-11-13 11:51:41,112: None
+[DEBUG]2016-11-13 11:51:41,112: None
+[DEBUG]2016-11-13 11:51:41,112: None
+[DEBUG]2016-11-13 11:51:41,112: None
+[DEBUG]2016-11-13 11:51:41,112: None
+[DEBUG]2016-11-13 11:51:41,112: None
+[DEBUG]2016-11-13 11:51:41,112: None
+[DEBUG]2016-11-13 11:51:41,112: None
+[DEBUG]2016-11-13 11:51:41,112: None
+[DEBUG]2016-11-13 11:51:41,112: None
+[DEBUG]2016-11-13 11:51:41,112: None
+[DEBUG]2016-11-13 11:51:41,112: None
+[DEBUG]2016-11-13 11:51:41,112: None
+[DEBUG]2016-11-13 11:51:41,113: None
+[DEBUG]2016-11-13 11:51:41,113: None
+[DEBUG]2016-11-13 11:51:41,113: None
+[DEBUG]2016-11-13 11:51:41,113: None
+[DEBUG]2016-11-13 11:51:41,113: None
+[DEBUG]2016-11-13 11:51:41,113: None
+[DEBUG]2016-11-13 11:51:41,113: None
+[DEBUG]2016-11-13 11:51:41,113: None
+[DEBUG]2016-11-13 11:51:41,113: None
+[DEBUG]2016-11-13 11:51:41,113: None
+[DEBUG]2016-11-13 11:51:41,113: None
+[DEBUG]2016-11-13 11:51:41,113: None
+[DEBUG]2016-11-13 11:51:41,113: None
+[DEBUG]2016-11-13 11:51:41,113: None
+[DEBUG]2016-11-13 11:51:41,115: None
+[DEBUG]2016-11-13 11:51:41,115: None
+[DEBUG]2016-11-13 11:51:41,115: None
+[DEBUG]2016-11-13 11:51:41,115: None
+[DEBUG]2016-11-13 11:51:41,115: None
+[DEBUG]2016-11-13 11:51:41,115: None
+[DEBUG]2016-11-13 11:51:41,115: None
+[DEBUG]2016-11-13 11:51:41,115: None
+[DEBUG]2016-11-13 11:51:41,115: None
+[DEBUG]2016-11-13 11:51:41,115: None
+[DEBUG]2016-11-13 11:51:41,115: None
+[DEBUG]2016-11-13 11:51:41,115: None
+[DEBUG]2016-11-13 11:51:41,115: None
+[DEBUG]2016-11-13 11:51:41,115: None
+[DEBUG]2016-11-13 11:51:41,115: None
+[DEBUG]2016-11-13 11:51:41,116: None
+[DEBUG]2016-11-13 11:51:41,116: None
+[DEBUG]2016-11-13 11:51:41,116: None
+[DEBUG]2016-11-13 11:51:41,116: None
+[DEBUG]2016-11-13 11:51:41,116: None
+[DEBUG]2016-11-13 11:51:41,116: None
+[DEBUG]2016-11-13 11:51:41,116: None
+[DEBUG]2016-11-13 11:51:41,116: None
+[DEBUG]2016-11-13 11:51:41,116: None
+[DEBUG]2016-11-13 11:51:41,116: None
+[DEBUG]2016-11-13 11:51:41,116: None
+[DEBUG]2016-11-13 11:51:41,116: None
+[DEBUG]2016-11-13 11:51:41,116: None
+[DEBUG]2016-11-13 11:51:41,116: None
+[DEBUG]2016-11-13 11:51:41,116: None
+[DEBUG]2016-11-13 11:51:41,116: None
+[DEBUG]2016-11-13 11:51:41,118: None
+[DEBUG]2016-11-13 11:51:41,118: None
+[DEBUG]2016-11-13 11:51:41,118: None
+[DEBUG]2016-11-13 11:51:41,118: None
+[DEBUG]2016-11-13 11:51:41,118: None
+[DEBUG]2016-11-13 11:51:41,118: None
+[DEBUG]2016-11-13 11:51:41,118: None
+[DEBUG]2016-11-13 11:51:41,118: None
+[DEBUG]2016-11-13 11:51:41,118: None
+[DEBUG]2016-11-13 11:51:41,118: None
+[DEBUG]2016-11-13 11:51:41,118: None
+[DEBUG]2016-11-13 11:51:41,118: None
+[DEBUG]2016-11-13 11:51:41,118: None
+[DEBUG]2016-11-13 11:51:41,118: None
+[DEBUG]2016-11-13 11:51:41,118: None
+[DEBUG]2016-11-13 11:51:41,118: None
+[DEBUG]2016-11-13 11:51:41,118: None
+[DEBUG]2016-11-13 11:51:41,119: None
+[DEBUG]2016-11-13 11:51:41,119: None
+[DEBUG]2016-11-13 11:51:41,119: None
+[DEBUG]2016-11-13 11:51:41,119: None
+[DEBUG]2016-11-13 11:51:41,119: None
+[DEBUG]2016-11-13 11:51:41,119: None
+[DEBUG]2016-11-13 11:51:41,119: None
+[DEBUG]2016-11-13 11:51:41,119: None
+[DEBUG]2016-11-13 11:51:41,119: None
+[DEBUG]2016-11-13 11:51:41,119: None
+[DEBUG]2016-11-13 11:51:41,119: None
+[DEBUG]2016-11-13 11:51:41,119: None
+[DEBUG]2016-11-13 11:51:41,119: None
+[DEBUG]2016-11-13 11:51:41,119: None
+[DEBUG]2016-11-13 11:51:41,119: None
+[DEBUG]2016-11-13 11:51:41,119: None
+[DEBUG]2016-11-13 11:51:41,119: None
+[DEBUG]2016-11-13 11:51:41,119: None
+[DEBUG]2016-11-13 11:51:41,121: None
+[DEBUG]2016-11-13 11:51:41,121: None
+[DEBUG]2016-11-13 11:51:41,121: None
+[DEBUG]2016-11-13 11:51:41,121: None
+[DEBUG]2016-11-13 11:51:41,121: None
+[DEBUG]2016-11-13 11:51:41,121: None
+[DEBUG]2016-11-13 11:51:41,121: None
+[DEBUG]2016-11-13 11:51:41,121: None
+[DEBUG]2016-11-13 11:51:41,121: None
+[DEBUG]2016-11-13 11:51:41,121: None
+[DEBUG]2016-11-13 11:51:41,121: None
+[DEBUG]2016-11-13 11:51:41,121: None
+[DEBUG]2016-11-13 11:51:41,121: None
+[DEBUG]2016-11-13 11:51:41,121: None
+[DEBUG]2016-11-13 11:51:41,121: None
+[DEBUG]2016-11-13 11:51:41,121: None
+[DEBUG]2016-11-13 11:51:41,121: None
+[DEBUG]2016-11-13 11:51:41,121: None
+[DEBUG]2016-11-13 11:51:41,121: None
+[DEBUG]2016-11-13 11:51:41,122: None
+[DEBUG]2016-11-13 11:51:41,122: None
+[DEBUG]2016-11-13 11:51:41,122: None
+[DEBUG]2016-11-13 11:51:41,122: None
+[DEBUG]2016-11-13 11:51:41,122: None
+[DEBUG]2016-11-13 11:51:41,122: None
+[DEBUG]2016-11-13 11:51:41,122: None
+[DEBUG]2016-11-13 11:51:41,122: None
+[DEBUG]2016-11-13 11:51:41,122: None
+[DEBUG]2016-11-13 11:51:41,122: None
+[DEBUG]2016-11-13 11:51:41,122: None
+[DEBUG]2016-11-13 11:51:41,122: None
+[DEBUG]2016-11-13 11:51:41,122: None
+[DEBUG]2016-11-13 11:51:41,122: None
+[DEBUG]2016-11-13 11:51:41,122: None
+[DEBUG]2016-11-13 11:51:41,122: None
+[DEBUG]2016-11-13 11:51:41,122: None
+[DEBUG]2016-11-13 11:51:41,122: None
+[DEBUG]2016-11-13 11:51:41,122: None
+[DEBUG]2016-11-13 11:51:41,122: None
+[DEBUG]2016-11-13 11:51:41,124: None
+[DEBUG]2016-11-13 11:51:41,124: None
+[DEBUG]2016-11-13 11:51:41,124: None
+[DEBUG]2016-11-13 11:51:41,124: None
+[DEBUG]2016-11-13 11:51:41,124: None
+[DEBUG]2016-11-13 11:51:41,124: None
+[DEBUG]2016-11-13 11:51:41,124: None
+[DEBUG]2016-11-13 11:51:41,124: None
+[DEBUG]2016-11-13 11:51:41,124: None
+[DEBUG]2016-11-13 11:51:41,124: None
+[DEBUG]2016-11-13 11:51:41,124: None
+[DEBUG]2016-11-13 11:51:41,124: None
+[DEBUG]2016-11-13 11:51:41,124: None
+[DEBUG]2016-11-13 11:51:41,124: None
+[DEBUG]2016-11-13 11:51:41,124: None
+[DEBUG]2016-11-13 11:51:41,124: None
+[DEBUG]2016-11-13 11:51:41,124: None
+[DEBUG]2016-11-13 11:51:41,124: None
+[DEBUG]2016-11-13 11:51:41,124: None
+[DEBUG]2016-11-13 11:51:41,124: None
+[DEBUG]2016-11-13 11:51:41,124: None
+[DEBUG]2016-11-13 11:51:41,125: None
+[DEBUG]2016-11-13 11:51:41,125: None
+[DEBUG]2016-11-13 11:51:41,125: None
+[DEBUG]2016-11-13 11:51:41,125: None
+[DEBUG]2016-11-13 11:51:41,125: None
+[DEBUG]2016-11-13 11:51:41,125: None
+[DEBUG]2016-11-13 11:51:41,125: None
+[DEBUG]2016-11-13 11:51:41,125: None
+[DEBUG]2016-11-13 11:51:41,125: None
+[DEBUG]2016-11-13 11:51:41,125: None
+[DEBUG]2016-11-13 11:51:41,125: None
+[DEBUG]2016-11-13 11:51:41,125: None
+[DEBUG]2016-11-13 11:51:41,125: None
+[DEBUG]2016-11-13 11:51:41,125: None
+[DEBUG]2016-11-13 11:51:41,125: None
+[DEBUG]2016-11-13 11:51:41,125: None
+[DEBUG]2016-11-13 11:51:41,125: None
+[DEBUG]2016-11-13 11:51:41,125: None
+[DEBUG]2016-11-13 11:51:41,125: None
+[DEBUG]2016-11-13 11:51:41,125: None
+[DEBUG]2016-11-13 11:51:41,125: None
+[DEBUG]2016-11-13 11:51:41,125: None
+[DEBUG]2016-11-13 11:51:41,126: None
+[DEBUG]2016-11-13 11:51:41,126: None
+[DEBUG]2016-11-13 11:51:41,126: None
+[DEBUG]2016-11-13 11:51:41,126: None
+[DEBUG]2016-11-13 11:51:41,126: None
+[DEBUG]2016-11-13 11:51:41,126: None
+[DEBUG]2016-11-13 11:51:41,126: None
+[DEBUG]2016-11-13 11:51:41,126: None
+[DEBUG]2016-11-13 11:51:41,126: None
+[DEBUG]2016-11-13 11:51:41,126: None
+[DEBUG]2016-11-13 11:51:41,126: None
+[DEBUG]2016-11-13 11:51:41,126: None
+[DEBUG]2016-11-13 11:51:41,126: None
+[DEBUG]2016-11-13 11:51:41,126: None
+[DEBUG]2016-11-13 11:51:41,126: None
+[DEBUG]2016-11-13 11:51:41,126: None
+[DEBUG]2016-11-13 11:51:41,126: None
+[DEBUG]2016-11-13 11:51:41,126: None
+[DEBUG]2016-11-13 11:51:41,126: None
+[DEBUG]2016-11-13 11:51:41,126: None
+[DEBUG]2016-11-13 11:51:41,126: None
+[DEBUG]2016-11-13 11:51:41,126: None
+[DEBUG]2016-11-13 11:51:41,126: None
+[DEBUG]2016-11-13 11:51:41,129: None
+[DEBUG]2016-11-13 11:51:41,129: None
+[DEBUG]2016-11-13 11:51:41,129: None
+[DEBUG]2016-11-13 11:51:41,129: None
+[DEBUG]2016-11-13 11:51:41,129: None
+[DEBUG]2016-11-13 11:51:41,129: None
+[DEBUG]2016-11-13 11:51:41,129: None
+[DEBUG]2016-11-13 11:51:41,129: None
+[DEBUG]2016-11-13 11:51:41,129: None
+[DEBUG]2016-11-13 11:51:41,129: None
+[DEBUG]2016-11-13 11:51:41,129: None
+[DEBUG]2016-11-13 11:51:41,129: None
+[DEBUG]2016-11-13 11:51:41,129: None
+[DEBUG]2016-11-13 11:51:41,129: None
+[DEBUG]2016-11-13 11:51:41,129: None
+[DEBUG]2016-11-13 11:51:41,129: None
+[DEBUG]2016-11-13 11:51:41,129: None
+[DEBUG]2016-11-13 11:51:41,129: None
+[DEBUG]2016-11-13 11:51:41,129: None
+[DEBUG]2016-11-13 11:51:41,129: None
+[DEBUG]2016-11-13 11:51:41,129: None
+[DEBUG]2016-11-13 11:51:41,129: None
+[DEBUG]2016-11-13 11:51:41,129: None
+[DEBUG]2016-11-13 11:51:41,129: None
+[DEBUG]2016-11-13 11:51:41,131: None
+[DEBUG]2016-11-13 11:51:41,131: None
+[DEBUG]2016-11-13 11:51:41,131: None
+[DEBUG]2016-11-13 11:51:41,131: None
+[DEBUG]2016-11-13 11:51:41,131: None
+[DEBUG]2016-11-13 11:51:41,131: None
+[DEBUG]2016-11-13 11:51:41,131: None
+[DEBUG]2016-11-13 11:51:41,131: None
+[DEBUG]2016-11-13 11:51:41,131: None
+[DEBUG]2016-11-13 11:51:41,131: None
+[DEBUG]2016-11-13 11:51:41,131: None
+[DEBUG]2016-11-13 11:51:41,131: None
+[DEBUG]2016-11-13 11:51:41,131: None
+[DEBUG]2016-11-13 11:51:41,131: None
+[DEBUG]2016-11-13 11:51:41,131: None
+[DEBUG]2016-11-13 11:51:41,131: None
+[DEBUG]2016-11-13 11:51:41,131: None
+[DEBUG]2016-11-13 11:51:41,131: None
+[DEBUG]2016-11-13 11:51:41,131: None
+[DEBUG]2016-11-13 11:51:41,131: None
+[DEBUG]2016-11-13 11:51:41,131: None
+[DEBUG]2016-11-13 11:51:41,131: None
+[DEBUG]2016-11-13 11:51:41,131: None
+[DEBUG]2016-11-13 11:51:41,131: None
+[DEBUG]2016-11-13 11:51:41,131: None
+[DEBUG]2016-11-13 11:53:45,594: <_sre.SRE_Match object; span=(1088, 1944), match='typedef enum {\n    ES_NO_EVENT, ES_ERROR, /* use>
+[DEBUG]2016-11-13 11:53:45,594: ['ES_NO_EVENT', 'ES_ERROR', 'ES_INIT', 'ES_ENTRY', 'ES_EXIT', 'ES_KEYINPUT', 'ES_LISTEVENTS', 'ES_TIMEOUT', 'ES_TIMERACTIVE', 'ES_TIMERSTOPPED', 'OFF_TAPE', 'ON_TAPE', 'TAPE_TRIGGERED', 'TW_TRIGGERED', 'TRACK_WIRE_ON', 'TRACK_WIRE_OFF', 'BEACON_OFF', 'BEACON_ON', 'BUMPED', 'UNLOADED', 'BATTERY_CONNECTED', 'BATTERY_DISCONNECTED', 'NUMBEROFEVENTS']
+[DEBUG]2016-11-13 11:53:45,594: 
+static const char *EventNames[] = {
+	"ES_NO_EVENT",
+	"ES_ERROR",
+	"ES_INIT",
+	"ES_ENTRY",
+	"ES_EXIT",
+	"ES_KEYINPUT",
+	"ES_LISTEVENTS",
+	"ES_TIMEOUT",
+	"ES_TIMERACTIVE",
+	"ES_TIMERSTOPPED",
+	"OFF_TAPE",
+	"ON_TAPE",
+	"TAPE_TRIGGERED",
+	"TW_TRIGGERED",
+	"TRACK_WIRE_ON",
+	"TRACK_WIRE_OFF",
+	"BEACON_OFF",
+	"BEACON_ON",
+	"BUMPED",
+	"UNLOADED",
+	"BATTERY_CONNECTED",
+	"BATTERY_DISCONNECTED",
+	"NUMBEROFEVENTS",
+};
+
+
+[DEBUG]2016-11-13 11:53:45,597: <_sre.SRE_Match object; span=(1173, 1349), match='typedef enum {\n    InitPState,\n    AmmoSearch,\>
+[DEBUG]2016-11-13 11:53:45,597: <_sre.SRE_Match object; span=(1173, 1349), match='typedef enum {\n    InitPState,\n    AmmoSearch,\>
+[DEBUG]2016-11-13 11:53:45,597: ['InitPState', 'AmmoSearch', 'AmmoLoad', 'FirstTargetSearch', 'FirstTargetUnload', 'SecondTargetSearch', 'SecondTargetUnload']
+[DEBUG]2016-11-13 11:53:45,597: ['InitPState', 'AmmoSearch', 'AmmoLoad', 'FirstTargetSearch', 'FirstTargetUnload', 'SecondTargetSearch', 'SecondTargetUnload']
+[DEBUG]2016-11-13 11:53:45,597: 
+static const char *StateNames[] = {
+	"InitPState",
+	"AmmoSearch",
+	"AmmoLoad",
+	"FirstTargetSearch",
+	"FirstTargetUnload",
+	"SecondTargetSearch",
+	"SecondTargetUnload",
+};
+
+
+[DEBUG]2016-11-13 11:53:45,597: 
+static const char *StateNames[] = {
+	"InitPState",
+	"AmmoSearch",
+	"AmmoLoad",
+	"FirstTargetSearch",
+	"FirstTargetUnload",
+	"SecondTargetSearch",
+	"SecondTargetUnload",
+};
+
+
+[DEBUG]2016-11-13 11:53:45,599: <_sre.SRE_Match object; span=(1176, 1261), match='typedef enum {\n    InitPState,\n    Forward,\n  >
+[DEBUG]2016-11-13 11:53:45,599: <_sre.SRE_Match object; span=(1176, 1261), match='typedef enum {\n    InitPState,\n    Forward,\n  >
+[DEBUG]2016-11-13 11:53:45,599: <_sre.SRE_Match object; span=(1176, 1261), match='typedef enum {\n    InitPState,\n    Forward,\n  >
+[DEBUG]2016-11-13 11:53:45,599: ['InitPState', 'Forward', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:53:45,599: ['InitPState', 'Forward', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:53:45,599: ['InitPState', 'Forward', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:53:45,599: 
+static const char *StateNames[] = {
+	"InitPState",
+	"Forward",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:53:45,599: 
+static const char *StateNames[] = {
+	"InitPState",
+	"Forward",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:53:45,599: 
+static const char *StateNames[] = {
+	"InitPState",
+	"Forward",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:53:45,600: <_sre.SRE_Match object; span=(1171, 1243), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 11:53:45,600: <_sre.SRE_Match object; span=(1171, 1243), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 11:53:45,600: <_sre.SRE_Match object; span=(1171, 1243), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 11:53:45,600: <_sre.SRE_Match object; span=(1171, 1243), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 11:53:45,600: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:53:45,600: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:53:45,600: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:53:45,600: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:53:45,600: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:53:45,600: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:53:45,600: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:53:45,600: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:53:45,602: <_sre.SRE_Match object; span=(1183, 1255), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 11:53:45,602: <_sre.SRE_Match object; span=(1183, 1255), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 11:53:45,602: <_sre.SRE_Match object; span=(1183, 1255), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 11:53:45,602: <_sre.SRE_Match object; span=(1183, 1255), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 11:53:45,602: <_sre.SRE_Match object; span=(1183, 1255), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 11:53:45,602: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:53:45,602: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:53:45,602: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:53:45,602: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:53:45,602: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 11:53:45,602: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:53:45,602: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:53:45,602: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:53:45,602: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:53:45,602: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 11:53:45,603: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 11:53:45,603: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 11:53:45,603: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 11:53:45,603: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 11:53:45,603: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 11:53:45,603: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 11:53:45,603: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 11:53:45,603: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 11:53:45,603: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 11:53:45,603: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 11:53:45,603: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 11:53:45,603: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 11:53:45,604: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 11:53:45,604: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 11:53:45,604: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 11:53:45,604: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 11:53:45,604: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 11:53:45,604: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 11:53:45,605: None
+[DEBUG]2016-11-13 11:53:45,605: None
+[DEBUG]2016-11-13 11:53:45,605: None
+[DEBUG]2016-11-13 11:53:45,605: None
+[DEBUG]2016-11-13 11:53:45,605: None
+[DEBUG]2016-11-13 11:53:45,605: None
+[DEBUG]2016-11-13 11:53:45,605: None
+[DEBUG]2016-11-13 11:53:45,606: None
+[DEBUG]2016-11-13 11:53:45,606: None
+[DEBUG]2016-11-13 11:53:45,606: None
+[DEBUG]2016-11-13 11:53:45,606: None
+[DEBUG]2016-11-13 11:53:45,606: None
+[DEBUG]2016-11-13 11:53:45,606: None
+[DEBUG]2016-11-13 11:53:45,606: None
+[DEBUG]2016-11-13 11:53:45,606: None
+[DEBUG]2016-11-13 11:53:45,607: None
+[DEBUG]2016-11-13 11:53:45,607: None
+[DEBUG]2016-11-13 11:53:45,607: None
+[DEBUG]2016-11-13 11:53:45,607: None
+[DEBUG]2016-11-13 11:53:45,607: None
+[DEBUG]2016-11-13 11:53:45,607: None
+[DEBUG]2016-11-13 11:53:45,607: None
+[DEBUG]2016-11-13 11:53:45,607: None
+[DEBUG]2016-11-13 11:53:45,607: None
+[DEBUG]2016-11-13 11:53:45,608: None
+[DEBUG]2016-11-13 11:53:45,608: None
+[DEBUG]2016-11-13 11:53:45,608: None
+[DEBUG]2016-11-13 11:53:45,608: None
+[DEBUG]2016-11-13 11:53:45,608: None
+[DEBUG]2016-11-13 11:53:45,608: None
+[DEBUG]2016-11-13 11:53:45,608: None
+[DEBUG]2016-11-13 11:53:45,608: None
+[DEBUG]2016-11-13 11:53:45,608: None
+[DEBUG]2016-11-13 11:53:45,608: None
+[DEBUG]2016-11-13 11:53:45,609: None
+[DEBUG]2016-11-13 11:53:45,609: None
+[DEBUG]2016-11-13 11:53:45,609: None
+[DEBUG]2016-11-13 11:53:45,609: None
+[DEBUG]2016-11-13 11:53:45,609: None
+[DEBUG]2016-11-13 11:53:45,609: None
+[DEBUG]2016-11-13 11:53:45,609: None
+[DEBUG]2016-11-13 11:53:45,609: None
+[DEBUG]2016-11-13 11:53:45,609: None
+[DEBUG]2016-11-13 11:53:45,609: None
+[DEBUG]2016-11-13 11:53:45,609: None
+[DEBUG]2016-11-13 11:53:45,610: None
+[DEBUG]2016-11-13 11:53:45,610: None
+[DEBUG]2016-11-13 11:53:45,610: None
+[DEBUG]2016-11-13 11:53:45,610: None
+[DEBUG]2016-11-13 11:53:45,610: None
+[DEBUG]2016-11-13 11:53:45,610: None
+[DEBUG]2016-11-13 11:53:45,610: None
+[DEBUG]2016-11-13 11:53:45,610: None
+[DEBUG]2016-11-13 11:53:45,610: None
+[DEBUG]2016-11-13 11:53:45,610: None
+[DEBUG]2016-11-13 11:53:45,610: None
+[DEBUG]2016-11-13 11:53:45,610: None
+[DEBUG]2016-11-13 11:53:45,611: None
+[DEBUG]2016-11-13 11:53:45,611: None
+[DEBUG]2016-11-13 11:53:45,611: None
+[DEBUG]2016-11-13 11:53:45,611: None
+[DEBUG]2016-11-13 11:53:45,611: None
+[DEBUG]2016-11-13 11:53:45,611: None
+[DEBUG]2016-11-13 11:53:45,611: None
+[DEBUG]2016-11-13 11:53:45,611: None
+[DEBUG]2016-11-13 11:53:45,611: None
+[DEBUG]2016-11-13 11:53:45,611: None
+[DEBUG]2016-11-13 11:53:45,611: None
+[DEBUG]2016-11-13 11:53:45,611: None
+[DEBUG]2016-11-13 11:53:45,611: None
+[DEBUG]2016-11-13 11:53:45,612: None
+[DEBUG]2016-11-13 11:53:45,612: None
+[DEBUG]2016-11-13 11:53:45,612: None
+[DEBUG]2016-11-13 11:53:45,612: None
+[DEBUG]2016-11-13 11:53:45,612: None
+[DEBUG]2016-11-13 11:53:45,612: None
+[DEBUG]2016-11-13 11:53:45,612: None
+[DEBUG]2016-11-13 11:53:45,612: None
+[DEBUG]2016-11-13 11:53:45,612: None
+[DEBUG]2016-11-13 11:53:45,612: None
+[DEBUG]2016-11-13 11:53:45,612: None
+[DEBUG]2016-11-13 11:53:45,612: None
+[DEBUG]2016-11-13 11:53:45,612: None
+[DEBUG]2016-11-13 11:53:45,612: None
+[DEBUG]2016-11-13 11:53:45,614: None
+[DEBUG]2016-11-13 11:53:45,614: None
+[DEBUG]2016-11-13 11:53:45,614: None
+[DEBUG]2016-11-13 11:53:45,614: None
+[DEBUG]2016-11-13 11:53:45,614: None
+[DEBUG]2016-11-13 11:53:45,614: None
+[DEBUG]2016-11-13 11:53:45,614: None
+[DEBUG]2016-11-13 11:53:45,614: None
+[DEBUG]2016-11-13 11:53:45,614: None
+[DEBUG]2016-11-13 11:53:45,614: None
+[DEBUG]2016-11-13 11:53:45,614: None
+[DEBUG]2016-11-13 11:53:45,614: None
+[DEBUG]2016-11-13 11:53:45,614: None
+[DEBUG]2016-11-13 11:53:45,614: None
+[DEBUG]2016-11-13 11:53:45,614: None
+[DEBUG]2016-11-13 11:53:45,615: None
+[DEBUG]2016-11-13 11:53:45,615: None
+[DEBUG]2016-11-13 11:53:45,615: None
+[DEBUG]2016-11-13 11:53:45,615: None
+[DEBUG]2016-11-13 11:53:45,615: None
+[DEBUG]2016-11-13 11:53:45,615: None
+[DEBUG]2016-11-13 11:53:45,615: None
+[DEBUG]2016-11-13 11:53:45,615: None
+[DEBUG]2016-11-13 11:53:45,615: None
+[DEBUG]2016-11-13 11:53:45,615: None
+[DEBUG]2016-11-13 11:53:45,615: None
+[DEBUG]2016-11-13 11:53:45,615: None
+[DEBUG]2016-11-13 11:53:45,615: None
+[DEBUG]2016-11-13 11:53:45,615: None
+[DEBUG]2016-11-13 11:53:45,615: None
+[DEBUG]2016-11-13 11:53:45,615: None
+[DEBUG]2016-11-13 11:53:45,616: None
+[DEBUG]2016-11-13 11:53:45,616: None
+[DEBUG]2016-11-13 11:53:45,616: None
+[DEBUG]2016-11-13 11:53:45,616: None
+[DEBUG]2016-11-13 11:53:45,616: None
+[DEBUG]2016-11-13 11:53:45,616: None
+[DEBUG]2016-11-13 11:53:45,616: None
+[DEBUG]2016-11-13 11:53:45,616: None
+[DEBUG]2016-11-13 11:53:45,616: None
+[DEBUG]2016-11-13 11:53:45,616: None
+[DEBUG]2016-11-13 11:53:45,616: None
+[DEBUG]2016-11-13 11:53:45,616: None
+[DEBUG]2016-11-13 11:53:45,616: None
+[DEBUG]2016-11-13 11:53:45,616: None
+[DEBUG]2016-11-13 11:53:45,616: None
+[DEBUG]2016-11-13 11:53:45,616: None
+[DEBUG]2016-11-13 11:53:45,616: None
+[DEBUG]2016-11-13 11:53:45,618: None
+[DEBUG]2016-11-13 11:53:45,618: None
+[DEBUG]2016-11-13 11:53:45,618: None
+[DEBUG]2016-11-13 11:53:45,618: None
+[DEBUG]2016-11-13 11:53:45,618: None
+[DEBUG]2016-11-13 11:53:45,618: None
+[DEBUG]2016-11-13 11:53:45,618: None
+[DEBUG]2016-11-13 11:53:45,618: None
+[DEBUG]2016-11-13 11:53:45,618: None
+[DEBUG]2016-11-13 11:53:45,618: None
+[DEBUG]2016-11-13 11:53:45,618: None
+[DEBUG]2016-11-13 11:53:45,618: None
+[DEBUG]2016-11-13 11:53:45,618: None
+[DEBUG]2016-11-13 11:53:45,618: None
+[DEBUG]2016-11-13 11:53:45,618: None
+[DEBUG]2016-11-13 11:53:45,618: None
+[DEBUG]2016-11-13 11:53:45,618: None
+[DEBUG]2016-11-13 11:53:45,618: None
+[DEBUG]2016-11-13 11:53:45,619: None
+[DEBUG]2016-11-13 11:53:45,619: None
+[DEBUG]2016-11-13 11:53:45,619: None
+[DEBUG]2016-11-13 11:53:45,619: None
+[DEBUG]2016-11-13 11:53:45,619: None
+[DEBUG]2016-11-13 11:53:45,619: None
+[DEBUG]2016-11-13 11:53:45,619: None
+[DEBUG]2016-11-13 11:53:45,619: None
+[DEBUG]2016-11-13 11:53:45,619: None
+[DEBUG]2016-11-13 11:53:45,619: None
+[DEBUG]2016-11-13 11:53:45,619: None
+[DEBUG]2016-11-13 11:53:45,619: None
+[DEBUG]2016-11-13 11:53:45,619: None
+[DEBUG]2016-11-13 11:53:45,619: None
+[DEBUG]2016-11-13 11:53:45,619: None
+[DEBUG]2016-11-13 11:53:45,619: None
+[DEBUG]2016-11-13 11:53:45,619: None
+[DEBUG]2016-11-13 11:53:45,619: None
+[DEBUG]2016-11-13 11:53:45,619: None
+[DEBUG]2016-11-13 11:53:45,621: None
+[DEBUG]2016-11-13 11:53:45,621: None
+[DEBUG]2016-11-13 11:53:45,621: None
+[DEBUG]2016-11-13 11:53:45,621: None
+[DEBUG]2016-11-13 11:53:45,621: None
+[DEBUG]2016-11-13 11:53:45,621: None
+[DEBUG]2016-11-13 11:53:45,621: None
+[DEBUG]2016-11-13 11:53:45,621: None
+[DEBUG]2016-11-13 11:53:45,621: None
+[DEBUG]2016-11-13 11:53:45,621: None
+[DEBUG]2016-11-13 11:53:45,621: None
+[DEBUG]2016-11-13 11:53:45,621: None
+[DEBUG]2016-11-13 11:53:45,621: None
+[DEBUG]2016-11-13 11:53:45,621: None
+[DEBUG]2016-11-13 11:53:45,621: None
+[DEBUG]2016-11-13 11:53:45,621: None
+[DEBUG]2016-11-13 11:53:45,621: None
+[DEBUG]2016-11-13 11:53:45,621: None
+[DEBUG]2016-11-13 11:53:45,621: None
+[DEBUG]2016-11-13 11:53:45,621: None
+[DEBUG]2016-11-13 11:53:45,623: None
+[DEBUG]2016-11-13 11:53:45,623: None
+[DEBUG]2016-11-13 11:53:45,623: None
+[DEBUG]2016-11-13 11:53:45,623: None
+[DEBUG]2016-11-13 11:53:45,623: None
+[DEBUG]2016-11-13 11:53:45,623: None
+[DEBUG]2016-11-13 11:53:45,623: None
+[DEBUG]2016-11-13 11:53:45,623: None
+[DEBUG]2016-11-13 11:53:45,623: None
+[DEBUG]2016-11-13 11:53:45,623: None
+[DEBUG]2016-11-13 11:53:45,623: None
+[DEBUG]2016-11-13 11:53:45,623: None
+[DEBUG]2016-11-13 11:53:45,623: None
+[DEBUG]2016-11-13 11:53:45,623: None
+[DEBUG]2016-11-13 11:53:45,623: None
+[DEBUG]2016-11-13 11:53:45,623: None
+[DEBUG]2016-11-13 11:53:45,623: None
+[DEBUG]2016-11-13 11:53:45,623: None
+[DEBUG]2016-11-13 11:53:45,623: None
+[DEBUG]2016-11-13 11:53:45,623: None
+[DEBUG]2016-11-13 11:53:45,623: None
+[DEBUG]2016-11-13 11:53:45,624: None
+[DEBUG]2016-11-13 11:53:45,624: None
+[DEBUG]2016-11-13 11:53:45,624: None
+[DEBUG]2016-11-13 11:53:45,624: None
+[DEBUG]2016-11-13 11:53:45,624: None
+[DEBUG]2016-11-13 11:53:45,624: None
+[DEBUG]2016-11-13 11:53:45,624: None
+[DEBUG]2016-11-13 11:53:45,624: None
+[DEBUG]2016-11-13 11:53:45,624: None
+[DEBUG]2016-11-13 11:53:45,624: None
+[DEBUG]2016-11-13 11:53:45,624: None
+[DEBUG]2016-11-13 11:53:45,624: None
+[DEBUG]2016-11-13 11:53:45,624: None
+[DEBUG]2016-11-13 11:53:45,624: None
+[DEBUG]2016-11-13 11:53:45,624: None
+[DEBUG]2016-11-13 11:53:45,624: None
+[DEBUG]2016-11-13 11:53:45,624: None
+[DEBUG]2016-11-13 11:53:45,624: None
+[DEBUG]2016-11-13 11:53:45,624: None
+[DEBUG]2016-11-13 11:53:45,624: None
+[DEBUG]2016-11-13 11:53:45,624: None
+[DEBUG]2016-11-13 11:53:45,624: None
+[DEBUG]2016-11-13 11:53:45,626: None
+[DEBUG]2016-11-13 11:53:45,626: None
+[DEBUG]2016-11-13 11:53:45,626: None
+[DEBUG]2016-11-13 11:53:45,626: None
+[DEBUG]2016-11-13 11:53:45,626: None
+[DEBUG]2016-11-13 11:53:45,626: None
+[DEBUG]2016-11-13 11:53:45,626: None
+[DEBUG]2016-11-13 11:53:45,626: None
+[DEBUG]2016-11-13 11:53:45,626: None
+[DEBUG]2016-11-13 11:53:45,626: None
+[DEBUG]2016-11-13 11:53:45,626: None
+[DEBUG]2016-11-13 11:53:45,626: None
+[DEBUG]2016-11-13 11:53:45,626: None
+[DEBUG]2016-11-13 11:53:45,626: None
+[DEBUG]2016-11-13 11:53:45,626: None
+[DEBUG]2016-11-13 11:53:45,626: None
+[DEBUG]2016-11-13 11:53:45,626: None
+[DEBUG]2016-11-13 11:53:45,626: None
+[DEBUG]2016-11-13 11:53:45,626: None
+[DEBUG]2016-11-13 11:53:45,626: None
+[DEBUG]2016-11-13 11:53:45,626: None
+[DEBUG]2016-11-13 11:53:45,626: None
+[DEBUG]2016-11-13 11:53:45,626: None
+[DEBUG]2016-11-13 11:53:45,628: None
+[DEBUG]2016-11-13 11:53:45,628: None
+[DEBUG]2016-11-13 11:53:45,628: None
+[DEBUG]2016-11-13 11:53:45,628: None
+[DEBUG]2016-11-13 11:53:45,628: None
+[DEBUG]2016-11-13 11:53:45,628: None
+[DEBUG]2016-11-13 11:53:45,628: None
+[DEBUG]2016-11-13 11:53:45,628: None
+[DEBUG]2016-11-13 11:53:45,628: None
+[DEBUG]2016-11-13 11:53:45,628: None
+[DEBUG]2016-11-13 11:53:45,628: None
+[DEBUG]2016-11-13 11:53:45,628: None
+[DEBUG]2016-11-13 11:53:45,628: None
+[DEBUG]2016-11-13 11:53:45,628: None
+[DEBUG]2016-11-13 11:53:45,628: None
+[DEBUG]2016-11-13 11:53:45,628: None
+[DEBUG]2016-11-13 11:53:45,628: None
+[DEBUG]2016-11-13 11:53:45,628: None
+[DEBUG]2016-11-13 11:53:45,628: None
+[DEBUG]2016-11-13 11:53:45,628: None
+[DEBUG]2016-11-13 11:53:45,628: None
+[DEBUG]2016-11-13 11:53:45,628: None
+[DEBUG]2016-11-13 11:53:45,628: None
+[DEBUG]2016-11-13 11:53:45,628: None
+[DEBUG]2016-11-13 11:53:45,629: None
+[DEBUG]2016-11-13 11:53:45,629: None
+[DEBUG]2016-11-13 11:53:45,629: None
+[DEBUG]2016-11-13 11:53:45,629: None
+[DEBUG]2016-11-13 11:53:45,629: None
+[DEBUG]2016-11-13 11:53:45,629: None
+[DEBUG]2016-11-13 11:53:45,629: None
+[DEBUG]2016-11-13 11:53:45,629: None
+[DEBUG]2016-11-13 11:53:45,629: None
+[DEBUG]2016-11-13 11:53:45,629: None
+[DEBUG]2016-11-13 11:53:45,629: None
+[DEBUG]2016-11-13 11:53:45,629: None
+[DEBUG]2016-11-13 11:53:45,629: None
+[DEBUG]2016-11-13 11:53:45,629: None
+[DEBUG]2016-11-13 11:53:45,629: None
+[DEBUG]2016-11-13 11:53:45,629: None
+[DEBUG]2016-11-13 11:53:45,629: None
+[DEBUG]2016-11-13 11:53:45,629: None
+[DEBUG]2016-11-13 11:53:45,629: None
+[DEBUG]2016-11-13 11:53:45,629: None
+[DEBUG]2016-11-13 11:53:45,629: None
+[DEBUG]2016-11-13 11:53:45,629: None
+[DEBUG]2016-11-13 11:53:45,629: None
+[DEBUG]2016-11-13 11:53:45,629: None
+[DEBUG]2016-11-13 11:53:45,629: None
+[DEBUG]2016-11-13 12:00:07,864: <_sre.SRE_Match object; span=(1088, 1944), match='typedef enum {\n    ES_NO_EVENT, ES_ERROR, /* use>
+[DEBUG]2016-11-13 12:00:07,865: ['ES_NO_EVENT', 'ES_ERROR', 'ES_INIT', 'ES_ENTRY', 'ES_EXIT', 'ES_KEYINPUT', 'ES_LISTEVENTS', 'ES_TIMEOUT', 'ES_TIMERACTIVE', 'ES_TIMERSTOPPED', 'OFF_TAPE', 'ON_TAPE', 'TAPE_TRIGGERED', 'TW_TRIGGERED', 'TRACK_WIRE_ON', 'TRACK_WIRE_OFF', 'BEACON_OFF', 'BEACON_ON', 'BUMPED', 'UNLOADED', 'BATTERY_CONNECTED', 'BATTERY_DISCONNECTED', 'NUMBEROFEVENTS']
+[DEBUG]2016-11-13 12:00:07,865: 
+static const char *EventNames[] = {
+	"ES_NO_EVENT",
+	"ES_ERROR",
+	"ES_INIT",
+	"ES_ENTRY",
+	"ES_EXIT",
+	"ES_KEYINPUT",
+	"ES_LISTEVENTS",
+	"ES_TIMEOUT",
+	"ES_TIMERACTIVE",
+	"ES_TIMERSTOPPED",
+	"OFF_TAPE",
+	"ON_TAPE",
+	"TAPE_TRIGGERED",
+	"TW_TRIGGERED",
+	"TRACK_WIRE_ON",
+	"TRACK_WIRE_OFF",
+	"BEACON_OFF",
+	"BEACON_ON",
+	"BUMPED",
+	"UNLOADED",
+	"BATTERY_CONNECTED",
+	"BATTERY_DISCONNECTED",
+	"NUMBEROFEVENTS",
+};
+
+
+[DEBUG]2016-11-13 12:00:07,867: <_sre.SRE_Match object; span=(1173, 1349), match='typedef enum {\n    InitPState,\n    AmmoSearch,\>
+[DEBUG]2016-11-13 12:00:07,867: <_sre.SRE_Match object; span=(1173, 1349), match='typedef enum {\n    InitPState,\n    AmmoSearch,\>
+[DEBUG]2016-11-13 12:00:07,867: ['InitPState', 'AmmoSearch', 'AmmoLoad', 'FirstTargetSearch', 'FirstTargetUnload', 'SecondTargetSearch', 'SecondTargetUnload']
+[DEBUG]2016-11-13 12:00:07,867: ['InitPState', 'AmmoSearch', 'AmmoLoad', 'FirstTargetSearch', 'FirstTargetUnload', 'SecondTargetSearch', 'SecondTargetUnload']
+[DEBUG]2016-11-13 12:00:07,867: 
+static const char *StateNames[] = {
+	"InitPState",
+	"AmmoSearch",
+	"AmmoLoad",
+	"FirstTargetSearch",
+	"FirstTargetUnload",
+	"SecondTargetSearch",
+	"SecondTargetUnload",
+};
+
+
+[DEBUG]2016-11-13 12:00:07,867: 
+static const char *StateNames[] = {
+	"InitPState",
+	"AmmoSearch",
+	"AmmoLoad",
+	"FirstTargetSearch",
+	"FirstTargetUnload",
+	"SecondTargetSearch",
+	"SecondTargetUnload",
+};
+
+
+[DEBUG]2016-11-13 12:00:07,868: <_sre.SRE_Match object; span=(1176, 1261), match='typedef enum {\n    InitPState,\n    Forward,\n  >
+[DEBUG]2016-11-13 12:00:07,868: <_sre.SRE_Match object; span=(1176, 1261), match='typedef enum {\n    InitPState,\n    Forward,\n  >
+[DEBUG]2016-11-13 12:00:07,868: <_sre.SRE_Match object; span=(1176, 1261), match='typedef enum {\n    InitPState,\n    Forward,\n  >
+[DEBUG]2016-11-13 12:00:07,869: ['InitPState', 'Forward', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 12:00:07,869: ['InitPState', 'Forward', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 12:00:07,869: ['InitPState', 'Forward', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 12:00:07,869: 
+static const char *StateNames[] = {
+	"InitPState",
+	"Forward",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 12:00:07,869: 
+static const char *StateNames[] = {
+	"InitPState",
+	"Forward",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 12:00:07,869: 
+static const char *StateNames[] = {
+	"InitPState",
+	"Forward",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 12:00:07,870: <_sre.SRE_Match object; span=(1171, 1243), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 12:00:07,870: <_sre.SRE_Match object; span=(1171, 1243), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 12:00:07,870: <_sre.SRE_Match object; span=(1171, 1243), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 12:00:07,870: <_sre.SRE_Match object; span=(1171, 1243), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 12:00:07,870: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 12:00:07,870: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 12:00:07,870: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 12:00:07,870: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 12:00:07,871: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 12:00:07,871: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 12:00:07,871: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 12:00:07,871: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 12:00:07,872: <_sre.SRE_Match object; span=(1183, 1255), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 12:00:07,872: <_sre.SRE_Match object; span=(1183, 1255), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 12:00:07,872: <_sre.SRE_Match object; span=(1183, 1255), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 12:00:07,872: <_sre.SRE_Match object; span=(1183, 1255), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 12:00:07,872: <_sre.SRE_Match object; span=(1183, 1255), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 12:00:07,872: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 12:00:07,872: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 12:00:07,872: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 12:00:07,872: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 12:00:07,872: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 12:00:07,872: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 12:00:07,872: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 12:00:07,872: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 12:00:07,872: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 12:00:07,872: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 12:00:07,873: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 12:00:07,873: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 12:00:07,873: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 12:00:07,873: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 12:00:07,873: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 12:00:07,873: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 12:00:07,873: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 12:00:07,873: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 12:00:07,873: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 12:00:07,873: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 12:00:07,873: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 12:00:07,873: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 12:00:07,874: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 12:00:07,874: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 12:00:07,874: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 12:00:07,874: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 12:00:07,874: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 12:00:07,874: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 12:00:07,875: None
+[DEBUG]2016-11-13 12:00:07,875: None
+[DEBUG]2016-11-13 12:00:07,875: None
+[DEBUG]2016-11-13 12:00:07,875: None
+[DEBUG]2016-11-13 12:00:07,875: None
+[DEBUG]2016-11-13 12:00:07,875: None
+[DEBUG]2016-11-13 12:00:07,875: None
+[DEBUG]2016-11-13 12:00:07,876: None
+[DEBUG]2016-11-13 12:00:07,876: None
+[DEBUG]2016-11-13 12:00:07,876: None
+[DEBUG]2016-11-13 12:00:07,876: None
+[DEBUG]2016-11-13 12:00:07,876: None
+[DEBUG]2016-11-13 12:00:07,876: None
+[DEBUG]2016-11-13 12:00:07,876: None
+[DEBUG]2016-11-13 12:00:07,876: None
+[DEBUG]2016-11-13 12:00:07,877: None
+[DEBUG]2016-11-13 12:00:07,877: None
+[DEBUG]2016-11-13 12:00:07,877: None
+[DEBUG]2016-11-13 12:00:07,877: None
+[DEBUG]2016-11-13 12:00:07,877: None
+[DEBUG]2016-11-13 12:00:07,877: None
+[DEBUG]2016-11-13 12:00:07,877: None
+[DEBUG]2016-11-13 12:00:07,877: None
+[DEBUG]2016-11-13 12:00:07,877: None
+[DEBUG]2016-11-13 12:00:07,878: None
+[DEBUG]2016-11-13 12:00:07,878: None
+[DEBUG]2016-11-13 12:00:07,878: None
+[DEBUG]2016-11-13 12:00:07,878: None
+[DEBUG]2016-11-13 12:00:07,878: None
+[DEBUG]2016-11-13 12:00:07,878: None
+[DEBUG]2016-11-13 12:00:07,878: None
+[DEBUG]2016-11-13 12:00:07,878: None
+[DEBUG]2016-11-13 12:00:07,878: None
+[DEBUG]2016-11-13 12:00:07,878: None
+[DEBUG]2016-11-13 12:00:07,879: None
+[DEBUG]2016-11-13 12:00:07,879: None
+[DEBUG]2016-11-13 12:00:07,879: None
+[DEBUG]2016-11-13 12:00:07,879: None
+[DEBUG]2016-11-13 12:00:07,879: None
+[DEBUG]2016-11-13 12:00:07,879: None
+[DEBUG]2016-11-13 12:00:07,879: None
+[DEBUG]2016-11-13 12:00:07,879: None
+[DEBUG]2016-11-13 12:00:07,879: None
+[DEBUG]2016-11-13 12:00:07,879: None
+[DEBUG]2016-11-13 12:00:07,879: None
+[DEBUG]2016-11-13 12:00:07,880: None
+[DEBUG]2016-11-13 12:00:07,880: None
+[DEBUG]2016-11-13 12:00:07,880: None
+[DEBUG]2016-11-13 12:00:07,880: None
+[DEBUG]2016-11-13 12:00:07,880: None
+[DEBUG]2016-11-13 12:00:07,880: None
+[DEBUG]2016-11-13 12:00:07,880: None
+[DEBUG]2016-11-13 12:00:07,880: None
+[DEBUG]2016-11-13 12:00:07,880: None
+[DEBUG]2016-11-13 12:00:07,880: None
+[DEBUG]2016-11-13 12:00:07,880: None
+[DEBUG]2016-11-13 12:00:07,880: None
+[DEBUG]2016-11-13 12:00:07,881: None
+[DEBUG]2016-11-13 12:00:07,881: None
+[DEBUG]2016-11-13 12:00:07,881: None
+[DEBUG]2016-11-13 12:00:07,881: None
+[DEBUG]2016-11-13 12:00:07,881: None
+[DEBUG]2016-11-13 12:00:07,881: None
+[DEBUG]2016-11-13 12:00:07,881: None
+[DEBUG]2016-11-13 12:00:07,881: None
+[DEBUG]2016-11-13 12:00:07,881: None
+[DEBUG]2016-11-13 12:00:07,881: None
+[DEBUG]2016-11-13 12:00:07,881: None
+[DEBUG]2016-11-13 12:00:07,881: None
+[DEBUG]2016-11-13 12:00:07,881: None
+[DEBUG]2016-11-13 12:00:07,883: None
+[DEBUG]2016-11-13 12:00:07,883: None
+[DEBUG]2016-11-13 12:00:07,883: None
+[DEBUG]2016-11-13 12:00:07,883: None
+[DEBUG]2016-11-13 12:00:07,883: None
+[DEBUG]2016-11-13 12:00:07,883: None
+[DEBUG]2016-11-13 12:00:07,883: None
+[DEBUG]2016-11-13 12:00:07,883: None
+[DEBUG]2016-11-13 12:00:07,883: None
+[DEBUG]2016-11-13 12:00:07,883: None
+[DEBUG]2016-11-13 12:00:07,883: None
+[DEBUG]2016-11-13 12:00:07,883: None
+[DEBUG]2016-11-13 12:00:07,883: None
+[DEBUG]2016-11-13 12:00:07,883: None
+[DEBUG]2016-11-13 12:00:07,884: None
+[DEBUG]2016-11-13 12:00:07,884: None
+[DEBUG]2016-11-13 12:00:07,884: None
+[DEBUG]2016-11-13 12:00:07,884: None
+[DEBUG]2016-11-13 12:00:07,884: None
+[DEBUG]2016-11-13 12:00:07,884: None
+[DEBUG]2016-11-13 12:00:07,884: None
+[DEBUG]2016-11-13 12:00:07,884: None
+[DEBUG]2016-11-13 12:00:07,884: None
+[DEBUG]2016-11-13 12:00:07,884: None
+[DEBUG]2016-11-13 12:00:07,884: None
+[DEBUG]2016-11-13 12:00:07,884: None
+[DEBUG]2016-11-13 12:00:07,884: None
+[DEBUG]2016-11-13 12:00:07,884: None
+[DEBUG]2016-11-13 12:00:07,884: None
+[DEBUG]2016-11-13 12:00:07,885: None
+[DEBUG]2016-11-13 12:00:07,885: None
+[DEBUG]2016-11-13 12:00:07,885: None
+[DEBUG]2016-11-13 12:00:07,885: None
+[DEBUG]2016-11-13 12:00:07,885: None
+[DEBUG]2016-11-13 12:00:07,885: None
+[DEBUG]2016-11-13 12:00:07,885: None
+[DEBUG]2016-11-13 12:00:07,885: None
+[DEBUG]2016-11-13 12:00:07,885: None
+[DEBUG]2016-11-13 12:00:07,885: None
+[DEBUG]2016-11-13 12:00:07,885: None
+[DEBUG]2016-11-13 12:00:07,885: None
+[DEBUG]2016-11-13 12:00:07,885: None
+[DEBUG]2016-11-13 12:00:07,885: None
+[DEBUG]2016-11-13 12:00:07,885: None
+[DEBUG]2016-11-13 12:00:07,885: None
+[DEBUG]2016-11-13 12:00:07,887: None
+[DEBUG]2016-11-13 12:00:07,887: None
+[DEBUG]2016-11-13 12:00:07,887: None
+[DEBUG]2016-11-13 12:00:07,887: None
+[DEBUG]2016-11-13 12:00:07,887: None
+[DEBUG]2016-11-13 12:00:07,887: None
+[DEBUG]2016-11-13 12:00:07,887: None
+[DEBUG]2016-11-13 12:00:07,887: None
+[DEBUG]2016-11-13 12:00:07,887: None
+[DEBUG]2016-11-13 12:00:07,887: None
+[DEBUG]2016-11-13 12:00:07,887: None
+[DEBUG]2016-11-13 12:00:07,887: None
+[DEBUG]2016-11-13 12:00:07,887: None
+[DEBUG]2016-11-13 12:00:07,887: None
+[DEBUG]2016-11-13 12:00:07,887: None
+[DEBUG]2016-11-13 12:00:07,887: None
+[DEBUG]2016-11-13 12:00:07,887: None
+[DEBUG]2016-11-13 12:00:07,888: None
+[DEBUG]2016-11-13 12:00:07,888: None
+[DEBUG]2016-11-13 12:00:07,888: None
+[DEBUG]2016-11-13 12:00:07,888: None
+[DEBUG]2016-11-13 12:00:07,888: None
+[DEBUG]2016-11-13 12:00:07,888: None
+[DEBUG]2016-11-13 12:00:07,888: None
+[DEBUG]2016-11-13 12:00:07,888: None
+[DEBUG]2016-11-13 12:00:07,888: None
+[DEBUG]2016-11-13 12:00:07,888: None
+[DEBUG]2016-11-13 12:00:07,888: None
+[DEBUG]2016-11-13 12:00:07,888: None
+[DEBUG]2016-11-13 12:00:07,888: None
+[DEBUG]2016-11-13 12:00:07,888: None
+[DEBUG]2016-11-13 12:00:07,888: None
+[DEBUG]2016-11-13 12:00:07,888: None
+[DEBUG]2016-11-13 12:00:07,888: None
+[DEBUG]2016-11-13 12:00:07,888: None
+[DEBUG]2016-11-13 12:00:07,890: None
+[DEBUG]2016-11-13 12:00:07,890: None
+[DEBUG]2016-11-13 12:00:07,890: None
+[DEBUG]2016-11-13 12:00:07,890: None
+[DEBUG]2016-11-13 12:00:07,890: None
+[DEBUG]2016-11-13 12:00:07,890: None
+[DEBUG]2016-11-13 12:00:07,890: None
+[DEBUG]2016-11-13 12:00:07,890: None
+[DEBUG]2016-11-13 12:00:07,890: None
+[DEBUG]2016-11-13 12:00:07,890: None
+[DEBUG]2016-11-13 12:00:07,890: None
+[DEBUG]2016-11-13 12:00:07,890: None
+[DEBUG]2016-11-13 12:00:07,890: None
+[DEBUG]2016-11-13 12:00:07,890: None
+[DEBUG]2016-11-13 12:00:07,890: None
+[DEBUG]2016-11-13 12:00:07,890: None
+[DEBUG]2016-11-13 12:00:07,890: None
+[DEBUG]2016-11-13 12:00:07,890: None
+[DEBUG]2016-11-13 12:00:07,890: None
+[DEBUG]2016-11-13 12:00:07,891: None
+[DEBUG]2016-11-13 12:00:07,891: None
+[DEBUG]2016-11-13 12:00:07,891: None
+[DEBUG]2016-11-13 12:00:07,891: None
+[DEBUG]2016-11-13 12:00:07,891: None
+[DEBUG]2016-11-13 12:00:07,891: None
+[DEBUG]2016-11-13 12:00:07,891: None
+[DEBUG]2016-11-13 12:00:07,891: None
+[DEBUG]2016-11-13 12:00:07,891: None
+[DEBUG]2016-11-13 12:00:07,891: None
+[DEBUG]2016-11-13 12:00:07,891: None
+[DEBUG]2016-11-13 12:00:07,891: None
+[DEBUG]2016-11-13 12:00:07,891: None
+[DEBUG]2016-11-13 12:00:07,891: None
+[DEBUG]2016-11-13 12:00:07,891: None
+[DEBUG]2016-11-13 12:00:07,891: None
+[DEBUG]2016-11-13 12:00:07,891: None
+[DEBUG]2016-11-13 12:00:07,891: None
+[DEBUG]2016-11-13 12:00:07,891: None
+[DEBUG]2016-11-13 12:00:07,891: None
+[DEBUG]2016-11-13 12:00:07,893: None
+[DEBUG]2016-11-13 12:00:07,893: None
+[DEBUG]2016-11-13 12:00:07,893: None
+[DEBUG]2016-11-13 12:00:07,893: None
+[DEBUG]2016-11-13 12:00:07,893: None
+[DEBUG]2016-11-13 12:00:07,893: None
+[DEBUG]2016-11-13 12:00:07,893: None
+[DEBUG]2016-11-13 12:00:07,893: None
+[DEBUG]2016-11-13 12:00:07,893: None
+[DEBUG]2016-11-13 12:00:07,893: None
+[DEBUG]2016-11-13 12:00:07,893: None
+[DEBUG]2016-11-13 12:00:07,893: None
+[DEBUG]2016-11-13 12:00:07,893: None
+[DEBUG]2016-11-13 12:00:07,893: None
+[DEBUG]2016-11-13 12:00:07,893: None
+[DEBUG]2016-11-13 12:00:07,893: None
+[DEBUG]2016-11-13 12:00:07,893: None
+[DEBUG]2016-11-13 12:00:07,893: None
+[DEBUG]2016-11-13 12:00:07,893: None
+[DEBUG]2016-11-13 12:00:07,893: None
+[DEBUG]2016-11-13 12:00:07,893: None
+[DEBUG]2016-11-13 12:00:07,894: None
+[DEBUG]2016-11-13 12:00:07,894: None
+[DEBUG]2016-11-13 12:00:07,894: None
+[DEBUG]2016-11-13 12:00:07,894: None
+[DEBUG]2016-11-13 12:00:07,894: None
+[DEBUG]2016-11-13 12:00:07,894: None
+[DEBUG]2016-11-13 12:00:07,894: None
+[DEBUG]2016-11-13 12:00:07,894: None
+[DEBUG]2016-11-13 12:00:07,894: None
+[DEBUG]2016-11-13 12:00:07,894: None
+[DEBUG]2016-11-13 12:00:07,894: None
+[DEBUG]2016-11-13 12:00:07,894: None
+[DEBUG]2016-11-13 12:00:07,894: None
+[DEBUG]2016-11-13 12:00:07,894: None
+[DEBUG]2016-11-13 12:00:07,894: None
+[DEBUG]2016-11-13 12:00:07,894: None
+[DEBUG]2016-11-13 12:00:07,894: None
+[DEBUG]2016-11-13 12:00:07,894: None
+[DEBUG]2016-11-13 12:00:07,894: None
+[DEBUG]2016-11-13 12:00:07,894: None
+[DEBUG]2016-11-13 12:00:07,894: None
+[DEBUG]2016-11-13 12:00:07,894: None
+[DEBUG]2016-11-13 12:00:07,896: None
+[DEBUG]2016-11-13 12:00:07,896: None
+[DEBUG]2016-11-13 12:00:07,896: None
+[DEBUG]2016-11-13 12:00:07,896: None
+[DEBUG]2016-11-13 12:00:07,896: None
+[DEBUG]2016-11-13 12:00:07,896: None
+[DEBUG]2016-11-13 12:00:07,896: None
+[DEBUG]2016-11-13 12:00:07,896: None
+[DEBUG]2016-11-13 12:00:07,896: None
+[DEBUG]2016-11-13 12:00:07,896: None
+[DEBUG]2016-11-13 12:00:07,896: None
+[DEBUG]2016-11-13 12:00:07,896: None
+[DEBUG]2016-11-13 12:00:07,896: None
+[DEBUG]2016-11-13 12:00:07,896: None
+[DEBUG]2016-11-13 12:00:07,896: None
+[DEBUG]2016-11-13 12:00:07,896: None
+[DEBUG]2016-11-13 12:00:07,896: None
+[DEBUG]2016-11-13 12:00:07,896: None
+[DEBUG]2016-11-13 12:00:07,896: None
+[DEBUG]2016-11-13 12:00:07,896: None
+[DEBUG]2016-11-13 12:00:07,896: None
+[DEBUG]2016-11-13 12:00:07,896: None
+[DEBUG]2016-11-13 12:00:07,896: None
+[DEBUG]2016-11-13 12:00:07,898: None
+[DEBUG]2016-11-13 12:00:07,898: None
+[DEBUG]2016-11-13 12:00:07,898: None
+[DEBUG]2016-11-13 12:00:07,898: None
+[DEBUG]2016-11-13 12:00:07,898: None
+[DEBUG]2016-11-13 12:00:07,898: None
+[DEBUG]2016-11-13 12:00:07,898: None
+[DEBUG]2016-11-13 12:00:07,898: None
+[DEBUG]2016-11-13 12:00:07,898: None
+[DEBUG]2016-11-13 12:00:07,898: None
+[DEBUG]2016-11-13 12:00:07,898: None
+[DEBUG]2016-11-13 12:00:07,898: None
+[DEBUG]2016-11-13 12:00:07,898: None
+[DEBUG]2016-11-13 12:00:07,898: None
+[DEBUG]2016-11-13 12:00:07,898: None
+[DEBUG]2016-11-13 12:00:07,898: None
+[DEBUG]2016-11-13 12:00:07,898: None
+[DEBUG]2016-11-13 12:00:07,898: None
+[DEBUG]2016-11-13 12:00:07,898: None
+[DEBUG]2016-11-13 12:00:07,898: None
+[DEBUG]2016-11-13 12:00:07,898: None
+[DEBUG]2016-11-13 12:00:07,898: None
+[DEBUG]2016-11-13 12:00:07,898: None
+[DEBUG]2016-11-13 12:00:07,898: None
+[DEBUG]2016-11-13 12:00:07,899: None
+[DEBUG]2016-11-13 12:00:07,899: None
+[DEBUG]2016-11-13 12:00:07,899: None
+[DEBUG]2016-11-13 12:00:07,899: None
+[DEBUG]2016-11-13 12:00:07,899: None
+[DEBUG]2016-11-13 12:00:07,899: None
+[DEBUG]2016-11-13 12:00:07,899: None
+[DEBUG]2016-11-13 12:00:07,899: None
+[DEBUG]2016-11-13 12:00:07,899: None
+[DEBUG]2016-11-13 12:00:07,899: None
+[DEBUG]2016-11-13 12:00:07,899: None
+[DEBUG]2016-11-13 12:00:07,899: None
+[DEBUG]2016-11-13 12:00:07,899: None
+[DEBUG]2016-11-13 12:00:07,899: None
+[DEBUG]2016-11-13 12:00:07,899: None
+[DEBUG]2016-11-13 12:00:07,899: None
+[DEBUG]2016-11-13 12:00:07,899: None
+[DEBUG]2016-11-13 12:00:07,899: None
+[DEBUG]2016-11-13 12:00:07,899: None
+[DEBUG]2016-11-13 12:00:07,899: None
+[DEBUG]2016-11-13 12:00:07,899: None
+[DEBUG]2016-11-13 12:00:07,899: None
+[DEBUG]2016-11-13 12:00:07,899: None
+[DEBUG]2016-11-13 12:00:07,899: None
+[DEBUG]2016-11-13 12:00:07,899: None
+[DEBUG]2016-11-13 12:00:07,901: None
+[DEBUG]2016-11-13 12:00:07,901: None
+[DEBUG]2016-11-13 12:00:07,901: None
+[DEBUG]2016-11-13 12:00:07,901: None
+[DEBUG]2016-11-13 12:00:07,901: None
+[DEBUG]2016-11-13 12:00:07,901: None
+[DEBUG]2016-11-13 12:00:07,901: None
+[DEBUG]2016-11-13 12:00:07,901: None
+[DEBUG]2016-11-13 12:00:07,901: None
+[DEBUG]2016-11-13 12:00:07,901: None
+[DEBUG]2016-11-13 12:00:07,901: None
+[DEBUG]2016-11-13 12:00:07,901: None
+[DEBUG]2016-11-13 12:00:07,901: None
+[DEBUG]2016-11-13 12:00:07,901: None
+[DEBUG]2016-11-13 12:00:07,901: None
+[DEBUG]2016-11-13 12:00:07,901: None
+[DEBUG]2016-11-13 12:00:07,901: None
+[DEBUG]2016-11-13 12:00:07,901: None
+[DEBUG]2016-11-13 12:00:07,901: None
+[DEBUG]2016-11-13 12:00:07,901: None
+[DEBUG]2016-11-13 12:00:07,901: None
+[DEBUG]2016-11-13 12:00:07,901: None
+[DEBUG]2016-11-13 12:00:07,901: None
+[DEBUG]2016-11-13 12:00:07,901: None
+[DEBUG]2016-11-13 12:00:07,901: None
+[DEBUG]2016-11-13 12:00:07,901: None
+[DEBUG]2016-11-13 12:06:33,135: <_sre.SRE_Match object; span=(1088, 1944), match='typedef enum {\n    ES_NO_EVENT, ES_ERROR, /* use>
+[DEBUG]2016-11-13 12:06:33,135: ['ES_NO_EVENT', 'ES_ERROR', 'ES_INIT', 'ES_ENTRY', 'ES_EXIT', 'ES_KEYINPUT', 'ES_LISTEVENTS', 'ES_TIMEOUT', 'ES_TIMERACTIVE', 'ES_TIMERSTOPPED', 'OFF_TAPE', 'ON_TAPE', 'TAPE_TRIGGERED', 'TW_TRIGGERED', 'TRACK_WIRE_ON', 'TRACK_WIRE_OFF', 'BEACON_OFF', 'BEACON_ON', 'BUMPED', 'UNLOADED', 'BATTERY_CONNECTED', 'BATTERY_DISCONNECTED', 'NUMBEROFEVENTS']
+[DEBUG]2016-11-13 12:06:33,135: 
+static const char *EventNames[] = {
+	"ES_NO_EVENT",
+	"ES_ERROR",
+	"ES_INIT",
+	"ES_ENTRY",
+	"ES_EXIT",
+	"ES_KEYINPUT",
+	"ES_LISTEVENTS",
+	"ES_TIMEOUT",
+	"ES_TIMERACTIVE",
+	"ES_TIMERSTOPPED",
+	"OFF_TAPE",
+	"ON_TAPE",
+	"TAPE_TRIGGERED",
+	"TW_TRIGGERED",
+	"TRACK_WIRE_ON",
+	"TRACK_WIRE_OFF",
+	"BEACON_OFF",
+	"BEACON_ON",
+	"BUMPED",
+	"UNLOADED",
+	"BATTERY_CONNECTED",
+	"BATTERY_DISCONNECTED",
+	"NUMBEROFEVENTS",
+};
+
+
+[DEBUG]2016-11-13 12:06:33,138: <_sre.SRE_Match object; span=(1173, 1349), match='typedef enum {\n    InitPState,\n    AmmoSearch,\>
+[DEBUG]2016-11-13 12:06:33,138: <_sre.SRE_Match object; span=(1173, 1349), match='typedef enum {\n    InitPState,\n    AmmoSearch,\>
+[DEBUG]2016-11-13 12:06:33,138: ['InitPState', 'AmmoSearch', 'AmmoLoad', 'FirstTargetSearch', 'FirstTargetUnload', 'SecondTargetSearch', 'SecondTargetUnload']
+[DEBUG]2016-11-13 12:06:33,138: ['InitPState', 'AmmoSearch', 'AmmoLoad', 'FirstTargetSearch', 'FirstTargetUnload', 'SecondTargetSearch', 'SecondTargetUnload']
+[DEBUG]2016-11-13 12:06:33,138: 
+static const char *StateNames[] = {
+	"InitPState",
+	"AmmoSearch",
+	"AmmoLoad",
+	"FirstTargetSearch",
+	"FirstTargetUnload",
+	"SecondTargetSearch",
+	"SecondTargetUnload",
+};
+
+
+[DEBUG]2016-11-13 12:06:33,138: 
+static const char *StateNames[] = {
+	"InitPState",
+	"AmmoSearch",
+	"AmmoLoad",
+	"FirstTargetSearch",
+	"FirstTargetUnload",
+	"SecondTargetSearch",
+	"SecondTargetUnload",
+};
+
+
+[DEBUG]2016-11-13 12:06:33,139: <_sre.SRE_Match object; span=(1176, 1261), match='typedef enum {\n    InitPState,\n    Forward,\n  >
+[DEBUG]2016-11-13 12:06:33,139: <_sre.SRE_Match object; span=(1176, 1261), match='typedef enum {\n    InitPState,\n    Forward,\n  >
+[DEBUG]2016-11-13 12:06:33,139: <_sre.SRE_Match object; span=(1176, 1261), match='typedef enum {\n    InitPState,\n    Forward,\n  >
+[DEBUG]2016-11-13 12:06:33,140: ['InitPState', 'Forward', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 12:06:33,140: ['InitPState', 'Forward', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 12:06:33,140: ['InitPState', 'Forward', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 12:06:33,140: 
+static const char *StateNames[] = {
+	"InitPState",
+	"Forward",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 12:06:33,140: 
+static const char *StateNames[] = {
+	"InitPState",
+	"Forward",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 12:06:33,140: 
+static const char *StateNames[] = {
+	"InitPState",
+	"Forward",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 12:06:33,140: <_sre.SRE_Match object; span=(1171, 1243), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 12:06:33,140: <_sre.SRE_Match object; span=(1171, 1243), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 12:06:33,140: <_sre.SRE_Match object; span=(1171, 1243), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 12:06:33,140: <_sre.SRE_Match object; span=(1171, 1243), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 12:06:33,140: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 12:06:33,140: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 12:06:33,140: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 12:06:33,140: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 12:06:33,140: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 12:06:33,140: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 12:06:33,140: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 12:06:33,140: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 12:06:33,142: <_sre.SRE_Match object; span=(1183, 1255), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 12:06:33,142: <_sre.SRE_Match object; span=(1183, 1255), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 12:06:33,142: <_sre.SRE_Match object; span=(1183, 1255), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 12:06:33,142: <_sre.SRE_Match object; span=(1183, 1255), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 12:06:33,142: <_sre.SRE_Match object; span=(1183, 1255), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 12:06:33,142: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 12:06:33,142: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 12:06:33,142: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 12:06:33,142: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 12:06:33,142: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 12:06:33,142: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 12:06:33,142: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 12:06:33,142: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 12:06:33,142: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 12:06:33,142: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 12:06:33,143: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 12:06:33,143: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 12:06:33,143: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 12:06:33,143: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 12:06:33,143: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 12:06:33,143: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 12:06:33,143: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 12:06:33,143: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 12:06:33,143: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 12:06:33,143: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 12:06:33,143: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 12:06:33,143: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 12:06:33,143: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 12:06:33,143: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 12:06:33,143: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 12:06:33,143: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 12:06:33,143: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 12:06:33,143: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 12:06:33,144: None
+[DEBUG]2016-11-13 12:06:33,144: None
+[DEBUG]2016-11-13 12:06:33,144: None
+[DEBUG]2016-11-13 12:06:33,144: None
+[DEBUG]2016-11-13 12:06:33,144: None
+[DEBUG]2016-11-13 12:06:33,144: None
+[DEBUG]2016-11-13 12:06:33,144: None
+[DEBUG]2016-11-13 12:06:33,146: None
+[DEBUG]2016-11-13 12:06:33,146: None
+[DEBUG]2016-11-13 12:06:33,146: None
+[DEBUG]2016-11-13 12:06:33,146: None
+[DEBUG]2016-11-13 12:06:33,146: None
+[DEBUG]2016-11-13 12:06:33,146: None
+[DEBUG]2016-11-13 12:06:33,146: None
+[DEBUG]2016-11-13 12:06:33,146: None
+[DEBUG]2016-11-13 12:06:33,147: None
+[DEBUG]2016-11-13 12:06:33,147: None
+[DEBUG]2016-11-13 12:06:33,147: None
+[DEBUG]2016-11-13 12:06:33,147: None
+[DEBUG]2016-11-13 12:06:33,147: None
+[DEBUG]2016-11-13 12:06:33,147: None
+[DEBUG]2016-11-13 12:06:33,147: None
+[DEBUG]2016-11-13 12:06:33,147: None
+[DEBUG]2016-11-13 12:06:33,147: None
+[DEBUG]2016-11-13 12:06:33,148: None
+[DEBUG]2016-11-13 12:06:33,148: None
+[DEBUG]2016-11-13 12:06:33,148: None
+[DEBUG]2016-11-13 12:06:33,148: None
+[DEBUG]2016-11-13 12:06:33,148: None
+[DEBUG]2016-11-13 12:06:33,148: None
+[DEBUG]2016-11-13 12:06:33,148: None
+[DEBUG]2016-11-13 12:06:33,148: None
+[DEBUG]2016-11-13 12:06:33,148: None
+[DEBUG]2016-11-13 12:06:33,148: None
+[DEBUG]2016-11-13 12:06:33,149: None
+[DEBUG]2016-11-13 12:06:33,149: None
+[DEBUG]2016-11-13 12:06:33,149: None
+[DEBUG]2016-11-13 12:06:33,149: None
+[DEBUG]2016-11-13 12:06:33,149: None
+[DEBUG]2016-11-13 12:06:33,149: None
+[DEBUG]2016-11-13 12:06:33,149: None
+[DEBUG]2016-11-13 12:06:33,149: None
+[DEBUG]2016-11-13 12:06:33,149: None
+[DEBUG]2016-11-13 12:06:33,149: None
+[DEBUG]2016-11-13 12:06:33,149: None
+[DEBUG]2016-11-13 12:06:33,151: None
+[DEBUG]2016-11-13 12:06:33,151: None
+[DEBUG]2016-11-13 12:06:33,151: None
+[DEBUG]2016-11-13 12:06:33,151: None
+[DEBUG]2016-11-13 12:06:33,151: None
+[DEBUG]2016-11-13 12:06:33,151: None
+[DEBUG]2016-11-13 12:06:33,151: None
+[DEBUG]2016-11-13 12:06:33,151: None
+[DEBUG]2016-11-13 12:06:33,151: None
+[DEBUG]2016-11-13 12:06:33,151: None
+[DEBUG]2016-11-13 12:06:33,151: None
+[DEBUG]2016-11-13 12:06:33,151: None
+[DEBUG]2016-11-13 12:06:33,152: None
+[DEBUG]2016-11-13 12:06:33,152: None
+[DEBUG]2016-11-13 12:06:33,152: None
+[DEBUG]2016-11-13 12:06:33,152: None
+[DEBUG]2016-11-13 12:06:33,152: None
+[DEBUG]2016-11-13 12:06:33,152: None
+[DEBUG]2016-11-13 12:06:33,152: None
+[DEBUG]2016-11-13 12:06:33,152: None
+[DEBUG]2016-11-13 12:06:33,152: None
+[DEBUG]2016-11-13 12:06:33,152: None
+[DEBUG]2016-11-13 12:06:33,152: None
+[DEBUG]2016-11-13 12:06:33,152: None
+[DEBUG]2016-11-13 12:06:33,152: None
+[DEBUG]2016-11-13 12:06:33,153: None
+[DEBUG]2016-11-13 12:06:33,153: None
+[DEBUG]2016-11-13 12:06:33,153: None
+[DEBUG]2016-11-13 12:06:33,153: None
+[DEBUG]2016-11-13 12:06:33,153: None
+[DEBUG]2016-11-13 12:06:33,153: None
+[DEBUG]2016-11-13 12:06:33,153: None
+[DEBUG]2016-11-13 12:06:33,153: None
+[DEBUG]2016-11-13 12:06:33,153: None
+[DEBUG]2016-11-13 12:06:33,153: None
+[DEBUG]2016-11-13 12:06:33,153: None
+[DEBUG]2016-11-13 12:06:33,153: None
+[DEBUG]2016-11-13 12:06:33,153: None
+[DEBUG]2016-11-13 12:06:33,153: None
+[DEBUG]2016-11-13 12:06:33,154: None
+[DEBUG]2016-11-13 12:06:33,154: None
+[DEBUG]2016-11-13 12:06:33,154: None
+[DEBUG]2016-11-13 12:06:33,154: None
+[DEBUG]2016-11-13 12:06:33,154: None
+[DEBUG]2016-11-13 12:06:33,154: None
+[DEBUG]2016-11-13 12:06:33,154: None
+[DEBUG]2016-11-13 12:06:33,154: None
+[DEBUG]2016-11-13 12:06:33,154: None
+[DEBUG]2016-11-13 12:06:33,154: None
+[DEBUG]2016-11-13 12:06:33,154: None
+[DEBUG]2016-11-13 12:06:33,154: None
+[DEBUG]2016-11-13 12:06:33,154: None
+[DEBUG]2016-11-13 12:06:33,154: None
+[DEBUG]2016-11-13 12:06:33,154: None
+[DEBUG]2016-11-13 12:06:33,156: None
+[DEBUG]2016-11-13 12:06:33,156: None
+[DEBUG]2016-11-13 12:06:33,156: None
+[DEBUG]2016-11-13 12:06:33,156: None
+[DEBUG]2016-11-13 12:06:33,156: None
+[DEBUG]2016-11-13 12:06:33,156: None
+[DEBUG]2016-11-13 12:06:33,156: None
+[DEBUG]2016-11-13 12:06:33,156: None
+[DEBUG]2016-11-13 12:06:33,156: None
+[DEBUG]2016-11-13 12:06:33,156: None
+[DEBUG]2016-11-13 12:06:33,156: None
+[DEBUG]2016-11-13 12:06:33,156: None
+[DEBUG]2016-11-13 12:06:33,156: None
+[DEBUG]2016-11-13 12:06:33,156: None
+[DEBUG]2016-11-13 12:06:33,156: None
+[DEBUG]2016-11-13 12:06:33,156: None
+[DEBUG]2016-11-13 12:06:33,157: None
+[DEBUG]2016-11-13 12:06:33,157: None
+[DEBUG]2016-11-13 12:06:33,157: None
+[DEBUG]2016-11-13 12:06:33,157: None
+[DEBUG]2016-11-13 12:06:33,157: None
+[DEBUG]2016-11-13 12:06:33,157: None
+[DEBUG]2016-11-13 12:06:33,157: None
+[DEBUG]2016-11-13 12:06:33,157: None
+[DEBUG]2016-11-13 12:06:33,157: None
+[DEBUG]2016-11-13 12:06:33,157: None
+[DEBUG]2016-11-13 12:06:33,157: None
+[DEBUG]2016-11-13 12:06:33,157: None
+[DEBUG]2016-11-13 12:06:33,157: None
+[DEBUG]2016-11-13 12:06:33,157: None
+[DEBUG]2016-11-13 12:06:33,157: None
+[DEBUG]2016-11-13 12:06:33,157: None
+[DEBUG]2016-11-13 12:06:33,157: None
+[DEBUG]2016-11-13 12:06:33,159: None
+[DEBUG]2016-11-13 12:06:33,159: None
+[DEBUG]2016-11-13 12:06:33,159: None
+[DEBUG]2016-11-13 12:06:33,159: None
+[DEBUG]2016-11-13 12:06:33,159: None
+[DEBUG]2016-11-13 12:06:33,159: None
+[DEBUG]2016-11-13 12:06:33,159: None
+[DEBUG]2016-11-13 12:06:33,159: None
+[DEBUG]2016-11-13 12:06:33,159: None
+[DEBUG]2016-11-13 12:06:33,159: None
+[DEBUG]2016-11-13 12:06:33,159: None
+[DEBUG]2016-11-13 12:06:33,159: None
+[DEBUG]2016-11-13 12:06:33,159: None
+[DEBUG]2016-11-13 12:06:33,159: None
+[DEBUG]2016-11-13 12:06:33,159: None
+[DEBUG]2016-11-13 12:06:33,159: None
+[DEBUG]2016-11-13 12:06:33,159: None
+[DEBUG]2016-11-13 12:06:33,159: None
+[DEBUG]2016-11-13 12:06:33,160: None
+[DEBUG]2016-11-13 12:06:33,160: None
+[DEBUG]2016-11-13 12:06:33,160: None
+[DEBUG]2016-11-13 12:06:33,160: None
+[DEBUG]2016-11-13 12:06:33,160: None
+[DEBUG]2016-11-13 12:06:33,160: None
+[DEBUG]2016-11-13 12:06:33,160: None
+[DEBUG]2016-11-13 12:06:33,160: None
+[DEBUG]2016-11-13 12:06:33,160: None
+[DEBUG]2016-11-13 12:06:33,160: None
+[DEBUG]2016-11-13 12:06:33,160: None
+[DEBUG]2016-11-13 12:06:33,160: None
+[DEBUG]2016-11-13 12:06:33,160: None
+[DEBUG]2016-11-13 12:06:33,160: None
+[DEBUG]2016-11-13 12:06:33,160: None
+[DEBUG]2016-11-13 12:06:33,160: None
+[DEBUG]2016-11-13 12:06:33,160: None
+[DEBUG]2016-11-13 12:06:33,160: None
+[DEBUG]2016-11-13 12:06:33,160: None
+[DEBUG]2016-11-13 12:06:33,161: None
+[DEBUG]2016-11-13 12:06:33,161: None
+[DEBUG]2016-11-13 12:06:33,161: None
+[DEBUG]2016-11-13 12:06:33,161: None
+[DEBUG]2016-11-13 12:06:33,161: None
+[DEBUG]2016-11-13 12:06:33,161: None
+[DEBUG]2016-11-13 12:06:33,161: None
+[DEBUG]2016-11-13 12:06:33,161: None
+[DEBUG]2016-11-13 12:06:33,161: None
+[DEBUG]2016-11-13 12:06:33,161: None
+[DEBUG]2016-11-13 12:06:33,161: None
+[DEBUG]2016-11-13 12:06:33,161: None
+[DEBUG]2016-11-13 12:06:33,161: None
+[DEBUG]2016-11-13 12:06:33,161: None
+[DEBUG]2016-11-13 12:06:33,161: None
+[DEBUG]2016-11-13 12:06:33,161: None
+[DEBUG]2016-11-13 12:06:33,161: None
+[DEBUG]2016-11-13 12:06:33,161: None
+[DEBUG]2016-11-13 12:06:33,161: None
+[DEBUG]2016-11-13 12:06:33,161: None
+[DEBUG]2016-11-13 12:06:33,163: None
+[DEBUG]2016-11-13 12:06:33,163: None
+[DEBUG]2016-11-13 12:06:33,163: None
+[DEBUG]2016-11-13 12:06:33,163: None
+[DEBUG]2016-11-13 12:06:33,163: None
+[DEBUG]2016-11-13 12:06:33,163: None
+[DEBUG]2016-11-13 12:06:33,163: None
+[DEBUG]2016-11-13 12:06:33,163: None
+[DEBUG]2016-11-13 12:06:33,163: None
+[DEBUG]2016-11-13 12:06:33,163: None
+[DEBUG]2016-11-13 12:06:33,163: None
+[DEBUG]2016-11-13 12:06:33,163: None
+[DEBUG]2016-11-13 12:06:33,163: None
+[DEBUG]2016-11-13 12:06:33,163: None
+[DEBUG]2016-11-13 12:06:33,163: None
+[DEBUG]2016-11-13 12:06:33,163: None
+[DEBUG]2016-11-13 12:06:33,163: None
+[DEBUG]2016-11-13 12:06:33,163: None
+[DEBUG]2016-11-13 12:06:33,163: None
+[DEBUG]2016-11-13 12:06:33,163: None
+[DEBUG]2016-11-13 12:06:33,163: None
+[DEBUG]2016-11-13 12:06:33,165: None
+[DEBUG]2016-11-13 12:06:33,165: None
+[DEBUG]2016-11-13 12:06:33,165: None
+[DEBUG]2016-11-13 12:06:33,165: None
+[DEBUG]2016-11-13 12:06:33,165: None
+[DEBUG]2016-11-13 12:06:33,165: None
+[DEBUG]2016-11-13 12:06:33,165: None
+[DEBUG]2016-11-13 12:06:33,165: None
+[DEBUG]2016-11-13 12:06:33,165: None
+[DEBUG]2016-11-13 12:06:33,165: None
+[DEBUG]2016-11-13 12:06:33,165: None
+[DEBUG]2016-11-13 12:06:33,165: None
+[DEBUG]2016-11-13 12:06:33,165: None
+[DEBUG]2016-11-13 12:06:33,165: None
+[DEBUG]2016-11-13 12:06:33,165: None
+[DEBUG]2016-11-13 12:06:33,165: None
+[DEBUG]2016-11-13 12:06:33,165: None
+[DEBUG]2016-11-13 12:06:33,165: None
+[DEBUG]2016-11-13 12:06:33,165: None
+[DEBUG]2016-11-13 12:06:33,165: None
+[DEBUG]2016-11-13 12:06:33,165: None
+[DEBUG]2016-11-13 12:06:33,165: None
+[DEBUG]2016-11-13 12:06:33,166: None
+[DEBUG]2016-11-13 12:06:33,166: None
+[DEBUG]2016-11-13 12:06:33,166: None
+[DEBUG]2016-11-13 12:06:33,166: None
+[DEBUG]2016-11-13 12:06:33,166: None
+[DEBUG]2016-11-13 12:06:33,166: None
+[DEBUG]2016-11-13 12:06:33,166: None
+[DEBUG]2016-11-13 12:06:33,166: None
+[DEBUG]2016-11-13 12:06:33,166: None
+[DEBUG]2016-11-13 12:06:33,166: None
+[DEBUG]2016-11-13 12:06:33,166: None
+[DEBUG]2016-11-13 12:06:33,166: None
+[DEBUG]2016-11-13 12:06:33,166: None
+[DEBUG]2016-11-13 12:06:33,166: None
+[DEBUG]2016-11-13 12:06:33,166: None
+[DEBUG]2016-11-13 12:06:33,166: None
+[DEBUG]2016-11-13 12:06:33,166: None
+[DEBUG]2016-11-13 12:06:33,166: None
+[DEBUG]2016-11-13 12:06:33,166: None
+[DEBUG]2016-11-13 12:06:33,166: None
+[DEBUG]2016-11-13 12:06:33,166: None
+[DEBUG]2016-11-13 12:06:33,166: None
+[DEBUG]2016-11-13 12:06:33,166: None
+[DEBUG]2016-11-13 12:06:33,168: None
+[DEBUG]2016-11-13 12:06:33,168: None
+[DEBUG]2016-11-13 12:06:33,168: None
+[DEBUG]2016-11-13 12:06:33,168: None
+[DEBUG]2016-11-13 12:06:33,168: None
+[DEBUG]2016-11-13 12:06:33,168: None
+[DEBUG]2016-11-13 12:06:33,168: None
+[DEBUG]2016-11-13 12:06:33,168: None
+[DEBUG]2016-11-13 12:06:33,168: None
+[DEBUG]2016-11-13 12:06:33,168: None
+[DEBUG]2016-11-13 12:06:33,168: None
+[DEBUG]2016-11-13 12:06:33,168: None
+[DEBUG]2016-11-13 12:06:33,168: None
+[DEBUG]2016-11-13 12:06:33,168: None
+[DEBUG]2016-11-13 12:06:33,168: None
+[DEBUG]2016-11-13 12:06:33,168: None
+[DEBUG]2016-11-13 12:06:33,168: None
+[DEBUG]2016-11-13 12:06:33,168: None
+[DEBUG]2016-11-13 12:06:33,168: None
+[DEBUG]2016-11-13 12:06:33,168: None
+[DEBUG]2016-11-13 12:06:33,168: None
+[DEBUG]2016-11-13 12:06:33,168: None
+[DEBUG]2016-11-13 12:06:33,168: None
+[DEBUG]2016-11-13 12:06:33,168: None
+[DEBUG]2016-11-13 12:06:33,170: None
+[DEBUG]2016-11-13 12:06:33,170: None
+[DEBUG]2016-11-13 12:06:33,170: None
+[DEBUG]2016-11-13 12:06:33,170: None
+[DEBUG]2016-11-13 12:06:33,170: None
+[DEBUG]2016-11-13 12:06:33,170: None
+[DEBUG]2016-11-13 12:06:33,170: None
+[DEBUG]2016-11-13 12:06:33,170: None
+[DEBUG]2016-11-13 12:06:33,170: None
+[DEBUG]2016-11-13 12:06:33,170: None
+[DEBUG]2016-11-13 12:06:33,170: None
+[DEBUG]2016-11-13 12:06:33,170: None
+[DEBUG]2016-11-13 12:06:33,170: None
+[DEBUG]2016-11-13 12:06:33,170: None
+[DEBUG]2016-11-13 12:06:33,170: None
+[DEBUG]2016-11-13 12:06:33,170: None
+[DEBUG]2016-11-13 12:06:33,170: None
+[DEBUG]2016-11-13 12:06:33,170: None
+[DEBUG]2016-11-13 12:06:33,170: None
+[DEBUG]2016-11-13 12:06:33,170: None
+[DEBUG]2016-11-13 12:06:33,170: None
+[DEBUG]2016-11-13 12:06:33,170: None
+[DEBUG]2016-11-13 12:06:33,170: None
+[DEBUG]2016-11-13 12:06:33,170: None
+[DEBUG]2016-11-13 12:06:33,170: None
+[DEBUG]2016-11-13 12:06:33,172: None
+[DEBUG]2016-11-13 12:06:33,172: None
+[DEBUG]2016-11-13 12:06:33,172: None
+[DEBUG]2016-11-13 12:06:33,172: None
+[DEBUG]2016-11-13 12:06:33,172: None
+[DEBUG]2016-11-13 12:06:33,172: None
+[DEBUG]2016-11-13 12:06:33,172: None
+[DEBUG]2016-11-13 12:06:33,172: None
+[DEBUG]2016-11-13 12:06:33,172: None
+[DEBUG]2016-11-13 12:06:33,172: None
+[DEBUG]2016-11-13 12:06:33,172: None
+[DEBUG]2016-11-13 12:06:33,172: None
+[DEBUG]2016-11-13 12:06:33,172: None
+[DEBUG]2016-11-13 12:06:33,172: None
+[DEBUG]2016-11-13 12:06:33,172: None
+[DEBUG]2016-11-13 12:06:33,172: None
+[DEBUG]2016-11-13 12:06:33,172: None
+[DEBUG]2016-11-13 12:06:33,172: None
+[DEBUG]2016-11-13 12:06:33,172: None
+[DEBUG]2016-11-13 12:06:33,172: None
+[DEBUG]2016-11-13 12:06:33,172: None
+[DEBUG]2016-11-13 12:06:33,172: None
+[DEBUG]2016-11-13 12:06:33,172: None
+[DEBUG]2016-11-13 12:06:33,172: None
+[DEBUG]2016-11-13 12:06:33,172: None
+[DEBUG]2016-11-13 12:06:33,172: None
+[DEBUG]2016-11-13 12:07:47,244: <_sre.SRE_Match object; span=(1088, 1944), match='typedef enum {\n    ES_NO_EVENT, ES_ERROR, /* use>
+[DEBUG]2016-11-13 12:07:47,245: ['ES_NO_EVENT', 'ES_ERROR', 'ES_INIT', 'ES_ENTRY', 'ES_EXIT', 'ES_KEYINPUT', 'ES_LISTEVENTS', 'ES_TIMEOUT', 'ES_TIMERACTIVE', 'ES_TIMERSTOPPED', 'OFF_TAPE', 'ON_TAPE', 'TAPE_TRIGGERED', 'TW_TRIGGERED', 'TRACK_WIRE_ON', 'TRACK_WIRE_OFF', 'BEACON_OFF', 'BEACON_ON', 'BUMPED', 'UNLOADED', 'BATTERY_CONNECTED', 'BATTERY_DISCONNECTED', 'NUMBEROFEVENTS']
+[DEBUG]2016-11-13 12:07:47,245: 
+static const char *EventNames[] = {
+	"ES_NO_EVENT",
+	"ES_ERROR",
+	"ES_INIT",
+	"ES_ENTRY",
+	"ES_EXIT",
+	"ES_KEYINPUT",
+	"ES_LISTEVENTS",
+	"ES_TIMEOUT",
+	"ES_TIMERACTIVE",
+	"ES_TIMERSTOPPED",
+	"OFF_TAPE",
+	"ON_TAPE",
+	"TAPE_TRIGGERED",
+	"TW_TRIGGERED",
+	"TRACK_WIRE_ON",
+	"TRACK_WIRE_OFF",
+	"BEACON_OFF",
+	"BEACON_ON",
+	"BUMPED",
+	"UNLOADED",
+	"BATTERY_CONNECTED",
+	"BATTERY_DISCONNECTED",
+	"NUMBEROFEVENTS",
+};
+
+
+[DEBUG]2016-11-13 12:07:47,248: <_sre.SRE_Match object; span=(1173, 1349), match='typedef enum {\n    InitPState,\n    AmmoSearch,\>
+[DEBUG]2016-11-13 12:07:47,248: <_sre.SRE_Match object; span=(1173, 1349), match='typedef enum {\n    InitPState,\n    AmmoSearch,\>
+[DEBUG]2016-11-13 12:07:47,248: ['InitPState', 'AmmoSearch', 'AmmoLoad', 'FirstTargetSearch', 'FirstTargetUnload', 'SecondTargetSearch', 'SecondTargetUnload']
+[DEBUG]2016-11-13 12:07:47,248: ['InitPState', 'AmmoSearch', 'AmmoLoad', 'FirstTargetSearch', 'FirstTargetUnload', 'SecondTargetSearch', 'SecondTargetUnload']
+[DEBUG]2016-11-13 12:07:47,248: 
+static const char *StateNames[] = {
+	"InitPState",
+	"AmmoSearch",
+	"AmmoLoad",
+	"FirstTargetSearch",
+	"FirstTargetUnload",
+	"SecondTargetSearch",
+	"SecondTargetUnload",
+};
+
+
+[DEBUG]2016-11-13 12:07:47,248: 
+static const char *StateNames[] = {
+	"InitPState",
+	"AmmoSearch",
+	"AmmoLoad",
+	"FirstTargetSearch",
+	"FirstTargetUnload",
+	"SecondTargetSearch",
+	"SecondTargetUnload",
+};
+
+
+[DEBUG]2016-11-13 12:07:47,249: <_sre.SRE_Match object; span=(1176, 1261), match='typedef enum {\n    InitPState,\n    Forward,\n  >
+[DEBUG]2016-11-13 12:07:47,249: <_sre.SRE_Match object; span=(1176, 1261), match='typedef enum {\n    InitPState,\n    Forward,\n  >
+[DEBUG]2016-11-13 12:07:47,249: <_sre.SRE_Match object; span=(1176, 1261), match='typedef enum {\n    InitPState,\n    Forward,\n  >
+[DEBUG]2016-11-13 12:07:47,249: ['InitPState', 'Forward', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 12:07:47,249: ['InitPState', 'Forward', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 12:07:47,249: ['InitPState', 'Forward', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 12:07:47,249: 
+static const char *StateNames[] = {
+	"InitPState",
+	"Forward",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 12:07:47,249: 
+static const char *StateNames[] = {
+	"InitPState",
+	"Forward",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 12:07:47,249: 
+static const char *StateNames[] = {
+	"InitPState",
+	"Forward",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 12:07:47,250: <_sre.SRE_Match object; span=(1171, 1243), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 12:07:47,250: <_sre.SRE_Match object; span=(1171, 1243), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 12:07:47,250: <_sre.SRE_Match object; span=(1171, 1243), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 12:07:47,250: <_sre.SRE_Match object; span=(1171, 1243), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 12:07:47,251: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 12:07:47,251: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 12:07:47,251: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 12:07:47,251: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 12:07:47,251: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 12:07:47,251: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 12:07:47,251: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 12:07:47,251: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 12:07:47,252: <_sre.SRE_Match object; span=(1183, 1255), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 12:07:47,252: <_sre.SRE_Match object; span=(1183, 1255), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 12:07:47,252: <_sre.SRE_Match object; span=(1183, 1255), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 12:07:47,252: <_sre.SRE_Match object; span=(1183, 1255), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 12:07:47,252: <_sre.SRE_Match object; span=(1183, 1255), match='typedef enum {\n    InitPState,\n    TankTurn,\n >
+[DEBUG]2016-11-13 12:07:47,252: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 12:07:47,252: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 12:07:47,252: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 12:07:47,252: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 12:07:47,252: ['InitPState', 'TankTurn', 'Backward']
+[DEBUG]2016-11-13 12:07:47,252: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 12:07:47,252: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 12:07:47,252: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 12:07:47,252: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 12:07:47,252: 
+static const char *StateNames[] = {
+	"InitPState",
+	"TankTurn",
+	"Backward",
+};
+
+
+[DEBUG]2016-11-13 12:07:47,254: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 12:07:47,254: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 12:07:47,254: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 12:07:47,254: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 12:07:47,254: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 12:07:47,254: <_sre.SRE_Match object; span=(1189, 1273), match='typedef enum {\n    InitPState,\n    PivotTurn,\n>
+[DEBUG]2016-11-13 12:07:47,254: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 12:07:47,254: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 12:07:47,254: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 12:07:47,254: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 12:07:47,254: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 12:07:47,254: ['InitPState', 'PivotTurn', 'Forward', 'Unload']
+[DEBUG]2016-11-13 12:07:47,254: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 12:07:47,254: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 12:07:47,254: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 12:07:47,254: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 12:07:47,254: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 12:07:47,254: 
+static const char *StateNames[] = {
+	"InitPState",
+	"PivotTurn",
+	"Forward",
+	"Unload",
+};
+
+
+[DEBUG]2016-11-13 12:07:47,255: None
+[DEBUG]2016-11-13 12:07:47,255: None
+[DEBUG]2016-11-13 12:07:47,255: None
+[DEBUG]2016-11-13 12:07:47,255: None
+[DEBUG]2016-11-13 12:07:47,255: None
+[DEBUG]2016-11-13 12:07:47,255: None
+[DEBUG]2016-11-13 12:07:47,255: None
+[DEBUG]2016-11-13 12:07:47,256: None
+[DEBUG]2016-11-13 12:07:47,256: None
+[DEBUG]2016-11-13 12:07:47,256: None
+[DEBUG]2016-11-13 12:07:47,256: None
+[DEBUG]2016-11-13 12:07:47,256: None
+[DEBUG]2016-11-13 12:07:47,256: None
+[DEBUG]2016-11-13 12:07:47,256: None
+[DEBUG]2016-11-13 12:07:47,256: None
+[DEBUG]2016-11-13 12:07:47,258: None
+[DEBUG]2016-11-13 12:07:47,258: None
+[DEBUG]2016-11-13 12:07:47,258: None
+[DEBUG]2016-11-13 12:07:47,258: None
+[DEBUG]2016-11-13 12:07:47,258: None
+[DEBUG]2016-11-13 12:07:47,258: None
+[DEBUG]2016-11-13 12:07:47,258: None
+[DEBUG]2016-11-13 12:07:47,258: None
+[DEBUG]2016-11-13 12:07:47,258: None
+[DEBUG]2016-11-13 12:07:47,259: None
+[DEBUG]2016-11-13 12:07:47,259: None
+[DEBUG]2016-11-13 12:07:47,259: None
+[DEBUG]2016-11-13 12:07:47,259: None
+[DEBUG]2016-11-13 12:07:47,259: None
+[DEBUG]2016-11-13 12:07:47,259: None
+[DEBUG]2016-11-13 12:07:47,259: None
+[DEBUG]2016-11-13 12:07:47,259: None
+[DEBUG]2016-11-13 12:07:47,259: None
+[DEBUG]2016-11-13 12:07:47,259: None
+[DEBUG]2016-11-13 12:07:47,260: None
+[DEBUG]2016-11-13 12:07:47,260: None
+[DEBUG]2016-11-13 12:07:47,260: None
+[DEBUG]2016-11-13 12:07:47,260: None
+[DEBUG]2016-11-13 12:07:47,260: None
+[DEBUG]2016-11-13 12:07:47,260: None
+[DEBUG]2016-11-13 12:07:47,260: None
+[DEBUG]2016-11-13 12:07:47,260: None
+[DEBUG]2016-11-13 12:07:47,260: None
+[DEBUG]2016-11-13 12:07:47,260: None
+[DEBUG]2016-11-13 12:07:47,260: None
+[DEBUG]2016-11-13 12:07:47,261: None
+[DEBUG]2016-11-13 12:07:47,261: None
+[DEBUG]2016-11-13 12:07:47,261: None
+[DEBUG]2016-11-13 12:07:47,261: None
+[DEBUG]2016-11-13 12:07:47,261: None
+[DEBUG]2016-11-13 12:07:47,261: None
+[DEBUG]2016-11-13 12:07:47,261: None
+[DEBUG]2016-11-13 12:07:47,261: None
+[DEBUG]2016-11-13 12:07:47,261: None
+[DEBUG]2016-11-13 12:07:47,261: None
+[DEBUG]2016-11-13 12:07:47,261: None
+[DEBUG]2016-11-13 12:07:47,261: None
+[DEBUG]2016-11-13 12:07:47,262: None
+[DEBUG]2016-11-13 12:07:47,262: None
+[DEBUG]2016-11-13 12:07:47,262: None
+[DEBUG]2016-11-13 12:07:47,262: None
+[DEBUG]2016-11-13 12:07:47,262: None
+[DEBUG]2016-11-13 12:07:47,262: None
+[DEBUG]2016-11-13 12:07:47,262: None
+[DEBUG]2016-11-13 12:07:47,262: None
+[DEBUG]2016-11-13 12:07:47,262: None
+[DEBUG]2016-11-13 12:07:47,262: None
+[DEBUG]2016-11-13 12:07:47,262: None
+[DEBUG]2016-11-13 12:07:47,262: None
+[DEBUG]2016-11-13 12:07:47,262: None
+[DEBUG]2016-11-13 12:07:47,264: None
+[DEBUG]2016-11-13 12:07:47,264: None
+[DEBUG]2016-11-13 12:07:47,264: None
+[DEBUG]2016-11-13 12:07:47,264: None
+[DEBUG]2016-11-13 12:07:47,264: None
+[DEBUG]2016-11-13 12:07:47,264: None
+[DEBUG]2016-11-13 12:07:47,264: None
+[DEBUG]2016-11-13 12:07:47,264: None
+[DEBUG]2016-11-13 12:07:47,264: None
+[DEBUG]2016-11-13 12:07:47,264: None
+[DEBUG]2016-11-13 12:07:47,264: None
+[DEBUG]2016-11-13 12:07:47,264: None
+[DEBUG]2016-11-13 12:07:47,264: None
+[DEBUG]2016-11-13 12:07:47,264: None
+[DEBUG]2016-11-13 12:07:47,265: None
+[DEBUG]2016-11-13 12:07:47,265: None
+[DEBUG]2016-11-13 12:07:47,265: None
+[DEBUG]2016-11-13 12:07:47,265: None
+[DEBUG]2016-11-13 12:07:47,265: None
+[DEBUG]2016-11-13 12:07:47,265: None
+[DEBUG]2016-11-13 12:07:47,265: None
+[DEBUG]2016-11-13 12:07:47,265: None
+[DEBUG]2016-11-13 12:07:47,265: None
+[DEBUG]2016-11-13 12:07:47,265: None
+[DEBUG]2016-11-13 12:07:47,265: None
+[DEBUG]2016-11-13 12:07:47,265: None
+[DEBUG]2016-11-13 12:07:47,265: None
+[DEBUG]2016-11-13 12:07:47,265: None
+[DEBUG]2016-11-13 12:07:47,265: None
+[DEBUG]2016-11-13 12:07:47,267: None
+[DEBUG]2016-11-13 12:07:47,267: None
+[DEBUG]2016-11-13 12:07:47,267: None
+[DEBUG]2016-11-13 12:07:47,267: None
+[DEBUG]2016-11-13 12:07:47,267: None
+[DEBUG]2016-11-13 12:07:47,267: None
+[DEBUG]2016-11-13 12:07:47,267: None
+[DEBUG]2016-11-13 12:07:47,267: None
+[DEBUG]2016-11-13 12:07:47,267: None
+[DEBUG]2016-11-13 12:07:47,267: None
+[DEBUG]2016-11-13 12:07:47,267: None
+[DEBUG]2016-11-13 12:07:47,267: None
+[DEBUG]2016-11-13 12:07:47,267: None
+[DEBUG]2016-11-13 12:07:47,267: None
+[DEBUG]2016-11-13 12:07:47,267: None
+[DEBUG]2016-11-13 12:07:47,267: None
+[DEBUG]2016-11-13 12:07:47,267: None
+[DEBUG]2016-11-13 12:07:47,267: None
+[DEBUG]2016-11-13 12:07:47,267: None
+[DEBUG]2016-11-13 12:07:47,267: None
+[DEBUG]2016-11-13 12:07:47,267: None
+[DEBUG]2016-11-13 12:07:47,267: None
+[DEBUG]2016-11-13 12:07:47,267: None
+[DEBUG]2016-11-13 12:07:47,267: None
+[DEBUG]2016-11-13 12:07:47,267: None
+[DEBUG]2016-11-13 12:07:47,267: None
+[DEBUG]2016-11-13 12:07:47,267: None
+[DEBUG]2016-11-13 12:07:47,267: None
+[DEBUG]2016-11-13 12:07:47,267: None
+[DEBUG]2016-11-13 12:07:47,267: None
+[DEBUG]2016-11-13 12:07:47,267: None
+[DEBUG]2016-11-13 12:07:47,267: None
+[DEBUG]2016-11-13 12:07:47,267: None
+[DEBUG]2016-11-13 12:07:47,269: None
+[DEBUG]2016-11-13 12:07:47,269: None
+[DEBUG]2016-11-13 12:07:47,269: None
+[DEBUG]2016-11-13 12:07:47,269: None
+[DEBUG]2016-11-13 12:07:47,269: None
+[DEBUG]2016-11-13 12:07:47,269: None
+[DEBUG]2016-11-13 12:07:47,269: None
+[DEBUG]2016-11-13 12:07:47,269: None
+[DEBUG]2016-11-13 12:07:47,269: None
+[DEBUG]2016-11-13 12:07:47,269: None
+[DEBUG]2016-11-13 12:07:47,269: None
+[DEBUG]2016-11-13 12:07:47,269: None
+[DEBUG]2016-11-13 12:07:47,269: None
+[DEBUG]2016-11-13 12:07:47,269: None
+[DEBUG]2016-11-13 12:07:47,269: None
+[DEBUG]2016-11-13 12:07:47,269: None
+[DEBUG]2016-11-13 12:07:47,269: None
+[DEBUG]2016-11-13 12:07:47,269: None
+[DEBUG]2016-11-13 12:07:47,271: None
+[DEBUG]2016-11-13 12:07:47,271: None
+[DEBUG]2016-11-13 12:07:47,271: None
+[DEBUG]2016-11-13 12:07:47,271: None
+[DEBUG]2016-11-13 12:07:47,271: None
+[DEBUG]2016-11-13 12:07:47,271: None
+[DEBUG]2016-11-13 12:07:47,271: None
+[DEBUG]2016-11-13 12:07:47,271: None
+[DEBUG]2016-11-13 12:07:47,271: None
+[DEBUG]2016-11-13 12:07:47,271: None
+[DEBUG]2016-11-13 12:07:47,271: None
+[DEBUG]2016-11-13 12:07:47,271: None
+[DEBUG]2016-11-13 12:07:47,271: None
+[DEBUG]2016-11-13 12:07:47,271: None
+[DEBUG]2016-11-13 12:07:47,271: None
+[DEBUG]2016-11-13 12:07:47,271: None
+[DEBUG]2016-11-13 12:07:47,271: None
+[DEBUG]2016-11-13 12:07:47,271: None
+[DEBUG]2016-11-13 12:07:47,271: None
+[DEBUG]2016-11-13 12:07:47,272: None
+[DEBUG]2016-11-13 12:07:47,272: None
+[DEBUG]2016-11-13 12:07:47,272: None
+[DEBUG]2016-11-13 12:07:47,272: None
+[DEBUG]2016-11-13 12:07:47,272: None
+[DEBUG]2016-11-13 12:07:47,272: None
+[DEBUG]2016-11-13 12:07:47,272: None
+[DEBUG]2016-11-13 12:07:47,272: None
+[DEBUG]2016-11-13 12:07:47,272: None
+[DEBUG]2016-11-13 12:07:47,272: None
+[DEBUG]2016-11-13 12:07:47,272: None
+[DEBUG]2016-11-13 12:07:47,272: None
+[DEBUG]2016-11-13 12:07:47,272: None
+[DEBUG]2016-11-13 12:07:47,272: None
+[DEBUG]2016-11-13 12:07:47,272: None
+[DEBUG]2016-11-13 12:07:47,272: None
+[DEBUG]2016-11-13 12:07:47,272: None
+[DEBUG]2016-11-13 12:07:47,272: None
+[DEBUG]2016-11-13 12:07:47,272: None
+[DEBUG]2016-11-13 12:07:47,272: None
+[DEBUG]2016-11-13 12:07:47,274: None
+[DEBUG]2016-11-13 12:07:47,274: None
+[DEBUG]2016-11-13 12:07:47,274: None
+[DEBUG]2016-11-13 12:07:47,274: None
+[DEBUG]2016-11-13 12:07:47,274: None
+[DEBUG]2016-11-13 12:07:47,274: None
+[DEBUG]2016-11-13 12:07:47,274: None
+[DEBUG]2016-11-13 12:07:47,274: None
+[DEBUG]2016-11-13 12:07:47,274: None
+[DEBUG]2016-11-13 12:07:47,274: None
+[DEBUG]2016-11-13 12:07:47,274: None
+[DEBUG]2016-11-13 12:07:47,274: None
+[DEBUG]2016-11-13 12:07:47,274: None
+[DEBUG]2016-11-13 12:07:47,274: None
+[DEBUG]2016-11-13 12:07:47,274: None
+[DEBUG]2016-11-13 12:07:47,274: None
+[DEBUG]2016-11-13 12:07:47,274: None
+[DEBUG]2016-11-13 12:07:47,274: None
+[DEBUG]2016-11-13 12:07:47,274: None
+[DEBUG]2016-11-13 12:07:47,274: None
+[DEBUG]2016-11-13 12:07:47,274: None
+[DEBUG]2016-11-13 12:07:47,276: None
+[DEBUG]2016-11-13 12:07:47,276: None
+[DEBUG]2016-11-13 12:07:47,276: None
+[DEBUG]2016-11-13 12:07:47,276: None
+[DEBUG]2016-11-13 12:07:47,276: None
+[DEBUG]2016-11-13 12:07:47,276: None
+[DEBUG]2016-11-13 12:07:47,276: None
+[DEBUG]2016-11-13 12:07:47,276: None
+[DEBUG]2016-11-13 12:07:47,276: None
+[DEBUG]2016-11-13 12:07:47,276: None
+[DEBUG]2016-11-13 12:07:47,276: None
+[DEBUG]2016-11-13 12:07:47,276: None
+[DEBUG]2016-11-13 12:07:47,276: None
+[DEBUG]2016-11-13 12:07:47,276: None
+[DEBUG]2016-11-13 12:07:47,276: None
+[DEBUG]2016-11-13 12:07:47,276: None
+[DEBUG]2016-11-13 12:07:47,276: None
+[DEBUG]2016-11-13 12:07:47,276: None
+[DEBUG]2016-11-13 12:07:47,276: None
+[DEBUG]2016-11-13 12:07:47,276: None
+[DEBUG]2016-11-13 12:07:47,276: None
+[DEBUG]2016-11-13 12:07:47,276: None
+[DEBUG]2016-11-13 12:07:47,277: None
+[DEBUG]2016-11-13 12:07:47,277: None
+[DEBUG]2016-11-13 12:07:47,277: None
+[DEBUG]2016-11-13 12:07:47,277: None
+[DEBUG]2016-11-13 12:07:47,277: None
+[DEBUG]2016-11-13 12:07:47,277: None
+[DEBUG]2016-11-13 12:07:47,277: None
+[DEBUG]2016-11-13 12:07:47,277: None
+[DEBUG]2016-11-13 12:07:47,277: None
+[DEBUG]2016-11-13 12:07:47,277: None
+[DEBUG]2016-11-13 12:07:47,277: None
+[DEBUG]2016-11-13 12:07:47,277: None
+[DEBUG]2016-11-13 12:07:47,277: None
+[DEBUG]2016-11-13 12:07:47,277: None
+[DEBUG]2016-11-13 12:07:47,277: None
+[DEBUG]2016-11-13 12:07:47,277: None
+[DEBUG]2016-11-13 12:07:47,277: None
+[DEBUG]2016-11-13 12:07:47,277: None
+[DEBUG]2016-11-13 12:07:47,277: None
+[DEBUG]2016-11-13 12:07:47,277: None
+[DEBUG]2016-11-13 12:07:47,277: None
+[DEBUG]2016-11-13 12:07:47,277: None
+[DEBUG]2016-11-13 12:07:47,277: None
+[DEBUG]2016-11-13 12:07:47,279: None
+[DEBUG]2016-11-13 12:07:47,279: None
+[DEBUG]2016-11-13 12:07:47,279: None
+[DEBUG]2016-11-13 12:07:47,279: None
+[DEBUG]2016-11-13 12:07:47,279: None
+[DEBUG]2016-11-13 12:07:47,279: None
+[DEBUG]2016-11-13 12:07:47,279: None
+[DEBUG]2016-11-13 12:07:47,279: None
+[DEBUG]2016-11-13 12:07:47,279: None
+[DEBUG]2016-11-13 12:07:47,279: None
+[DEBUG]2016-11-13 12:07:47,279: None
+[DEBUG]2016-11-13 12:07:47,279: None
+[DEBUG]2016-11-13 12:07:47,279: None
+[DEBUG]2016-11-13 12:07:47,279: None
+[DEBUG]2016-11-13 12:07:47,279: None
+[DEBUG]2016-11-13 12:07:47,279: None
+[DEBUG]2016-11-13 12:07:47,279: None
+[DEBUG]2016-11-13 12:07:47,279: None
+[DEBUG]2016-11-13 12:07:47,279: None
+[DEBUG]2016-11-13 12:07:47,279: None
+[DEBUG]2016-11-13 12:07:47,279: None
+[DEBUG]2016-11-13 12:07:47,279: None
+[DEBUG]2016-11-13 12:07:47,279: None
+[DEBUG]2016-11-13 12:07:47,279: None
+[DEBUG]2016-11-13 12:07:47,280: None
+[DEBUG]2016-11-13 12:07:47,280: None
+[DEBUG]2016-11-13 12:07:47,280: None
+[DEBUG]2016-11-13 12:07:47,280: None
+[DEBUG]2016-11-13 12:07:47,280: None
+[DEBUG]2016-11-13 12:07:47,280: None
+[DEBUG]2016-11-13 12:07:47,280: None
+[DEBUG]2016-11-13 12:07:47,280: None
+[DEBUG]2016-11-13 12:07:47,280: None
+[DEBUG]2016-11-13 12:07:47,280: None
+[DEBUG]2016-11-13 12:07:47,280: None
+[DEBUG]2016-11-13 12:07:47,280: None
+[DEBUG]2016-11-13 12:07:47,280: None
+[DEBUG]2016-11-13 12:07:47,280: None
+[DEBUG]2016-11-13 12:07:47,280: None
+[DEBUG]2016-11-13 12:07:47,280: None
+[DEBUG]2016-11-13 12:07:47,280: None
+[DEBUG]2016-11-13 12:07:47,280: None
+[DEBUG]2016-11-13 12:07:47,280: None
+[DEBUG]2016-11-13 12:07:47,280: None
+[DEBUG]2016-11-13 12:07:47,280: None
+[DEBUG]2016-11-13 12:07:47,280: None
+[DEBUG]2016-11-13 12:07:47,280: None
+[DEBUG]2016-11-13 12:07:47,280: None
+[DEBUG]2016-11-13 12:07:47,280: None
+[DEBUG]2016-11-13 12:07:47,282: None
+[DEBUG]2016-11-13 12:07:47,282: None
+[DEBUG]2016-11-13 12:07:47,282: None
+[DEBUG]2016-11-13 12:07:47,282: None
+[DEBUG]2016-11-13 12:07:47,282: None
+[DEBUG]2016-11-13 12:07:47,282: None
+[DEBUG]2016-11-13 12:07:47,282: None
+[DEBUG]2016-11-13 12:07:47,282: None
+[DEBUG]2016-11-13 12:07:47,282: None
+[DEBUG]2016-11-13 12:07:47,282: None
+[DEBUG]2016-11-13 12:07:47,282: None
+[DEBUG]2016-11-13 12:07:47,282: None
+[DEBUG]2016-11-13 12:07:47,282: None
+[DEBUG]2016-11-13 12:07:47,282: None
+[DEBUG]2016-11-13 12:07:47,282: None
+[DEBUG]2016-11-13 12:07:47,282: None
+[DEBUG]2016-11-13 12:07:47,282: None
+[DEBUG]2016-11-13 12:07:47,282: None
+[DEBUG]2016-11-13 12:07:47,282: None
+[DEBUG]2016-11-13 12:07:47,282: None
+[DEBUG]2016-11-13 12:07:47,282: None
+[DEBUG]2016-11-13 12:07:47,282: None
+[DEBUG]2016-11-13 12:07:47,282: None
+[DEBUG]2016-11-13 12:07:47,282: None
+[DEBUG]2016-11-13 12:07:47,282: None
+[DEBUG]2016-11-13 12:07:47,282: None

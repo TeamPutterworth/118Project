@@ -38,6 +38,7 @@
         <itemPath>ES_Configure.h</itemPath>
         <itemPath>C:/CMPE118/include/AD.h</itemPath>
         <itemPath>C:/CMPE118/include/BOARD.h</itemPath>
+        <itemPath>C:/CMPE118/include/RC_Servo.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f6" displayName="Events" projectFiles="true">
         <itemPath>EventCheckers/inc/EventChecker.h</itemPath>
@@ -82,6 +83,7 @@
         <itemPath>C:/CMPE118/src/LED.c</itemPath>
         <itemPath>C:/CMPE118/src/ES_KeyboardInput.c</itemPath>
         <itemPath>C:/CMPE118/src/serial.c</itemPath>
+        <itemPath>C:/CMPE118/src/RC_Servo.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f6" displayName="Events" projectFiles="true">
         <itemPath>EventCheckers/src/EventChecker.c</itemPath>
