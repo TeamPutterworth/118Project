@@ -38,19 +38,7 @@
  *        execution. It will post an ES_INIT event to the appropriate event
  *        queue, which will be handled inside RunAmmoSearchSubHSM function.
  */
-uint8_t InitAmmoSearchSubHSM(uint8_t Priority);
-
-
-/**
- * @Function PostAmmoSearchSubHSM(ES_Event ThisEvent)
- * @param ThisEvent - the event (type and param) to be posted to queue
- * @return TRUE or FALSE
- * @brief This function is a wrapper to the queue posting function.
- */
-uint8_t PostAmmoSearchSubHSM(ES_Event ThisEvent);
-
-
-
+uint8_t InitAmmoSearchSubHSM(void);
 
 /**
  * @Function RunAmmoSearchSubHSM(ES_Event ThisEvent)

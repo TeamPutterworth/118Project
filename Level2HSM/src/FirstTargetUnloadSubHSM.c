@@ -1,5 +1,5 @@
 /*
- * File:   FirstTargetUnloadSubHSM.h
+ * File:   FirstTargetUnloadSubSubHSM.h
  * Author: jdgrant
  *
  * This file includes the top level of our hierarchal state machine. At this level
@@ -70,28 +70,16 @@ static uint8_t MyPriority;
  *        execution. It will post an ES_INIT event to the appropriate event
  *        queue, which will be handled inside RunFirstTargetUnloadSubHSM function.
  */
-uint8_t InitFirstTargetUnloadSubHSM(uint8_t Priority)
+uint8_t InitFirstTargetUnloadSubHSM(void)
 {
-    MyPriority = Priority;
-    // put us into the Initial PseudoState
-    CurrentState = InitPState;
-    // post the initial transition event
-    if (ES_PostToService(MyPriority, INIT_EVENT) == TRUE) {
-        return TRUE;
-    } else {
-        return FALSE;
-    }
-}
+    ES_Event returnEvent;
 
-/**
- * @Function PostFirstTargetUnloadSubHSM(ES_Event ThisEvent)
- * @param ThisEvent - the event (type and param) to be posted to queue
- * @return TRUE or FALSE
- * @brief This function is a wrapper to the queue posting function.
- */
-uint8_t PostFirstTargetUnloadSubHSM(ES_Event ThisEvent)
-{
-    return ES_PostToService(MyPriority, ThisEvent);
+    CurrentState = InitPState;
+    returnEvent = RunFirstTargetUnloadSubHSM(INIT_EVENT);
+    if (returnEvent.EventType == ES_NO_EVENT) {
+        return TRUE;
+    }
+    return FALSE;
 }
 
 /**
@@ -117,7 +105,7 @@ ES_Event RunFirstTargetUnloadSubHSM(ES_Event ThisEvent)
             // transition from the initial pseudo-state into the actual
             // initial state
             // Initialize all sub-state machines
-            //InitAmmoLoadHSM();
+            //InitAmmoLoadSubHSM();
             // now put the machine into the actual initial state
             nextState = PivotTurn;
             makeTransition = TRUE;
@@ -131,18 +119,21 @@ ES_Event RunFirstTargetUnloadSubHSM(ES_Event ThisEvent)
             case ES_ENTRY:
                 // we arbitrarily prefer right. all hail right, and satan
                 pivotTurnRight();
+                ThisEvent.EventType = ES_NO_EVENT;
                 break;
             case TAPE_TRIGGERED:
                 if (((ThisEvent.EventParam & TS_FR) >> FR_SH) && ((ThisEvent.EventParam & TS_FL) >> FL_SH))
                 {
                     nextState = Forward;
                     makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
                 }
                 else if (!(((ThisEvent.EventParam & TS_FR) >> FR_SH) && ((ThisEvent.EventParam & TS_FL) >> FL_SH)
                         && ((ThisEvent.EventParam & TS_FM) >> FM_SH)))
                 {
                     nextState = Forward;
                     makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
                 }
                 break;
             case ES_NO_EVENT:
@@ -155,22 +146,26 @@ ES_Event RunFirstTargetUnloadSubHSM(ES_Event ThisEvent)
         switch (ThisEvent.EventType) {
             case ES_ENTRY:
                 moveForward();
+                ThisEvent.EventType = ES_NO_EVENT;
                 break;
             case TAPE_TRIGGERED:
                 if(!((ThisEvent.EventParam & TS_FR) >> FR_SH))
                 {
                     nextState = Forward;
                     makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
                 }
                 else if(!((ThisEvent.EventParam & TS_FL) >> FL_SH))
                 {
                     nextState = Forward;
                     makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
                 }
                 else if(((ThisEvent.EventParam & TS_FM) >> FM_SH))
                 {
                     nextState = Unload;
                     makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
                 }
                 break;
             case ES_NO_EVENT:
@@ -181,6 +176,7 @@ ES_Event RunFirstTargetUnloadSubHSM(ES_Event ThisEvent)
     case Unload:
         switch (ThisEvent.EventType) {
             case ES_ENTRY:
+                ThisEvent.EventType = ES_NO_EVENT;
                 break;
             case ES_NO_EVENT:
             default:

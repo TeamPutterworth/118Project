@@ -1,5 +1,5 @@
 /*
- * File:   FirstTargetSearchHSM.h
+ * File:   FirstTargetSearchSubHSM.h
  * Author: jdgrant
  *
  * This file includes the top level of our hierarchal state machine. At this level
@@ -15,7 +15,7 @@
 #include "ES_Configure.h"
 #include "ES_Framework.h"
 #include "BOARD.h"
-#include "FirstTargetSearchHSM.h"
+#include "FirstTargetSearchSubHSM.h"
 #include "sensors.h"
 #include "motor.h"
 
@@ -61,49 +61,36 @@ static uint8_t MyPriority;
  ******************************************************************************/
 
 /**
- * @Function InitFirstTargetSearchHSM(uint8_t Priority)
+ * @Function InitFirstTargetSearchSubHSM(uint8_t Priority)
  * @param Priority - internal variable to track which event queue to use
  * @return TRUE or FALSE
  * @brief This will get called by the framework at the beginning of the code
  *        execution. It will post an ES_INIT event to the appropriate event
- *        queue, which will be handled inside RunFirstTargetSearchHSM function.
+ *        queue, which will be handled inside RunFirstTargetSearchSubHSM function.
  */
-uint8_t InitFirstTargetSearchHSM(uint8_t Priority)
+uint8_t InitFirstTargetSearchSubHSM(void)
 {
-    MyPriority = Priority;
-    // put us into the Initial PseudoState
+    ES_Event returnEvent;
+
     CurrentState = InitPState;
-    // post the initial transition event
-    if (ES_PostToService(MyPriority, INIT_EVENT) == TRUE) {
+    returnEvent = RunFirstTargetSearchSubHSM(INIT_EVENT);
+    if (returnEvent.EventType == ES_NO_EVENT) {
         return TRUE;
-    } else {
-        return FALSE;
     }
+    return FALSE;
 }
 
 /**
- * @Function PostFirstTargetSearchHSM(ES_Event ThisEvent)
- * @param ThisEvent - the event (type and param) to be posted to queue
- * @return TRUE or FALSE
- * @brief This function is a wrapper to the queue posting function.
- */
-uint8_t PostFirstTargetSearchHSM(ES_Event ThisEvent)
-{
-    return ES_PostToService(MyPriority, ThisEvent);
-}
-
-/**
- * @Function RunFirstTargetSearchHSM(ES_Event ThisEvent)
+ * @Function RunFirstTargetSearchSubHSM(ES_Event ThisEvent)
  * @param ThisEvent - the event (type and param) to be responded.
  * @return Event - return event (type and param), in general should be ES_NO_EVENT
  * @brief This is the implementation for the top level of our state machine and 
  *        it contains the basic logic for our autonomous robot to meet the minimum
  *        specs of the competition.
  */
-ES_Event RunFirstTargetSearchHSM(ES_Event ThisEvent)
+ES_Event RunFirstTargetSearchSubHSM(ES_Event ThisEvent)
 {
     uint8_t makeTransition = FALSE; // use to flag transition
-    static uint8_t turnParam; // use this flag to turnCW or turnCCW
     HSMState_t nextState; // <- change type to correct enum
 
     ES_Tattle(); // trace call stack
@@ -116,7 +103,7 @@ ES_Event RunFirstTargetSearchHSM(ES_Event ThisEvent)
             // transition from the initial pseudo-state into the actual
             // initial state
             // Initialize all sub-state machines
-            //InitAmmoLoadHSM();
+            //InitAmmoLoadSubHSM();
             // now put the machine into the actual initial state
             nextState = TankTurn;
             makeTransition = TRUE;
@@ -129,6 +116,7 @@ ES_Event RunFirstTargetSearchHSM(ES_Event ThisEvent)
         switch (ThisEvent.EventType) {  
             case ES_ENTRY:
                 tankTurnRight();
+                ThisEvent.EventType = ES_NO_EVENT;
                 break;
             case TW_TRIGGERED:
                 // This value assumes we are using only middle and back track wires, meaning both bits are set high
@@ -136,6 +124,7 @@ ES_Event RunFirstTargetSearchHSM(ES_Event ThisEvent)
                 {
                     nextState = Backward;
                     makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
                 }
                 break;
             case ES_NO_EVENT:
@@ -148,6 +137,7 @@ ES_Event RunFirstTargetSearchHSM(ES_Event ThisEvent)
         switch (ThisEvent.EventType) {
             case ES_ENTRY:
                 moveBackward();
+                ThisEvent.EventType = ES_NO_EVENT;
                 break;
             case TW_TRIGGERED:
                 // This value assumes we are using only middle and back track wires, meaning both bits are set high
@@ -155,6 +145,7 @@ ES_Event RunFirstTargetSearchHSM(ES_Event ThisEvent)
                 {
                     nextState = TankTurn;
                     makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
                 }
                 break;
             case ES_NO_EVENT:
@@ -169,9 +160,9 @@ ES_Event RunFirstTargetSearchHSM(ES_Event ThisEvent)
 
     if (makeTransition == TRUE) { // making a state transition, send EXIT and ENTRY
         // recursively call the current state with an exit event
-        RunFirstTargetSearchHSM(EXIT_EVENT); // <- rename to your own Run function
+        RunFirstTargetSearchSubHSM(EXIT_EVENT); 
         CurrentState = nextState;
-        RunFirstTargetSearchHSM(ENTRY_EVENT); // <- rename to your own Run function
+        RunFirstTargetSearchSubHSM(ENTRY_EVENT); 
     }
 
     ES_Tail(); // trace call stack end

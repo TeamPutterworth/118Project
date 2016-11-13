@@ -38,19 +38,7 @@
  *        execution. It will post an ES_INIT event to the appropriate event
  *        queue, which will be handled inside RunAmmoLoadSubHSM function.
  */
-uint8_t InitAmmoLoadSubHSM(uint8_t Priority);
-
-
-/**
- * @Function PostAmmoLoadSubHSM(ES_Event ThisEvent)
- * @param ThisEvent - the event (type and param) to be posted to queue
- * @return TRUE or FALSE
- * @brief This function is a wrapper to the queue posting function.
- */
-uint8_t PostAmmoLoadSubHSM(ES_Event ThisEvent);
-
-
-
+uint8_t InitAmmoLoadSubHSM(void);
 
 /**
  * @Function RunAmmoLoadSubHSM(ES_Event ThisEvent)

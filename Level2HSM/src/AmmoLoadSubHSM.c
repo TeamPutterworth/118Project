@@ -68,28 +68,16 @@ static uint8_t MyPriority;
  *        execution. It will post an ES_INIT event to the appropriate event
  *        queue, which will be handled inside RunAmmoLoadSubHSM function.
  */
-uint8_t InitAmmoLoadSubHSM(uint8_t Priority)
+uint8_t InitAmmoLoadSubHSM(void)
 {
-    MyPriority = Priority;
-    // put us into the Initial PseudoState
-    CurrentState = InitPState;
-    // post the initial transition event
-    if (ES_PostToService(MyPriority, INIT_EVENT) == TRUE) {
-        return TRUE;
-    } else {
-        return FALSE;
-    }
-}
+    ES_Event returnEvent;
 
-/**
- * @Function PostAmmoLoadSubHSM(ES_Event ThisEvent)
- * @param ThisEvent - the event (type and param) to be posted to queue
- * @return TRUE or FALSE
- * @brief This function is a wrapper to the queue posting function.
- */
-uint8_t PostAmmoLoadSubHSM(ES_Event ThisEvent)
-{
-    return ES_PostToService(MyPriority, ThisEvent);
+    CurrentState = InitPState;
+    returnEvent = RunAmmoLoadSubHSM(INIT_EVENT);
+    if (returnEvent.EventType == ES_NO_EVENT) {
+        return TRUE;
+    }
+    return FALSE;
 }
 
 /**
@@ -129,6 +117,7 @@ ES_Event RunAmmoLoadSubHSM(ES_Event ThisEvent)
             case ES_ENTRY:
                 // We love tank turning cw
                 tankTurnRight();
+                ThisEvent.EventType = ES_NO_EVENT;
                 break;
             case TW_TRIGGERED:
                 // This value assumes we are using only middle and back track wires, meaning both bits are set high
@@ -136,6 +125,7 @@ ES_Event RunAmmoLoadSubHSM(ES_Event ThisEvent)
                 {
                     nextState = Backward;
                     makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
                 }
                 break;
             case ES_NO_EVENT:
@@ -148,6 +138,7 @@ ES_Event RunAmmoLoadSubHSM(ES_Event ThisEvent)
         switch (ThisEvent.EventType) {
             case ES_ENTRY:
                 moveBackward();
+                ThisEvent.EventType = ES_NO_EVENT;
                 break;
             case TW_TRIGGERED:
                 // This value assumes we are using only middle and back track wires, meaning both bits are set high
@@ -155,6 +146,7 @@ ES_Event RunAmmoLoadSubHSM(ES_Event ThisEvent)
                 {
                     nextState = TankTurn;
                     makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
                 }
                 break;
             case ES_NO_EVENT:

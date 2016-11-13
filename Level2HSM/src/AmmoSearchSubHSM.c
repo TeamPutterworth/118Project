@@ -71,28 +71,16 @@ static uint8_t MyPriority;
  *        execution. It will post an ES_INIT event to the appropriate event
  *        queue, which will be handled inside RunAmmoSearchSubHSM function.
  */
-uint8_t InitAmmoSearchSubHSM(uint8_t Priority)
+uint8_t InitAmmoSearchSubHSM(void)
 {
-    MyPriority = Priority;
-    // put us into the Initial PseudoState
-    CurrentState = InitPState;
-    // post the initial transition event
-    if (ES_PostToService(MyPriority, INIT_EVENT) == TRUE) {
-        return TRUE;
-    } else {
-        return FALSE;
-    }
-}
+    ES_Event returnEvent;
 
-/**
- * @Function PostAmmoSearchSubHSM(ES_Event ThisEvent)
- * @param ThisEvent - the event (type and param) to be posted to queue
- * @return TRUE or FALSE
- * @brief This function is a wrapper to the queue posting function.
- */
-uint8_t PostAmmoSearchSubHSM(ES_Event ThisEvent)
-{
-    return ES_PostToService(MyPriority, ThisEvent);
+    CurrentState = InitPState;
+    returnEvent = RunAmmoSearchSubHSM(INIT_EVENT);
+    if (returnEvent.EventType == ES_NO_EVENT) {
+        return TRUE;
+    }
+    return FALSE;
 }
 
 /**
@@ -141,12 +129,14 @@ ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
                     turnParam = 0;
                     nextState = Backward;
                     makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
                 } 
                 else if (((ThisEvent.EventParam & TS_FL) >> FL_SH))
                 {
                     turnParam = 1;
                     nextState = Backward;
                     makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
                 }
                 break;
             case BUMPED:
@@ -156,16 +146,19 @@ ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
                     turnParam = 0;
                     nextState = Backward;
                     makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
                 } 
                 else if (ThisEvent.EventParam == 0x2)
                 {
                     turnParam = 1;
                     nextState = Backward;
                     makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
                 }
                 break;
             case ES_ENTRY:
                 moveForward();
+                ThisEvent.EventType = ES_NO_EVENT;
                 break;
             case ES_NO_EVENT:
             default:
@@ -185,10 +178,12 @@ ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
                 {
                     tankTurnLeft();
                 }
+                ThisEvent.EventType = ES_NO_EVENT;
                 break;
             case ES_TIMEOUT:
                 nextState = Forward;
                 makeTransition = TRUE;
+                ThisEvent.EventType = ES_NO_EVENT;
                 break;
             case ES_NO_EVENT:
             default:
@@ -201,10 +196,12 @@ ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
             case ES_ENTRY:
                 ES_Timer_InitTimer(SHORT_HSM_TIMER, SHORT_TIMER_TICKS);
                 moveBackward();
+                ThisEvent.EventType = ES_NO_EVENT;
                 break;
             case ES_TIMEOUT:
                 nextState = TankTurn;
                 makeTransition = TRUE;
+                ThisEvent.EventType = ES_NO_EVENT;
                 break;
             case ES_NO_EVENT:
             default:

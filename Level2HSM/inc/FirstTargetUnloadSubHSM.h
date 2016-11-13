@@ -1,5 +1,5 @@
 /*
- * File:   FirstTargetUnloadSubHSM.h
+ * File:   FirstTargetUnloadSubSubHSM.h
  * Author: jdgrant
  *
  * This file includes the top level of our hierarchal state machine. At this level
@@ -7,8 +7,8 @@
  * and finding targets to deposit the ammo. This basic logic is looped.
  * 
  */
-#ifndef FIRST_TARGET_UNLOAD_HSM_H  // <- This should be changed to your own guard on both
-#define FIRST_TARGET_UNLOAD_HSM_H  //    of these lines
+#ifndef FIRST_TARGET_UNLOAD_SUB_HSM_H  // <- This should be changed to your own guard on both
+#define FIRST_TARGET_UNLOAD_SUB_HSM_H  //    of these lines
 
 
 /*******************************************************************************
@@ -36,21 +36,9 @@
  * @return TRUE or FALSE
  * @brief This will get called by the framework at the beginning of the code
  *        execution. It will post an ES_INIT event to the appropriate event
- *        queue, which will be handled inside RunFirstTargetUnloadSubHSM function.
+ *        queue, which will be handled inside RunFirstTargetUnloadSubSubHSM function.
  */
-uint8_t InitFirstTargetUnloadSubHSM(uint8_t Priority);
-
-
-/**
- * @Function PostFirstTargetUnloadSubHSM(ES_Event ThisEvent)
- * @param ThisEvent - the event (type and param) to be posted to queue
- * @return TRUE or FALSE
- * @brief This function is a wrapper to the queue posting function.
- */
-uint8_t PostFirstTargetUnloadSubHSM(ES_Event ThisEvent);
-
-
-
+uint8_t InitFirstTargetUnloadSubHSM(void);
 
 /**
  * @Function RunFirstTargetUnloadSubHSM(ES_Event ThisEvent)
@@ -62,4 +50,4 @@ uint8_t PostFirstTargetUnloadSubHSM(ES_Event ThisEvent);
  */
 ES_Event RunFirstTargetUnloadSubHSM(ES_Event ThisEvent);
 
-#endif /* FIRST_TARGET_UNLOAD_HSM_H */
+#endif /* FIRST_TARGET_UNLOAD_SubHSM_H */

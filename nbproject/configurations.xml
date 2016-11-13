@@ -10,7 +10,7 @@
       <logicalFolder name="f5" displayName="2ndLevelHSM" projectFiles="true">
         <itemPath>Level2HSM/inc/AmmoSearchSubHSM.h</itemPath>
         <itemPath>Level2HSM/inc/AmmoLoadSubHSM.h</itemPath>
-        <itemPath>Level2HSM/inc/FirstTargetSearchHSM.h</itemPath>
+        <itemPath>Level2HSM/inc/FirstTargetSearchSubHSM.h</itemPath>
         <itemPath>Level2HSM/inc/FirstTargetUnloadSubHSM.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="Drivers" projectFiles="true">
@@ -62,7 +62,7 @@
       <logicalFolder name="f5" displayName="2ndLevelHSM" projectFiles="true">
         <itemPath>Level2HSM/src/AmmoSearchSubHSM.c</itemPath>
         <itemPath>Level2HSM/src/AmmoLoadSubHSM.c</itemPath>
-        <itemPath>Level2HSM/src/FirstTargetSearchHSM.c</itemPath>
+        <itemPath>Level2HSM/src/FirstTargetSearchSubHSM.c</itemPath>
         <itemPath>Level2HSM/src/FirstTargetUnloadSubHSM.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="Drivers" projectFiles="true">

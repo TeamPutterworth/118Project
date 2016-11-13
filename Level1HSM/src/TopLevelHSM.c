@@ -16,6 +16,10 @@
 #include "ES_Framework.h"
 #include "BOARD.h"
 #include "TopLevelHSM.h"
+#include "AmmoLoadSubHSM.h"
+#include "AmmoSearchSubHSM.h"
+#include "FirstTargetSearchSubHSM.h"
+#include "FirstTargetUnloadSubHSM.h"
 #include "sensors.h"
 
 /*******************************************************************************
@@ -114,7 +118,6 @@ ES_Event RunTopLevelHSM(ES_Event ThisEvent)
     TopLevelHSMState_t nextState; // <- change type to correct enum
 
     ES_Tattle(); // trace call stack
-    ThisEvent.EventType = ES_NO_EVENT; // assume no error
     
     switch (CurrentState) {
     case InitPState: // If current state is initial Pseudo State
@@ -124,7 +127,12 @@ ES_Event RunTopLevelHSM(ES_Event ThisEvent)
             // transition from the initial pseudo-state into the actual
             // initial state
             // Initialize all sub-state machines
-            //InitAmmoSearchHSM();
+            InitAmmoLoadSubHSM();
+            InitAmmoSearchSubHSM();
+            InitFirstTargetSearchSubHSM();
+            InitFirstTargetUnloadSubHSM();
+            //InitSecondTargetSearchSubHSM();
+            //InitSecondTargetUnloadSubHSM();
             // now put the machine into the actual initial state
             nextState = AmmoSearch;
             makeTransition = TRUE;
@@ -139,6 +147,7 @@ ES_Event RunTopLevelHSM(ES_Event ThisEvent)
         //state machine does
         //ThisEvent = RunAmmoSearchHSM(ThisEvent);
         switch (ThisEvent.EventType) {
+            ThisEvent = RunAmmoSearchSubHSM(ThisEvent);
             case TW_TRIGGERED:
                 // check if rising edge
                 if(ThisEvent.EventParam)
@@ -155,6 +164,7 @@ ES_Event RunTopLevelHSM(ES_Event ThisEvent)
         
     case AmmoLoad:
         switch (ThisEvent.EventType) {
+            ThisEvent = RunAmmoLoadSubHSM(ThisEvent);
             case TW_TRIGGERED:
                 // check if falling edge
                 if(!ThisEvent.EventParam)
@@ -178,6 +188,7 @@ ES_Event RunTopLevelHSM(ES_Event ThisEvent)
         
     case FirstTargetSearch:
         switch (ThisEvent.EventType) {
+            ThisEvent = RunFirstTargetSearchSubHSM(ThisEvent);
                     //TS_FL_TRIGGERED for either go to firstargetunload
                     //TS_FR_TRIGGERED
             case TAPE_TRIGGERED:
@@ -194,6 +205,7 @@ ES_Event RunTopLevelHSM(ES_Event ThisEvent)
         break;
         
     case FirstTargetUnload:
+        ThisEvent = RunFirstTargetUnloadSubHSM(ThisEvent);
         switch (ThisEvent.EventType) {
             case UNLOADED:
                 nextState = SecondTargetSearch;
@@ -206,6 +218,7 @@ ES_Event RunTopLevelHSM(ES_Event ThisEvent)
         break;
         
     case SecondTargetSearch:
+        //ThisEvent = RunSecondTargetSearchSubHSM(ThisEvent);
         switch (ThisEvent.EventType) {
                     //TS_FL_TRIGGERED for either go to secondtargetunload
                     //TS_FR_TRIGGERED
@@ -223,6 +236,7 @@ ES_Event RunTopLevelHSM(ES_Event ThisEvent)
         break;
     
     case SecondTargetUnload:
+        //ThisEvent = RunSecondTargetUnloadSubHSM(ThisEvent);
         switch (ThisEvent.EventType) {
             case UNLOADED:
                 nextState = AmmoSearch;
