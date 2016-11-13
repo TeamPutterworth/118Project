@@ -162,6 +162,12 @@ void testServos()
         setPulseBridgeServo(i);
         delay(1000);
     }
+    for (i=2000;i>1000;i=-50)
+    {
+        setPulseUnloadingServo(i);
+        setPulseBridgeServo(i);
+        delay(1000);
+    }
     return;
 }
 
