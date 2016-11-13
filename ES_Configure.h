@@ -23,7 +23,7 @@
 //#define POSTFUNCTION_FOR_KEYBOARD_INPUT PostTimerService
 
 //define for TattleTale
-#define USE_TATTLETALE
+//#define USE_TATTLETALE
 
 //uncomment to supress the entry and exit events
 //#define SUPPRESS_EXIT_ENTRY_IN_TATTLE
@@ -93,7 +93,7 @@ static const char *EventNames[] = {
 #define EVENT_CHECK_HEADER "EventChecker.h" 
 /****************************************************************************/
 // This is the list of event checking functions
-#define EVENT_CHECK_LIST Track_Wire_Signal,  Beacon_Signal
+#define EVENT_CHECK_LIST trackWireSignal,  beaconSignal
 
 /****************************************************************************/
 // These are the definitions for the post functions to be executed when the
@@ -104,7 +104,7 @@ static const char *EventNames[] = {
 #define TIMER1_RESP_FUNC PostTopLevelHSM
 #define TIMER2_RESP_FUNC PostTopLevelHSM
 #define TIMER3_RESP_FUNC PostTopLevelHSM
-#define TIMER4_RESP_FUNC TIMER_UNUSED
+#define TIMER4_RESP_FUNC PostBumperDebounceService
 #define TIMER5_RESP_FUNC TIMER_UNUSED
 #define TIMER6_RESP_FUNC TIMER_UNUSED
 #define TIMER7_RESP_FUNC TIMER_UNUSED
@@ -127,10 +127,11 @@ static const char *EventNames[] = {
 #define SHORT_HSM_TIMER 1
 #define MEDIUM_HSM_TIMER 2
 #define LONG_HSM_TIMER 3
+#define BUMPER_DEBOUNCE_TIMER 4
 
 #define SHORT_TIMER_TICKS 500
-#define LONG_TIMER_TICKS 2000
 #define MEDIUM_TIMER_TICKS 1000 
+#define LONG_TIMER_TICKS 2000
 
 /****************************************************************************/
 // The maximum number of services sets an upper bound on the number of 
@@ -141,7 +142,7 @@ static const char *EventNames[] = {
 /****************************************************************************/
 // This macro determines that nuber of services that are *actually* used in
 // a particular application. It will vary in value from 1 to MAX_NUM_SERVICES
-#define NUM_SERVICES 3
+#define NUM_SERVICES 4
 
 /****************************************************************************/
 // These are the definitions for Service 0, the lowest priority service
@@ -187,11 +188,11 @@ static const char *EventNames[] = {
 // These are the definitions for Service 3
 #if NUM_SERVICES > 3
 // the header file with the public fuction prototypes
-#define SERV_3_HEADER "TestService.h"
+#define SERV_3_HEADER "BumperDebounce.h"
 // the name of the Init function
-#define SERV_3_INIT TestServiceInit
+#define SERV_3_INIT InitBumperDebounceService
 // the name of the run function
-#define SERV_3_RUN TestServiceRun
+#define SERV_3_RUN RunBumperDebounceService
 // How big should this services Queue be?
 #define SERV_3_QUEUE_SIZE 3
 #endif

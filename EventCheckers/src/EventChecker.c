@@ -40,7 +40,7 @@
  * PUBLIC FUNCTIONS                                                            *
  ******************************************************************************/
 
-uint8_t Track_Wire_Signal(void) {
+uint8_t trackWireSignal(void) {
     static ES_EventTyp_t PRESTATE = TRACK_WIRE_OFF;
     ES_EventTyp_t CURRENTTRACK;
     ES_Event thisEvent;
@@ -70,7 +70,7 @@ uint8_t Track_Wire_Signal(void) {
 
 }
 
-uint8_t Beacon_Signal(void) {
+uint8_t beaconSignal(void) {
     static ES_EventTyp_t PRESTATE = BEACON_OFF;
     ES_EventTyp_t CURRENTBEACON;
     ES_Event thisEvent;

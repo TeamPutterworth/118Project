@@ -14,17 +14,12 @@
 #include <stdio.h>
 
 //#define DEBUG
-#define TRACKWIRE_OUTPUT PIN6
-#define FR_BUMPER PIN3
-#define FL_BUMPER PIN4
-#define BR_BUMPER PIN5
-#define BL_BUMPER PIN6
-#define BEACONDETECT_OUTPUT PIN7 
+
 
 
 uint8_t readTrackWire()
 {
-    uint8_t retVal = (IO_PortsReadPort(PORTY) & TRACKWIRE_OUTPUT) >> 6;
+    uint8_t retVal = (IO_PortsReadPort(PORTW) & TRACKWIRE_OUTPUT) >> 7;
 #ifdef DEBUG
     printf("\r\nPort Y val is: %d,Track Wire: %d", IO_PortsReadPort(PORTY),retVal);
 #endif
@@ -44,8 +39,7 @@ uint8_t readBumpers()
     
     retVal = retVal | (IO_PortsReadPort(PORTW) & FR_BUMPER);
     retVal = retVal | (IO_PortsReadPort(PORTW) & FL_BUMPER);
-    retVal = retVal | (IO_PortsReadPort(PORTW) & BR_BUMPER);
-    retVal = retVal | (IO_PortsReadPort(PORTW) & BL_BUMPER);
+    retVal = retVal | (IO_PortsReadPort(PORTW) & B_BUMPER);
     
     return (retVal >> 3);
 }
@@ -53,16 +47,20 @@ uint8_t readBumpers()
 void sensorsInit()
 {
     //Init for track wire and beacon detector
-    IO_PortsSetPortInputs(PORTY,TRACKWIRE_OUTPUT | BEACONDETECT_OUTPUT );
+    IO_PortsSetPortInputs(PORTW,TRACKWIRE_OUTPUT | BEACONDETECT_OUTPUT );
 
     // Init for Bumpers
-    IO_PortsSetPortInputs(PORTW,FR_BUMPER|FL_BUMPER|BR_BUMPER|BL_BUMPER);
+    IO_PortsSetPortInputs(PORTW,FR_BUMPER|FL_BUMPER|B_BUMPER);
+    
+    // Init for multiplexer select
+    IO_PortsSetPortOutputs(PORTZ,FR_BUMPER|FL_BUMPER|B_BUMPER);
+    
 }
 
 uint8_t readBeaconDetector()
 
     {
-    uint8_t retVal = (IO_PortsReadPort(PORTY) & BEACONDETECT_OUTPUT ) >> 7;
+    uint8_t retVal = (IO_PortsReadPort(PORTW) & BEACONDETECT_OUTPUT ) >> 8;
 //#ifdef DEBUG
    // printf("\r\nPort Y val is: %d,Track Wire: %d", IO_PortsReadPort(PORTY),retVal);
 //#endif

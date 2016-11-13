@@ -44,6 +44,7 @@
       </logicalFolder>
       <logicalFolder name="f4" displayName="Services" projectFiles="true">
         <itemPath>Services/inc/SyncSampling.h</itemPath>
+        <itemPath>../BumperDebounce.h</itemPath>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
@@ -87,6 +88,7 @@
       </logicalFolder>
       <logicalFolder name="f1" displayName="Services" projectFiles="true">
         <itemPath>Services/src/SyncSampling.c</itemPath>
+        <itemPath>Services/src/BumperDebounce.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
     </logicalFolder>

@@ -114,7 +114,8 @@ ES_Event RunTopLevelHSM(ES_Event ThisEvent)
     TopLevelHSMState_t nextState; // <- change type to correct enum
 
     ES_Tattle(); // trace call stack
-
+    ThisEvent.EventType = ES_NO_EVENT; // assume no error
+    
     switch (CurrentState) {
     case InitPState: // If current state is initial Pseudo State
         if (ThisEvent.EventType == ES_INIT)// only respond to ES_Init

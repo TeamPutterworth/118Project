@@ -21,6 +21,14 @@
 #define BR_SH 3
 #define BL_SH 4
 
+#define TRACKWIRE_OUTPUT PIN7
+#define FR_BUMPER PIN3
+#define FL_BUMPER PIN4
+#define B_BUMPER PIN5
+#define BEACONDETECT_OUTPUT PIN8 
+#define MUX_SELECT_A PIN11
+#define MUX_SELECT_B PIN12
+
 
 
 void sensorsInit(); 

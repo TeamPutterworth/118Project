@@ -57,8 +57,8 @@
  * @note Use this code as a template for your other event checkers, and modify as necessary.
  * @author Gabriel H Elkaim, 2013.09.27 09:18
  * @modified Gabriel H Elkaim/Max Dunne, 2016.09.12 20:08 */
-uint8_t  Track_Wire_Signal(void);
-uint8_t     Beacon_Signal(void);
+uint8_t trackWireSignal(void);
+uint8_t beaconSignal(void);
 
 
 
