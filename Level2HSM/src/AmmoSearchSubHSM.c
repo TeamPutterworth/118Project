@@ -158,7 +158,6 @@ ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
                 break;
             case ES_ENTRY:
                 moveForward();
-                ThisEvent.EventType = ES_NO_EVENT;
                 break;
             case ES_NO_EVENT:
             default:
@@ -178,7 +177,6 @@ ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
                 {
                     tankTurnLeft();
                 }
-                ThisEvent.EventType = ES_NO_EVENT;
                 break;
             case ES_TIMEOUT:
                 nextState = Forward;
@@ -196,7 +194,6 @@ ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
             case ES_ENTRY:
                 ES_Timer_InitTimer(SHORT_HSM_TIMER, SHORT_TIMER_TICKS);
                 moveBackward();
-                ThisEvent.EventType = ES_NO_EVENT;
                 break;
             case ES_TIMEOUT:
                 nextState = TankTurn;

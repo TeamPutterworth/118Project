@@ -117,7 +117,6 @@ ES_Event RunAmmoLoadSubHSM(ES_Event ThisEvent)
             case ES_ENTRY:
                 // We love tank turning cw
                 tankTurnRight();
-                ThisEvent.EventType = ES_NO_EVENT;
                 break;
             case TW_TRIGGERED:
                 // This value assumes we are using only middle and back track wires, meaning both bits are set high
@@ -138,7 +137,6 @@ ES_Event RunAmmoLoadSubHSM(ES_Event ThisEvent)
         switch (ThisEvent.EventType) {
             case ES_ENTRY:
                 moveBackward();
-                ThisEvent.EventType = ES_NO_EVENT;
                 break;
             case TW_TRIGGERED:
                 // This value assumes we are using only middle and back track wires, meaning both bits are set high

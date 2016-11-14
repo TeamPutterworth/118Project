@@ -18,12 +18,12 @@
 
 
 //defines for keyboard input
-//#define USE_KEYBOARD_INPUT
+#define USE_KEYBOARD_INPUT
 //What State machine are we testing
-//#define POSTFUNCTION_FOR_KEYBOARD_INPUT PostTimerService
+#define POSTFUNCTION_FOR_KEYBOARD_INPUT PostTopLevelHSM
 
 //define for TattleTale
-//#define USE_TATTLETALE
+#define USE_TATTLETALE
 
 //uncomment to supress the entry and exit events
 //#define SUPPRESS_EXIT_ENTRY_IN_TATTLE
@@ -122,6 +122,9 @@ static const char *EventNames[] = {
 // to different timers if the need arises. Keep these definitons close to the
 // definitions for the response functions to make it easire to check that
 // the timer number matches where the timer event will be routed
+
+// Simple service timer is only for keyboard inputs
+#define SIMPLE_SERVICE_TIMER 0
 
 #define SYNC_SAMPLE_TIMER 0 /*make sure this is enabled above and posting to the correct state machine*/
 #define SHORT_HSM_TIMER 1

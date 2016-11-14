@@ -119,7 +119,6 @@ ES_Event RunFirstTargetUnloadSubHSM(ES_Event ThisEvent)
             case ES_ENTRY:
                 // we arbitrarily prefer right. all hail right, and satan
                 pivotTurnRight();
-                ThisEvent.EventType = ES_NO_EVENT;
                 break;
             case TAPE_TRIGGERED:
                 if (((ThisEvent.EventParam & TS_FR) >> FR_SH) && ((ThisEvent.EventParam & TS_FL) >> FL_SH))
@@ -146,7 +145,6 @@ ES_Event RunFirstTargetUnloadSubHSM(ES_Event ThisEvent)
         switch (ThisEvent.EventType) {
             case ES_ENTRY:
                 moveForward();
-                ThisEvent.EventType = ES_NO_EVENT;
                 break;
             case TAPE_TRIGGERED:
                 if(!((ThisEvent.EventParam & TS_FR) >> FR_SH))
@@ -176,7 +174,6 @@ ES_Event RunFirstTargetUnloadSubHSM(ES_Event ThisEvent)
     case Unload:
         switch (ThisEvent.EventType) {
             case ES_ENTRY:
-                ThisEvent.EventType = ES_NO_EVENT;
                 break;
             case ES_NO_EVENT:
             default:

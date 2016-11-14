@@ -116,7 +116,6 @@ ES_Event RunFirstTargetSearchSubHSM(ES_Event ThisEvent)
         switch (ThisEvent.EventType) {  
             case ES_ENTRY:
                 tankTurnRight();
-                ThisEvent.EventType = ES_NO_EVENT;
                 break;
             case TW_TRIGGERED:
                 // This value assumes we are using only middle and back track wires, meaning both bits are set high
@@ -137,7 +136,6 @@ ES_Event RunFirstTargetSearchSubHSM(ES_Event ThisEvent)
         switch (ThisEvent.EventType) {
             case ES_ENTRY:
                 moveBackward();
-                ThisEvent.EventType = ES_NO_EVENT;
                 break;
             case TW_TRIGGERED:
                 // This value assumes we are using only middle and back track wires, meaning both bits are set high
@@ -145,7 +143,6 @@ ES_Event RunFirstTargetSearchSubHSM(ES_Event ThisEvent)
                 {
                     nextState = TankTurn;
                     makeTransition = TRUE;
-                    ThisEvent.EventType = ES_NO_EVENT;
                 }
                 break;
             case ES_NO_EVENT:

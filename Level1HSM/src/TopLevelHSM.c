@@ -127,8 +127,8 @@ ES_Event RunTopLevelHSM(ES_Event ThisEvent)
             // transition from the initial pseudo-state into the actual
             // initial state
             // Initialize all sub-state machines
-            InitAmmoLoadSubHSM();
             InitAmmoSearchSubHSM();
+            InitAmmoLoadSubHSM();
             InitFirstTargetSearchSubHSM();
             InitFirstTargetUnloadSubHSM();
             //InitSecondTargetSearchSubHSM();
@@ -146,8 +146,8 @@ ES_Event RunTopLevelHSM(ES_Event ThisEvent)
         //NOTE: the SubState Machine runs and responds to events before anything in the this
         //state machine does
         //ThisEvent = RunAmmoSearchHSM(ThisEvent);
+        ThisEvent = RunAmmoSearchSubHSM(ThisEvent);
         switch (ThisEvent.EventType) {
-            ThisEvent = RunAmmoSearchSubHSM(ThisEvent);
             case TW_TRIGGERED:
                 // check if rising edge
                 if(ThisEvent.EventParam)
@@ -163,8 +163,8 @@ ES_Event RunTopLevelHSM(ES_Event ThisEvent)
         break;
         
     case AmmoLoad:
+        ThisEvent = RunAmmoLoadSubHSM(ThisEvent);
         switch (ThisEvent.EventType) {
-            ThisEvent = RunAmmoLoadSubHSM(ThisEvent);
             case TW_TRIGGERED:
                 // check if falling edge
                 if(!ThisEvent.EventParam)
@@ -187,8 +187,8 @@ ES_Event RunTopLevelHSM(ES_Event ThisEvent)
         break;
         
     case FirstTargetSearch:
+        ThisEvent = RunFirstTargetSearchSubHSM(ThisEvent);
         switch (ThisEvent.EventType) {
-            ThisEvent = RunFirstTargetSearchSubHSM(ThisEvent);
                     //TS_FL_TRIGGERED for either go to firstargetunload
                     //TS_FR_TRIGGERED
             case TAPE_TRIGGERED:

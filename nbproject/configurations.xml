@@ -35,7 +35,6 @@
         <itemPath>C:/CMPE118/include/serial.h</itemPath>
         <itemPath>C:/CMPE118/include/ES_Events.h</itemPath>
         <itemPath>C:/CMPE118/include/ES_CheckEvents.h</itemPath>
-        <itemPath>ES_Configure.h</itemPath>
         <itemPath>C:/CMPE118/include/AD.h</itemPath>
         <itemPath>C:/CMPE118/include/BOARD.h</itemPath>
         <itemPath>C:/CMPE118/include/RC_Servo.h</itemPath>
@@ -45,8 +44,9 @@
       </logicalFolder>
       <logicalFolder name="f4" displayName="Services" projectFiles="true">
         <itemPath>Services/inc/SyncSampling.h</itemPath>
-        <itemPath>../BumperDebounce.h</itemPath>
+        <itemPath>Services/inc/BumperDebounce.h</itemPath>
       </logicalFolder>
+      <itemPath>ES_Configure.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
