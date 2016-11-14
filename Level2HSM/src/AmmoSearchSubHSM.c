@@ -193,6 +193,7 @@ ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
         switch (ThisEvent.EventType) {
             case ES_ENTRY:
                 ES_Timer_InitTimer(SHORT_HSM_TIMER, SHORT_TIMER_TICKS);
+                //ES_Timer_StartTimer We might have to call this?
                 moveBackward();
                 break;
             case ES_TIMEOUT:
