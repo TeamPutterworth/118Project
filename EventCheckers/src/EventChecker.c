@@ -17,7 +17,7 @@
 /*******************************************************************************
  * MODULE #DEFINES                                                             *
  ******************************************************************************/
-
+//#define DEBUG
 /*******************************************************************************
  * EVENTCHECKER_TEST SPECIFIC CODE                                                             *
  ******************************************************************************/
@@ -50,13 +50,17 @@ uint8_t trackWireSignal(void) {
 
     if (Whichtrack) {
         CURRENTTRACK = TRACK_WIRE_OFF;
+        #ifdef DEBUG
         LED_SetBank(LED_BANK1,0x0);
-        //printf("\r\ntrack wire is on");
+        printf("\r\ntrack wire is on");
+        #endif 
     } else {
         
         CURRENTTRACK = TRACK_WIRE_ON;
-        //printf("\r\ntrack wire is off");
+        #ifdef DEBUG
         LED_SetBank(LED_BANK1,0xF);
+        printf("\r\ntrack wire is off");
+        #endif
     }
 
     if (CURRENTTRACK != PRESTATE) {

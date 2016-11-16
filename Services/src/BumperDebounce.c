@@ -110,10 +110,9 @@ ES_Event RunBumperDebounceService(ES_Event ThisEvent)
             pastBumperState[i] |= bumperState[i];
             
             if(pastBumperState[i] == LOW_TO_HIGH){
-                ReturnEvent.EventParam |= bumperPin[i];
-                LED_SetBank(ledBanks[i],0xF);
-                
+                ReturnEvent.EventParam |= bumperPin[i];   
                 #ifdef DEBUG
+                LED_SetBank(ledBanks[i],0xF);
                 printf("\r\nBumper %d bumped", i);
                 #endif 
             }

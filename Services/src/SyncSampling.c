@@ -18,7 +18,7 @@
 /*******************************************************************************
  * MODULE #DEFINES                                                             *
  ******************************************************************************/
-//#define DEBUG
+#define DEBUG
 //#define MOTOR_TEST 
 #ifdef DEBUG
 #define TIMER_0_TICKS 500 // 2 ticks = 2 ms
@@ -26,8 +26,8 @@
 #define TIMER_0_TICKS 2 // 2 ticks = 2 ms
 #endif
 #define ON 1
-#define HI_THRESHOLD 150
-#define LO_THRESHOLD 100
+#define HI_THRESHOLD 500
+#define LO_THRESHOLD 150
 #define NUM_LEDS 5
 
 /*******************************************************************************
@@ -44,7 +44,7 @@ static const char *eventName;
 static ES_Event storedEvent;
 static uint8_t MyPriority;
 static unsigned int adPins[]={AD_PORTV3,AD_PORTV4,AD_PORTV5,AD_PORTV6,AD_PORTV7};
-static uint16_t ledPins[]={PIN3,PIN4,PIN5,PIN7,PIN10};
+static uint16_t ledPins[]={PIN4,PIN3,PIN5,PIN7,PIN8};
 static uint16_t ledBanks[]={LED_BANK1,LED_BANK1,LED_BANK2,LED_BANK2,LED_BANK3};
 
 /*******************************************************************************
@@ -69,7 +69,7 @@ uint8_t InitSyncSamplingService(uint8_t Priority) {
     // TODO : Move this init stuff to their proper init functions and then call the init
     // functions in main.
     
-    IO_PortsSetPortOutputs(PORTZ, PIN3|PIN4|PIN5|PIN7|PIN10);
+    IO_PortsSetPortOutputs(PORTZ, PIN3|PIN4|PIN5|PIN7|PIN8);
     AD_AddPins(AD_PORTV3|AD_PORTV4|AD_PORTV5|AD_PORTV6|AD_PORTV7);
 #ifdef MOTOR_TEST
     moveForward();
@@ -80,7 +80,7 @@ uint8_t InitSyncSamplingService(uint8_t Priority) {
     IO_PortsWritePort(PORTZ,IO_PortsReadPort(PORTZ) | PIN4); // This Sets PIN7 (the LED) high for the first sample
     IO_PortsWritePort(PORTZ,IO_PortsReadPort(PORTZ) | PIN5); // This Sets PIN7 (the LED) high for the first sample
     IO_PortsWritePort(PORTZ,IO_PortsReadPort(PORTZ) | PIN7); // This Sets PIN7 (the LED) high for the first sample
-    IO_PortsWritePort(PORTZ,IO_PortsReadPort(PORTZ) | PIN10); // This Sets PIN7 (the LED) high for the first sample
+    IO_PortsWritePort(PORTZ,IO_PortsReadPort(PORTZ) | PIN8); // This Sets PIN7 (the LED) high for the first sample
     ES_Timer_InitTimer(SYNC_SAMPLE_TIMER, TIMER_0_TICKS);
     ThisEvent.EventType = ES_INIT;
     if (ES_PostToService(MyPriority, ThisEvent) == TRUE) {
@@ -146,7 +146,7 @@ ES_Event RunSyncSamplingService(ES_Event ThisEvent)
                 {
                     adcValOn[i] = AD_ReadADPin(adPins[i]); // Read the LED while it has been on for 2 ms 
                     #ifdef DEBUG
-                    printf("\r\nadcValOn[%d]: %d",i,adcValOn[i]);
+                    //printf("\r\nadcValOn[%d]: %d",i,adcValOn[i]);
                     #endif
                     IO_PortsWritePort(PORTZ,IO_PortsReadPort(PORTZ) & ~ledPins[i]); // This Sets PINi (the LED) low  
                 }
@@ -157,9 +157,9 @@ ES_Event RunSyncSamplingService(ES_Event ThisEvent)
                 {
                     adcValOff[i] = AD_ReadADPin(adPins[i]); // Read the LED after it has been off for 2 ms
                     #ifdef DEBUG
-                    printf("\r\nadcValOff[%d]: %d",i,adcValOff[i]);
+                    //printf("\r\nadcValOff[%d]: %d",i,adcValOff[i]);
                     #endif
-                    IO_PortsWritePort(PORTZ,IO_PortsReadPort(PORTZ) | ledPins[i]); // This Sets PIN7 (the LED) high
+                    IO_PortsWritePort(PORTZ,IO_PortsReadPort(PORTZ) | ledPins[i]); // This Sets PINi (the LED) high
 
                     adcDiff[i] = adcValOn[i] - adcValOff[i];
                     #ifdef DEBUG

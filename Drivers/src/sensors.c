@@ -54,7 +54,7 @@ void sensorsInit()
     IO_PortsSetPortInputs(BUMPER_PORT,FR_BUMPER|FL_BUMPER|B_BUMPER);
     
     // Init for multiplexer select
-    IO_PortsSetPortOutputs(MUX_PORT,MUX_SELECT_A|MUX_SELECT_B);
+    IO_PortsSetPortOutputs(MUX_PORT,MUX_SELECT_A);
     
     // Init for servos
     RC_AddPins(RC_SERVO_UNLOADING|RC_SERVO_BRIDGE);
@@ -85,15 +85,6 @@ void muxSelTrackWire(uint8_t selectMask)
     else
     {
         IO_PortsWritePort(MUX_PORT,IO_PortsReadPort(MUX_PORT) & ~(1 << MUX_SELECT_A_SH)); // This clears select A on the mux
-    }
-    
-     if (selectMask & 0x2)
-    {
-        IO_PortsWritePort(MUX_PORT,IO_PortsReadPort(MUX_PORT) | (1 << MUX_SELECT_B_SH)); // This sets select B on the mux
-    }
-    else
-    {
-        IO_PortsWritePort(MUX_PORT,IO_PortsReadPort(MUX_PORT) & ~(1 << MUX_SELECT_B_SH)); // This clears select B on the mux
     }
     return;
 }
