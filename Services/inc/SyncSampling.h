@@ -2,8 +2,8 @@
 // Midterm Problem 8
 // 11/1/16
 
-#ifndef SyncSampling_H  // <- This should be changed to your own guard on both
-#define SyncSampling_H  //    of these lines
+#ifndef SYNC_SAMPLING_H  // <- This should be changed to your own guard on both
+#define SYNC_SAMPLING_H  //    of these lines
 
 
 /*******************************************************************************
@@ -63,5 +63,5 @@ ES_Event RunSyncSamplingService(ES_Event ThisEvent);
 
 
 
-#endif /* SyncSampling_H */
+#endif /* SYNC_SAMPLING_H */
 

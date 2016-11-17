@@ -80,11 +80,11 @@ void muxSelTrackWire(uint8_t selectMask)
 {
     if (selectMask & 0x1)
     {
-        IO_PortsWritePort(MUX_PORT,IO_PortsReadPort(MUX_PORT) | (1 << MUX_SELECT_A_SH)); // This sets select A on the mux
+        IO_PortsWritePort(MUX_PORT,IO_PortsReadPort(MUX_PORT) | MUX_SELECT_A); // This sets select A on the mux
     }
     else
     {
-        IO_PortsWritePort(MUX_PORT,IO_PortsReadPort(MUX_PORT) & ~(1 << MUX_SELECT_A_SH)); // This clears select A on the mux
+        IO_PortsWritePort(MUX_PORT,IO_PortsReadPort(MUX_PORT) & ~MUX_SELECT_A); // This clears select A on the mux
     }
     return;
 }

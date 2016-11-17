@@ -40,6 +40,7 @@
  * PUBLIC FUNCTIONS                                                            *
  ******************************************************************************/
 
+#if 0
 uint8_t trackWireSignal(void) {
     static ES_EventTyp_t PRESTATE = TRACK_WIRE_OFF;
     ES_EventTyp_t CURRENTTRACK;
@@ -73,7 +74,7 @@ uint8_t trackWireSignal(void) {
     return (returnREAD);
 
 }
-
+#endif
 uint8_t beaconSignal(void) {
     static ES_EventTyp_t PRESTATE = BEACON_OFF;
     ES_EventTyp_t CURRENTBEACON;
@@ -84,13 +85,17 @@ uint8_t beaconSignal(void) {
 
     if (Whichbeacon) {
         CURRENTBEACON = BEACON_OFF;
+        #ifdef DEBUG
         LED_SetBank(LED_BANK3,0x0);
         //printf("\r\ntrack wire is on");
+        #endif
     } else {
         
         CURRENTBEACON = BEACON_ON;
+        #ifdef DEBUG
         //printf("\r\ntrack wire is off");
         LED_SetBank(LED_BANK3,0xF);
+        #endif
     }
 
     if (CURRENTBEACON != PRESTATE) {

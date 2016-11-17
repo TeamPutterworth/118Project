@@ -45,6 +45,7 @@
       <logicalFolder name="f4" displayName="Services" projectFiles="true">
         <itemPath>Services/inc/SyncSampling.h</itemPath>
         <itemPath>Services/inc/BumperDebounce.h</itemPath>
+        <itemPath>Services/inc/TrackWire.h</itemPath>
       </logicalFolder>
       <itemPath>ES_Configure.h</itemPath>
     </logicalFolder>
@@ -91,6 +92,7 @@
       <logicalFolder name="f1" displayName="Services" projectFiles="true">
         <itemPath>Services/src/SyncSampling.c</itemPath>
         <itemPath>Services/src/BumperDebounce.c</itemPath>
+        <itemPath>Services/src/TrackWire.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
     </logicalFolder>

@@ -93,7 +93,7 @@ static const char *EventNames[] = {
 #define EVENT_CHECK_HEADER "EventChecker.h" 
 /****************************************************************************/
 // This is the list of event checking functions
-#define EVENT_CHECK_LIST trackWireSignal,  beaconSignal
+#define EVENT_CHECK_LIST beaconSignal
 
 /****************************************************************************/
 // These are the definitions for the post functions to be executed when the
@@ -105,7 +105,7 @@ static const char *EventNames[] = {
 #define TIMER2_RESP_FUNC PostTopLevelHSM
 #define TIMER3_RESP_FUNC PostTopLevelHSM
 #define TIMER4_RESP_FUNC PostBumperDebounceService
-#define TIMER5_RESP_FUNC TIMER_UNUSED
+#define TIMER5_RESP_FUNC PostTrackWireService
 #define TIMER6_RESP_FUNC TIMER_UNUSED
 #define TIMER7_RESP_FUNC TIMER_UNUSED
 #define TIMER8_RESP_FUNC TIMER_UNUSED
@@ -131,6 +131,7 @@ static const char *EventNames[] = {
 #define MEDIUM_HSM_TIMER 2
 #define LONG_HSM_TIMER 3
 #define BUMPER_DEBOUNCE_TIMER 4
+#define TRACK_WIRE_TIMER 5
 
 #define SHORT_TIMER_TICKS 500
 #define MEDIUM_TIMER_TICKS 1000 
@@ -145,7 +146,7 @@ static const char *EventNames[] = {
 /****************************************************************************/
 // This macro determines that nuber of services that are *actually* used in
 // a particular application. It will vary in value from 1 to MAX_NUM_SERVICES
-#define NUM_SERVICES 4
+#define NUM_SERVICES 5
 
 /****************************************************************************/
 // These are the definitions for Service 0, the lowest priority service
@@ -204,11 +205,11 @@ static const char *EventNames[] = {
 // These are the definitions for Service 4
 #if NUM_SERVICES > 4
 // the header file with the public fuction prototypes
-#define SERV_4_HEADER "TestService.h"
+#define SERV_4_HEADER "TrackWire.h"
 // the name of the Init function
-#define SERV_4_INIT TestServiceInit
+#define SERV_4_INIT InitTrackWireService
 // the name of the run function
-#define SERV_4_RUN TestServiceRun
+#define SERV_4_RUN RunTrackWireService
 // How big should this services Queue be?
 #define SERV_4_QUEUE_SIZE 3
 #endif
@@ -217,11 +218,11 @@ static const char *EventNames[] = {
 // These are the definitions for Service 5
 #if NUM_SERVICES > 5
 // the header file with the public fuction prototypes
-#define SERV_5_HEADER "TestService.h"
+#define SERV_5_HEADER "TrackWire.h"
 // the name of the Init function
-#define SERV_5_INIT TestServiceInit
+#define SERV_5_INIT InitTrackWireService
 // the name of the run function
-#define SERV_5_RUN TestServiceRun
+#define SERV_5_RUN RunTrackWireService
 // How big should this services Queue be?
 #define SERV_5_QUEUE_SIZE 3
 #endif

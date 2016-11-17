@@ -30,12 +30,12 @@ ifeq ($(TYPE_IMAGE), DEBUG_RUN)
 IMAGE_TYPE=debug
 OUTPUT_SUFFIX=elf
 DEBUGGABLE_SUFFIX=elf
-FINAL_IMAGE=dist/${CND_CONF}/${IMAGE_TYPE}/118project.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+FINAL_IMAGE=dist/${CND_CONF}/${IMAGE_TYPE}/118Project.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
 else
 IMAGE_TYPE=production
 OUTPUT_SUFFIX=hex
 DEBUGGABLE_SUFFIX=elf
-FINAL_IMAGE=dist/${CND_CONF}/${IMAGE_TYPE}/118project.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+FINAL_IMAGE=dist/${CND_CONF}/${IMAGE_TYPE}/118Project.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
 endif
 
 ifeq ($(COMPARE_BUILD), true)
@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=Level1HSM/src/TopLevelHSM.c Level2HSM/src/AmmoSearchSubHSM.c Level2HSM/src/AmmoLoadSubHSM.c Level2HSM/src/FirstTargetSearchSubHSM.c Level2HSM/src/FirstTargetUnloadSubHSM.c Drivers/src/motor.c Drivers/src/sensors.c C:/CMPE118/src/ES_Timers.c C:/CMPE118/src/ES_TattleTale.c C:/CMPE118/src/pwm.c C:/CMPE118/src/ES_PostList.c C:/CMPE118/src/AD.c C:/CMPE118/src/ES_Framework.c C:/CMPE118/src/IO_Ports.c C:/CMPE118/src/ES_CheckEvents.c C:/CMPE118/src/BOARD.c C:/CMPE118/src/ES_Queue.c C:/CMPE118/src/LED.c C:/CMPE118/src/ES_KeyboardInput.c C:/CMPE118/src/serial.c C:/CMPE118/src/RC_Servo.c EventCheckers/src/EventChecker.c Services/src/SyncSampling.c Services/src/BumperDebounce.c main.c
+SOURCEFILES_QUOTED_IF_SPACED=Level1HSM/src/TopLevelHSM.c Level2HSM/src/AmmoSearchSubHSM.c Level2HSM/src/AmmoLoadSubHSM.c Level2HSM/src/FirstTargetSearchSubHSM.c Level2HSM/src/FirstTargetUnloadSubHSM.c Drivers/src/motor.c Drivers/src/sensors.c C:/CMPE118/src/ES_Timers.c C:/CMPE118/src/ES_TattleTale.c C:/CMPE118/src/pwm.c C:/CMPE118/src/ES_PostList.c C:/CMPE118/src/AD.c C:/CMPE118/src/ES_Framework.c C:/CMPE118/src/IO_Ports.c C:/CMPE118/src/ES_CheckEvents.c C:/CMPE118/src/BOARD.c C:/CMPE118/src/ES_Queue.c C:/CMPE118/src/LED.c C:/CMPE118/src/ES_KeyboardInput.c C:/CMPE118/src/serial.c C:/CMPE118/src/RC_Servo.c EventCheckers/src/EventChecker.c Services/src/SyncSampling.c Services/src/BumperDebounce.c main.c Services/src/TrackWire.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/Level1HSM/src/TopLevelHSM.o ${OBJECTDIR}/Level2HSM/src/AmmoSearchSubHSM.o ${OBJECTDIR}/Level2HSM/src/AmmoLoadSubHSM.o ${OBJECTDIR}/Level2HSM/src/FirstTargetSearchSubHSM.o ${OBJECTDIR}/Level2HSM/src/FirstTargetUnloadSubHSM.o ${OBJECTDIR}/Drivers/src/motor.o ${OBJECTDIR}/Drivers/src/sensors.o ${OBJECTDIR}/_ext/331920610/ES_Timers.o ${OBJECTDIR}/_ext/331920610/ES_TattleTale.o ${OBJECTDIR}/_ext/331920610/pwm.o ${OBJECTDIR}/_ext/331920610/ES_PostList.o ${OBJECTDIR}/_ext/331920610/AD.o ${OBJECTDIR}/_ext/331920610/ES_Framework.o ${OBJECTDIR}/_ext/331920610/IO_Ports.o ${OBJECTDIR}/_ext/331920610/ES_CheckEvents.o ${OBJECTDIR}/_ext/331920610/BOARD.o ${OBJECTDIR}/_ext/331920610/ES_Queue.o ${OBJECTDIR}/_ext/331920610/LED.o ${OBJECTDIR}/_ext/331920610/ES_KeyboardInput.o ${OBJECTDIR}/_ext/331920610/serial.o ${OBJECTDIR}/_ext/331920610/RC_Servo.o ${OBJECTDIR}/EventCheckers/src/EventChecker.o ${OBJECTDIR}/Services/src/SyncSampling.o ${OBJECTDIR}/Services/src/BumperDebounce.o ${OBJECTDIR}/main.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/Level1HSM/src/TopLevelHSM.o.d ${OBJECTDIR}/Level2HSM/src/AmmoSearchSubHSM.o.d ${OBJECTDIR}/Level2HSM/src/AmmoLoadSubHSM.o.d ${OBJECTDIR}/Level2HSM/src/FirstTargetSearchSubHSM.o.d ${OBJECTDIR}/Level2HSM/src/FirstTargetUnloadSubHSM.o.d ${OBJECTDIR}/Drivers/src/motor.o.d ${OBJECTDIR}/Drivers/src/sensors.o.d ${OBJECTDIR}/_ext/331920610/ES_Timers.o.d ${OBJECTDIR}/_ext/331920610/ES_TattleTale.o.d ${OBJECTDIR}/_ext/331920610/pwm.o.d ${OBJECTDIR}/_ext/331920610/ES_PostList.o.d ${OBJECTDIR}/_ext/331920610/AD.o.d ${OBJECTDIR}/_ext/331920610/ES_Framework.o.d ${OBJECTDIR}/_ext/331920610/IO_Ports.o.d ${OBJECTDIR}/_ext/331920610/ES_CheckEvents.o.d ${OBJECTDIR}/_ext/331920610/BOARD.o.d ${OBJECTDIR}/_ext/331920610/ES_Queue.o.d ${OBJECTDIR}/_ext/331920610/LED.o.d ${OBJECTDIR}/_ext/331920610/ES_KeyboardInput.o.d ${OBJECTDIR}/_ext/331920610/serial.o.d ${OBJECTDIR}/_ext/331920610/RC_Servo.o.d ${OBJECTDIR}/EventCheckers/src/EventChecker.o.d ${OBJECTDIR}/Services/src/SyncSampling.o.d ${OBJECTDIR}/Services/src/BumperDebounce.o.d ${OBJECTDIR}/main.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/Level1HSM/src/TopLevelHSM.o ${OBJECTDIR}/Level2HSM/src/AmmoSearchSubHSM.o ${OBJECTDIR}/Level2HSM/src/AmmoLoadSubHSM.o ${OBJECTDIR}/Level2HSM/src/FirstTargetSearchSubHSM.o ${OBJECTDIR}/Level2HSM/src/FirstTargetUnloadSubHSM.o ${OBJECTDIR}/Drivers/src/motor.o ${OBJECTDIR}/Drivers/src/sensors.o ${OBJECTDIR}/_ext/331920610/ES_Timers.o ${OBJECTDIR}/_ext/331920610/ES_TattleTale.o ${OBJECTDIR}/_ext/331920610/pwm.o ${OBJECTDIR}/_ext/331920610/ES_PostList.o ${OBJECTDIR}/_ext/331920610/AD.o ${OBJECTDIR}/_ext/331920610/ES_Framework.o ${OBJECTDIR}/_ext/331920610/IO_Ports.o ${OBJECTDIR}/_ext/331920610/ES_CheckEvents.o ${OBJECTDIR}/_ext/331920610/BOARD.o ${OBJECTDIR}/_ext/331920610/ES_Queue.o ${OBJECTDIR}/_ext/331920610/LED.o ${OBJECTDIR}/_ext/331920610/ES_KeyboardInput.o ${OBJECTDIR}/_ext/331920610/serial.o ${OBJECTDIR}/_ext/331920610/RC_Servo.o ${OBJECTDIR}/EventCheckers/src/EventChecker.o ${OBJECTDIR}/Services/src/SyncSampling.o ${OBJECTDIR}/Services/src/BumperDebounce.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Services/src/TrackWire.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/Level1HSM/src/TopLevelHSM.o.d ${OBJECTDIR}/Level2HSM/src/AmmoSearchSubHSM.o.d ${OBJECTDIR}/Level2HSM/src/AmmoLoadSubHSM.o.d ${OBJECTDIR}/Level2HSM/src/FirstTargetSearchSubHSM.o.d ${OBJECTDIR}/Level2HSM/src/FirstTargetUnloadSubHSM.o.d ${OBJECTDIR}/Drivers/src/motor.o.d ${OBJECTDIR}/Drivers/src/sensors.o.d ${OBJECTDIR}/_ext/331920610/ES_Timers.o.d ${OBJECTDIR}/_ext/331920610/ES_TattleTale.o.d ${OBJECTDIR}/_ext/331920610/pwm.o.d ${OBJECTDIR}/_ext/331920610/ES_PostList.o.d ${OBJECTDIR}/_ext/331920610/AD.o.d ${OBJECTDIR}/_ext/331920610/ES_Framework.o.d ${OBJECTDIR}/_ext/331920610/IO_Ports.o.d ${OBJECTDIR}/_ext/331920610/ES_CheckEvents.o.d ${OBJECTDIR}/_ext/331920610/BOARD.o.d ${OBJECTDIR}/_ext/331920610/ES_Queue.o.d ${OBJECTDIR}/_ext/331920610/LED.o.d ${OBJECTDIR}/_ext/331920610/ES_KeyboardInput.o.d ${OBJECTDIR}/_ext/331920610/serial.o.d ${OBJECTDIR}/_ext/331920610/RC_Servo.o.d ${OBJECTDIR}/EventCheckers/src/EventChecker.o.d ${OBJECTDIR}/Services/src/SyncSampling.o.d ${OBJECTDIR}/Services/src/BumperDebounce.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/Services/src/TrackWire.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/Level1HSM/src/TopLevelHSM.o ${OBJECTDIR}/Level2HSM/src/AmmoSearchSubHSM.o ${OBJECTDIR}/Level2HSM/src/AmmoLoadSubHSM.o ${OBJECTDIR}/Level2HSM/src/FirstTargetSearchSubHSM.o ${OBJECTDIR}/Level2HSM/src/FirstTargetUnloadSubHSM.o ${OBJECTDIR}/Drivers/src/motor.o ${OBJECTDIR}/Drivers/src/sensors.o ${OBJECTDIR}/_ext/331920610/ES_Timers.o ${OBJECTDIR}/_ext/331920610/ES_TattleTale.o ${OBJECTDIR}/_ext/331920610/pwm.o ${OBJECTDIR}/_ext/331920610/ES_PostList.o ${OBJECTDIR}/_ext/331920610/AD.o ${OBJECTDIR}/_ext/331920610/ES_Framework.o ${OBJECTDIR}/_ext/331920610/IO_Ports.o ${OBJECTDIR}/_ext/331920610/ES_CheckEvents.o ${OBJECTDIR}/_ext/331920610/BOARD.o ${OBJECTDIR}/_ext/331920610/ES_Queue.o ${OBJECTDIR}/_ext/331920610/LED.o ${OBJECTDIR}/_ext/331920610/ES_KeyboardInput.o ${OBJECTDIR}/_ext/331920610/serial.o ${OBJECTDIR}/_ext/331920610/RC_Servo.o ${OBJECTDIR}/EventCheckers/src/EventChecker.o ${OBJECTDIR}/Services/src/SyncSampling.o ${OBJECTDIR}/Services/src/BumperDebounce.o ${OBJECTDIR}/main.o
+OBJECTFILES=${OBJECTDIR}/Level1HSM/src/TopLevelHSM.o ${OBJECTDIR}/Level2HSM/src/AmmoSearchSubHSM.o ${OBJECTDIR}/Level2HSM/src/AmmoLoadSubHSM.o ${OBJECTDIR}/Level2HSM/src/FirstTargetSearchSubHSM.o ${OBJECTDIR}/Level2HSM/src/FirstTargetUnloadSubHSM.o ${OBJECTDIR}/Drivers/src/motor.o ${OBJECTDIR}/Drivers/src/sensors.o ${OBJECTDIR}/_ext/331920610/ES_Timers.o ${OBJECTDIR}/_ext/331920610/ES_TattleTale.o ${OBJECTDIR}/_ext/331920610/pwm.o ${OBJECTDIR}/_ext/331920610/ES_PostList.o ${OBJECTDIR}/_ext/331920610/AD.o ${OBJECTDIR}/_ext/331920610/ES_Framework.o ${OBJECTDIR}/_ext/331920610/IO_Ports.o ${OBJECTDIR}/_ext/331920610/ES_CheckEvents.o ${OBJECTDIR}/_ext/331920610/BOARD.o ${OBJECTDIR}/_ext/331920610/ES_Queue.o ${OBJECTDIR}/_ext/331920610/LED.o ${OBJECTDIR}/_ext/331920610/ES_KeyboardInput.o ${OBJECTDIR}/_ext/331920610/serial.o ${OBJECTDIR}/_ext/331920610/RC_Servo.o ${OBJECTDIR}/EventCheckers/src/EventChecker.o ${OBJECTDIR}/Services/src/SyncSampling.o ${OBJECTDIR}/Services/src/BumperDebounce.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Services/src/TrackWire.o
 
 # Source Files
-SOURCEFILES=Level1HSM/src/TopLevelHSM.c Level2HSM/src/AmmoSearchSubHSM.c Level2HSM/src/AmmoLoadSubHSM.c Level2HSM/src/FirstTargetSearchSubHSM.c Level2HSM/src/FirstTargetUnloadSubHSM.c Drivers/src/motor.c Drivers/src/sensors.c C:/CMPE118/src/ES_Timers.c C:/CMPE118/src/ES_TattleTale.c C:/CMPE118/src/pwm.c C:/CMPE118/src/ES_PostList.c C:/CMPE118/src/AD.c C:/CMPE118/src/ES_Framework.c C:/CMPE118/src/IO_Ports.c C:/CMPE118/src/ES_CheckEvents.c C:/CMPE118/src/BOARD.c C:/CMPE118/src/ES_Queue.c C:/CMPE118/src/LED.c C:/CMPE118/src/ES_KeyboardInput.c C:/CMPE118/src/serial.c C:/CMPE118/src/RC_Servo.c EventCheckers/src/EventChecker.c Services/src/SyncSampling.c Services/src/BumperDebounce.c main.c
+SOURCEFILES=Level1HSM/src/TopLevelHSM.c Level2HSM/src/AmmoSearchSubHSM.c Level2HSM/src/AmmoLoadSubHSM.c Level2HSM/src/FirstTargetSearchSubHSM.c Level2HSM/src/FirstTargetUnloadSubHSM.c Drivers/src/motor.c Drivers/src/sensors.c C:/CMPE118/src/ES_Timers.c C:/CMPE118/src/ES_TattleTale.c C:/CMPE118/src/pwm.c C:/CMPE118/src/ES_PostList.c C:/CMPE118/src/AD.c C:/CMPE118/src/ES_Framework.c C:/CMPE118/src/IO_Ports.c C:/CMPE118/src/ES_CheckEvents.c C:/CMPE118/src/BOARD.c C:/CMPE118/src/ES_Queue.c C:/CMPE118/src/LED.c C:/CMPE118/src/ES_KeyboardInput.c C:/CMPE118/src/serial.c C:/CMPE118/src/RC_Servo.c EventCheckers/src/EventChecker.c Services/src/SyncSampling.c Services/src/BumperDebounce.c main.c Services/src/TrackWire.c
 
 
 CFLAGS=
@@ -79,11 +79,11 @@ FIXDEPS=fixDeps
 
 # The following macros may be used in the pre and post step lines
 Device=PIC32MX320F128H
-ProjectDir="C:\Users\jcrowley\Desktop\118project"
+ProjectDir="C:\Users\jdgrant\Desktop\118Project"
 ConfName=default
-ImagePath="dist\default\${IMAGE_TYPE}\118project.${IMAGE_TYPE}.${OUTPUT_SUFFIX}"
+ImagePath="dist\default\${IMAGE_TYPE}\118Project.${IMAGE_TYPE}.${OUTPUT_SUFFIX}"
 ImageDir="dist\default\${IMAGE_TYPE}"
-ImageName="118project.${IMAGE_TYPE}.${OUTPUT_SUFFIX}"
+ImageName="118Project.${IMAGE_TYPE}.${OUTPUT_SUFFIX}"
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
 IsDebug="true"
 else
@@ -94,7 +94,7 @@ endif
 ifneq ($(INFORMATION_MESSAGE), )
 	@echo $(INFORMATION_MESSAGE)
 endif
-	${MAKE}  -f nbproject/Makefile-default.mk dist/${CND_CONF}/${IMAGE_TYPE}/118project.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+	${MAKE}  -f nbproject/Makefile-default.mk dist/${CND_CONF}/${IMAGE_TYPE}/118Project.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
 
 MP_PROCESSOR_OPTION=32MX320F128H
 MP_LINKER_FILE_OPTION=,--script="C:\CMPE118\bootloader320.ld"
@@ -263,6 +263,12 @@ ${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/main.o 
 	@${FIXDEPS} "${OBJECTDIR}/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"Drivers/inc" -I"C:/CMPE118/include" -I"Services/inc" -I"EventCheckers/inc" -I"." -I"Level1HSM/inc" -I"Level2HSM/inc" -MMD -MF "${OBJECTDIR}/main.o.d" -o ${OBJECTDIR}/main.o main.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
+${OBJECTDIR}/Services/src/TrackWire.o: Services/src/TrackWire.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/Services/src" 
+	@${RM} ${OBJECTDIR}/Services/src/TrackWire.o.d 
+	@${RM} ${OBJECTDIR}/Services/src/TrackWire.o 
+	@${FIXDEPS} "${OBJECTDIR}/Services/src/TrackWire.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"Drivers/inc" -I"C:/CMPE118/include" -I"Services/inc" -I"EventCheckers/inc" -I"." -I"Level1HSM/inc" -I"Level2HSM/inc" -MMD -MF "${OBJECTDIR}/Services/src/TrackWire.o.d" -o ${OBJECTDIR}/Services/src/TrackWire.o Services/src/TrackWire.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
 else
 ${OBJECTDIR}/Level1HSM/src/TopLevelHSM.o: Level1HSM/src/TopLevelHSM.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/Level1HSM/src" 
@@ -414,6 +420,12 @@ ${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/main.o 
 	@${FIXDEPS} "${OBJECTDIR}/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"Drivers/inc" -I"C:/CMPE118/include" -I"Services/inc" -I"EventCheckers/inc" -I"." -I"Level1HSM/inc" -I"Level2HSM/inc" -MMD -MF "${OBJECTDIR}/main.o.d" -o ${OBJECTDIR}/main.o main.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
+${OBJECTDIR}/Services/src/TrackWire.o: Services/src/TrackWire.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/Services/src" 
+	@${RM} ${OBJECTDIR}/Services/src/TrackWire.o.d 
+	@${RM} ${OBJECTDIR}/Services/src/TrackWire.o 
+	@${FIXDEPS} "${OBJECTDIR}/Services/src/TrackWire.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"Drivers/inc" -I"C:/CMPE118/include" -I"Services/inc" -I"EventCheckers/inc" -I"." -I"Level1HSM/inc" -I"Level2HSM/inc" -MMD -MF "${OBJECTDIR}/Services/src/TrackWire.o.d" -o ${OBJECTDIR}/Services/src/TrackWire.o Services/src/TrackWire.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
 endif
 
 # ------------------------------------------------------------------------------------
@@ -425,15 +437,15 @@ endif
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: link
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-dist/${CND_CONF}/${IMAGE_TYPE}/118project.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk    C:/CMPE118/bootloader320.ld
+dist/${CND_CONF}/${IMAGE_TYPE}/118Project.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk    C:/CMPE118/bootloader320.ld
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
-	${MP_CC} $(MP_EXTRA_LD_PRE)  -mdebugger -D__MPLAB_DEBUGGER_PK3=1 -mprocessor=$(MP_PROCESSOR_OPTION)  -o dist/${CND_CONF}/${IMAGE_TYPE}/118project.${IMAGE_TYPE}.${OUTPUT_SUFFIX} ${OBJECTFILES_QUOTED_IF_SPACED}          -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)    -mreserve=boot@0x1FC02000:0x1FC02FEF -mreserve=boot@0x1FC02000:0x1FC024FF  -Wl,--defsym=__MPLAB_BUILD=1$(MP_EXTRA_LD_POST)$(MP_LINKER_FILE_OPTION),--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,--defsym=__MPLAB_DEBUGGER_PK3=1,--defsym=_min_heap_size=10,--no-code-in-dinit,--no-dinit-in-serial-mem,-Map="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map",--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml
+	${MP_CC} $(MP_EXTRA_LD_PRE)  -mdebugger -D__MPLAB_DEBUGGER_PK3=1 -mprocessor=$(MP_PROCESSOR_OPTION)  -o dist/${CND_CONF}/${IMAGE_TYPE}/118Project.${IMAGE_TYPE}.${OUTPUT_SUFFIX} ${OBJECTFILES_QUOTED_IF_SPACED}          -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)    -mreserve=boot@0x1FC02000:0x1FC02FEF -mreserve=boot@0x1FC02000:0x1FC024FF  -Wl,--defsym=__MPLAB_BUILD=1$(MP_EXTRA_LD_POST)$(MP_LINKER_FILE_OPTION),--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,--defsym=__MPLAB_DEBUGGER_PK3=1,--defsym=_min_heap_size=10,--no-code-in-dinit,--no-dinit-in-serial-mem,-Map="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map",--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml
 	
 else
-dist/${CND_CONF}/${IMAGE_TYPE}/118project.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk   C:/CMPE118/bootloader320.ld
+dist/${CND_CONF}/${IMAGE_TYPE}/118Project.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk   C:/CMPE118/bootloader320.ld
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
-	${MP_CC} $(MP_EXTRA_LD_PRE)  -mprocessor=$(MP_PROCESSOR_OPTION)  -o dist/${CND_CONF}/${IMAGE_TYPE}/118project.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX} ${OBJECTFILES_QUOTED_IF_SPACED}          -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -Wl,--defsym=__MPLAB_BUILD=1$(MP_EXTRA_LD_POST)$(MP_LINKER_FILE_OPTION),--defsym=_min_heap_size=10,--no-code-in-dinit,--no-dinit-in-serial-mem,-Map="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map",--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml
-	${MP_CC_DIR}\\xc32-bin2hex dist/${CND_CONF}/${IMAGE_TYPE}/118project.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX} 
+	${MP_CC} $(MP_EXTRA_LD_PRE)  -mprocessor=$(MP_PROCESSOR_OPTION)  -o dist/${CND_CONF}/${IMAGE_TYPE}/118Project.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX} ${OBJECTFILES_QUOTED_IF_SPACED}          -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -Wl,--defsym=__MPLAB_BUILD=1$(MP_EXTRA_LD_POST)$(MP_LINKER_FILE_OPTION),--defsym=_min_heap_size=10,--no-code-in-dinit,--no-dinit-in-serial-mem,-Map="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map",--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml
+	${MP_CC_DIR}\\xc32-bin2hex dist/${CND_CONF}/${IMAGE_TYPE}/118Project.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX} 
 endif
 
 .pre:
