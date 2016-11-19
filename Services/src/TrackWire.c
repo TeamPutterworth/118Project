@@ -18,11 +18,11 @@
 /*******************************************************************************
  * MODULE #DEFINES                                                             *
  ******************************************************************************/
-//#define DEBUG
+#define DEBUG
 #ifdef DEBUG
 #define TIMER_5_TICKS 500 // 2 ticks = 2 ms
 #else
-#define TIMER_5_TICKS 1 // 2 ticks = 2 ms
+#define TIMER_5_TICKS 50 // 2 ticks = 2 ms
 #endif
 #define BACK_TRACK_WIRE 1
 #define FRONT_TRACK_WIRE 0
