@@ -119,6 +119,7 @@ ES_Event RunTrackWireService(ES_Event ThisEvent)
             
             if (state == FRONT_TRACK_WIRE) // Read the front track wire val, set sel for back track
             {
+                state = BACK_TRACK_WIRE;
                 trackValF = readTrackWire();
                 if (trackValF)
                 {
@@ -132,6 +133,7 @@ ES_Event RunTrackWireService(ES_Event ThisEvent)
             }
             else if (state == BACK_TRACK_WIRE) // Read the back track wire val, set sel for front track
             {
+                state = FRONT_TRACK_WIRE;
                 trackVal = readTrackWire();
                 if (trackVal)
                 {
