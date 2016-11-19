@@ -73,7 +73,7 @@ uint8_t InitSyncSamplingService(uint8_t Priority) {
     AD_AddPins(AD_PORTV3|AD_PORTV4|AD_PORTV5|AD_PORTV6|AD_PORTV7);
 #ifdef MOTOR_TEST
     moveForward();
-    setMoveSpeed(50);
+    setMoveSpeed(25);
 #endif 
     // post the initial transition event
     IO_PortsWritePort(PORTZ,IO_PortsReadPort(PORTZ) | PIN3); // This Sets PIN7 (the LED) high for the first sample
@@ -146,7 +146,7 @@ ES_Event RunSyncSamplingService(ES_Event ThisEvent)
                 {
                     adcValOn[i] = AD_ReadADPin(adPins[i]); // Read the LED while it has been on for 2 ms 
                     #ifdef DEBUG
-                    //printf("\r\nadcValOn[%d]: %d",i,adcValOn[i]);
+                    printf("\r\nadcValOn[%d]: %d",i,adcValOn[i]);
                     #endif
                     IO_PortsWritePort(PORTZ,IO_PortsReadPort(PORTZ) & ~ledPins[i]); // This Sets PINi (the LED) low  
                 }
@@ -157,7 +157,7 @@ ES_Event RunSyncSamplingService(ES_Event ThisEvent)
                 {
                     adcValOff[i] = AD_ReadADPin(adPins[i]); // Read the LED after it has been off for 2 ms
                     #ifdef DEBUG
-                    //printf("\r\nadcValOff[%d]: %d",i,adcValOff[i]);
+                    printf("\r\nadcValOff[%d]: %d",i,adcValOff[i]);
                     #endif
                     IO_PortsWritePort(PORTZ,IO_PortsReadPort(PORTZ) | ledPins[i]); // This Sets PINi (the LED) high
 
@@ -193,16 +193,6 @@ ES_Event RunSyncSamplingService(ES_Event ThisEvent)
                     if (curEvent[i] != lastEvent[i])
                     {
                         tapeTriggered = TRUE;
-                        #ifdef MOTOR_TEST
-                        if (curEvent[i] == ON_TAPE)
-                        {
-                            stopMoving();
-                        }
-                        else
-                        {
-                            setMoveSpeed(50);
-                        }
-                        #endif
                     }
                     lastEvent[i] = curEvent[i];
                 }
@@ -230,6 +220,16 @@ ES_Event RunSyncSamplingService(ES_Event ThisEvent)
                             PostEvent.EventParam = PostEvent.EventParam & ~(1 << i);
                         }                
                     }
+                    #ifdef MOTOR_TEST
+                    if (PostEvent.EventParam)
+                    {
+                        stopMoving();
+                    }
+                    else
+                    {
+                        setMoveSpeed(25);
+                    }
+                    #endif
                     PostTopLevelHSM(PostEvent);
                     tapeTriggered = FALSE;      
                 }

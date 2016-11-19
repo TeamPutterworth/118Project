@@ -23,7 +23,7 @@
 //#define POSTFUNCTION_FOR_KEYBOARD_INPUT PostTopLevelHSM
 
 //define for TattleTale
-//#define USE_TATTLETALE
+#define USE_TATTLETALE
 
 //uncomment to supress the entry and exit events
 //#define SUPPRESS_EXIT_ENTRY_IN_TATTLE
@@ -133,9 +133,9 @@ static const char *EventNames[] = {
 #define BUMPER_DEBOUNCE_TIMER 4
 #define TRACK_WIRE_TIMER 5
 
-#define SHORT_TIMER_TICKS 500
-#define MEDIUM_TIMER_TICKS 1000 
-#define LONG_TIMER_TICKS 2000
+#define SHORT_TIMER_TICKS 50
+#define MEDIUM_TIMER_TICKS 500 
+#define LONG_TIMER_TICKS 1000
 
 /****************************************************************************/
 // The maximum number of services sets an upper bound on the number of 

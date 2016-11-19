@@ -111,6 +111,7 @@ ES_Event RunBumperDebounceService(ES_Event ThisEvent)
             
             if(pastBumperState[i] == LOW_TO_HIGH){
                 ReturnEvent.EventParam |= bumperPin[i];   
+                PostTopLevelHSM(ReturnEvent);
                 #ifdef DEBUG
                 LED_SetBank(ledBanks[i],0xF);
                 printf("\r\nBumper %d bumped", i);
@@ -127,6 +128,5 @@ ES_Event RunBumperDebounceService(ES_Event ThisEvent)
         ES_Timer_InitTimer(BUMPER_DEBOUNCE_TIMER,BUMPER_DEBOUNCE_TIMER_TICKS);
   
     }
-    PostTopLevelHSM(ReturnEvent);
     return ReturnEvent;
 }

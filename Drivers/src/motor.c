@@ -31,37 +31,43 @@ void motorInit()
 
 void pivotTurnRight()
 {
-	motorForward(LEFT);
-	motorStop(RIGHT);
+	motorForward(RIGHT);
+	motorStop(LEFT);
+    setMoveSpeed(25);
 }
 
 void pivotTurnLeft()
 {
-	motorForward(RIGHT);
-	motorStop(LEFT);
+	motorForward(LEFT);
+	motorStop(RIGHT);
+    setMoveSpeed(25);
 }
 
 void tankTurnRight()
 {
-	motorForward(RIGHT);
 	motorForward(LEFT);
+	motorForward(RIGHT);
+    setMoveSpeed(25);
 }
 void tankTurnLeft()
 {
-	motorBackward(LEFT);
 	motorBackward(RIGHT);
+	motorBackward(LEFT);
+    setMoveSpeed(25);
 }
 
 void moveBackward()
 {
-	motorForward(LEFT);
-	motorBackward(RIGHT);
+	motorForward(RIGHT);
+	motorBackward(LEFT);
+    setMoveSpeed(25);
 }
 
 void moveForward()
 {
-	motorForward(RIGHT);
-	motorBackward(LEFT);
+	motorForward(LEFT);
+	motorBackward(RIGHT);
+    setMoveSpeed(25);
 }
 
 void stopMoving()

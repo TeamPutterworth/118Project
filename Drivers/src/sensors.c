@@ -78,7 +78,7 @@ uint8_t readBeaconDetector()
  */
 void muxSelTrackWire(uint8_t selectMask)
 {
-    if (selectMask & 0x1)
+    if (selectMask)
     {
         IO_PortsWritePort(MUX_PORT,IO_PortsReadPort(MUX_PORT) | MUX_SELECT_A); // This sets select A on the mux
     }

@@ -126,14 +126,14 @@ ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
             case TAPE_TRIGGERED:
                 if (((ThisEvent.EventParam & TS_FR) >> FR_SH))
                 {
-                    turnParam = 0;
+                    turnParam = 1;
                     nextState = Backward;
                     makeTransition = TRUE;
                     ThisEvent.EventType = ES_NO_EVENT;
                 } 
                 else if (((ThisEvent.EventParam & TS_FL) >> FL_SH))
                 {
-                    turnParam = 1;
+                    turnParam = 0;
                     nextState = Backward;
                     makeTransition = TRUE;
                     ThisEvent.EventType = ES_NO_EVENT;
