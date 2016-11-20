@@ -47,5 +47,16 @@ void pivotTurnLeft();
 // This function can be used to stop a specific motor
 void motorStop(int lr);
 
+// This function sets a specific motor to a specific speed
+void setMotorSpeed(int lr, int speed);
+
+// This function sets the motors to the normal speed with a 
+// positive offset to the left motor
+void gradualTurnLeft(int difference);
+
+// This function sets the motors to the normal speed with a 
+// positive offset to the left motor
+void gradualTurnRight(int difference);
+
 
 #endif /* _MOTOR_H */

@@ -22,6 +22,7 @@
 #define DIR_RIGHT_MOTOR PIN11
 #define RIGHT 1
 #define LEFT 0
+#define NORM_SPEED 25
 
 void motorInit()
 {
@@ -32,14 +33,14 @@ void motorInit()
 void pivotTurnRight()
 {
 	motorForward(RIGHT);
-    setMoveSpeed(25);
+    setMoveSpeed(NORM_SPEED);
 	motorStop(LEFT);
 }
 
 void pivotTurnLeft()
 {
 	motorForward(LEFT);
-    setMoveSpeed(25);
+    setMoveSpeed(NORM_SPEED);
 	motorStop(RIGHT);
 }
 
@@ -47,32 +48,53 @@ void tankTurnRight()
 {
 	motorForward(LEFT);
 	motorForward(RIGHT);
-    setMoveSpeed(25);
+    setMoveSpeed(NORM_SPEED);
 }
+
 void tankTurnLeft()
 {
 	motorBackward(RIGHT);
 	motorBackward(LEFT);
-    setMoveSpeed(25);
+    setMoveSpeed(NORM_SPEED);
 }
 
 void moveBackward()
 {
 	motorForward(RIGHT);
 	motorBackward(LEFT);
-    setMoveSpeed(25);
+    setMoveSpeed(NORM_SPEED);
 }
 
 void moveForward()
 {
 	motorForward(LEFT);
 	motorBackward(RIGHT);
-    setMoveSpeed(25);
+    setMoveSpeed(NORM_SPEED);
 }
 
 void stopMoving()
 {
 	setMoveSpeed(0);
+}
+
+
+void gradualTurnRight()
+{
+	setMotorSpeed(LEFT, NORM_SPEED);
+	setMotorSpeed(RIGHT, NORM_SPEED);
+}
+
+
+void gradualTurnLeft(int difference)
+{
+	setMotorSpeed(LEFT, NORM_SPEED - (difference/2));
+	setMotorSpeed(RIGHT, NORM_SPEED + (difference/2));
+}
+
+void gradualTurnRight(int difference)
+{
+	setMotorSpeed(LEFT, NORM_SPEED - (difference/2));
+	setMotorSpeed(RIGHT, NORM_SPEED + (difference/2));
 }
 
 /*
@@ -120,6 +142,28 @@ void motorStop(int lr)
 	else
 	{
 		PWM_SetDutyCycle(PWM_LEFT_MOTOR,0);
+	}
+	return;
+}
+
+void setMotorSpeed(int lr, int speed)
+{
+	if(speed > 50)
+    {
+        speed = 50;
+    }
+    else if(speed < 0)
+    {
+        speed = 0;
+    }
+
+    if (lr == RIGHT) 
+	{
+		PWM_SetDutyCycle(PWM_RIGHT_MOTOR, speed);
+	}
+	else
+	{
+		PWM_SetDutyCycle(PWM_LEFT_MOTOR, speed);
 	}
 	return;
 }
