@@ -32,15 +32,15 @@ void motorInit()
 void pivotTurnRight()
 {
 	motorForward(RIGHT);
-	motorStop(LEFT);
     setMoveSpeed(25);
+	motorStop(LEFT);
 }
 
 void pivotTurnLeft()
 {
 	motorForward(LEFT);
-	motorStop(RIGHT);
     setMoveSpeed(25);
+	motorStop(RIGHT);
 }
 
 void tankTurnRight()

@@ -22,7 +22,7 @@
 /*******************************************************************************
  * PRIVATE #DEFINES                                                            *
  ******************************************************************************/
-
+#define STUCK 4
 /*******************************************************************************
  * MODULE #DEFINES                                                             *
  ******************************************************************************/
@@ -95,6 +95,7 @@ ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
 {
     uint8_t makeTransition = FALSE; // use to flag transition
     static uint8_t turnParam; // use this flag to turnCW or turnCCW
+    static uint8_t stuckCounter; // use this to see if we are stuck!
     HSMState_t nextState; // <- change type to correct enum
 
     ES_Tattle(); // trace call stack
@@ -126,14 +127,46 @@ ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
             case TAPE_TRIGGERED:
                 if (((ThisEvent.EventParam & TS_FR) >> FR_SH))
                 {
-                    turnParam = 1;
+                    if (turnParam == 0)
+                    {
+                        stuckCounter++;
+                    }
+                    else
+                    {
+                        stuckCounter = 0;
+                    }
+                    
+                    if (stuckCounter > STUCK)
+                    {
+                        turnParam = 0;
+                    }
+                    else
+                    {
+                        turnParam = 1;
+                    }
                     nextState = Backward;
                     makeTransition = TRUE;
                     ThisEvent.EventType = ES_NO_EVENT;
                 } 
                 else if (((ThisEvent.EventParam & TS_FL) >> FL_SH))
-                {
-                    turnParam = 0;
+                {   
+                    if (turnParam == 1)
+                    {
+                        stuckCounter++;
+                    }
+                    else
+                    {
+                        stuckCounter = 0;
+                    }
+                    
+                    if (stuckCounter > STUCK)
+                    {
+                        turnParam = 1;
+                    }
+                    else
+                    {
+                        turnParam = 0;
+                    }
                     nextState = Backward;
                     makeTransition = TRUE;
                     ThisEvent.EventType = ES_NO_EVENT;

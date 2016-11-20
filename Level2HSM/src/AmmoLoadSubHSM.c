@@ -117,6 +117,7 @@ ES_Event RunAmmoLoadSubHSM(ES_Event ThisEvent)
             case ES_ENTRY:
                 // We love tank turning cw
                 tankTurnRight();
+                setMoveSpeed(10);
                 break;
             case TW_TRIGGERED:
                 // This value assumes we are using only middle and back track wires, meaning both bits are set high

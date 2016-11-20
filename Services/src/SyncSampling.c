@@ -26,7 +26,7 @@
 #define TIMER_0_TICKS 2 // 2 ticks = 2 ms
 #endif
 #define ON 1
-#define HI_THRESHOLD 500
+#define HI_THRESHOLD 400
 #define LO_THRESHOLD 150
 #define NUM_LEDS 5
 
@@ -123,7 +123,7 @@ ES_Event RunSyncSamplingService(ES_Event ThisEvent)
     ReturnEvent.EventType = ES_NO_EVENT; // assume no errors
     static uint8_t curLEDState = ON; // LED Starts as on (in init function).
     static int16_t adcValOn[NUM_LEDS], adcValOff[NUM_LEDS], adcDiff[NUM_LEDS];
-    static ES_EventTyp_t lastEvent [NUM_LEDS] = {OFF_TAPE,OFF_TAPE,OFF_TAPE,OFF_TAPE};
+    static ES_EventTyp_t lastEvent [NUM_LEDS] = {OFF_TAPE,OFF_TAPE,OFF_TAPE,OFF_TAPE,OFF_TAPE};
     ES_EventTyp_t curEvent [NUM_LEDS];
 
     switch (ThisEvent.EventType) 
@@ -188,7 +188,11 @@ ES_Event RunSyncSamplingService(ES_Event ThisEvent)
                            LED_SetBank(ledBanks[i],LED_GetBank(ledBanks[i]) & ~0xC); 
                         }
                         curEvent[i] = ON_TAPE;
-                    }
+                    }/*
+                    else 
+                    {
+                        curEvent[i] = lastEvent[i];
+                    }*/
                     // if we get into this condition, a tape sensor was triggered either on or off
                     if (curEvent[i] != lastEvent[i])
                     {

@@ -150,7 +150,7 @@ ES_Event RunTopLevelHSM(ES_Event ThisEvent)
         switch (ThisEvent.EventType) {
             case TW_TRIGGERED:
                 // check if rising edge
-                if(ThisEvent.EventParam)
+                if(ThisEvent.EventParam == 0x1);
                 {
                     nextState = AmmoLoad;
                     makeTransition = TRUE;
@@ -167,7 +167,7 @@ ES_Event RunTopLevelHSM(ES_Event ThisEvent)
         switch (ThisEvent.EventType) {
             case TW_TRIGGERED:
                 // check if falling edge
-                if(!ThisEvent.EventParam)
+                if(ThisEvent.EventParam == 0)
                 {
                     nextState = AmmoSearch;
                     makeTransition = TRUE;

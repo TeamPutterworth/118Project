@@ -79,7 +79,7 @@ FIXDEPS=fixDeps
 
 # The following macros may be used in the pre and post step lines
 Device=PIC32MX320F128H
-ProjectDir="C:\Users\rlhill\Desktop\118Project"
+ProjectDir="C:\Users\jdgrant\Desktop\118Project"
 ConfName=default
 ImagePath="dist\default\${IMAGE_TYPE}\118Project.${IMAGE_TYPE}.${OUTPUT_SUFFIX}"
 ImageDir="dist\default\${IMAGE_TYPE}"

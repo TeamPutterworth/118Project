@@ -102,12 +102,14 @@ void testServos()
         RC_SetPulseTime(RC_SERVO_BRIDGE,i);
         delay(1000);
     }
+    delay(100000);
     for (i=2000;i>1000;i-=1)
     {
         RC_SetPulseTime(RC_SERVO_UNLOADING,i);
         RC_SetPulseTime(RC_SERVO_BRIDGE,i);
         delay(1000);
     }
+    delay(100000);
     return;
 }
 #endif
@@ -158,7 +160,7 @@ void main(void)
         ;
 #else
     while (1) {
-        testMotors();
+        testServos();
         /*
         switch(readBumpers()){
             case (0x01): // Front-Right Bumper
