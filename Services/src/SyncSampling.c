@@ -146,7 +146,7 @@ ES_Event RunSyncSamplingService(ES_Event ThisEvent)
                 {
                     adcValOn[i] = AD_ReadADPin(adPins[i]); // Read the LED while it has been on for 2 ms 
                     #ifdef DEBUG
-                    printf("\r\nadcValOn[%d]: %d",i,adcValOn[i]);
+                    //printf("\r\nadcValOn[%d]: %d",i,adcValOn[i]);
                     #endif
                     IO_PortsWritePort(PORTZ,IO_PortsReadPort(PORTZ) & ~ledPins[i]); // This Sets PINi (the LED) low  
                 }
@@ -157,7 +157,7 @@ ES_Event RunSyncSamplingService(ES_Event ThisEvent)
                 {
                     adcValOff[i] = AD_ReadADPin(adPins[i]); // Read the LED after it has been off for 2 ms
                     #ifdef DEBUG
-                    printf("\r\nadcValOff[%d]: %d",i,adcValOff[i]);
+                    //printf("\r\nadcValOff[%d]: %d",i,adcValOff[i]);
                     #endif
                     IO_PortsWritePort(PORTZ,IO_PortsReadPort(PORTZ) | ledPins[i]); // This Sets PINi (the LED) high
 

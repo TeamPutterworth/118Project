@@ -18,7 +18,7 @@
 #include "SecondTargetSearchSubHSM.h"
 #include "sensors.h"
 #include "motor.h"
-
+#include "IO_Ports.h"
 /*******************************************************************************
  * PRIVATE #DEFINES                                                            *
  ******************************************************************************/
@@ -35,10 +35,15 @@ typedef enum {
     Backward,
     TankTurn,
     GradualTurn,
+    Forward,
 } HSMState_t;
 
 static const char *StateNames[] = {
-	
+	"InitPState",
+	"Backward",
+	"TankTurn",
+	"GradualTurn",
+	"Forward",
 };
 
 
@@ -117,7 +122,7 @@ ES_Event RunSecondTargetSearchSubHSM(ES_Event ThisEvent)
     case Backward:
         switch(ThisEvent.EventType){
             case ES_ENTRY:
-                moveBackward()
+                moveBackward();
                 break;
             case ES_TIMEOUT:
                 nextState = Backward;
@@ -169,12 +174,12 @@ ES_Event RunSecondTargetSearchSubHSM(ES_Event ThisEvent)
                 // circle the last target and increase radius each time
                 if(direction == LEFT)
                 {
-                    GradualTurnLeft(difference);
+                    gradualTurnLeft(difference);
                     direction = RIGHT;
                 }
                 else
                 {
-                    GradualTurnRight(difference);
+                    gradualTurnRight(difference);
                     direction = LEFT;
                 }
                 difference -= 3;

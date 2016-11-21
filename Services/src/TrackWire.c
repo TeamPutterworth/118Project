@@ -18,7 +18,7 @@
 /*******************************************************************************
  * MODULE #DEFINES                                                             *
  ******************************************************************************/
-//#define DEBUG
+#define DEBUG
 #ifdef DEBUG
 #define TIMER_5_TICKS 500 // 2 ticks = 2 ms
 #else
@@ -121,6 +121,11 @@ ES_Event RunTrackWireService(ES_Event ThisEvent)
             {
                 state = BACK_TRACK_WIRE;
                 trackValF = readTrackWire();
+                
+                #ifdef DEBUG
+                printf("\r\nFront TrackW: %d",!trackValF);
+                #endif
+                
                 if (trackValF)
                 {
                     curStateF = TRACK_WIRE_OFF;
@@ -135,6 +140,11 @@ ES_Event RunTrackWireService(ES_Event ThisEvent)
             {
                 state = FRONT_TRACK_WIRE;
                 trackVal = readTrackWire();
+                
+                #ifdef DEBUG
+                printf("\r\nBack TrackW: %d",!trackVal);
+                #endif
+              
                 if (trackVal)
                 {
                     curState = TRACK_WIRE_OFF;
@@ -153,7 +163,8 @@ ES_Event RunTrackWireService(ES_Event ThisEvent)
                     PostEvent.EventParam = 0;
                     PostEvent.EventParam = (!trackValF) | (!trackVal << 1);
                     #ifdef DEBUG
-                    printf("\r\nFront TrackW: %d Back TrackW: %d",!trackValF,!trackVal);
+                    //printf("\r\nFront TrackW: %d Back TrackW: %d",!trackValF,!trackVal);
+                    printf("\r\nParam: %d",PostEvent.EventParam);
                     #endif
                     PostTopLevelHSM(PostEvent);
                 }

@@ -12,6 +12,8 @@
         <itemPath>Level2HSM/inc/AmmoLoadSubHSM.h</itemPath>
         <itemPath>Level2HSM/inc/FirstTargetSearchSubHSM.h</itemPath>
         <itemPath>Level2HSM/inc/FirstTargetUnloadSubHSM.h</itemPath>
+        <itemPath>Level2HSM/inc/SecondTargetSearchSubHSM.h</itemPath>
+        <itemPath>Level2HSM/inc/SecondTargetApproachSubHSM.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="Drivers" projectFiles="true">
         <itemPath>Drivers/inc/sensors.h</itemPath>
@@ -65,6 +67,7 @@
         <itemPath>Level2HSM/src/AmmoLoadSubHSM.c</itemPath>
         <itemPath>Level2HSM/src/FirstTargetSearchSubHSM.c</itemPath>
         <itemPath>Level2HSM/src/FirstTargetUnloadSubHSM.c</itemPath>
+        <itemPath>Level2HSM/src/SecondTargetSearchSubHSM.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="Drivers" projectFiles="true">
         <itemPath>Drivers/src/motor.c</itemPath>
@@ -151,7 +154,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="Drivers\inc;C:\CMPE118\include;Services\inc;EventCheckers\inc;.;Level1HSM\inc;Level2HSM\inc"/>
+                  value="Drivers\inc;Services\inc;EventCheckers\inc;.;Level1HSM\inc;Level2HSM\inc;C:\CMPE118\include;118Project"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="false"/>

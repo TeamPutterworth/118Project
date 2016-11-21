@@ -19,7 +19,7 @@
 /*******************************************************************************
  * MODULE #DEFINES                                                             *
  ******************************************************************************/
-//#define DEBUG
+#define DEBUG
 #define LOW_TO_HIGH 0x7FFF
 #define HIGH_TO_LOW 0x8000
 #define BUMPER_DEBOUNCE_TIMER_TICKS 5
@@ -113,7 +113,7 @@ ES_Event RunBumperDebounceService(ES_Event ThisEvent)
                 ReturnEvent.EventParam |= bumperPin[i];   
                 PostTopLevelHSM(ReturnEvent);
                 #ifdef DEBUG
-                LED_SetBank(ledBanks[i],0xF);
+                //LED_SetBank(ledBanks[i],0xF);
                 printf("\r\nBumper %d bumped", i);
                 #endif 
             }
@@ -121,12 +121,18 @@ ES_Event RunBumperDebounceService(ES_Event ThisEvent)
 
         // event has occurred if any bumper set the param
         if(ReturnEvent.EventParam){
+            #ifdef DEBUG
+                //LED_SetBank(ledBanks[i],0xF);
+                printf("\r\nEventParam: %x", ReturnEvent.EventParam);
+                #endif 
             ReturnEvent.EventType = BUMPED;
+            PostTopLevelHSM(ReturnEvent);
         }
          
         // restart timer for this service
         ES_Timer_InitTimer(BUMPER_DEBOUNCE_TIMER,BUMPER_DEBOUNCE_TIMER_TICKS);
   
     }
+    
     return ReturnEvent;
 }

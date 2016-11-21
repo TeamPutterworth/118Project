@@ -123,6 +123,9 @@ ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
         //state machine does
         //ThisEvent = RunAmmoSearchHSM(ThisEvent);
         switch (ThisEvent.EventType) {
+            case ES_ENTRY:
+                moveForward();
+                break;
             // fl triggered then turn right, else if fr triggered turn left
             case TAPE_TRIGGERED:
                 if (((ThisEvent.EventParam & TS_FR) >> FR_SH))
@@ -174,14 +177,14 @@ ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
                 break;
             case BUMPED:
                 // We kinda want to ignore back bumpers when going forward, who cares if a robot hit us
-                if (ThisEvent.EventParam == 0x1)
+                if (ThisEvent.EventParam == FL_BUMPER)
                 {
                     turnParam = 0;
                     nextState = Backward;
                     makeTransition = TRUE;
                     ThisEvent.EventType = ES_NO_EVENT;
                 } 
-                else if (ThisEvent.EventParam == 0x2)
+                else if (ThisEvent.EventParam == FR_BUMPER)
                 {
                     turnParam = 1;
                     nextState = Backward;
@@ -189,9 +192,7 @@ ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
                     ThisEvent.EventType = ES_NO_EVENT;
                 }
                 break;
-            case ES_ENTRY:
-                moveForward();
-                break;
+            
             case ES_NO_EVENT:
             default:
                 break;

@@ -7,8 +7,8 @@
  * and finding targets to deposit the ammo. This basic logic is looped.
  * 
  */
-#ifndef SECOND_TARGET_SEARCH_SUB_HSM_H  // <- This should be changed to your own guard on both
-#define SECOND_TARGET_SEARCH_SUB_HSM_H  //    of these lines
+#ifndef SECOND_TARGET_SEARCH_SUB_HSM_H 
+#define SECOND_TARGET_SEARCH_SUB_HSM_H  
 
 
 /*******************************************************************************
