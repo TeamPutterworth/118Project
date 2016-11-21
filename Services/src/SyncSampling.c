@@ -166,6 +166,9 @@ ES_Event RunSyncSamplingService(ES_Event ThisEvent)
                     printf("\r\nadcDiff[%d]: %d",i,adcDiff[i]);
                     #endif
                     // Do hystersis check
+                    
+                    //curEvent[i] = lastEvent[i];
+                    
                     if (adcDiff[i] > HI_THRESHOLD) {
                         if ((i % 2) == 0)
                         {
@@ -188,8 +191,8 @@ ES_Event RunSyncSamplingService(ES_Event ThisEvent)
                            LED_SetBank(ledBanks[i],LED_GetBank(ledBanks[i]) & ~0xC); 
                         }
                         curEvent[i] = ON_TAPE;
-                    }/*
-                    else 
+                    }
+                    /*else 
                     {
                         curEvent[i] = lastEvent[i];
                     }*/

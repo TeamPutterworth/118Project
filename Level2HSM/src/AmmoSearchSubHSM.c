@@ -23,6 +23,8 @@
  * PRIVATE #DEFINES                                                            *
  ******************************************************************************/
 #define STUCK 4
+#define LEFT 0
+#define RIGHT 1
 /*******************************************************************************
  * MODULE #DEFINES                                                             *
  ******************************************************************************/
@@ -94,8 +96,10 @@ uint8_t InitAmmoSearchSubHSM(void)
 ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
 {
     uint8_t makeTransition = FALSE; // use to flag transition
-    static uint8_t turnParam; // use this flag to turnCW or turnCCW
+    static uint8_t turnParam = 0; // use this flag to turnCW or turnCCW
     static uint8_t stuckCounter; // use this to see if we are stuck!
+    static uint8_t lastTape[2] = {LEFT,LEFT};
+    
     HSMState_t nextState; // <- change type to correct enum
 
     ES_Tattle(); // trace call stack
@@ -130,6 +134,8 @@ ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
             case TAPE_TRIGGERED:
                 if (((ThisEvent.EventParam & TS_FR) >> FR_SH))
                 {
+                    lastTape[1] = lastTape[0];
+                    lastTape[0] = RIGHT;
                     if (turnParam == 0)
                     {
                         stuckCounter++;
@@ -150,9 +156,12 @@ ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
                     nextState = Backward;
                     makeTransition = TRUE;
                     ThisEvent.EventType = ES_NO_EVENT;
+                    ES_Timer_InitTimer(SHORT_HSM_TIMER, SHORT_TIMER_TICKS);
                 } 
                 else if (((ThisEvent.EventParam & TS_FL) >> FL_SH))
                 {   
+                    lastTape[1] = lastTape[0];
+                    lastTape[0] = LEFT;
                     if (turnParam == 1)
                     {
                         stuckCounter++;
@@ -173,6 +182,7 @@ ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
                     nextState = Backward;
                     makeTransition = TRUE;
                     ThisEvent.EventType = ES_NO_EVENT;
+                    ES_Timer_InitTimer(SHORT_HSM_TIMER, SHORT_TIMER_TICKS);
                 }
                 break;
             case BUMPED:
@@ -183,6 +193,7 @@ ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
                     nextState = Backward;
                     makeTransition = TRUE;
                     ThisEvent.EventType = ES_NO_EVENT;
+                    ES_Timer_InitTimer(SHORT_HSM_TIMER, SHORT_TIMER_TICKS);
                 } 
                 else if (ThisEvent.EventParam == FR_BUMPER)
                 {
@@ -190,9 +201,21 @@ ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
                     nextState = Backward;
                     makeTransition = TRUE;
                     ThisEvent.EventType = ES_NO_EVENT;
+                    ES_Timer_InitTimer(SHORT_HSM_TIMER, SHORT_TIMER_TICKS);
                 }
                 break;
-            
+            case TW_TRIGGERED:
+                if (ThisEvent.EventParam == TW_F)
+                {
+                    nextState = Backward;
+                    makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
+                    
+                    ES_Timer_InitTimer(LONG_HSM_TIMER, LONG_TIMER_TICKS);
+                    
+                } 
+                
+                break;
             case ES_NO_EVENT:
             default:
                 break;
@@ -202,8 +225,8 @@ ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
     case TankTurn:
         switch (ThisEvent.EventType) {  
             case ES_ENTRY:
-                ES_Timer_InitTimer(SHORT_HSM_TIMER, SHORT_TIMER_TICKS);
-                if (turnParam)
+                
+                if (/*turnParam || */lastTape[1])
                 {
                     tankTurnRight();
                 }
@@ -226,14 +249,20 @@ ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
     case Backward:
         switch (ThisEvent.EventType) {
             case ES_ENTRY:
-                ES_Timer_InitTimer(SHORT_HSM_TIMER, SHORT_TIMER_TICKS);
-                //ES_Timer_StartTimer We might have to call this?
                 moveBackward();
                 break;
             case ES_TIMEOUT:
-                nextState = TankTurn;
-                makeTransition = TRUE;
-                ThisEvent.EventType = ES_NO_EVENT;
+                if(ThisEvent.EventParam == SHORT_HSM_TIMER){
+                    nextState = TankTurn;
+                    makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
+                    ES_Timer_InitTimer(SHORT_HSM_TIMER, SHORT_TIMER_TICKS);
+                }else if(ThisEvent.EventParam == LONG_HSM_TIMER){
+                    nextState = TankTurn;
+                    makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
+                    ES_Timer_InitTimer(MEDIUM_HSM_TIMER, MEDIUM_TIMER_TICKS);
+                }
                 break;
             case ES_NO_EVENT:
             default:

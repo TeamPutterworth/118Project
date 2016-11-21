@@ -47,20 +47,20 @@ void pivotTurnLeft()
 void tankTurnRight()
 {
 	motorForward(LEFT);
-	motorBackward(RIGHT);
+	motorForward(RIGHT);
     setMoveSpeed(NORM_SPEED);
 }
 
 void tankTurnLeft()
 {
-	motorForward(RIGHT);
+	motorBackward(RIGHT);
 	motorBackward(LEFT);
     setMoveSpeed(NORM_SPEED);
 }
 
 void moveBackward()
 {
-	motorBackward(RIGHT);
+	motorForward(RIGHT);
 	motorBackward(LEFT);
     setMoveSpeed(NORM_SPEED);
 }
@@ -68,7 +68,7 @@ void moveBackward()
 void moveForward()
 {
 	motorForward(LEFT);
-	motorForward(RIGHT);
+	motorBackward(RIGHT);
     setMoveSpeed(NORM_SPEED);
 }
 
@@ -151,11 +151,11 @@ void setMotorSpeed(int lr, int speed)
 
     if (lr == RIGHT) 
 	{
-		PWM_SetDutyCycle(PWM_RIGHT_MOTOR, speed);
+		PWM_SetDutyCycle(PWM_RIGHT_MOTOR, speed*10);
 	}
 	else
 	{
-		PWM_SetDutyCycle(PWM_LEFT_MOTOR, speed);
+		PWM_SetDutyCycle(PWM_LEFT_MOTOR, speed*10);
 	}
 	return;
 }

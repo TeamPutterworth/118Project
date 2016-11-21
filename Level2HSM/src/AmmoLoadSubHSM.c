@@ -31,12 +31,14 @@ typedef enum {
     InitPState,
     TankTurn,
     Backward,
+    Forward,
 } HSMState_t;
 
 static const char *StateNames[] = {
 	"InitPState",
 	"TankTurn",
 	"Backward",
+	"Forward",
 };
 
 
@@ -99,16 +101,10 @@ ES_Event RunAmmoLoadSubHSM(ES_Event ThisEvent)
     case InitPState: // If current state is initial Pseudo State
         if (ThisEvent.EventType == ES_INIT)// only respond to ES_Init
         {
-            // this is where you would put any actions associated with the
-            // transition from the initial pseudo-state into the actual
-            // initial state
-            // Initialize all sub-state machines
-            //InitAmmoLoadHSM();
-            // now put the machine into the actual initial state
-            nextState = TankTurn;
+            nextState = Backward;
             makeTransition = TRUE;
             ThisEvent.EventType = ES_NO_EVENT;
-            ;
+            
         }
         break;
 
@@ -121,7 +117,7 @@ ES_Event RunAmmoLoadSubHSM(ES_Event ThisEvent)
                 break;
             case TW_TRIGGERED:
                 // This value assumes we are using only middle and back track wires, meaning both bits are set high
-                if (ThisEvent.EventParam == 0x3)
+                if (ThisEvent.EventParam == (TW_F | TW_B))
                 {
                     nextState = Backward;
                     makeTransition = TRUE;
@@ -141,7 +137,27 @@ ES_Event RunAmmoLoadSubHSM(ES_Event ThisEvent)
                 break;
             case TW_TRIGGERED:
                 // This value assumes we are using only middle and back track wires, meaning both bits are set high
-                if (ThisEvent.EventParam != 0x3)
+                
+                if (ThisEvent.EventParam != (TW_F | TW_B))
+                {
+                    nextState = TankTurn;
+                    makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
+                }
+                break;
+            case ES_NO_EVENT:
+            default:
+                break;
+        }
+        break;
+    case Forward:
+        switch (ThisEvent.EventType) {
+            case ES_ENTRY:
+                moveForward();
+                break;
+            case TW_TRIGGERED:
+                // This value assumes we are using only middle and back track wires, meaning both bits are set high
+                if (ThisEvent.EventParam & 0x1)
                 {
                     nextState = TankTurn;
                     makeTransition = TRUE;
