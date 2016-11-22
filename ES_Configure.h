@@ -54,6 +54,7 @@ typedef enum {
     BEACON_ON,
     BUMPED,
     UNLOADED,
+    BEACON_TRIGGERED,
     BATTERY_CONNECTED,
     BATTERY_DISCONNECTED,
     NUMBEROFEVENTS,
@@ -80,6 +81,7 @@ static const char *EventNames[] = {
 	"BEACON_ON",
 	"BUMPED",
 	"UNLOADED",
+	"BEACON_TRIGGERED",
 	"BATTERY_CONNECTED",
 	"BATTERY_DISCONNECTED",
 	"NUMBEROFEVENTS",
@@ -108,7 +110,7 @@ static const char *EventNames[] = {
 #define TIMER5_RESP_FUNC PostTrackWireService
 #define TIMER6_RESP_FUNC PostTopLevelHSM
 #define TIMER7_RESP_FUNC PostTopLevelHSM
-#define TIMER8_RESP_FUNC TIMER_UNUSED
+#define TIMER8_RESP_FUNC PostTopLevelHSM
 #define TIMER9_RESP_FUNC TIMER_UNUSED
 #define TIMER10_RESP_FUNC TIMER_UNUSED
 #define TIMER11_RESP_FUNC TIMER_UNUSED
@@ -132,15 +134,17 @@ static const char *EventNames[] = {
 #define LONG_HSM_TIMER 3
 #define BUMPER_DEBOUNCE_TIMER 4
 #define TRACK_WIRE_TIMER 5
-#define TIMER_90 6
-#define TIMER_180 7
+#define TIMER_45 6
+#define TIMER_90 7
+#define TIMER_180 8
 
 #define SHORT_TIMER_TICKS 50
-#define MEDIUM_TIMER_TICKS 500 
+#define MEDIUM_TIMER_TICKS 250 
 #define LONG_TIMER_TICKS 1000
 
-#define TIMER_90_TICKS
-#define TIMER_180_TICKS 2*TIMER_90_TICKS
+#define TIMER_45_TICKS 685
+#define TIMER_90_TICKS 2*TIMER_45_TICKS
+#define TIMER_180_TICKS 4*TIMER_45_TICKS
 
 /****************************************************************************/
 // The maximum number of services sets an upper bound on the number of 

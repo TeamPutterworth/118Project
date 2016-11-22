@@ -16,6 +16,7 @@
  * PUBLIC #DEFINES                                                             *
  ******************************************************************************/
 
+#define NOT_FOLLOWING 0xF
 
 /*******************************************************************************
  * PUBLIC TYPEDEFS                                                             *
@@ -61,7 +62,7 @@ uint8_t PostSyncSamplingService(ES_Event ThisEvent);
  */
 ES_Event RunSyncSamplingService(ES_Event ThisEvent);
 
-
+uint8_t getLastTape();
 
 #endif /* SYNC_SAMPLING_H */
 

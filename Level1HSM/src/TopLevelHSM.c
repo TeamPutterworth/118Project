@@ -21,6 +21,7 @@
 #include "FirstTargetSearchSubHSM.h"
 #include "FirstTargetUnloadSubHSM.h"
 #include "sensors.h"
+#include "SyncSampling.h"
 
 /*******************************************************************************
  * PRIVATE #DEFINES                                                            *
@@ -121,8 +122,7 @@ ES_Event RunTopLevelHSM(ES_Event ThisEvent)
     
     switch (CurrentState) {
     case InitPState: // If current state is initial Pseudo State
-        if (ThisEvent.EventType == ES_INIT)// only respond to ES_Init
-        {
+        if (ThisEvent.EventType == ES_INIT){
             // this is where you would put any actions associated with the
             // transition from the initial pseudo-state into the actual
             // initial state
@@ -137,10 +137,11 @@ ES_Event RunTopLevelHSM(ES_Event ThisEvent)
             nextState = AmmoSearch;
             makeTransition = TRUE;
             ThisEvent.EventType = ES_NO_EVENT;
-            ;
+            
+            ES_Timer_InitTimer(MEDIUM_HSM_TIMER, MEDIUM_TIMER_TICKS);
         }
         break;
-
+        
     case AmmoSearch: // in the first state, replace this with correct names
         // run sub-state machine for this state
         //NOTE: the SubState Machine runs and responds to events before anything in the this
@@ -150,10 +151,10 @@ ES_Event RunTopLevelHSM(ES_Event ThisEvent)
         switch (ThisEvent.EventType) {
             case TW_TRIGGERED:
                 // check if rising edge
-                if(ThisEvent.EventParam == 0x1);
-                {
+                if((ThisEvent.EventParam & TW_F) && getLastTape() != NOT_FOLLOWING){
                     nextState = AmmoLoad;
                     makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
                 }
                 break;
             case ES_NO_EVENT:
@@ -165,20 +166,13 @@ ES_Event RunTopLevelHSM(ES_Event ThisEvent)
     case AmmoLoad:
         ThisEvent = RunAmmoLoadSubHSM(ThisEvent);
         switch (ThisEvent.EventType) {
-            case TW_TRIGGERED:
-                // check if falling edge
-                if(ThisEvent.EventParam == 0)
-                {
-                    nextState = AmmoSearch;
-                    makeTransition = TRUE;
-                }
-                break;
             case BUMPED:
-                if(ThisEvent.EventParam & PLUNGER_BUMPER)
-                {
+                if(ThisEvent.EventParam & PLUNGER_BUMPER){
                     nextState = FirstTargetSearch;
                     makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
                 }
+               
                 break;
             case ES_NO_EVENT:
             default:
@@ -189,14 +183,13 @@ ES_Event RunTopLevelHSM(ES_Event ThisEvent)
     case FirstTargetSearch:
         ThisEvent = RunFirstTargetSearchSubHSM(ThisEvent);
         switch (ThisEvent.EventType) {
-                    //TS_FL_TRIGGERED for either go to firstargetunload
-                    //TS_FR_TRIGGERED
             case TAPE_TRIGGERED:
-                if(((ThisEvent.EventParam & TS_FR) >> FR_SH) && ((ThisEvent.EventParam & TS_FL) >> FL_SH))
-                {
+                if(((ThisEvent.EventParam & TS_FR) >> FR_SH) && ((ThisEvent.EventParam & TS_FL) >> FL_SH)){
                     nextState = FirstTargetUnload;
                     makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
                 }
+                
                 break;
             case ES_NO_EVENT:
             default:
@@ -210,7 +203,9 @@ ES_Event RunTopLevelHSM(ES_Event ThisEvent)
             case UNLOADED:
                 nextState = SecondTargetSearch;
                 makeTransition = TRUE;
+                ThisEvent.EventType = ES_NO_EVENT;
                 break;
+                
             case ES_NO_EVENT:
             default:
                 break;
@@ -223,11 +218,12 @@ ES_Event RunTopLevelHSM(ES_Event ThisEvent)
                     //TS_FL_TRIGGERED for either go to secondtargetunload
                     //TS_FR_TRIGGERED
             case TAPE_TRIGGERED:
-                if(((ThisEvent.EventParam & TS_FR) >> FR_SH) && ((ThisEvent.EventParam & TS_FL) >> FL_SH))
-                {
+                if(((ThisEvent.EventParam & TS_FR) >> FR_SH) && ((ThisEvent.EventParam & TS_FL) >> FL_SH)){
                     nextState = SecondTargetUnload;
                     makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
                 }
+                
                 break;
             case ES_NO_EVENT:
             default:
@@ -241,6 +237,7 @@ ES_Event RunTopLevelHSM(ES_Event ThisEvent)
             case UNLOADED:
                 nextState = AmmoSearch;
                 makeTransition = TRUE;
+                ThisEvent.EventType = ES_NO_EVENT;
                 break;
             case ES_NO_EVENT:
             default:

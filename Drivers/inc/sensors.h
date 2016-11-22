@@ -7,6 +7,8 @@
  * 
  */
 
+#include "IO_Ports.h"
+
 #ifndef _SENSORS_H   
 #define _SENSORS_H
 
@@ -25,11 +27,14 @@
 #define TRACKWIRE_OUTPUT PIN7
 #define BEACONDETECT_OUTPUT PIN8 
 #define SENSOR_PORT PORTW
+#define TW_F 0x01
+#define TW_B 0x02
 // Bumpers
 #define FR_BUMPER PIN3
 #define FL_BUMPER PIN4
 #define B_BUMPER PIN5
 #define BUMPER_PORT PORTW
+
 // Mux
 #define MUX_SELECT_A PIN11
 #define MUX_SELECT_A_SH 11
