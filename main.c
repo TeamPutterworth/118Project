@@ -10,7 +10,7 @@
 #include "motor.h"
 #include "sensors.h"
 
-//#define JANKY_TEST_HARNESS
+#define JANKY_TEST_HARNESS
 #ifdef JANKY_TEST_HARNESS
 
 void delay(int counter)
@@ -27,25 +27,20 @@ void delay(int counter)
 
 void testMotors()
 {
-    tankTurnRight();
-    setMoveSpeed(50);
+    setMoveSpeed(25);
+    moveForward();
     delay(1000000);
     tankTurnLeft();
-    setMoveSpeed(35);
     delay(1000000);
-    moveBackward();
-    setMoveSpeed(15);
+    tankTurnRight();
     delay(1000000);
-    stopMoving();
-    delay(100000);
-    moveForward();
-    setMoveSpeed(50);
+    gradualTurnLeft(20);
     delay(1000000);
-    pivotTurnRight();
-    setMoveSpeed(35);
+    gradualTurnRight(20);
     delay(1000000);
     pivotTurnLeft();
-    setMoveSpeed(15);
+    delay(1000000);
+    pivotTurnRight();
     delay(1000000);
     stopMoving();
     

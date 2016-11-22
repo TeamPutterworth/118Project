@@ -13,6 +13,7 @@
 #include "ES_Configure.h"
 #include "ES_Framework.h"
 #include "motor.h"
+#include "sensors.h"
 #include <stdio.h>
 
 /*******************************************************************************
@@ -23,12 +24,15 @@
 #ifdef DEBUG
 #define TIMER_0_TICKS 500 // 2 ticks = 2 ms
 #else
-#define TIMER_0_TICKS 2 // 2 ticks = 2 ms
+#define TIMER_0_TICKS 5 // 2 ticks = 2 ms
 #endif
 #define ON 1
-#define HI_THRESHOLD 400
-#define LO_THRESHOLD 150
+#define HI_THRESHOLD 300
+#define LO_THRESHOLD 100
 #define NUM_LEDS 5
+#define LEFT 0
+#define RIGHT 1
+#define FOLLOWING_THRESHOLD 3
 
 /*******************************************************************************
  * PRIVATE FUNCTION PROTOTYPES                                                 *
@@ -46,6 +50,7 @@ static uint8_t MyPriority;
 static unsigned int adPins[]={AD_PORTV3,AD_PORTV4,AD_PORTV5,AD_PORTV6,AD_PORTV7};
 static uint16_t ledPins[]={PIN4,PIN3,PIN5,PIN7,PIN8};
 static uint16_t ledBanks[]={LED_BANK1,LED_BANK1,LED_BANK2,LED_BANK2,LED_BANK3};
+static uint8_t lastTape = NOT_FOLLOWING;
 
 /*******************************************************************************
  * PUBLIC FUNCTIONS                                                            *
@@ -118,6 +123,7 @@ ES_Event RunSyncSamplingService(ES_Event ThisEvent)
 {
     int i;
     uint8_t tapeTriggered = FALSE;
+    static uint8_t lastTapeCounter [2];
     ES_Event ReturnEvent;
     ES_Event PostEvent;
     ReturnEvent.EventType = ES_NO_EVENT; // assume no errors
@@ -170,32 +176,33 @@ ES_Event RunSyncSamplingService(ES_Event ThisEvent)
                     //curEvent[i] = lastEvent[i];
                     
                     if (adcDiff[i] > HI_THRESHOLD) {
-                        if ((i % 2) == 0)
-                        {
-                            LED_SetBank(ledBanks[i],LED_GetBank(ledBanks[i]) | 0x3);
-                        }
-                        if ((i % 2) != 0)
-                        {
-                           LED_SetBank(ledBanks[i],LED_GetBank(ledBanks[i]) | 0xC); 
-                        }
+//                        if ((i % 2) == 0)
+//                        {
+//                            LED_SetBank(ledBanks[i],LED_GetBank(ledBanks[i]) | 0x3);
+//                        }
+//                        if ((i % 2) != 0)
+//                        {
+//                           LED_SetBank(ledBanks[i],LED_GetBank(ledBanks[i]) | 0xC); 
+//                        }
                         curEvent[i] = OFF_TAPE;
                     }
                     else if (adcDiff[i] < LO_THRESHOLD)
                     {
-                        if ((i % 2) == 0)
-                        {
-                            LED_SetBank(ledBanks[i],LED_GetBank(ledBanks[i]) & ~0x3);
-                        }
-                        if ((i % 2) != 0)
-                        {
-                           LED_SetBank(ledBanks[i],LED_GetBank(ledBanks[i]) & ~0xC); 
-                        }
+//                        if ((i % 2) == 0)
+//                        {
+//                            LED_SetBank(ledBanks[i],LED_GetBank(ledBanks[i]) & ~0x3);
+//                        }
+//                        if ((i % 2) != 0)
+//                        {
+//                           LED_SetBank(ledBanks[i],LED_GetBank(ledBanks[i]) & ~0xC); 
+//                        }
                         curEvent[i] = ON_TAPE;
                     }
-                    /*else 
+                    else 
                     {
                         curEvent[i] = lastEvent[i];
-                    }*/
+                    }
+                    
                     // if we get into this condition, a tape sensor was triggered either on or off
                     if (curEvent[i] != lastEvent[i])
                     {
@@ -238,6 +245,29 @@ ES_Event RunSyncSamplingService(ES_Event ThisEvent)
                     }
                     #endif
                     PostTopLevelHSM(PostEvent);
+                    if (PostEvent.EventParam & TS_FR)
+                    {
+                        lastTapeCounter[0]++;
+                    } 
+                    if(PostEvent.EventParam & TS_FL)
+                    {      
+                        lastTapeCounter[1]++;
+                    }
+                    
+                    if (lastTapeCounter[0] > FOLLOWING_THRESHOLD)
+                    {
+                        lastTapeCounter[1] = 0;
+                        lastTapeCounter[0] = 0;
+                        lastTape = RIGHT;
+                        LED_SetBank(LED_BANK1,0xC);
+                    }
+                    if (lastTapeCounter[1] > FOLLOWING_THRESHOLD)
+                    {
+                        lastTapeCounter[0] = 0;
+                        lastTapeCounter[1] = 0;
+                        lastTape = LEFT;
+                        LED_SetBank(LED_BANK1,0x3);
+                    }
                     tapeTriggered = FALSE;      
                 }
             }
@@ -249,4 +279,9 @@ ES_Event RunSyncSamplingService(ES_Event ThisEvent)
             break;
     }
     return ReturnEvent;
+}
+
+uint8_t getLastTape()
+{
+    return lastTape;
 }

@@ -23,6 +23,7 @@
 #define RIGHT 1
 #define LEFT 0
 #define NORM_SPEED 25
+#define MAX_VOLTAGE 10.5
 
 void motorInit()
 {
@@ -44,23 +45,38 @@ void pivotTurnLeft()
 	motorStop(RIGHT);
 }
 
+void pivotTurnRightBackward()
+{
+    motorStop(LEFT);
+	motorBackward(RIGHT);
+    setMotorSpeed(RIGHT, NORM_SPEED);
+}
+
+void pivotTurnLeftBackward()
+{
+    motorStop(RIGHT);
+	motorBackward(LEFT);
+    setMotorSpeed(LEFT, NORM_SPEED);
+}
+
+
 void tankTurnRight()
 {
 	motorForward(LEFT);
-	motorForward(RIGHT);
+	motorBackward(RIGHT);
     setMoveSpeed(NORM_SPEED);
 }
 
 void tankTurnLeft()
 {
-	motorBackward(RIGHT);
+	motorForward(RIGHT);
 	motorBackward(LEFT);
     setMoveSpeed(NORM_SPEED);
 }
 
 void moveBackward()
 {
-	motorForward(RIGHT);
+	motorBackward(RIGHT);
 	motorBackward(LEFT);
     setMoveSpeed(NORM_SPEED);
 }
@@ -68,7 +84,7 @@ void moveBackward()
 void moveForward()
 {
 	motorForward(LEFT);
-	motorBackward(RIGHT);
+	motorForward(RIGHT);
     setMoveSpeed(NORM_SPEED);
 }
 
@@ -79,14 +95,18 @@ void stopMoving()
 
 void gradualTurnLeft(int difference)
 {
+    motorForward(LEFT);
+    motorForward(RIGHT);
 	setMotorSpeed(LEFT, NORM_SPEED - (difference/2));
 	setMotorSpeed(RIGHT, NORM_SPEED + (difference/2));
 }
 
 void gradualTurnRight(int difference)
 {
-	setMotorSpeed(LEFT, NORM_SPEED - (difference/2));
-	setMotorSpeed(RIGHT, NORM_SPEED + (difference/2));
+    motorForward(LEFT);
+    motorForward(RIGHT);
+	setMotorSpeed(LEFT, NORM_SPEED + (difference/2));
+	setMotorSpeed(RIGHT, NORM_SPEED - (difference/2));
 }
 
 /*
@@ -98,11 +118,11 @@ void motorForward(int lr)
 	// sets IN0 = 0, IN1 = 1
 	if (lr == RIGHT) 
 	{
-        IO_PortsWritePort(PORTY,IO_PortsReadPort(PORTY) | DIR_RIGHT_MOTOR); // Set Dir right motor = high (forward)
+        IO_PortsWritePort(PORTY,IO_PortsReadPort(PORTY) | DIR_RIGHT_MOTOR); // Set Dir right motor = low (forward)
 	}
 	else
 	{   
-        IO_PortsWritePort(PORTY,IO_PortsReadPort(PORTY) | DIR_LEFT_MOTOR); // Set Dir left motor = high (forward)
+        IO_PortsWritePort(PORTY,IO_PortsReadPort(PORTY) & ~DIR_LEFT_MOTOR); // Set Dir left motor = high (forward)
 	}
 	return;
 }
@@ -116,11 +136,11 @@ void motorBackward(int lr)
 	// sets IN0 = 0, IN1 = 1
 	if (lr == RIGHT) 
 	{
-		IO_PortsWritePort(PORTY,IO_PortsReadPort(PORTY) & ~DIR_RIGHT_MOTOR); // Set Dir right motor = low (backward)
+		IO_PortsWritePort(PORTY,IO_PortsReadPort(PORTY) & ~DIR_RIGHT_MOTOR); // Set Dir right motor = high (backward)
 	}
 	else
 	{
-		IO_PortsWritePort(PORTY,IO_PortsReadPort(PORTY) & ~DIR_LEFT_MOTOR); // Set Dir left motor = low (backward)
+		IO_PortsWritePort(PORTY,IO_PortsReadPort(PORTY) | DIR_LEFT_MOTOR); // Set Dir left motor = low (backward)
 	}
 	return;
 }
@@ -140,6 +160,7 @@ void motorStop(int lr)
 
 void setMotorSpeed(int lr, int speed)
 {
+    uint16_t batVoltage = (AD_ReadADPin(BAT_VOLTAGE) * 33) / 1023; // read the battery voltage
 	if(speed > 50)
     {
         speed = 50;
@@ -148,14 +169,17 @@ void setMotorSpeed(int lr, int speed)
     {
         speed = 0;
     }
-
+    
+    speed = speed * 10; // Duty cycle is set in increments of 1/1000, rather than 1/100
+    speed = speed * MAX_VOLTAGE/batVoltage;
+ 
     if (lr == RIGHT) 
 	{
-		PWM_SetDutyCycle(PWM_RIGHT_MOTOR, speed*10);
+		PWM_SetDutyCycle(PWM_RIGHT_MOTOR, speed);
 	}
 	else
 	{
-		PWM_SetDutyCycle(PWM_LEFT_MOTOR, speed*10);
+		PWM_SetDutyCycle(PWM_LEFT_MOTOR, speed);
 	}
 	return;
 }
@@ -168,6 +192,7 @@ void setMotorSpeed(int lr, int speed)
  */
 void setMoveSpeed(int speed)
 {
+    uint16_t batVoltage = (AD_ReadADPin(BAT_VOLTAGE) * 33) / 1023; // read the battery voltage
     if(speed > 50)
     {
         speed = 50;
@@ -175,9 +200,11 @@ void setMoveSpeed(int speed)
     else if(speed < 0)
     {
         speed = 0;
-    }
-    PWM_SetDutyCycle(PWM_LEFT_MOTOR,speed*10);
-    PWM_SetDutyCycle(PWM_RIGHT_MOTOR,speed*10);
+    } 
+    speed = speed * 10; // Duty cycle is set in increments of 1/1000, rather than 1/100
+    speed = speed * MAX_VOLTAGE/batVoltage;
+    PWM_SetDutyCycle(PWM_LEFT_MOTOR,speed);
+    PWM_SetDutyCycle(PWM_RIGHT_MOTOR,speed);
     
     return;
 }

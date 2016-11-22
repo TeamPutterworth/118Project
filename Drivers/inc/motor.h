@@ -44,6 +44,12 @@ void pivotTurnRight();
 // This function is used to pivot turn to the left
 void pivotTurnLeft();
 
+// This function is used to pivot turn backwards with the right wheel
+void pivotTurnRightBackward();
+
+// This function is used to pivot turn backwards with the left wheel
+void pivotTurnLeftBackward();
+
 // This function can be used to stop a specific motor
 void motorStop(int lr);
 

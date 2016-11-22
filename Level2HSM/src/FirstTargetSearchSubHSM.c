@@ -29,14 +29,14 @@
 
 typedef enum {
     InitPState,
-    TankTurn,
-    Backward,
+    Scan,
+    Forward,
 } HSMState_t;
 
 static const char *StateNames[] = {
 	"InitPState",
-	"TankTurn",
-	"Backward",
+	"Scan",
+	"Forward",
 };
 
 
@@ -99,32 +99,37 @@ ES_Event RunFirstTargetSearchSubHSM(ES_Event ThisEvent)
     case InitPState: // If current state is initial Pseudo State
         if (ThisEvent.EventType == ES_INIT)// only respond to ES_Init
         {
-            // this is where you would put any actions associated with the
-            // transition from the initial pseudo-state into the actual
-            // initial state
-            // Initialize all sub-state machines
-            //InitAmmoLoadSubHSM();
-            // now put the machine into the actual initial state
-            nextState = TankTurn;
+            nextState = Forward;
             makeTransition = TRUE;
             ThisEvent.EventType = ES_NO_EVENT;
             ;
         }
         break;
 
-    case TankTurn:
+    case Scan:
         switch (ThisEvent.EventType) {  
             case ES_ENTRY:
                 tankTurnRight();
+                ES_Timer_InitTimer(TIMER_180,TIMER_180_TICKS);
                 break;
-            case TW_TRIGGERED:
+            case BEACON_TRIGGERED:
                 // This value assumes we are using only middle and back track wires, meaning both bits are set high
-                if (ThisEvent.EventParam == 0x3)
+                if (ThisEvent.EventParam)
                 {
-                    nextState = Backward;
+                    stopMoving();
+                    ES_Timer_StopTimer(TIMER_180);
+                }
+                break;
+            case ES_TIMEOUT:
+                if(ThisEvent.EventParam == TIMER_180)
+                {
+                    nextState = Forward;
                     makeTransition = TRUE;
                     ThisEvent.EventType = ES_NO_EVENT;
                 }
+                break;
+            case ES_EXIT:
+                ES_Timer_StopTimer(TIMER_180);
                 break;
             case ES_NO_EVENT:
             default:
@@ -132,18 +137,22 @@ ES_Event RunFirstTargetSearchSubHSM(ES_Event ThisEvent)
         }
         break;
         
-    case Backward:
+    case Forward:
         switch (ThisEvent.EventType) {
             case ES_ENTRY:
-                moveBackward();
+                moveForward();
+                ES_Timer_InitTimer(LONG_HSM_TIMER,LONG_TIMER_TICKS);
                 break;
-            case TW_TRIGGERED:
-                // This value assumes we are using only middle and back track wires, meaning both bits are set high
-                if (ThisEvent.EventParam != 0x3)
+            case ES_TIMEOUT:
+                if(ThisEvent.EventParam == LONG_HSM_TIMER)
                 {
-                    nextState = TankTurn;
+                    nextState = Scan;
                     makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
                 }
+                break;
+            case ES_EXIT:
+                ES_Timer_StopTimer(LONG_HSM_TIMER);
                 break;
             case ES_NO_EVENT:
             default:

@@ -76,33 +76,33 @@ uint8_t trackWireSignal(void) {
 }
 #endif
 uint8_t beaconSignal(void) {
-    static ES_EventTyp_t PRESTATE = BEACON_OFF;
-    ES_EventTyp_t CURRENTBEACON;
+    static ES_EventTyp_t lastState = BEACON_OFF;
+    ES_EventTyp_t curState;
     ES_Event thisEvent;
     uint8_t returnREAD = FALSE;
  
-    uint8_t Whichbeacon = readBeaconDetector();
+    uint8_t beaconVal = readBeaconDetector();
 
-    if (Whichbeacon) {
-        CURRENTBEACON = BEACON_OFF;
+    if (beaconVal) {
+        curState = BEACON_OFF;
         #ifdef DEBUG
         LED_SetBank(LED_BANK3,0x0);
         //printf("\r\ntrack wire is on");
         #endif
     } else {
         
-        CURRENTBEACON = BEACON_ON;
+        curState = BEACON_ON;
         #ifdef DEBUG
         //printf("\r\ntrack wire is off");
         LED_SetBank(LED_BANK3,0xF);
         #endif
     }
 
-    if (CURRENTBEACON != PRESTATE) {
-        thisEvent.EventType = CURRENTBEACON;
-        thisEvent.EventParam = Whichbeacon;
+    if (curState != lastState) {
+        thisEvent.EventType = BEACON_TRIGGERED;
+        thisEvent.EventParam = !beaconVal;
         returnREAD = TRUE;
-        PRESTATE = CURRENTBEACON;
+        lastState = curState;
        // PostGenericService(thisEvent);
     }
     return (returnREAD);

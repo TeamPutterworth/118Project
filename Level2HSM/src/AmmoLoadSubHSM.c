@@ -16,13 +16,15 @@
 #include "ES_Framework.h"
 #include "BOARD.h"
 #include "AmmoLoadSubHSM.h"
+#include "SyncSampling.h"
 #include "sensors.h"
 #include "motor.h"
 
 /*******************************************************************************
  * PRIVATE #DEFINES                                                            *
  ******************************************************************************/
-
+#define LEFT 0
+#define RIGHT 1
 /*******************************************************************************
  * MODULE #DEFINES                                                             *
  ******************************************************************************/
@@ -32,6 +34,7 @@ typedef enum {
     TankTurn,
     Backward,
     Forward,
+    PivotTurn,
 } HSMState_t;
 
 static const char *StateNames[] = {
@@ -39,6 +42,7 @@ static const char *StateNames[] = {
 	"TankTurn",
 	"Backward",
 	"Forward",
+	"PivotTurn",
 };
 
 
@@ -94,31 +98,75 @@ ES_Event RunAmmoLoadSubHSM(ES_Event ThisEvent)
 {
     uint8_t makeTransition = FALSE; // use to flag transition
     HSMState_t nextState; // <- change type to correct enum
-
+    uint8_t lastTape = getLastTape();
+    static uint8_t pivotState = LEFT;
     ES_Tattle(); // trace call stack
 
     switch (CurrentState) {
     case InitPState: // If current state is initial Pseudo State
         if (ThisEvent.EventType == ES_INIT)// only respond to ES_Init
         {
-            nextState = Backward;
+            nextState = PivotTurn;
             makeTransition = TRUE;
             ThisEvent.EventType = ES_NO_EVENT;
-            
         }
         break;
-
+    case PivotTurn:
+        switch (ThisEvent.EventType){
+            case ES_ENTRY:
+                if(lastTape){
+                    pivotTurnLeftBackward();
+                    pivotState = LEFT;
+                }else{
+                    pivotTurnRightBackward();
+                    pivotState = RIGHT;
+                }
+                break;
+            case TAPE_TRIGGERED:
+                if(ThisEvent.EventParam & TS_BR && pivotState == RIGHT){
+                    nextState = Forward;
+                    makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
+                }else if(ThisEvent.EventParam & TS_BL && pivotState == LEFT){
+                    nextState = Forward;
+                    makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
+                }
+                break;
+        }
+        break;
+    case Forward:
+        switch(ThisEvent.EventType)
+        {
+            case ES_ENTRY:
+                moveForward();
+                break;
+            case TW_TRIGGERED:
+                if(ThisEvent.EventParam & TW_B)
+                {
+                    nextState = TankTurn;
+                    makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
+                }
+                break;
+        }
+        break;
+            
     case TankTurn:
         switch (ThisEvent.EventType) {  
             case ES_ENTRY:
-                // We love tank turning cw
-                tankTurnRight();
-                setMoveSpeed(10);
-                break;
-            case TW_TRIGGERED:
-                // This value assumes we are using only middle and back track wires, meaning both bits are set high
-                if (ThisEvent.EventParam == (TW_F | TW_B))
+                ES_Timer_InitTimer(TIMER_45, TIMER_45_TICKS);
+                if(pivotState == RIGHT)
                 {
+                    tankTurnRight();
+                }
+                else if(pivotState == LEFT)
+                {
+                    tankTurnLeft();
+                }
+                break;
+            case ES_TIMEOUT:
+                if(ThisEvent.EventParam == TIMER_45){
                     nextState = Backward;
                     makeTransition = TRUE;
                     ThisEvent.EventType = ES_NO_EVENT;
@@ -134,51 +182,26 @@ ES_Event RunAmmoLoadSubHSM(ES_Event ThisEvent)
         switch (ThisEvent.EventType) {
             case ES_ENTRY:
                 moveBackward();
+                setMoveSpeed(20);
+                ES_Timer_InitTimer(LONG_HSM_TIMER, LONG_TIMER_TICKS);
                 break;
-            case TW_TRIGGERED:
-                // This value assumes we are using only middle and back track wires, meaning both bits are set high
+            case ES_TIMEOUT:
                 
-                if (ThisEvent.EventParam != (TW_F | TW_B))
-                {
-                    nextState = TankTurn;
-                    makeTransition = TRUE;
-                    ThisEvent.EventType = ES_NO_EVENT;
-                }
                 break;
             case ES_NO_EVENT:
             default:
                 break;
         }
         break;
-    case Forward:
-        switch (ThisEvent.EventType) {
-            case ES_ENTRY:
-                moveForward();
-                break;
-            case TW_TRIGGERED:
-                // This value assumes we are using only middle and back track wires, meaning both bits are set high
-                if (ThisEvent.EventParam & 0x1)
-                {
-                    nextState = TankTurn;
-                    makeTransition = TRUE;
-                    ThisEvent.EventType = ES_NO_EVENT;
-                }
-                break;
-            case ES_NO_EVENT:
-            default:
-                break;
-        }
-        break;
-        
     default: // all unhandled states fall into here
         break;
     } // end switch on Current State
 
     if (makeTransition == TRUE) { // making a state transition, send EXIT and ENTRY
         // recursively call the current state with an exit event
-        RunAmmoLoadSubHSM(EXIT_EVENT); // <- rename to your own Run function
+        RunAmmoLoadSubHSM(EXIT_EVENT);
         CurrentState = nextState;
-        RunAmmoLoadSubHSM(ENTRY_EVENT); // <- rename to your own Run function
+        RunAmmoLoadSubHSM(ENTRY_EVENT); 
     }
 
     ES_Tail(); // trace call stack end

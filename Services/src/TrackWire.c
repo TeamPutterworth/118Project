@@ -22,10 +22,11 @@
 #ifdef DEBUG
 #define TIMER_5_TICKS 500 // 2 ticks = 2 ms
 #else
-#define TIMER_5_TICKS 5 // 2 ticks = 2 ms
+#define TIMER_5_TICKS 8 // 2 ticks = 2 ms
 #endif
 #define BACK_TRACK_WIRE 1
 #define FRONT_TRACK_WIRE 0
+#define TRACK_WIRE_STEADY_STATE 2
 
 /*******************************************************************************
  * PRIVATE FUNCTION PROTOTYPES                                                 *
@@ -99,6 +100,7 @@ ES_Event RunTrackWireService(ES_Event ThisEvent)
     ReturnEvent.EventType = ES_NO_EVENT; // assume no errors
     static uint8_t state;
     uint8_t trackVal;
+    static uint8_t counter[2];
     static uint8_t trackValF;
     static ES_EventTyp_t lastState [] = {TRACK_WIRE_OFF,TRACK_WIRE_OFF};
     static ES_EventTyp_t curStateF;
@@ -123,16 +125,25 @@ ES_Event RunTrackWireService(ES_Event ThisEvent)
                 trackValF = readTrackWire();
                 
                 #ifdef DEBUG
-                printf("\r\nFront TrackW: %d",!trackValF);
+                //printf("\r\nFront TrackW: %d",!trackValF);
                 #endif
                 
                 if (trackValF)
                 {
-                    curStateF = TRACK_WIRE_OFF;
+                    counter[0] = 0;
                 }
                 else
                 {
+                    counter[0]++;
+                }
+                
+                if(counter[0] > TRACK_WIRE_STEADY_STATE)
+                {
                     curStateF = TRACK_WIRE_ON;
+                }
+                else
+                {
+                    curStateF = TRACK_WIRE_OFF;
                 }
                 muxSelTrackWire(BACK_TRACK_WIRE);
             }
@@ -142,16 +153,26 @@ ES_Event RunTrackWireService(ES_Event ThisEvent)
                 trackVal = readTrackWire();
                 
                 #ifdef DEBUG
+                printf("\r\n\nFront TrackW: %d",!trackValF);
                 printf("\r\nBack TrackW: %d",!trackVal);
                 #endif
               
                 if (trackVal)
                 {
-                    curState = TRACK_WIRE_OFF;
+                    counter[1] = 0;
                 }
                 else
                 {
+                    counter[1]++;
+                }
+                
+                if(counter[1] > TRACK_WIRE_STEADY_STATE)
+                {
                     curState = TRACK_WIRE_ON;
+                }
+                else
+                {
+                    curState = TRACK_WIRE_OFF;
                 }
                 muxSelTrackWire(FRONT_TRACK_WIRE);
                 // Choose this one to post as we read the front track wire first.
@@ -161,7 +182,15 @@ ES_Event RunTrackWireService(ES_Event ThisEvent)
                     lastState[1] = curState;
                     PostEvent.EventType = TW_TRIGGERED;
                     PostEvent.EventParam = 0;
-                    PostEvent.EventParam = (!trackValF) | (!trackVal << 1);
+                    if(curState == TRACK_WIRE_ON)
+                    {
+                        PostEvent.EventParam |= 2;
+                    }
+                    else             
+                    if(curStateF == TRACK_WIRE_ON)
+                    {
+                        PostEvent.EventParam |= 1;
+                    }
                     #ifdef DEBUG
                     //printf("\r\nFront TrackW: %d Back TrackW: %d",!trackValF,!trackVal);
                     printf("\r\nParam: %d",PostEvent.EventParam);

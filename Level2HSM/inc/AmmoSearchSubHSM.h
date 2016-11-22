@@ -25,7 +25,6 @@
  * PUBLIC TYPEDEFS                                                             *
  ******************************************************************************/
 
-
 /*******************************************************************************
  * PUBLIC FUNCTION PROTOTYPES                                                  *
  ******************************************************************************/
@@ -44,9 +43,8 @@ uint8_t InitAmmoSearchSubHSM(void);
  * @Function RunAmmoSearchSubHSM(ES_Event ThisEvent)
  * @param ThisEvent - the event (type and param) to be responded.
  * @return Event - return event (type and param), in general should be ES_NO_EVENT
- * @brief This is the implementation for the top level of our state machine and 
- *        it contains the basic logic for our autonomous robot to meet the minimum
- *        specs of the competition.
+ * @brief This is the implementation for the sub state responsible for searching for 
+ * ammo.
  */
 ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent);
 
