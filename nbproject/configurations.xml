@@ -14,6 +14,7 @@
         <itemPath>Level2HSM/inc/FirstTargetUnloadSubHSM.h</itemPath>
         <itemPath>Level2HSM/inc/SecondTargetSearchSubHSM.h</itemPath>
         <itemPath>Level2HSM/inc/SecondTargetApproachSubHSM.h</itemPath>
+        <itemPath>Level2HSM/inc/SecondTargetUnloadSubHSM.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="Drivers" projectFiles="true">
         <itemPath>Drivers/inc/sensors.h</itemPath>
@@ -69,6 +70,8 @@
         <itemPath>Level2HSM/src/FirstTargetSearchSubHSM.c</itemPath>
         <itemPath>Level2HSM/src/FirstTargetUnloadSubHSM.c</itemPath>
         <itemPath>Level2HSM/src/SecondTargetSearchSubHSM.c</itemPath>
+        <itemPath>Level2HSM/src/SecondTargetApproachSubHSM.c</itemPath>
+        <itemPath>Level2HSM/src/SecondTargetUnloadSubHSM.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="Drivers" projectFiles="true">
         <itemPath>Drivers/src/motor.c</itemPath>
@@ -137,6 +140,8 @@
           <parseOnProdLoad>false</parseOnProdLoad>
           <alternateLoadableFile></alternateLoadableFile>
         </loading>
+        <subordinates>
+        </subordinates>
       </compileType>
       <makeCustomizationType>
         <makeCustomizationPreStepEnabled>true</makeCustomizationPreStepEnabled>

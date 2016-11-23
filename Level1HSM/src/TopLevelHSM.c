@@ -20,6 +20,7 @@
 #include "AmmoSearchSubHSM.h"
 #include "FirstTargetSearchSubHSM.h"
 #include "FirstTargetUnloadSubHSM.h"
+#include "SecondTargetSearchSubHSM.h"
 #include "sensors.h"
 #include "SyncSampling.h"
 
@@ -131,7 +132,7 @@ ES_Event RunTopLevelHSM(ES_Event ThisEvent)
             InitAmmoLoadSubHSM();
             InitFirstTargetSearchSubHSM();
             InitFirstTargetUnloadSubHSM();
-            //InitSecondTargetSearchSubHSM();
+            InitSecondTargetSearchSubHSM();
             //InitSecondTargetUnloadSubHSM();
             // now put the machine into the actual initial state
             nextState = AmmoSearch;
@@ -210,10 +211,8 @@ ES_Event RunTopLevelHSM(ES_Event ThisEvent)
         break;
         
     case SecondTargetSearch:
-        //ThisEvent = RunSecondTargetSearchSubHSM(ThisEvent);
+        ThisEvent = RunSecondTargetSearchSubHSM(ThisEvent);
         switch (ThisEvent.EventType) {
-                    //TS_FL_TRIGGERED for either go to secondtargetunload
-                    //TS_FR_TRIGGERED
             case TAPE_TRIGGERED:
                 if(((ThisEvent.EventParam & TS_FR) >> FR_SH) && ((ThisEvent.EventParam & TS_FL) >> FL_SH)){
                     nextState = SecondTargetUnload;

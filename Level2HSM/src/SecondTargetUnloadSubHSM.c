@@ -35,6 +35,7 @@ typedef enum {
     InitPState,
     Backward,
     TankTurn,
+    Forward,
 } HSMState_t;
 
 static const char *StateNames[] = {
@@ -123,7 +124,7 @@ ES_Event RunSecondTargetUnloadSubHSM(ES_Event ThisEvent)
     case Backward:
         switch(ThisEvent.EventType){
             case ES_ENTRY:
-                moveBackward()
+                moveBackward();
                 break;
 
             default:
