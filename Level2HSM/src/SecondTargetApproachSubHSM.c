@@ -38,11 +38,6 @@ typedef enum {
 } HSMState_t;
 
 static const char *StateNames[] = {
-    TankTurn,
-    Forward,
-} HSMState_t;
-
-static const char *StateNames[] = {
 	"InitPState",
 	"Backward",
 	"TankTurn",
@@ -158,9 +153,7 @@ ES_Event RunSecondTargetApproachSubHSM(ES_Event ThisEvent)
         RunSecondTargetApproachSubHSM(EXIT_EVENT); 
         CurrentState = nextState;
         RunSecondTargetApproachSubHSM(ENTRY_EVENT); 
-        RunFirstTargetSearchSubHSM(EXIT_EVENT); 
-        CurrentState = nextState;
-        RunFirstTargetSearchSubHSM(ENTRY_EVENT); 
+
     }
 
     ES_Tail(); // trace call stack end

@@ -211,9 +211,9 @@ ES_Event RunSecondTargetSearchSubHSM(ES_Event ThisEvent)
 
     if (makeTransition == TRUE) { // making a state transition, send EXIT and ENTRY
         // recursively call the current state with an exit event
-        RunFirstTargetSearchSubHSM(EXIT_EVENT); 
+        RunSecondTargetSearchSubHSM(EXIT_EVENT); 
         CurrentState = nextState;
-        RunFirstTargetSearchSubHSM(ENTRY_EVENT); 
+        RunSecondTargetSearchSubHSM(ENTRY_EVENT); 
     }
 
     ES_Tail(); // trace call stack end

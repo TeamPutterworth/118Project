@@ -1,5 +1,5 @@
 /*
- * File:   FirstTargetApproachSubHSM.h
+ * File:   SecondTargetApproachSubHSM.h
  * Author: jcrowley
  *
  * This file includes the top level of our hierarchal state machine. At this level
@@ -31,7 +31,6 @@
  ******************************************************************************/
 
 /**
- * @Function InitApproachTargetApproachSubHSM(uint8_t Priority)
  * @Function InitSecondTargetApproachSubHSM(uint8_t Priority)
  * @param Priority - internal variable to track which event queue to use
  * @return TRUE or FALSE
