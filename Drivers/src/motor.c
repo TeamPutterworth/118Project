@@ -23,7 +23,7 @@
 #define RIGHT 1
 #define LEFT 0
 #define NORM_SPEED 25
-#define MAX_VOLTAGE 10.5
+#define MAX_VOLTAGE 9.9
 
 void motorInit()
 {

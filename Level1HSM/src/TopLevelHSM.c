@@ -166,13 +166,10 @@ ES_Event RunTopLevelHSM(ES_Event ThisEvent)
     case AmmoLoad:
         ThisEvent = RunAmmoLoadSubHSM(ThisEvent);
         switch (ThisEvent.EventType) {
-            case BUMPED:
-                if(ThisEvent.EventParam & PLUNGER_BUMPER){
-                    nextState = FirstTargetSearch;
-                    makeTransition = TRUE;
-                    ThisEvent.EventType = ES_NO_EVENT;
-                }
-               
+            case UNLOADED:
+                nextState = FirstTargetSearch;
+                makeTransition = TRUE;
+                ThisEvent.EventType = ES_NO_EVENT;
                 break;
             case ES_NO_EVENT:
             default:
