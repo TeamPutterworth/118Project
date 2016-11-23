@@ -40,7 +40,6 @@
  * PUBLIC FUNCTIONS                                                            *
  ******************************************************************************/
 
-#if 0
 uint8_t trackWireSignal(void) {
     static ES_EventTyp_t PRESTATE = TRACK_WIRE_OFF;
     ES_EventTyp_t CURRENTTRACK;
@@ -74,7 +73,7 @@ uint8_t trackWireSignal(void) {
     return (returnREAD);
 
 }
-#endif
+
 uint8_t beaconSignal(void) {
     static ES_EventTyp_t lastState = BEACON_OFF;
     ES_EventTyp_t curState;
@@ -106,5 +105,4 @@ uint8_t beaconSignal(void) {
        // PostGenericService(thisEvent);
     }
     return (returnREAD);
-
 }

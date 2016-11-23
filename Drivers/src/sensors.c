@@ -15,9 +15,6 @@
 #include <stdio.h>
 
 //#define DEBUG
-
-
-
 uint8_t readTrackWire()
 {
     uint8_t retVal = (IO_PortsReadPort(SENSOR_PORT) & TRACKWIRE_OUTPUT) >> 7;

@@ -1,10 +1,10 @@
-// Joseph Grant
-// Midterm Problem 8
-// 11/1/16
-
-/*******************************************************************************
- * MODULE #INCLUDE                                                             *
- ******************************************************************************/
+/*
+ * File:   TrackWire.c
+ * Author: TeamPutterWorth
+ * 
+ * This service is responsible for debouncing the track wire and choosing mux select lines for the output of the tank circuit.
+ * 
+ */
 
 #include "BOARD.h"
 #include "LED.h"
@@ -27,7 +27,8 @@
 #define BACK_TRACK_WIRE 1
 #define FRONT_TRACK_WIRE 0
 #define TRACK_WIRE_STEADY_STATE 2
-
+#define ON 0
+#define OFF 1
 /*******************************************************************************
  * PRIVATE FUNCTION PROTOTYPES                                                 *
  ******************************************************************************/
@@ -41,10 +42,21 @@
 static const char *eventName;
 static ES_Event storedEvent;
 static uint8_t MyPriority;
+static uint8_t curVal[] = {OFF,OFF};
 
 /*******************************************************************************
  * PUBLIC FUNCTIONS                                                            *
  ******************************************************************************/
+
+/*
+ *@Function getTrackWireVals()
+ * @return curVal
+ * @brief This function returns the current value stored on both track wires
+ */
+uint8_t * getTrackWireVals()
+{
+    return curVal;
+}
 
 /**
  * @Function InitTrackWireService(uint8_t Priority)
@@ -123,7 +135,6 @@ ES_Event RunTrackWireService(ES_Event ThisEvent)
             {
                 state = BACK_TRACK_WIRE;
                 trackValF = readTrackWire();
-                
                 #ifdef DEBUG
                 //printf("\r\nFront TrackW: %d",!trackValF);
                 #endif
@@ -151,7 +162,6 @@ ES_Event RunTrackWireService(ES_Event ThisEvent)
             {
                 state = FRONT_TRACK_WIRE;
                 trackVal = readTrackWire();
-                
                 #ifdef DEBUG
                 printf("\r\n\nFront TrackW: %d",!trackValF);
                 printf("\r\nBack TrackW: %d",!trackVal);
@@ -185,11 +195,17 @@ ES_Event RunTrackWireService(ES_Event ThisEvent)
                     if(curState == TRACK_WIRE_ON)
                     {
                         PostEvent.EventParam |= 2;
+                        curVal[1] = ON;
+                    }else{
+                        curVal[1] = OFF;
                     }
-                    else             
+                    
                     if(curStateF == TRACK_WIRE_ON)
                     {
+                        curVal[0] = ON;
                         PostEvent.EventParam |= 1;
+                    }else{
+                        curVal[0] = OFF;
                     }
                     #ifdef DEBUG
                     //printf("\r\nFront TrackW: %d Back TrackW: %d",!trackValF,!trackVal);

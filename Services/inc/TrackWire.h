@@ -26,7 +26,13 @@
  * PUBLIC FUNCTION PROTOTYPES                                                  *
  ******************************************************************************/
 
- 
+ /*
+ *@Function getTrackWireVals()
+ * @return curVal
+ * @brief This function returns the current value stored on both track wires
+ */
+uint8_t * getTrackWireVals();
+
 /**
  * @Function InitTrackWireService(uint8_t Priority)
  * @param Priority - internal variable to track which event queue to use

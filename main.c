@@ -10,7 +10,7 @@
 #include "motor.h"
 #include "sensors.h"
 
-#define JANKY_TEST_HARNESS
+//#define JANKY_TEST_HARNESS
 #ifdef JANKY_TEST_HARNESS
 
 void delay(int counter)

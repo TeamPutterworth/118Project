@@ -91,11 +91,12 @@ static const char *EventNames[] = {
 
 
 /****************************************************************************/
-// This are the name of the Event checking function header file.
+// This are the name of the Event checking function header file. 
+// Our events are now legacy code and not actually run.
 #define EVENT_CHECK_HEADER "EventChecker.h" 
 /****************************************************************************/
 // This is the list of event checking functions
-#define EVENT_CHECK_LIST beaconSignal
+#define EVENT_CHECK_LIST 
 
 /****************************************************************************/
 // These are the definitions for the post functions to be executed when the
@@ -111,9 +112,9 @@ static const char *EventNames[] = {
 #define TIMER6_RESP_FUNC PostTopLevelHSM
 #define TIMER7_RESP_FUNC PostTopLevelHSM
 #define TIMER8_RESP_FUNC PostTopLevelHSM
-#define TIMER9_RESP_FUNC TIMER_UNUSED
-#define TIMER10_RESP_FUNC TIMER_UNUSED
-#define TIMER11_RESP_FUNC TIMER_UNUSED
+#define TIMER9_RESP_FUNC PostTopLevelHSM
+#define TIMER10_RESP_FUNC PostBeaconDebounceService
+#define TIMER11_RESP_FUNC PostTopLevelHSM
 #define TIMER12_RESP_FUNC TIMER_UNUSED
 #define TIMER13_RESP_FUNC TIMER_UNUSED
 #define TIMER14_RESP_FUNC TIMER_UNUSED
@@ -134,17 +135,22 @@ static const char *EventNames[] = {
 #define LONG_HSM_TIMER 3
 #define BUMPER_DEBOUNCE_TIMER 4
 #define TRACK_WIRE_TIMER 5
+#define TIMER_22 9
 #define TIMER_45 6
 #define TIMER_90 7
 #define TIMER_180 8
+#define BEACON_DEBOUNCE_TIMER 10
+#define TIMER_360 11
 
 #define SHORT_TIMER_TICKS 50
 #define MEDIUM_TIMER_TICKS 250 
 #define LONG_TIMER_TICKS 1000
 
 #define TIMER_45_TICKS 685
+#define TIMER_22_TICKS TIMER_45_TICKS/2
 #define TIMER_90_TICKS 2*TIMER_45_TICKS
 #define TIMER_180_TICKS 4*TIMER_45_TICKS
+#define TIMER_360_TICKS 8*TIMER_45_TICKS
 
 /****************************************************************************/
 // The maximum number of services sets an upper bound on the number of 
@@ -155,7 +161,7 @@ static const char *EventNames[] = {
 /****************************************************************************/
 // This macro determines that nuber of services that are *actually* used in
 // a particular application. It will vary in value from 1 to MAX_NUM_SERVICES
-#define NUM_SERVICES 5
+#define NUM_SERVICES 6
 
 /****************************************************************************/
 // These are the definitions for Service 0, the lowest priority service
@@ -227,11 +233,11 @@ static const char *EventNames[] = {
 // These are the definitions for Service 5
 #if NUM_SERVICES > 5
 // the header file with the public fuction prototypes
-#define SERV_5_HEADER "TrackWire.h"
+#define SERV_5_HEADER "BeaconDebounce.h"
 // the name of the Init function
-#define SERV_5_INIT InitTrackWireService
+#define SERV_5_INIT InitBeaconDebounceService
 // the name of the run function
-#define SERV_5_RUN RunTrackWireService
+#define SERV_5_RUN RunBeaconDebounceService
 // How big should this services Queue be?
 #define SERV_5_QUEUE_SIZE 3
 #endif

@@ -172,6 +172,9 @@ ES_Event RunAmmoLoadSubHSM(ES_Event ThisEvent)
                     ThisEvent.EventType = ES_NO_EVENT;
                 }
                 break;
+            case ES_EXIT:
+                ES_Timer_StopTimer(TIMER_45);
+                break;
             case ES_NO_EVENT:
             default:
                 break;
@@ -186,7 +189,12 @@ ES_Event RunAmmoLoadSubHSM(ES_Event ThisEvent)
                 ES_Timer_InitTimer(LONG_HSM_TIMER, LONG_TIMER_TICKS);
                 break;
             case ES_TIMEOUT:
-                
+                if(ThisEvent.EventParam == LONG_HSM_TIMER){
+                    ThisEvent.EventType = UNLOADED; // This will cause a top state transition into beacon searching
+                }
+                break;
+            case ES_EXIT:
+                ES_Timer_StopTimer(LONG_HSM_TIMER);
                 break;
             case ES_NO_EVENT:
             default:
