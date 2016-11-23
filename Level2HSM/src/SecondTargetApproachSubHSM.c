@@ -1,9 +1,5 @@
 /*
-<<<<<<< HEAD
- * File:   FirstTargetSearchSubHSM.h
-=======
- * File:   FirstTargetApproachHSM.c
->>>>>>> c00c10808e2e1194c1079fd75aa4c347ecedc6b8
+ * File:   SecondTargetApproachHSM.c
  * Author: jcrowley
  *
  * This file includes the top level of our hierarchal state machine. At this level
@@ -22,11 +18,8 @@
 #include "SecondTargetApproachSubHSM.h"
 #include "sensors.h"
 #include "motor.h"
-<<<<<<< HEAD
-
-=======
 #include "IO_Ports.h"
->>>>>>> c00c10808e2e1194c1079fd75aa4c347ecedc6b8
+
 /*******************************************************************************
  * PRIVATE #DEFINES                                                            *
  ******************************************************************************/
@@ -41,14 +34,10 @@
 typedef enum {
     InitPState,
     Backward,
-<<<<<<< HEAD
-    ,
-    GradualTurn,
+    TankTurn,
 } HSMState_t;
 
 static const char *StateNames[] = {
-	
-=======
     TankTurn,
     Forward,
 } HSMState_t;
@@ -58,7 +47,6 @@ static const char *StateNames[] = {
 	"Backward",
 	"TankTurn",
 	"Forward",
->>>>>>> c00c10808e2e1194c1079fd75aa4c347ecedc6b8
 };
 
 
@@ -77,11 +65,6 @@ static const char *StateNames[] = {
 static HSMState_t CurrentState = InitPState; // <- change enum name to match ENUM
 static uint8_t MyPriority;
 
-
-<<<<<<< HEAD
-=======
-
->>>>>>> c00c10808e2e1194c1079fd75aa4c347ecedc6b8
 /*******************************************************************************
  * PUBLIC FUNCTIONS                                                            *
  ******************************************************************************/
@@ -123,7 +106,6 @@ ES_Event RunSecondTargetApproachSubHSM(ES_Event ThisEvent)
 
     switch (CurrentState) {
     case InitPState: // If current state is initial Pseudo State
-<<<<<<< HEAD
         if (ThisEvent.EventType == ES_INIT)// only respond to ES_Init
         {
             nextState = Forward;
@@ -165,25 +147,20 @@ ES_Event RunSecondTargetApproachSubHSM(ES_Event ThisEvent)
         }
         break;
         
-=======
         break;
 
->>>>>>> c00c10808e2e1194c1079fd75aa4c347ecedc6b8
     default: // all unhandled states fall into here
         break;
     } // end switch on Current State
 
     if (makeTransition == TRUE) { // making a state transition, send EXIT and ENTRY
         // recursively call the current state with an exit event
-<<<<<<< HEAD
         RunSecondTargetApproachSubHSM(EXIT_EVENT); 
         CurrentState = nextState;
         RunSecondTargetApproachSubHSM(ENTRY_EVENT); 
-=======
         RunFirstTargetSearchSubHSM(EXIT_EVENT); 
         CurrentState = nextState;
         RunFirstTargetSearchSubHSM(ENTRY_EVENT); 
->>>>>>> c00c10808e2e1194c1079fd75aa4c347ecedc6b8
     }
 
     ES_Tail(); // trace call stack end

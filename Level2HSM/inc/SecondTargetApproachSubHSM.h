@@ -1,9 +1,5 @@
 /*
-<<<<<<< HEAD
- * File:   FirstTargetSearchSubHSM.h
-=======
  * File:   FirstTargetApproachSubHSM.h
->>>>>>> c00c10808e2e1194c1079fd75aa4c347ecedc6b8
  * Author: jcrowley
  *
  * This file includes the top level of our hierarchal state machine. At this level
@@ -35,22 +31,17 @@
  ******************************************************************************/
 
 /**
-<<<<<<< HEAD
  * @Function InitApproachTargetApproachSubHSM(uint8_t Priority)
-=======
  * @Function InitSecondTargetApproachSubHSM(uint8_t Priority)
->>>>>>> c00c10808e2e1194c1079fd75aa4c347ecedc6b8
  * @param Priority - internal variable to track which event queue to use
  * @return TRUE or FALSE
  * @brief This will get called by the framework at the beginning of the code
  *        execution. It will post an ES_INIT event to the appropriate event
  *        queue, which will be handled inside RunFirstTargetSearchSubHSM function.
  */
-<<<<<<< HEAD
-uint8_t InitSecondApproachApproachSubHSM(void);
-=======
+
 uint8_t InitSecondTargetApproachSubHSM(void);
->>>>>>> c00c10808e2e1194c1079fd75aa4c347ecedc6b8
+
 
 /**
  * @Function RunSecondTargetApproachSubHSM(ES_Event ThisEvent)
