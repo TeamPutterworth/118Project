@@ -114,7 +114,7 @@ ES_Event RunSecondTargetSearchSubHSM(ES_Event ThisEvent)
             makeTransition = TRUE;
             ThisEvent.EventType = ES_NO_EVENT;
 
-            ES_Timer_InitTimer(SHORT_HSM_TIMER, SHORT_TIMER_TICKS);
+            ES_Timer_InitTimer(LONG_HSM_TIMER, LONG_TIMER_TICKS);
 
         }
         break;
@@ -125,16 +125,21 @@ ES_Event RunSecondTargetSearchSubHSM(ES_Event ThisEvent)
                 moveBackward();
                 break;
             case ES_TIMEOUT:
-                nextState = Backward;
-                makeTransition = TRUE;
-                ThisEvent.EventType = ES_NO_EVENT;
-
-                if(firstEntry = 0){
-                    ES_Timer_InitTimer(TIMER_90, TIMER_90_TICKS);
-                    firstEntry = 1;
-                }else{
-                    ES_Timer_InitTimer(TIMER_180, TIMER_180_TICKS);
+                if (ThisEvent.EventParam == LONG_HSM_TIMER)
+                {
+                    nextState = Backward;
+                    makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
+                    if(firstEntry = 0){
+                        ES_Timer_InitTimer(TIMER_90, TIMER_90_TICKS);
+                        firstEntry = 1;
+                    }else{
+                        ES_Timer_InitTimer(TIMER_180, TIMER_180_TICKS);
+                    }
                 }
+                break;
+            case ES_EXIT:
+                ES_Timer_StopTimer(LONG_HSM_TIMER);
                 break;
         }
         break;

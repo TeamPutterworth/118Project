@@ -244,6 +244,8 @@ ES_Event RunSyncSamplingService(ES_Event ThisEvent)
                         setMoveSpeed(25);
                     }
                     #endif
+                    printf("\r\nadcDiff Right[%d]: %d",i,adcDiff[0]);
+                    printf("\r\nadcDiff Left[%d]: %d",i,adcDiff[1]);
                     PostTopLevelHSM(PostEvent);
                     if (PostEvent.EventParam & TS_FR)
                     {

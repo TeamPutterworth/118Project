@@ -22,7 +22,7 @@
 #define DEBUG
 #define LOW_TO_HIGH 0x7FFF
 #define HIGH_TO_LOW 0x8000
-#define BUMPER_DEBOUNCE_TIMER_TICKS 5
+#define BUMPER_DEBOUNCE_TIMER_TICKS 10
 
 /*******************************************************************************
  * PRIVATE FUNCTION PROTOTYPES                                                 *
