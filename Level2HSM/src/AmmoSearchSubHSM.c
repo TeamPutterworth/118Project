@@ -34,6 +34,7 @@ typedef enum {
     InitPState,
     Forward,
     TankTurn,
+    TankTurnAvoid,
     Backward,
     AlignToTape,
     FollowTape,
@@ -43,6 +44,7 @@ static const char *StateNames[] = {
 	"InitPState",
 	"Forward",
 	"TankTurn",
+	"TankTurnAvoid",
 	"Backward",
 	"AlignToTape",
 	"FollowTape",
@@ -214,6 +216,36 @@ ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
                 break;
         }
         break;
+    
+    case TankTurnAvoid:
+        switch (ThisEvent.EventType) { 
+            case ES_ENTRY:
+                if (turnParam == RIGHT){
+                    tankTurnRight();
+                }else{
+                    tankTurnLeft();
+                }
+                break;
+            case ES_TIMEOUT:
+                if (ThisEvent.EventParam == TIMER_45 || ThisEvent.EventParam == TIMER_22 || ThisEvent.EventParam == TIMER_360
+                        || ThisEvent.EventParam == TIMER_180){
+                    nextState = Forward;
+                    makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
+                }
+                break;
+            case ES_EXIT:
+                ES_Timer_StopTimer(TIMER_22);
+                ES_Timer_StopTimer(TIMER_45);
+                ES_Timer_StopTimer(TIMER_90);
+                ES_Timer_StopTimer(TIMER_180);
+                ES_Timer_StopTimer(TIMER_360);
+                break;
+            case ES_NO_EVENT:
+            default:
+                break;
+        }
+        break;
         
     case TankTurn:
         switch (ThisEvent.EventType) {  
@@ -260,7 +292,8 @@ ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
                 }
                 break;
             case ES_TIMEOUT:
-                if (ThisEvent.EventParam == TIMER_45 || ThisEvent.EventParam == TIMER_22 || ThisEvent.EventParam == TIMER_360){
+                if (ThisEvent.EventParam == TIMER_45 || ThisEvent.EventParam == TIMER_22 || ThisEvent.EventParam == TIMER_360
+                        || ThisEvent.EventParam == TIMER_180){
                     nextState = Forward;
                     makeTransition = TRUE;
                     ThisEvent.EventType = ES_NO_EVENT;
@@ -269,6 +302,9 @@ ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
             case ES_EXIT:
                 ES_Timer_StopTimer(TIMER_22);
                 ES_Timer_StopTimer(TIMER_45);
+                ES_Timer_StopTimer(TIMER_90);
+                ES_Timer_StopTimer(TIMER_180);
+                ES_Timer_StopTimer(TIMER_360);
                 break;
             case ES_NO_EVENT:
             default:
@@ -365,10 +401,10 @@ ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
                 break;
             case ES_TIMEOUT:
                 if(ThisEvent.EventParam == MEDIUM_HSM_TIMER){
-                    nextState = TankTurn;
+                    nextState = TankTurnAvoid;
                     makeTransition = TRUE;
                     ThisEvent.EventType = ES_NO_EVENT;
-                    ES_Timer_InitTimer(TIMER_45, TIMER_45_TICKS);
+                    ES_Timer_InitTimer(TIMER_180, TIMER_180_TICKS);
                 }
                 if(ThisEvent.EventParam == LONG_HSM_TIMER){
                     nextState = TankTurn;
