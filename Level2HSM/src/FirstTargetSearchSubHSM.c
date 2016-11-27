@@ -31,12 +31,14 @@ typedef enum {
     InitPState,
     Scan,
     Forward,
+    Unload,
 } HSMState_t;
 
 static const char *StateNames[] = {
 	"InitPState",
 	"Scan",
 	"Forward",
+	"Unload",
 };
 
 
@@ -90,6 +92,7 @@ uint8_t InitFirstTargetSearchSubHSM(void)
  */
 ES_Event RunFirstTargetSearchSubHSM(ES_Event ThisEvent)
 {
+    uint8_t pulseDuration;
     uint8_t makeTransition = FALSE; // use to flag transition
     HSMState_t nextState; // <- change type to correct enum
 
@@ -158,6 +161,10 @@ ES_Event RunFirstTargetSearchSubHSM(ES_Event ThisEvent)
             default:
                 break;
         }
+        break;
+        
+    case Unload:
+        
         break;
         
     default: // all unhandled states fall into here

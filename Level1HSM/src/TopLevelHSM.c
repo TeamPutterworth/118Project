@@ -138,8 +138,8 @@ ES_Event RunTopLevelHSM(ES_Event ThisEvent)
             nextState = AmmoSearch;
             makeTransition = TRUE;
             ThisEvent.EventType = ES_NO_EVENT;
-            
-            ES_Timer_InitTimer(MEDIUM_HSM_TIMER, MEDIUM_TIMER_TICKS);
+            // Why this timer?
+            //ES_Timer_InitTimer(MEDIUM_HSM_TIMER, MEDIUM_TIMER_TICKS);
         }
         break;
         
@@ -182,7 +182,7 @@ ES_Event RunTopLevelHSM(ES_Event ThisEvent)
         ThisEvent = RunFirstTargetSearchSubHSM(ThisEvent);
         switch (ThisEvent.EventType) {
             case TAPE_TRIGGERED:
-                if(((ThisEvent.EventParam & TS_FR) >> FR_SH) && ((ThisEvent.EventParam & TS_FL) >> FL_SH)){
+                if((ThisEvent.EventParam & TS_FR) && (ThisEvent.EventParam & TS_FL)){
                     nextState = FirstTargetUnload;
                     makeTransition = TRUE;
                     ThisEvent.EventType = ES_NO_EVENT;

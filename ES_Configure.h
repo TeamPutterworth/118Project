@@ -115,7 +115,7 @@ static const char *EventNames[] = {
 #define TIMER9_RESP_FUNC PostTopLevelHSM
 #define TIMER10_RESP_FUNC PostBeaconDebounceService
 #define TIMER11_RESP_FUNC PostTopLevelHSM
-#define TIMER12_RESP_FUNC TIMER_UNUSED
+#define TIMER12_RESP_FUNC PostTopLevelHSM
 #define TIMER13_RESP_FUNC TIMER_UNUSED
 #define TIMER14_RESP_FUNC TIMER_UNUSED
 #define TIMER15_RESP_FUNC TIMER_UNUSED
@@ -141,6 +141,9 @@ static const char *EventNames[] = {
 #define TIMER_180 8
 #define BEACON_DEBOUNCE_TIMER 10
 #define TIMER_360 11
+#define SERVO_TIMER 12
+
+#define SERVO_TIMER_TICKS 2
 
 #define SHORT_TIMER_TICKS 50
 #define MEDIUM_TIMER_TICKS 250 

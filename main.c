@@ -91,20 +91,34 @@ void testBeaconDetector()
 void testServos()
 {
     int i;
-    for (i=550;i<2250;i+=1)
+    for (i=1150;i>550;i-=1)
     {
-        RC_SetPulseTime(RC_SERVO_UNLOADING,i);
-        RC_SetPulseTime(RC_SERVO_BRIDGE,i);
+        setPulseUnloadingServo(i);
+        //RC_SetPulseTime(RC_SERVO_BRIDGE,i);
         delay(600);
     }
-    delay(100000);
-    for (i=2250;i>550;i-=1)
+    delay(250000);
+    for (i=550;i<1150;i+=1)
     {
-        RC_SetPulseTime(RC_SERVO_UNLOADING,i);
-        RC_SetPulseTime(RC_SERVO_BRIDGE,i);
+        setPulseUnloadingServo(i);
+        //RC_SetPulseTime(RC_SERVO_BRIDGE,i);
+        delay(1000);
+    }
+    delay(250000);
+    for (i=1150;i<1800;i+=1)
+    {
+        setPulseUnloadingServo(i);
+        //RC_SetPulseTime(RC_SERVO_BRIDGE,i);
+        delay(1000);
+    }
+    delay(250000);
+    for (i=1800;i>1150;i-=1)
+    {
+        setPulseUnloadingServo(i);
+        //RC_SetPulseTime(RC_SERVO_BRIDGE,i);
         delay(600);
     }
-    delay(100000);
+    delay(250000);
     return;
 }
 #endif
@@ -124,6 +138,7 @@ void main(void)
     motorInit();
     sensorsInit();
     
+    setPulseUnloadingServo(UNLOADING_CENTER_PULSE);
     LED_AddBanks(LED_BANK1|LED_BANK2|LED_BANK3);
     LED_SetBank(LED_BANK1,0x0);
     LED_SetBank(LED_BANK2,0x0);
@@ -155,6 +170,8 @@ void main(void)
         ;
 #else
     while (1) {
+        //RC_SetPulseTime(RC_SERVO_BRIDGE,1750);
+        testServos();
         /*
         switch(readBumpers()){
             case (0x01): // Front-Right Bumper

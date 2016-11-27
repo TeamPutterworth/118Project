@@ -87,31 +87,13 @@ void muxSelTrackWire(uint8_t selectMask)
 }
 
 void setPulseUnloadingServo(uint16_t pulse)
-{
-    if (pulse < 1000)
-    {
-        pulse = 1000;
-    } 
-    else if (pulse > 2000)
-    {
-        pulse = 2000;
-    }
-    
+{  
     RC_SetPulseTime(RC_SERVO_UNLOADING,pulse);
     return;
 }
 
 void setPulseBridgeServo(uint16_t pulse)
 {
-    if (pulse < 1000)
-    {
-        pulse = 1000;
-    } 
-    else if (pulse > 2000)
-    {
-        pulse = 2000;
-    }
-    
     RC_SetPulseTime(RC_SERVO_BRIDGE,pulse);
     return;
 }
