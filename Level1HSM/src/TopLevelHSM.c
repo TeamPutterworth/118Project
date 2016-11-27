@@ -134,6 +134,16 @@ ES_Event RunTopLevelHSM(ES_Event ThisEvent)
             InitFirstTargetUnloadSubHSM();
             InitSecondTargetSearchSubHSM();
             //InitSecondTargetUnloadSubHSM();
+            // I am stopping all of our timer's because some might be started in an ES_ENTRY during initialization
+            ES_Timer_StopTimer(SHORT_HSM_TIMER);
+            ES_Timer_StopTimer(MEDIUM_HSM_TIMER);
+            ES_Timer_StopTimer(LONG_HSM_TIMER);
+            ES_Timer_StopTimer(TIMER_22);
+            ES_Timer_StopTimer(TIMER_45);
+            ES_Timer_StopTimer(TIMER_90);
+            ES_Timer_StopTimer(TIMER_180);
+            ES_Timer_StopTimer(TIMER_360);
+            
             // now put the machine into the actual initial state
             nextState = AmmoSearch;
             makeTransition = TRUE;

@@ -112,7 +112,7 @@ ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
     case InitPState: // If current state is initial Pseudo State
         if (ThisEvent.EventType == ES_INIT)// only respond to ES_Init
         {
-            nextState = Forward;
+            nextState = TankTurn;
             makeTransition = TRUE;
             ThisEvent.EventType = ES_NO_EVENT;
         }
@@ -218,14 +218,49 @@ ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
     case TankTurn:
         switch (ThisEvent.EventType) {  
             case ES_ENTRY:
+                ES_Timer_InitTimer(TIMER_360, TIMER_360_TICKS);
                 if (turnParam == RIGHT){
                     tankTurnRight();
                 }else{
                     tankTurnLeft();
                 }
                 break;
+            case TAPE_TRIGGERED:
+                // If tape is triggered after hitting a track wire and we weren't following it, back up a lot
+                if (ThisEvent.EventParam & TS_FR){
+                    if (turnParam == RIGHT){
+                        stuckCounter++;
+                    }else{
+                        stuckCounter = 0;
+                    }
+                    
+                    if (stuckCounter > STUCK){
+                        turnParam = RIGHT;
+                    }else{
+                        turnParam = LEFT;
+                    }
+                    nextState = AlignToTape;
+                    makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
+                }else if (ThisEvent.EventParam & TS_FL){   
+                    if (turnParam == LEFT){
+                        stuckCounter++;
+                    }else{
+                        stuckCounter = 0;
+                    }
+                    
+                    if (stuckCounter > STUCK){
+                        turnParam = LEFT;
+                    }else{
+                        turnParam = RIGHT;
+                    }
+                    nextState = AlignToTape;
+                    makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
+                }
+                break;
             case ES_TIMEOUT:
-                if (ThisEvent.EventParam == TIMER_45 || ThisEvent.EventParam == TIMER_22){
+                if (ThisEvent.EventParam == TIMER_45 || ThisEvent.EventParam == TIMER_22 || ThisEvent.EventParam == TIMER_360){
                     nextState = Forward;
                     makeTransition = TRUE;
                     ThisEvent.EventType = ES_NO_EVENT;

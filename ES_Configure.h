@@ -151,9 +151,10 @@ static const char *EventNames[] = {
 
 #define TIMER_45_TICKS 685
 #define TIMER_22_TICKS TIMER_45_TICKS/2
-#define TIMER_90_TICKS 2*TIMER_45_TICKS
-#define TIMER_180_TICKS 4*TIMER_45_TICKS
-#define TIMER_360_TICKS 8*TIMER_45_TICKS
+#define TIMER_360_TICKS 3150
+#define TIMER_90_TICKS TIMER_360_TICKS/4
+#define TIMER_180_TICKS TIMER_360_TICKS/2
+
 
 /****************************************************************************/
 // The maximum number of services sets an upper bound on the number of 
