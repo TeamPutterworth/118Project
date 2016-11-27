@@ -60,7 +60,7 @@ static const char *StateNames[] = {
 
 static HSMState_t CurrentState = InitPState; // <- change enum name to match ENUM
 static uint8_t MyPriority;
-static uint16_t pulse = UNLOADING_CENTER_PULSE;
+static uint16_t servoPulse = UNLOADING_CENTER_PULSE;
 
 /*******************************************************************************
  * PUBLIC FUNCTIONS                                                            *
@@ -190,16 +190,17 @@ ES_Event RunFirstTargetUnloadSubHSM(ES_Event ThisEvent)
             case ES_ENTRY:
                 stopMoving();
                 ES_Timer_InitTimer(SERVO_TIMER,SERVO_TIMER_TICKS);
-                setPulseUnloadingServo(pulse);
+                setPulseBridgeServo(BRIDGE_OUT_PULSE);
+                setPulseUnloadingServo(servoPulse);
                 break;
             case ES_TIMEOUT:
                 if (ThisEvent.EventParam == SERVO_TIMER)
                 {
                     ES_Timer_InitTimer(SERVO_TIMER,SERVO_TIMER_TICKS);
-                    if (pulse < UNLOADING_HIGH_PULSE)
+                    if (servoPulse < UNLOADING_HIGH_PULSE)
                     {
-                        pulse+=10;
-                        setPulseUnloadingServo(pulse);
+                        servoPulse+=10;
+                        setPulseUnloadingServo(servoPulse);
                     } else {
                         nextState = UnloadOne;
                         makeTransition = TRUE;
@@ -217,24 +218,25 @@ ES_Event RunFirstTargetUnloadSubHSM(ES_Event ThisEvent)
             case ES_ENTRY:
                 stopMoving();
                 ES_Timer_InitTimer(SERVO_TIMER,SERVO_TIMER_TICKS);
-                setPulseUnloadingServo(pulse);
+                setPulseUnloadingServo(servoPulse);
                 break;
             case ES_TIMEOUT:
                 if (ThisEvent.EventParam == SERVO_TIMER)
                 {
-                    if (pulse > UNLOADING_LOW_PULSE)
+                    if (servoPulse > UNLOADING_LOW_PULSE)
                     {
                         ES_Timer_InitTimer(SERVO_TIMER,SERVO_TIMER_TICKS);
-                        pulse-=10;
-                        setPulseUnloadingServo(pulse);
+                        servoPulse-=10;
+                        setPulseUnloadingServo(servoPulse);
                         ThisEvent.EventType = ES_NO_EVENT;
                     } else {
-                        pulse = UNLOADING_CENTER_PULSE;
-                        setPulseUnloadingServo(pulse);
+                        servoPulse = UNLOADING_CENTER_PULSE;
+                        setPulseUnloadingServo(servoPulse);
                         ES_Timer_InitTimer(LONG_HSM_TIMER,LONG_TIMER_TICKS);
                     }
                 } else if(ThisEvent.EventParam == LONG_HSM_TIMER){
                     ThisEvent.EventType = UNLOADED;
+                    setPulseBridgeServo(BRIDGE_IN_PULSE);
                 }
                 break;
             case ES_NO_EVENT:

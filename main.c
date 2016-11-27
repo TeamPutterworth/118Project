@@ -91,31 +91,30 @@ void testBeaconDetector()
 void testServos()
 {
     int i;
-    for (i=1150;i>550;i-=1)
+    for (i=1500;i>850;i-=1)
     {
-        setPulseUnloadingServo(i);
-        //RC_SetPulseTime(RC_SERVO_BRIDGE,i);
+        //setPulseUnloadingServo(i);
+        setPulseBridgeServo(i);
         delay(600);
     }
     delay(250000);
-    for (i=550;i<1150;i+=1)
+    for (i=850;i<1500;i+=1)
     {
-        setPulseUnloadingServo(i);
-        //RC_SetPulseTime(RC_SERVO_BRIDGE,i);
+        setPulseBridgeServo(i);
         delay(1000);
     }
     delay(250000);
-    for (i=1150;i<1800;i+=1)
+    for (i=1500;i<2200;i+=1)
     {
-        setPulseUnloadingServo(i);
-        //RC_SetPulseTime(RC_SERVO_BRIDGE,i);
+        //setPulseUnloadingServo(i);
+        setPulseBridgeServo(i);
         delay(1000);
     }
     delay(250000);
-    for (i=1800;i>1150;i-=1)
+    for (i=2200;i>1500;i-=1)
     {
-        setPulseUnloadingServo(i);
-        //RC_SetPulseTime(RC_SERVO_BRIDGE,i);
+        //setPulseUnloadingServo(i);
+        setPulseBridgeServo(i);
         delay(600);
     }
     delay(250000);
@@ -139,6 +138,7 @@ void main(void)
     sensorsInit();
     
     setPulseUnloadingServo(UNLOADING_CENTER_PULSE);
+    setPulseBridgeServo(BRIDGE_IN_PULSE);
     LED_AddBanks(LED_BANK1|LED_BANK2|LED_BANK3);
     LED_SetBank(LED_BANK1,0x0);
     LED_SetBank(LED_BANK2,0x0);
