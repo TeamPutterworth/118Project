@@ -44,6 +44,7 @@ static const char *StateNames[] = {
 	"Backward",
 	"TankTurn",
 	"Forward",
+	"Scan",
 };
 
 
@@ -120,7 +121,7 @@ ES_Event RunSecondTargetApproachSubHSM(ES_Event ThisEvent)
 
             case BUMPED:
                 if(ThisEvent.EventParam & FL_BUMPER){
-                    lastBump = LEFT:
+                    lastBump = LEFT;
                 }
                 else if (ThisEvent.EventParam & FR_BUMPER)
                 {
