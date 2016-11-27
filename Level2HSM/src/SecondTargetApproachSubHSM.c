@@ -36,6 +36,7 @@ typedef enum {
     Backward,
     TankTurn,
     Forward,
+    Scan,
 } HSMState_t;
 
 static const char *StateNames[] = {
@@ -60,6 +61,7 @@ static const char *StateNames[] = {
 
 static HSMState_t CurrentState = InitPState; // <- change enum name to match ENUM
 static uint8_t MyPriority;
+static uint8_t lastBump;
 
 /*******************************************************************************
  * PUBLIC FUNCTIONS                                                            *
@@ -107,8 +109,6 @@ ES_Event RunSecondTargetApproachSubHSM(ES_Event ThisEvent)
             nextState = Forward;
             makeTransition = TRUE;
             ThisEvent.EventType = ES_NO_EVENT;
-
-
         }
         break;
 
@@ -117,6 +117,32 @@ ES_Event RunSecondTargetApproachSubHSM(ES_Event ThisEvent)
             case ES_ENTRY:
                 moveForward();
                 break;
+
+            case BUMPED:
+                if(ThisEvent.EventParam & FL_BUMPER){
+                    lastBump = LEFT:
+                }
+                else if (ThisEvent.EventParam & FR_BUMPER)
+                {
+                    lastBump = RIGHT;
+                }
+                nextState = Backward;
+                makeTransition = TRUE;
+                ThisEvent.EventType = ES_NO_EVENT;
+
+                ES_Timer_InitTimer(MEDIUM_HSM_TIMER, MEDIUM_TIMER_TICKS);
+
+                break;
+
+            case ES_TIMEOUT:
+                if(ThisEvent.EventParam & LONG_HSM_TIMER){
+                    nextState = Scan;
+                    makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
+                }
+
+            case ES_EXIT:
+                ES_Timer_StopTimer(LONG_HSM_TIMER);
 
             default:
                 break;
@@ -127,6 +153,15 @@ ES_Event RunSecondTargetApproachSubHSM(ES_Event ThisEvent)
                 moveBackward();
                 break;
 
+            case ES_TIMEOUT:
+                if (ThisEvent.EventParam & MEDIUM_HSM_TIMER)
+                {
+                    nextState = TankTurn;
+                    makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
+                }
+                break;
+
             default:
                 break;
         }
@@ -135,14 +170,47 @@ ES_Event RunSecondTargetApproachSubHSM(ES_Event ThisEvent)
     case TankTurn:
         switch (ThisEvent.EventType) {  
             case ES_ENTRY:
-                tankTurnRight();
+                if(lastBump == RIGHT)
+                {
+                    tankTurnLeft();    
+                }
+                else
+                {
+                    tankTurnRight();
+                }
+                ES_Timer_InitTimer(MEDIUM_HSM_TIMER, MEDIUM_TIMER_TICKS);
+                
                 break;
-            
+            case ES_TIMEOUT:
+                if(ThisEvent.EventParam & MEDIUM_HSM_TIMER){
+                    nextState = Forward;
+                    makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
+
+                    ES_Timer_InitTimer(LONG_HSM_TIMER, LONG_TIMER_TICKS);
+                }
+
             default:
                 break;
         }
         break;
         
+    case Scan:
+        switch(ThisEvent.EventType){
+            case ES_ENTRY:
+                if(lastBump == RIGHT)
+                {
+                    tankTurnRight();
+                }
+                else
+                {
+                    tankTurnLeft();
+                }
+                break;
+
+            case BEACON_TRIGGERED:
+                stopMoving();
+        }    
         break;
 
     default: // all unhandled states fall into here

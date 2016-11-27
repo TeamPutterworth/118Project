@@ -1,5 +1,5 @@
 /*
- * File:   FirstTargetSearchSubHSM.h
+ * File:   SecondTargetSearchSubHSM.h
  * Author: jcrowley
  *
  * This file includes the top level of our hierarchal state machine. At this level
@@ -35,7 +35,6 @@ typedef enum {
     Backward,
     TankTurn,
     GradualTurn,
-    Forward,
 } HSMState_t;
 
 static const char *StateNames[] = {
@@ -43,7 +42,6 @@ static const char *StateNames[] = {
 	"Backward",
 	"TankTurn",
 	"GradualTurn",
-	"Forward",
 };
 
 
@@ -63,7 +61,7 @@ static HSMState_t CurrentState = InitPState; // <- change enum name to match ENU
 static uint8_t MyPriority;
 
 static uint8_t direction = LEFT;
-static uint8_t difference = 10;
+static uint8_t difference = 15;
 static uint8_t firstEntry = 0;
 
 
@@ -127,19 +125,22 @@ ES_Event RunSecondTargetSearchSubHSM(ES_Event ThisEvent)
             case ES_TIMEOUT:
                 if (ThisEvent.EventParam == LONG_HSM_TIMER)
                 {
-                    nextState = Backward;
+                    nextState = TankTurn;
                     makeTransition = TRUE;
                     ThisEvent.EventType = ES_NO_EVENT;
-                    if(firstEntry = 0){
-                        ES_Timer_InitTimer(TIMER_90, TIMER_90_TICKS);
-                        firstEntry = 1;
-                    }else{
-                        ES_Timer_InitTimer(TIMER_180, TIMER_180_TICKS);
-                    }
+                    ES_Timer_InitTimer(TIMER_90, TIMER_90_TICKS);
+                }
+                else if(ThisEvent.EventParam == MEDIUM_HSM_TIMER)
+                {
+                    nextState = TankTurn;
+                    makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
+                    ES_Timer_InitTimer(TIMER_180, TIMER_180_TICKS);
                 }
                 break;
             case ES_EXIT:
                 ES_Timer_StopTimer(LONG_HSM_TIMER);
+                ES_Timer_StopTimer(MEDIUM_HSM_TIMER);
                 break;
         }
         break;
@@ -149,14 +150,6 @@ ES_Event RunSecondTargetSearchSubHSM(ES_Event ThisEvent)
             case ES_ENTRY:
                 tankTurnRight();
                 break;
-            case TAPE_TRIGGERED:
-                if(ThisEvent.EventParam & TS_BR)
-                {
-                    nextState = Forward;
-                    makeTransition = TRUE;
-                    ThisEvent.EventType = ES_NO_EVENT;
-                }
-                break;
             case ES_TIMEOUT:
                 if(ThisEvent.EventParam & (TIMER_90 | TIMER_180)){
                     nextState = GradualTurn;
@@ -164,14 +157,15 @@ ES_Event RunSecondTargetSearchSubHSM(ES_Event ThisEvent)
                     ThisEvent.EventType = ES_NO_EVENT;
                 }
                 break;
+            case ES_EXIT:
+                ES_Timer_StopTimer(TIMER_90);
+                ES_Timer_StopTimer(TIMER_180);
             
             default:
                 break;
         }
         break;
-        
 
-        
     case GradualTurn:
         switch(ThisEvent.EventType){
             case ES_ENTRY:
@@ -196,6 +190,7 @@ ES_Event RunSecondTargetSearchSubHSM(ES_Event ThisEvent)
                     nextState = Backward;
                     makeTransition = TRUE;
                     ThisEvent.EventType = ES_NO_EVENT;
+                    ES_Timer_InitTimer(MEDIUM_HSM_TIMER, MEDIUM_TIMER_TICKS);
                 }
                 break;
             case BUMPED:
@@ -204,17 +199,17 @@ ES_Event RunSecondTargetSearchSubHSM(ES_Event ThisEvent)
                     nextState = Backward;
                     makeTransition = TRUE;
                     ThisEvent.EventType = ES_NO_EVENT;
+                    ES_Timer_InitTimer(MEDIUM_HSM_TIMER, MEDIUM_TIMER_TICKS);
                 }
                 break;
-
         }
         break;
 
-    default: // all unhandled states fall into here
+    default: 
         break;
-    } // end switch on Current State
+    } 
 
-    if (makeTransition == TRUE) { // making a state transition, send EXIT and ENTRY
+    if (makeTransition == TRUE) { 
         // recursively call the current state with an exit event
         RunSecondTargetSearchSubHSM(EXIT_EVENT); 
         CurrentState = nextState;
