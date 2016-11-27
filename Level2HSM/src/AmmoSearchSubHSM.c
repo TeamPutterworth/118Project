@@ -114,7 +114,8 @@ ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
     case InitPState: // If current state is initial Pseudo State
         if (ThisEvent.EventType == ES_INIT)// only respond to ES_Init
         {
-            nextState = TankTurn;
+            //nextState = TankTurn;
+            nextState = Forward;
             makeTransition = TRUE;
             ThisEvent.EventType = ES_NO_EVENT;
         }
@@ -250,7 +251,7 @@ ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
     case TankTurn:
         switch (ThisEvent.EventType) {  
             case ES_ENTRY:
-                ES_Timer_InitTimer(TIMER_360, TIMER_360_TICKS);
+                //ES_Timer_InitTimer(TIMER_360, TIMER_360_TICKS);
                 if (turnParam == RIGHT){
                     tankTurnRight();
                 }else{

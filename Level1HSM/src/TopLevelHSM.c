@@ -40,6 +40,7 @@ typedef enum {
     FirstTargetSearch,
     FirstTargetUnload,
     SecondTargetSearch,
+    SecondTargetApproach,
     SecondTargetUnload,
 } TopLevelHSMState_t;
 
@@ -50,6 +51,7 @@ static const char *StateNames[] = {
 	"FirstTargetSearch",
 	"FirstTargetUnload",
 	"SecondTargetSearch",
+	"SecondTargetApproach",
 	"SecondTargetUnload",
 };
 
@@ -133,6 +135,7 @@ ES_Event RunTopLevelHSM(ES_Event ThisEvent)
             InitFirstTargetSearchSubHSM();
             InitFirstTargetUnloadSubHSM();
             InitSecondTargetSearchSubHSM();
+            InitSecondTargetApproachSubHSM();
             //InitSecondTargetUnloadSubHSM();
             // I am stopping all of our timer's because some might be started in an ES_ENTRY during initialization
             ES_Timer_StopTimer(SHORT_HSM_TIMER);
@@ -192,7 +195,7 @@ ES_Event RunTopLevelHSM(ES_Event ThisEvent)
         ThisEvent = RunFirstTargetSearchSubHSM(ThisEvent);
         switch (ThisEvent.EventType) {
             case TAPE_TRIGGERED:
-                if((ThisEvent.EventParam & TS_FR) && (ThisEvent.EventParam & TS_FL)){
+                if(ThisEvent.EventParam & (TS_FL | TS_FR)){
                     nextState = FirstTargetUnload;
                     makeTransition = TRUE;
                     ThisEvent.EventType = ES_NO_EVENT;
@@ -223,20 +226,37 @@ ES_Event RunTopLevelHSM(ES_Event ThisEvent)
     case SecondTargetSearch:
         ThisEvent = RunSecondTargetSearchSubHSM(ThisEvent);
         switch (ThisEvent.EventType) {
-            case TAPE_TRIGGERED:
-                if(((ThisEvent.EventParam & TS_FR) >> FR_SH) && ((ThisEvent.EventParam & TS_FL) >> FL_SH)){
-                    nextState = SecondTargetUnload;
+            case BEACON_TRIGGERED:
+                
+                if(ThisEvent.EventParam)
+                {
+                    nextState = SecondTargetApproach;
                     makeTransition = TRUE;
                     ThisEvent.EventType = ES_NO_EVENT;
-                }
-                
+                } 
                 break;
             case ES_NO_EVENT:
             default:
                 break;
         }
         break;
-    
+    case SecondTargetApproach:
+        stopMoving();
+        //ThisEvent = RunSecondTargetApproachSubHSM(ThisEvent);
+        /*switch (ThisEvent.EventType) {
+            
+            case TAPE_TRIGGERED:
+                if(ThisEvent.EventParam & (TS_FR | TS_FL)){
+                    nextState = SecondTargetUnload;
+                    makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
+                }
+                break;
+            case ES_NO_EVENT:
+            default:
+                break;
+        }*/
+        break;
     case SecondTargetUnload:
         //ThisEvent = RunSecondTargetUnloadSubHSM(ThisEvent);
         switch (ThisEvent.EventType) {

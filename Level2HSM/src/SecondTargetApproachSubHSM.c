@@ -116,7 +116,8 @@ ES_Event RunSecondTargetApproachSubHSM(ES_Event ThisEvent)
     case Forward:
         switch(ThisEvent.EventType){
             case ES_ENTRY:
-                moveForward();
+                //moveForward();
+                stopMoving();
                 break;
 
             case BUMPED:
@@ -141,13 +142,15 @@ ES_Event RunSecondTargetApproachSubHSM(ES_Event ThisEvent)
                     makeTransition = TRUE;
                     ThisEvent.EventType = ES_NO_EVENT;
                 }
+                break;
 
             case ES_EXIT:
                 ES_Timer_StopTimer(LONG_HSM_TIMER);
-
+                break;
             default:
                 break;
         }
+        break;
     case Backward:
         switch(ThisEvent.EventType){
             case ES_ENTRY:
@@ -190,6 +193,7 @@ ES_Event RunSecondTargetApproachSubHSM(ES_Event ThisEvent)
 
                     ES_Timer_InitTimer(LONG_HSM_TIMER, LONG_TIMER_TICKS);
                 }
+                break;
 
             default:
                 break;
@@ -211,6 +215,7 @@ ES_Event RunSecondTargetApproachSubHSM(ES_Event ThisEvent)
 
             case BEACON_TRIGGERED:
                 stopMoving();
+                break;
         }    
         break;
 

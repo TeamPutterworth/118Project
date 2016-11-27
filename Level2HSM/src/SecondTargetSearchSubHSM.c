@@ -62,7 +62,6 @@ static uint8_t MyPriority;
 
 static uint8_t direction = LEFT;
 static uint8_t difference = 15;
-static uint8_t firstEntry = 0;
 
 
 /*******************************************************************************
@@ -108,11 +107,11 @@ ES_Event RunSecondTargetSearchSubHSM(ES_Event ThisEvent)
     case InitPState: // If current state is initial Pseudo State
         if (ThisEvent.EventType == ES_INIT)// only respond to ES_Init
         {
-            nextState = Backward;
+            nextState = GradualTurn;
             makeTransition = TRUE;
             ThisEvent.EventType = ES_NO_EVENT;
 
-            ES_Timer_InitTimer(LONG_HSM_TIMER, LONG_TIMER_TICKS);
+            //ES_Timer_InitTimer(LONG_HSM_TIMER, LONG_TIMER_TICKS);
 
         }
         break;
@@ -120,7 +119,8 @@ ES_Event RunSecondTargetSearchSubHSM(ES_Event ThisEvent)
     case Backward:
         switch(ThisEvent.EventType){
             case ES_ENTRY:
-                moveBackward();
+                //moveBackward();
+                stopMoving();
                 break;
             case ES_TIMEOUT:
                 if (ThisEvent.EventParam == LONG_HSM_TIMER)
