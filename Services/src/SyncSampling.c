@@ -27,7 +27,7 @@
 #define TIMER_0_TICKS 5 // 2 ticks = 2 ms
 #endif
 #define ON 1
-#define HI_THRESHOLD 300
+#define HI_THRESHOLD 250
 #define LO_THRESHOLD 100
 #define NUM_LEDS 5
 #define LEFT 0
@@ -244,8 +244,6 @@ ES_Event RunSyncSamplingService(ES_Event ThisEvent)
                         setMoveSpeed(25);
                     }
                     #endif
-                    printf("\r\nadcDiff Right[%d]: %d",i,adcDiff[0]);
-                    printf("\r\nadcDiff Left[%d]: %d",i,adcDiff[1]);
                     PostTopLevelHSM(PostEvent);
                     if (PostEvent.EventParam & TS_FR)
                     {

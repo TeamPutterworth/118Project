@@ -253,13 +253,13 @@ ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
             case TAPE_TRIGGERED:
                 if(!(ThisEvent.EventParam & TS_FR) && (turnParam == LEFT) && !(ThisEvent.EventParam & TS_FL)){
                     turnParam = RIGHT;
-                    gradualTurnRight(5);
+                    gradualTurnRight(10);
                     makeTransition = TRUE;
                     nextState = FollowTape;
                     ThisEvent.EventType = ES_NO_EVENT;
                 } else if(!(ThisEvent.EventParam & TS_FL) && (turnParam == RIGHT) && !(ThisEvent.EventParam & TS_FR)){
                     turnParam = LEFT;
-                    gradualTurnLeft(5);
+                    gradualTurnLeft(10);
                     makeTransition = TRUE;
                     nextState = FollowTape;
                     ThisEvent.EventType = ES_NO_EVENT;
@@ -275,10 +275,10 @@ ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
             case TAPE_TRIGGERED:
                 if(!(ThisEvent.EventParam & TS_FR) && (turnParam == LEFT)){
                     turnParam = RIGHT;
-                    gradualTurnRight(10);
+                    gradualTurnRight(20);
                 } else if(!(ThisEvent.EventParam & TS_FL) && (turnParam == RIGHT)){
                     turnParam = LEFT;
-                    gradualTurnLeft(10);
+                    gradualTurnLeft(20);
                 }
                 break;
             case BUMPED:
