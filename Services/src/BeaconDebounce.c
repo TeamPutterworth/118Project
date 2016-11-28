@@ -41,7 +41,7 @@
 /*******************************************************************************
  * PRIVATE MODULE VARIABLES                                                    *
  ******************************************************************************/
-
+static uint8_t savedBeaconVal;
 static const char *eventName;
 static ES_Event storedEvent;
 static uint8_t MyPriority;
@@ -49,6 +49,11 @@ static uint8_t MyPriority;
 /*******************************************************************************
  * PUBLIC FUNCTIONS                                                            *
  ******************************************************************************/
+
+uint8_t getBeaconVal()
+{
+    return savedBeaconVal;
+}
 
 /**
  * @Function InitBeaconDebounceService(uint8_t Priority)
@@ -155,8 +160,10 @@ ES_Event RunBeaconDebounceService(ES_Event ThisEvent)
                 if(curState == BEACON_ON)
                 {
                     PostEvent.EventParam = 1;
+                    savedBeaconVal = 1;
                 }else{
                     PostEvent.EventParam = 0;
+                    savedBeaconVal = 0;
                 }
 
                 #ifdef DEBUG

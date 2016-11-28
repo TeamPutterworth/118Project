@@ -23,6 +23,7 @@
 #include "SecondTargetSearchSubHSM.h"
 #include "sensors.h"
 #include "SyncSampling.h"
+#include "BeaconDebounce.h"
 
 /*******************************************************************************
  * PRIVATE #DEFINES                                                            *
@@ -195,7 +196,7 @@ ES_Event RunTopLevelHSM(ES_Event ThisEvent)
         ThisEvent = RunFirstTargetSearchSubHSM(ThisEvent);
         switch (ThisEvent.EventType) {
             case TAPE_TRIGGERED:
-                if(ThisEvent.EventParam & (TS_FL | TS_FR)){
+                if(ThisEvent.EventParam & (TS_FL | TS_FR) && getBeaconVal()){
                     nextState = FirstTargetUnload;
                     makeTransition = TRUE;
                     ThisEvent.EventType = ES_NO_EVENT;

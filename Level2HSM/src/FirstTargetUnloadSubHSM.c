@@ -31,6 +31,7 @@
 
 typedef enum {
     InitPState,
+    AlignToTape,
     PivotTurn,
     Forward,
     UnloadTwo,
@@ -41,6 +42,7 @@ typedef enum {
 
 static const char *StateNames[] = {
 	"InitPState",
+	"AlignToTape",
 	"PivotTurn",
 	"Forward",
 	"UnloadTwo",
@@ -123,6 +125,38 @@ ES_Event RunFirstTargetUnloadSubHSM(ES_Event ThisEvent)
         }
         break;
 
+    case AlignToTape:
+        switch (ThisEvent.EventType) {  
+            case ES_ENTRY:
+                if (turnParam == RIGHT){
+                    tankTurnRight();
+                } else if (turnParam == LEFT){
+                    tankTurnLeft();
+                }
+                break;
+            case TAPE_TRIGGERED:
+                if(ThisEvent.EventParam & TS_FM)
+                {
+                    nextState = UnloadTwo;
+                    makeTransition = TRUE;
+                    ThisEvent.EventParam = ES_NO_EVENT;
+                }
+                else if((ThisEvent.EventParam & TS_FL) &&  (turnParam == RIGHT))
+                {
+                    moveForward();
+                    setMoveSpeed(10);
+                }
+                else if((ThisEvent.EventParam & TS_FR) &&  (turnParam == LEFT))
+                {
+                    moveForward();
+                    setMoveSpeed(10);
+                }
+                break;
+            case ES_NO_EVENT:
+            default:
+                break;
+        }
+        break;
     case PivotTurn:
         switch (ThisEvent.EventType) {  
             case ES_ENTRY:
@@ -133,13 +167,7 @@ ES_Event RunFirstTargetUnloadSubHSM(ES_Event ThisEvent)
                 }
                 break;
             case TAPE_TRIGGERED:
-                if(ThisEvent.EventParam & TS_FM)
-                {
-                    nextState = UnloadTwo;
-                    makeTransition = TRUE;
-                    ThisEvent.EventType = ES_NO_EVENT;
-                }
-                else if((ThisEvent.EventParam & TS_FL) &&  (turnParam == RIGHT))
+                if((ThisEvent.EventParam & TS_FL) &&  (turnParam == RIGHT))
                 {
                     nextState = Forward;
                     makeTransition = TRUE;
@@ -180,7 +208,6 @@ ES_Event RunFirstTargetUnloadSubHSM(ES_Event ThisEvent)
         switch (ThisEvent.EventType) {
             case ES_ENTRY:
                 moveForward();
-                setMoveSpeed(10);
                 break;
             case TAPE_TRIGGERED:
                 
@@ -192,14 +219,14 @@ ES_Event RunFirstTargetUnloadSubHSM(ES_Event ThisEvent)
                 else if(ThisEvent.EventParam & TS_FL)
                 {
                     turnParam = LEFT;
-                    nextState = PivotTurn;
+                    nextState = AlignToTape;
                     makeTransition = TRUE;
                     ThisEvent.EventType = ES_NO_EVENT;
                 }
                 else if(ThisEvent.EventParam & TS_FR)
                 {
                     turnParam = RIGHT;
-                    nextState = PivotTurn;
+                    nextState = AlignToTape;
                     makeTransition = TRUE;
                     ThisEvent.EventType = ES_NO_EVENT;
                 } 
@@ -241,9 +268,9 @@ ES_Event RunFirstTargetUnloadSubHSM(ES_Event ThisEvent)
             case ES_TIMEOUT:
                 if (ThisEvent.EventParam == SERVO_TIMER)
                 {
-                    ES_Timer_InitTimer(SERVO_TIMER,SERVO_TIMER_TICKS);
                     if (servoPulse < UNLOADING_HIGH_PULSE)
                     {
+                        ES_Timer_InitTimer(SERVO_TIMER,SERVO_TIMER_TICKS);
                         servoPulse+=10;
                         setPulseUnloadingServo(servoPulse);
                     } else {
@@ -253,9 +280,6 @@ ES_Event RunFirstTargetUnloadSubHSM(ES_Event ThisEvent)
                     }
                     
                 }
-                /***********************************/
-                /********DOESNT GO INTO HERE********/
-                /***********************************/
                 else if(ThisEvent.EventParam == LONG_HSM_TIMER)
                 {
                     nextState = Backward;
@@ -275,7 +299,7 @@ ES_Event RunFirstTargetUnloadSubHSM(ES_Event ThisEvent)
         switch (ThisEvent.EventType) {
             case ES_ENTRY:
                 moveBackward();
-                ES_Timer_InitTimer(LONG_HSM_TIMER,LONG_TIMER_TICKS);
+                ES_Timer_InitTimer(LONG_HSM_TIMER,MEDIUM_TIMER_TICKS);
                 break;
             case ES_TIMEOUT:
                 if(ThisEvent.EventParam == MEDIUM_HSM_TIMER)
@@ -309,7 +333,7 @@ ES_Event RunFirstTargetUnloadSubHSM(ES_Event ThisEvent)
         }
         break;
             
-    case UnloadOne:
+    /*case UnloadOne:
         switch (ThisEvent.EventType) {
             case ES_ENTRY:
                 stopMoving();
@@ -339,7 +363,7 @@ ES_Event RunFirstTargetUnloadSubHSM(ES_Event ThisEvent)
             default:
                 break;
         }
-        break;
+        break;*/
     default: // all unhandled states fall into here
         break;
     } // end switch on Current State

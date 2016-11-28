@@ -146,7 +146,7 @@ static const char *EventNames[] = {
 #define SERVO_TIMER_TICKS 2
 
 #define SHORT_TIMER_TICKS 50
-#define MEDIUM_TIMER_TICKS 250 
+#define MEDIUM_TIMER_TICKS 275 
 #define LONG_TIMER_TICKS 1000
 
 #define TIMER_45_TICKS 685

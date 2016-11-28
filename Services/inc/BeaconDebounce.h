@@ -25,6 +25,14 @@
 /*******************************************************************************
  * PUBLIC FUNCTION PROTOTYPES                                                  *
  ******************************************************************************/
+/**
+ * @Function uint8_t getBeaconVal()
+ * @param Priority - internal variable to track which event queue to use
+ * @return uint8_t
+ * @brief This function returns private variable module for current status of the 
+ * beacon.
+ */
+uint8_t getBeaconVal();
 
 /**
  * @Function InitBeaconDebounceService(uint8_t Priority)

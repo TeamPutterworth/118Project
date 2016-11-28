@@ -148,6 +148,14 @@ ES_Event RunSecondTargetSearchSubHSM(ES_Event ThisEvent)
     case TankTurn:
         switch (ThisEvent.EventType) {  
             case ES_ENTRY:
+                if(direction == LEFT)
+                {
+                    tankTurnLeft();
+                }
+                else
+                {
+                    tankTurnRight();
+                }
                 tankTurnRight();
                 break;
             case ES_TIMEOUT:
