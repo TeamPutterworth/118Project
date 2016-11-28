@@ -320,7 +320,7 @@ ES_Event RunFirstTargetUnloadSubHSM(ES_Event ThisEvent)
     case TankTurn:
         switch (ThisEvent.EventType) {
             case ES_ENTRY:
-                tankTurnRight();
+                tankTurnLeft();
                 ES_Timer_InitTimer(TIMER_90,TIMER_90_TICKS);
                 break;
             case ES_TIMEOUT:

@@ -110,9 +110,6 @@ ES_Event RunSecondTargetSearchSubHSM(ES_Event ThisEvent)
             nextState = GradualTurn;
             makeTransition = TRUE;
             ThisEvent.EventType = ES_NO_EVENT;
-
-            //ES_Timer_InitTimer(LONG_HSM_TIMER, LONG_TIMER_TICKS);
-
         }
         break;
 
@@ -123,14 +120,7 @@ ES_Event RunSecondTargetSearchSubHSM(ES_Event ThisEvent)
                 stopMoving();
                 break;
             case ES_TIMEOUT:
-                if (ThisEvent.EventParam == LONG_HSM_TIMER)
-                {
-                    nextState = TankTurn;
-                    makeTransition = TRUE;
-                    ThisEvent.EventType = ES_NO_EVENT;
-                    ES_Timer_InitTimer(TIMER_90, TIMER_90_TICKS);
-                }
-                else if(ThisEvent.EventParam == MEDIUM_HSM_TIMER)
+                if(ThisEvent.EventParam == MEDIUM_HSM_TIMER)
                 {
                     nextState = TankTurn;
                     makeTransition = TRUE;

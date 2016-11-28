@@ -215,6 +215,7 @@ ES_Event RunSecondTargetApproachSubHSM(ES_Event ThisEvent)
 
             case BEACON_TRIGGERED:
                 stopMoving();
+                ThisEvent.EventType = ES_NO_EVENT;
                 break;
         }    
         break;

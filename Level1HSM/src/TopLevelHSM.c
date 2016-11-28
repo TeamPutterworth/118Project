@@ -244,7 +244,7 @@ ES_Event RunTopLevelHSM(ES_Event ThisEvent)
     case SecondTargetApproach:
         stopMoving();
         //ThisEvent = RunSecondTargetApproachSubHSM(ThisEvent);
-        /*switch (ThisEvent.EventType) {
+        switch (ThisEvent.EventType) {
             
             case TAPE_TRIGGERED:
                 if(ThisEvent.EventParam & (TS_FR | TS_FL)){
@@ -256,7 +256,7 @@ ES_Event RunTopLevelHSM(ES_Event ThisEvent)
             case ES_NO_EVENT:
             default:
                 break;
-        }*/
+        }
         break;
     case SecondTargetUnload:
         //ThisEvent = RunSecondTargetUnloadSubHSM(ThisEvent);
