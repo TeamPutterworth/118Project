@@ -32,6 +32,7 @@
 
 typedef enum {
     InitPState,
+    Start,        
     Forward,
     TankTurn,
     TankTurnAvoid,
@@ -42,6 +43,7 @@ typedef enum {
 
 static const char *StateNames[] = {
 	"InitPState",
+	"Start",
 	"Forward",
 	"TankTurn",
 	"TankTurnAvoid",
@@ -114,12 +116,28 @@ ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
     case InitPState: // If current state is initial Pseudo State
         if (ThisEvent.EventType == ES_INIT)// only respond to ES_Init
         {
-            nextState = TankTurn;
+            nextState = Start;
             makeTransition = TRUE;
             ThisEvent.EventType = ES_NO_EVENT;
         }
         break;
-
+    case Start:
+        switch(ThisEvent.EventType){
+            case ES_ENTRY:
+                tankTurnRight();
+                break;
+            case BEACON_TRIGGERED:
+                if(ThisEvent.EventParam)
+                {
+                    nextState = TankTurn;
+                    makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
+                }
+                break;
+                
+        }
+        
+        break;
     case Forward: // in the first state, replace this with correct names
         // run sub-state machine for this state
         //NOTE: the SubState Machine runs and responds to events before anything in the this

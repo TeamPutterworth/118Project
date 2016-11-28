@@ -116,8 +116,7 @@ ES_Event RunSecondTargetApproachSubHSM(ES_Event ThisEvent)
     case Forward:
         switch(ThisEvent.EventType){
             case ES_ENTRY:
-                //moveForward();
-                stopMoving();
+                moveForward();
                 break;
 
             case BUMPED:

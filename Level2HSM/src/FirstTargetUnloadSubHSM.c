@@ -35,7 +35,6 @@ typedef enum {
     PivotTurn,
     Forward,
     UnloadTwo,
-    UnloadOne,
     Backward,
     TankTurn,
 } HSMState_t;
@@ -46,7 +45,6 @@ static const char *StateNames[] = {
 	"PivotTurn",
 	"Forward",
 	"UnloadTwo",
-	"UnloadOne",
 	"Backward",
 	"TankTurn",
 };
@@ -179,24 +177,6 @@ ES_Event RunFirstTargetUnloadSubHSM(ES_Event ThisEvent)
                     makeTransition = TRUE;
                     ThisEvent.EventType = ES_NO_EVENT;
                 }
-                
-                /*if ((ThisEvent.EventParam & TS_FR) && (ThisEvent.EventParam & TS_FL))
-                {
-                    nextState = Forward;
-                    makeTransition = TRUE;
-                    ThisEvent.EventType = ES_NO_EVENT;
-                }
-                else if (!((ThisEvent.EventParam & TS_FR) && (ThisEvent.EventParam & TS_FL)
-                        && (ThisEvent.EventParam & TS_FM)))
-                {
-                    nextState = Forward;
-                    makeTransition = TRUE;
-                    ThisEvent.EventType = ES_NO_EVENT;
-                } else {
-                    nextState = UnloadTwo;
-                    makeTransition = TRUE;
-                    ThisEvent.EventType = ES_NO_EVENT;
-                }*/
                 break;
             case ES_NO_EVENT:
             default:
@@ -230,27 +210,7 @@ ES_Event RunFirstTargetUnloadSubHSM(ES_Event ThisEvent)
                     makeTransition = TRUE;
                     ThisEvent.EventType = ES_NO_EVENT;
                 } 
-                
-                /*if(!(ThisEvent.EventParam & TS_FR))
-                {
-                    turnParam = RIGHT;
-                    nextState = PivotTurn;
-                    makeTransition = TRUE;
-                    ThisEvent.EventType = ES_NO_EVENT;
-                }
-                else if(!(ThisEvent.EventParam & TS_FL))
-                {
-                    turnParam = LEFT;
-                    nextState = PivotTurn;
-                    makeTransition = TRUE;
-                    ThisEvent.EventType = ES_NO_EVENT;
-                }
-                else if(ThisEvent.EventParam & TS_FM)
-                {
-                    nextState = UnloadTwo;
-                    makeTransition = TRUE;
-                    ThisEvent.EventType = ES_NO_EVENT;
-                }*/
+
                 break;
             case ES_NO_EVENT:
             default:
@@ -274,14 +234,14 @@ ES_Event RunFirstTargetUnloadSubHSM(ES_Event ThisEvent)
                         servoPulse+=10;
                         setPulseUnloadingServo(servoPulse);
                     } else {
-                        //nextState = Backward;
-                        //makeTransition = TRUE;
-                        ES_Timer_InitTimer(LONG_HSM_TIMER,LONG_TIMER_TICKS);
+                        ES_Timer_InitTimer(LONG_HSM_TIMER,2.5*LONG_TIMER_TICKS);
                     }
                     
                 }
                 else if(ThisEvent.EventParam == LONG_HSM_TIMER)
                 {
+                    servoPulse = UNLOADING_CENTER_PULSE;
+                    setPulseUnloadingServo(servoPulse);
                     nextState = Backward;
                     makeTransition = TRUE;
                     ThisEvent.EventType = ES_NO_EVENT;
@@ -332,38 +292,6 @@ ES_Event RunFirstTargetUnloadSubHSM(ES_Event ThisEvent)
                 break;
         }
         break;
-            
-    /*case UnloadOne:
-        switch (ThisEvent.EventType) {
-            case ES_ENTRY:
-                stopMoving();
-                ES_Timer_InitTimer(SERVO_TIMER,SERVO_TIMER_TICKS);
-                setPulseUnloadingServo(servoPulse);
-                break;
-            case ES_TIMEOUT:
-                if (ThisEvent.EventParam == SERVO_TIMER)
-                {
-                    if (servoPulse > UNLOADING_LOW_PULSE)
-                    {
-                        ES_Timer_InitTimer(SERVO_TIMER,SERVO_TIMER_TICKS);
-                        servoPulse-=10;
-                        setPulseUnloadingServo(servoPulse);
-                        ThisEvent.EventType = ES_NO_EVENT;
-                    } else {
-                        servoPulse = UNLOADING_CENTER_PULSE;
-                        setPulseUnloadingServo(servoPulse);
-                        ES_Timer_InitTimer(LONG_HSM_TIMER,LONG_TIMER_TICKS);
-                    }
-                } else if(ThisEvent.EventParam == LONG_HSM_TIMER){
-                    ThisEvent.EventType = UNLOADED;
-                    setPulseBridgeServo(BRIDGE_IN_PULSE);
-                }
-                break;
-            case ES_NO_EVENT:
-            default:
-                break;
-        }
-        break;*/
     default: // all unhandled states fall into here
         break;
     } // end switch on Current State

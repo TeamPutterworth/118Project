@@ -21,6 +21,8 @@
 #include "FirstTargetSearchSubHSM.h"
 #include "FirstTargetUnloadSubHSM.h"
 #include "SecondTargetSearchSubHSM.h"
+#include "SecondTargetApproachSubHSM.h"
+#include "SecondTargetUnloadSubHSM.h"
 #include "sensors.h"
 #include "SyncSampling.h"
 #include "BeaconDebounce.h"
@@ -137,7 +139,7 @@ ES_Event RunTopLevelHSM(ES_Event ThisEvent)
             InitFirstTargetUnloadSubHSM();
             InitSecondTargetSearchSubHSM();
             InitSecondTargetApproachSubHSM();
-            //InitSecondTargetUnloadSubHSM();
+            InitSecondTargetUnloadSubHSM();
             // I am stopping all of our timer's because some might be started in an ES_ENTRY during initialization
             ES_Timer_StopTimer(SHORT_HSM_TIMER);
             ES_Timer_StopTimer(MEDIUM_HSM_TIMER);
@@ -166,7 +168,7 @@ ES_Event RunTopLevelHSM(ES_Event ThisEvent)
         switch (ThisEvent.EventType) {
             case TW_TRIGGERED:
                 // check if rising edge
-                if((ThisEvent.EventParam & TW_F) && getLastTape() != NOT_FOLLOWING){
+                if((ThisEvent.EventParam & TW_B) && getLastTape() != NOT_FOLLOWING){
                     nextState = AmmoLoad;
                     makeTransition = TRUE;
                     ThisEvent.EventType = ES_NO_EVENT;
@@ -242,8 +244,7 @@ ES_Event RunTopLevelHSM(ES_Event ThisEvent)
         }
         break;
     case SecondTargetApproach:
-        stopMoving();
-        //ThisEvent = RunSecondTargetApproachSubHSM(ThisEvent);
+        ThisEvent = RunSecondTargetApproachSubHSM(ThisEvent);
         switch (ThisEvent.EventType) {
             
             case TAPE_TRIGGERED:
@@ -259,10 +260,10 @@ ES_Event RunTopLevelHSM(ES_Event ThisEvent)
         }
         break;
     case SecondTargetUnload:
-        //ThisEvent = RunSecondTargetUnloadSubHSM(ThisEvent);
+        ThisEvent = RunSecondTargetUnloadSubHSM(ThisEvent);
         switch (ThisEvent.EventType) {
             case UNLOADED:
-                nextState = AmmoSearch;
+                nextState = InitPState; // Reinitialize the state machine 
                 makeTransition = TRUE;
                 ThisEvent.EventType = ES_NO_EVENT;
                 break;
