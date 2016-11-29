@@ -84,6 +84,8 @@ static uint8_t shimmyCount = 0;
 uint8_t InitFirstTargetUnloadSubHSM(void)
 {
     ES_Event returnEvent;
+    
+    shimmyCount = 0;
 
     CurrentState = InitPState;
     returnEvent = RunFirstTargetUnloadSubHSM(INIT_EVENT);

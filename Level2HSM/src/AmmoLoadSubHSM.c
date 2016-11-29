@@ -81,7 +81,9 @@ static uint8_t shimmyCount = 0;
 uint8_t InitAmmoLoadSubHSM(void)
 {
     ES_Event returnEvent;
-
+    
+    shimmyCount = 0;
+    
     CurrentState = InitPState;
     returnEvent = RunAmmoLoadSubHSM(INIT_EVENT);
     if (returnEvent.EventType == ES_NO_EVENT) {
