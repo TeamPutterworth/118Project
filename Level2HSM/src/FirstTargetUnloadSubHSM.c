@@ -69,6 +69,7 @@ static uint8_t MyPriority;
 static uint16_t servoPulse = UNLOADING_CENTER_PULSE;
 static uint8_t shimmy = LEFT;
 static uint8_t shimmyCount = 0;
+static uint8_t unloaded = FALSE;
 /*******************************************************************************
  * PUBLIC FUNCTIONS                                                            *
  ******************************************************************************/
@@ -289,6 +290,10 @@ ES_Event RunFirstTargetUnloadSubHSM(ES_Event ThisEvent)
                     ThisEvent.EventType = ES_NO_EVENT;
                 }
                 break;
+            case ES_EXIT:
+                ES_Timer_StopTimer(MEDIUM_HSM_TIMER);
+                ES_Timer_StopTimer(LONG_HSM_TIMER);
+                break;
         }
         break;
     case TankTurn:
@@ -298,7 +303,7 @@ ES_Event RunFirstTargetUnloadSubHSM(ES_Event ThisEvent)
                 ES_Timer_InitTimer(TIMER_90,TIMER_90_TICKS);
                 break;
             case ES_TIMEOUT:
-                if(ThisEvent.EventParam == TIMER_90)
+                if(ThisEvent.EventParam == TIMER_90 /*&& unloaded == TRUE*/)
                 {
                     ThisEvent.EventType = UNLOADED;
                 }
@@ -335,6 +340,7 @@ ES_Event RunFirstTargetUnloadSubHSM(ES_Event ThisEvent)
                     makeTransition = TRUE;
                     ThisEvent.EventType = ES_NO_EVENT;
                     ES_Timer_InitTimer(MEDIUM_HSM_TIMER,MEDIUM_TIMER_TICKS);
+                    //unloaded = TRUE;
                 }
                 break;
         }

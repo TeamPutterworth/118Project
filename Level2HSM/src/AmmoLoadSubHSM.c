@@ -36,6 +36,7 @@ typedef enum {
     Forward,
     PivotTurn,
     Shimmy,
+    QuickForward,
 } HSMState_t;
 
 static const char *StateNames[] = {
@@ -45,6 +46,7 @@ static const char *StateNames[] = {
 	"Forward",
 	"PivotTurn",
 	"Shimmy",
+	"QuickForward",
 };
 
 
@@ -154,7 +156,7 @@ ES_Event RunAmmoLoadSubHSM(ES_Event ThisEvent)
                     makeTransition = TRUE;
                     ThisEvent.EventType = ES_NO_EVENT;
                 }
-                break;
+                break;              
         }
         break;
             
@@ -236,11 +238,28 @@ ES_Event RunAmmoLoadSubHSM(ES_Event ThisEvent)
                 }
                 if(shimmyCount == 6)
                 {
+                    nextState = QuickForward;
+                    makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
+                    ES_Timer_InitTimer(MEDIUM_HSM_TIMER, MEDIUM_TIMER_TICKS);
+                }
+                break;
+        }
+        break;
+    case QuickForward:
+        switch(ThisEvent.EventType){
+            case ES_ENTRY:
+                moveForward();
+                break;
+            case ES_TIMEOUT:
+                if(ThisEvent.EventParam == MEDIUM_HSM_TIMER)
+                {
                     ThisEvent.EventType = UNLOADED;
                 }
                 break;
         }
         break;
+            
     default: // all unhandled states fall into here
         break;
     } // end switch on Current State

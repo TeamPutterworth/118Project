@@ -35,6 +35,7 @@ typedef enum {
     Backward,
     TankTurn,
     GradualTurn,
+    Scan,
 } HSMState_t;
 
 static const char *StateNames[] = {
@@ -42,6 +43,7 @@ static const char *StateNames[] = {
 	"Backward",
 	"TankTurn",
 	"GradualTurn",
+	"Scan",
 };
 
 
@@ -61,7 +63,7 @@ static HSMState_t CurrentState = InitPState; // <- change enum name to match ENU
 static uint8_t MyPriority;
 
 static uint8_t direction = LEFT;
-static uint8_t difference = 15;
+static uint8_t difference = 21;
 
 
 /*******************************************************************************
@@ -151,6 +153,7 @@ ES_Event RunSecondTargetSearchSubHSM(ES_Event ThisEvent)
                     nextState = GradualTurn;
                     makeTransition  = TRUE;
                     ThisEvent.EventType = ES_NO_EVENT;
+                    ES_Timer_InitTimer(TIMER_45, TIMER_45_TICKS);
                 }
                 break;
             case ES_EXIT:
@@ -178,7 +181,7 @@ ES_Event RunSecondTargetSearchSubHSM(ES_Event ThisEvent)
                     direction = LEFT;
                 }
                 difference -= 3;
-
+  
                 break;
             case TAPE_TRIGGERED:
                 if(ThisEvent.EventParam & (TS_FL | TS_FR | TS_FM))
@@ -198,9 +201,58 @@ ES_Event RunSecondTargetSearchSubHSM(ES_Event ThisEvent)
                     ES_Timer_InitTimer(MEDIUM_HSM_TIMER, MEDIUM_TIMER_TICKS);
                 }
                 break;
+            /*case ES_TIMEOUT:
+                if(ThisEvent.EventParam == TIMER_45)
+                {
+                    nextState = Scan; 
+                    makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
+                    ES_Timer_InitTimer(TIMER_45, TIMER_45_TICKS);     
+                }
+                break;*/
+                        
         }
         break;
-
+    /*case Scan:
+        switch(ThisEvent.EventType){
+            case ES_ENTRY:
+                if(direction == LEFT)
+                {
+                    tankTurnLeft();
+                    direction = RIGHT;
+                }
+                else
+                {
+                    tankTurnRight();
+                    direction = LEFT;
+                }
+                break;
+                
+            case ES_TIMEOUT:
+                if(ThisEvent.EventParam == TIMER_45)
+                {
+                    if(direction == RIGHT)
+                    {
+                        tankTurnLeft();
+                    }
+                    else
+                    {
+                        tankTurnRight();
+                    }
+                    ES_Timer_InitTimer(TIMER_22, TIMER_22_TICKS);
+                }
+                else if(ThisEvent.EventParam == TIMER_22)
+                {
+                    nextState = GradualTurn;
+                    makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
+                }
+                break;
+        }
+        
+        
+        break;*/
+            
     default: 
         break;
     } 

@@ -5,11 +5,14 @@
         <group>
             <file>file:/C:/Users/jcrowley/MPLABXProjects/118Project/Level2HSM/src/AmmoSearchSubHSM.c</file>
             <file>file:/C:/Users/jcrowley/MPLABXProjects/118Project/Level2HSM/src/FirstTargetUnloadSubHSM.c</file>
+            <file>file:/C:/Users/jcrowley/MPLABXProjects/118Project/Drivers/src/motor.c</file>
             <file>file:/C:/Users/jcrowley/MPLABXProjects/118Project/Level2HSM/src/AmmoLoadSubHSM.c</file>
             <file>file:/C:/Users/jcrowley/MPLABXProjects/118Project/ES_Configure.h</file>
-            <file>file:/C:/Users/jcrowley/MPLABXProjects/118Project/main.c</file>
+            <file>file:/C:/Users/jcrowley/MPLABXProjects/118Project/Level2HSM/src/FirstTargetSearchSubHSM.c</file>
             <file>file:/C:/Users/jcrowley/MPLABXProjects/118Project/Level2HSM/src/SecondTargetSearchSubHSM.c</file>
-            <file>file:/C:/Users/jcrowley/MPLABXProjects/118Project/Level2HSM/src/SecondTargetUnloadSubHSM.c</file>
+            <file>file:/C:/Users/jcrowley/MPLABXProjects/118Project/Drivers/inc/motor.h</file>
+            <file>file:/C:/Users/jcrowley/MPLABXProjects/118Project/Services/inc/SyncSampling.h</file>
+            <file>file:/C:/Users/jcrowley/MPLABXProjects/118Project/Services/src/SyncSampling.c</file>
             <file>file:/C:/Users/jcrowley/MPLABXProjects/118Project/Level2HSM/src/SecondTargetApproachSubHSM.c</file>
         </group>
     </open-files>

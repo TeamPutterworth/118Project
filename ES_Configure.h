@@ -117,7 +117,7 @@ static const char *EventNames[] = {
 #define TIMER11_RESP_FUNC PostTopLevelHSM
 #define TIMER12_RESP_FUNC PostTopLevelHSM
 #define TIMER13_RESP_FUNC PostTopLevelHSM
-#define TIMER14_RESP_FUNC TIMER_UNUSED
+#define TIMER14_RESP_FUNC PostTopLevelHSM
 #define TIMER15_RESP_FUNC TIMER_UNUSED
 
 /****************************************************************************/
@@ -143,6 +143,7 @@ static const char *EventNames[] = {
 #define TIMER_360 11
 #define SERVO_TIMER 12
 #define SHIMMY_TIMER 13
+#define SCAN_TIMER 14
 
 #define SERVO_TIMER_TICKS 2
 
@@ -157,6 +158,7 @@ static const char *EventNames[] = {
 #define TIMER_180_TICKS TIMER_360_TICKS/2
 
 #define SHIMMY_TIMER_TICKS 100
+#define SCAN_TIMER_TICKS 2000
 
 
 /****************************************************************************/

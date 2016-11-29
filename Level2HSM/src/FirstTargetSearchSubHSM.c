@@ -36,6 +36,8 @@ typedef enum {
     Scan,
     Forward,
     Align,
+    Backward,
+    TankTurn,
 } HSMState_t;
 
 static const char *StateNames[] = {
@@ -44,6 +46,8 @@ static const char *StateNames[] = {
 	"Scan",
 	"Forward",
 	"Align",
+	"Backward",
+	"TankTurn",
 };
 
 
@@ -63,7 +67,7 @@ static HSMState_t CurrentState = InitPState; // <- change enum name to match ENU
 static uint8_t MyPriority;
 
 static uint8_t firstEntry = 1;
-
+static uint8_t lastBump = LEFT;
 /*******************************************************************************
  * PUBLIC FUNCTIONS                                                            *
  ******************************************************************************/
@@ -134,11 +138,14 @@ ES_Event RunFirstTargetSearchSubHSM(ES_Event ThisEvent)
                 }
                 break;
             case BEACON_TRIGGERED:
-                scanTimer = TIMER_22_TICKS;
-                nextState = Forward;
-                makeTransition = TRUE;
-                ThisEvent.EventType = ES_NO_EVENT;
-                ES_Timer_StopTimer(TIMER_22);
+                if(ThisEvent.EventParam)
+                {
+                    scanTimer = TIMER_22_TICKS;
+                    nextState = Forward;
+                    makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
+                    ES_Timer_StopTimer(TIMER_22);
+                }
                 break;
             case ES_TIMEOUT:
                 if(ThisEvent.EventParam == TIMER_22)
@@ -164,41 +171,6 @@ ES_Event RunFirstTargetSearchSubHSM(ES_Event ThisEvent)
         }
         break;
         
-    case Scan:
-        switch (ThisEvent.EventType) {  
-            case ES_ENTRY:
-                tankTurnRight();
-                //stopMoving();
-                ES_Timer_InitTimer(TIMER_360,2*TIMER_360_TICKS);
-                break;
-            case BEACON_TRIGGERED:
-                // This value assumes we are using only middle and back track wires, meaning both bits are set high
-                if (ThisEvent.EventParam)
-                {
-                    //stopMoving();
-                    nextState = Forward;
-                    makeTransition = TRUE;
-                    ThisEvent.EventType = ES_NO_EVENT;
-                    ES_Timer_StopTimer(TIMER_360);
-                }
-                break;
-            case ES_TIMEOUT:
-                if(ThisEvent.EventParam == TIMER_360)
-                {
-                    nextState = Forward;
-                    makeTransition = TRUE;
-                    ThisEvent.EventType = ES_NO_EVENT;
-                }
-                break;
-            case ES_EXIT:
-                ES_Timer_StopTimer(TIMER_180);
-                break;
-            case ES_NO_EVENT:
-            default:
-                break;
-        }
-        break;
-        
     case Forward:
         switch (ThisEvent.EventType) {
             case ES_ENTRY:
@@ -212,14 +184,87 @@ ES_Event RunFirstTargetSearchSubHSM(ES_Event ThisEvent)
                     ThisEvent.EventType = ES_NO_EVENT;
                 }
                 break;
+            case BUMPED:
+                if(ThisEvent.EventParam & FL_BUMPER){
+                    lastBump = LEFT;
+                    nextState = Backward;
+                    makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
+                }
+                else if (ThisEvent.EventParam & FR_BUMPER)
+                {
+                    lastBump = RIGHT;
+                    nextState = Backward;
+                    makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;  
+                }
+                break;
+            case ES_TIMEOUT:
+                if(ThisEvent.EventParam & SCAN_TIMER)
+                {
+                    nextState = ForwardScan;
+                    makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
+                }
+                        
+                break;
             case ES_EXIT:
-                //ES_Timer_StopTimer(LONG_HSM_TIMER);
+                ES_Timer_StopTimer(LONG_HSM_TIMER);
+                ES_Timer_StopTimer(SCAN_TIMER);
                 break;
             case ES_NO_EVENT:
             default:
                 break;
         }
+        break;
         
+    case Backward:
+        switch(ThisEvent.EventType){
+            case ES_ENTRY:
+                moveBackward();
+                ES_Timer_InitTimer(MEDIUM_HSM_TIMER, MEDIUM_TIMER_TICKS);
+                break;
+            case ES_TIMEOUT:
+                if(ThisEvent.EventParam == MEDIUM_HSM_TIMER)
+                {
+                    nextState = TankTurn;
+                    makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
+                    ES_Timer_InitTimer(TIMER_45, TIMER_45_TICKS);
+                }
+                break;
+            case ES_EXIT:
+                break;
+        }
+        break;
+        
+    case TankTurn:
+        switch (ThisEvent.EventType) {  
+            case ES_ENTRY:
+                if(lastBump == RIGHT)
+                {
+                    tankTurnLeft();
+                }
+                else
+                {
+                    tankTurnRight();
+                }
+                break;
+            case ES_TIMEOUT:
+                if(ThisEvent.EventParam == TIMER_45){
+                    nextState = Forward;
+                    makeTransition  = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
+                    ES_Timer_InitTimer(SCAN_TIMER, SCAN_TIMER_TICKS);
+                }
+                break;
+            case ES_EXIT:
+                break;
+            default:
+                break;
+        }
+        break;
+
         
     default: // all unhandled states fall into here
         break;
