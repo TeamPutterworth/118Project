@@ -35,6 +35,7 @@ typedef enum {
     Backward,
     Forward,
     PivotTurn,
+    Shimmy,
 } HSMState_t;
 
 static const char *StateNames[] = {
@@ -43,6 +44,7 @@ static const char *StateNames[] = {
 	"Backward",
 	"Forward",
 	"PivotTurn",
+	"Shimmy",
 };
 
 
@@ -60,6 +62,8 @@ static const char *StateNames[] = {
 
 static HSMState_t CurrentState = InitPState; // <- change enum name to match ENUM
 static uint8_t MyPriority;
+static uint8_t shimmy = LEFT;
+static uint8_t shimmyCount = 0;
 
 
 /*******************************************************************************
@@ -185,12 +189,15 @@ ES_Event RunAmmoLoadSubHSM(ES_Event ThisEvent)
         switch (ThisEvent.EventType) {
             case ES_ENTRY:
                 moveBackward();
-                setMoveSpeed(35);
+                setMoveSpeed(40);
                 ES_Timer_InitTimer(LONG_HSM_TIMER, LONG_TIMER_TICKS+500);
                 break;
             case ES_TIMEOUT:
-                if(ThisEvent.EventParam == LONG_HSM_TIMER){
-                    ThisEvent.EventType = UNLOADED; // This will cause a top state transition into beacon searching
+                if(ThisEvent.EventParam == LONG_HSM_TIMER)
+                {
+                    nextState = Shimmy;
+                    makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
                 }
                 break;
             case ES_EXIT:
@@ -198,6 +205,37 @@ ES_Event RunAmmoLoadSubHSM(ES_Event ThisEvent)
                 break;
             case ES_NO_EVENT:
             default:
+                break;
+        }
+        break;
+        
+    case Shimmy:
+        switch(ThisEvent.EventType){
+            case ES_ENTRY:
+                ES_Timer_InitTimer(SHIMMY_TIMER, SHIMMY_TIMER_TICKS/2);
+                tankTurnLeft();
+                break;
+                
+            case ES_TIMEOUT:
+                if(ThisEvent.EventParam == SHIMMY_TIMER)
+                {
+                    shimmyCount++;
+                    if(shimmy == LEFT)
+                    {
+                        shimmy = RIGHT;
+                        tankTurnRight();
+                    }
+                    else if(shimmy == RIGHT)
+                    {
+                        shimmy = LEFT;
+                        tankTurnLeft(); 
+                    }
+                     ES_Timer_InitTimer(SHIMMY_TIMER, SHIMMY_TIMER_TICKS);
+                }
+                if(shimmyCount == 6)
+                {
+                    ThisEvent.EventType = UNLOADED;
+                }
                 break;
         }
         break;
