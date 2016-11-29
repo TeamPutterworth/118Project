@@ -116,8 +116,7 @@ ES_Event RunSecondTargetSearchSubHSM(ES_Event ThisEvent)
     case Backward:
         switch(ThisEvent.EventType){
             case ES_ENTRY:
-                //moveBackward();
-                stopMoving();
+                moveBackward();
                 break;
             case ES_TIMEOUT:
                 if(ThisEvent.EventParam == MEDIUM_HSM_TIMER)
@@ -138,7 +137,7 @@ ES_Event RunSecondTargetSearchSubHSM(ES_Event ThisEvent)
     case TankTurn:
         switch (ThisEvent.EventType) {  
             case ES_ENTRY:
-                if(direction == LEFT)
+                if(direction == RIGHT)
                 {
                     tankTurnRight();
                 }

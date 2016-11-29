@@ -32,6 +32,7 @@
 
 typedef enum {
     InitPState,
+    ForwardScan,
     Scan,
     Forward,
     Align,
@@ -39,6 +40,7 @@ typedef enum {
 
 static const char *StateNames[] = {
 	"InitPState",
+	"ForwardScan",
 	"Scan",
 	"Forward",
 	"Align",
@@ -98,6 +100,7 @@ ES_Event RunFirstTargetSearchSubHSM(ES_Event ThisEvent)
 {
     uint8_t makeTransition = FALSE; // use to flag transition
     HSMState_t nextState; // <- change type to correct enum
+    static uint16_t scanTimer = TIMER_22_TICKS;
     static uint8_t turnParam;
 
     ES_Tattle(); // trace call stack
@@ -106,7 +109,7 @@ ES_Event RunFirstTargetSearchSubHSM(ES_Event ThisEvent)
     case InitPState: // If current state is initial Pseudo State
         if (ThisEvent.EventType == ES_INIT)// only respond to ES_Init
         {
-            nextState = Forward;
+            nextState = ForwardScan;
             makeTransition = TRUE;
             ThisEvent.EventType = ES_NO_EVENT;
             //ES_Timer_InitTimer(LONG_HSM_TIMER,3*LONG_TIMER_TICKS);
@@ -114,6 +117,53 @@ ES_Event RunFirstTargetSearchSubHSM(ES_Event ThisEvent)
         }
         break;
 
+    case ForwardScan:
+        switch(ThisEvent.EventType) {
+            case ES_ENTRY:
+                if(turnParam == RIGHT)
+                {
+                    tankTurnRight();
+                    ES_Timer_InitTimer(TIMER_22,scanTimer);
+                    turnParam = LEFT;
+                }
+                else
+                {    
+                    tankTurnLeft();
+                    ES_Timer_InitTimer(TIMER_22,scanTimer);
+                    turnParam = RIGHT;
+                }
+                break;
+            case BEACON_TRIGGERED:
+                scanTimer = TIMER_22_TICKS;
+                nextState = Forward;
+                makeTransition = TRUE;
+                ThisEvent.EventType = ES_NO_EVENT;
+                ES_Timer_StopTimer(TIMER_22);
+                break;
+            case ES_TIMEOUT:
+                if(ThisEvent.EventParam == TIMER_22)
+                {
+                    scanTimer = scanTimer + TIMER_22_TICKS;
+                    if(turnParam == RIGHT)
+                    {
+                        tankTurnRight();
+                        ES_Timer_InitTimer(TIMER_22,scanTimer);
+                        turnParam = LEFT;
+                    }
+                    else
+                    {    
+                        tankTurnLeft();
+                        ES_Timer_InitTimer(TIMER_22,scanTimer);
+                        turnParam = RIGHT;
+                    }
+                }
+                break;
+            case ES_NO_EVENT:
+            default:
+                break;
+        }
+        break;
+        
     case Scan:
         switch (ThisEvent.EventType) {  
             case ES_ENTRY:
@@ -153,12 +203,11 @@ ES_Event RunFirstTargetSearchSubHSM(ES_Event ThisEvent)
         switch (ThisEvent.EventType) {
             case ES_ENTRY:
                 moveForward();              
-                ES_Timer_InitTimer(LONG_HSM_TIMER,LONG_TIMER_TICKS);
                 break;
-           case ES_TIMEOUT:
-                if(ThisEvent.EventParam == LONG_HSM_TIMER)
+           case BEACON_TRIGGERED:
+                if(!ThisEvent.EventParam)
                 {
-                    nextState = Scan;
+                    nextState = ForwardScan;
                     makeTransition = TRUE;
                     ThisEvent.EventType = ES_NO_EVENT;
                 }

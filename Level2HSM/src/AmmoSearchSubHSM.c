@@ -104,9 +104,10 @@ uint8_t InitAmmoSearchSubHSM(void)
 ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
 {
     uint8_t makeTransition = FALSE; // use to flag transition
-    static uint8_t turnParam = 0; // use this flag to turnCW or turnCCW
+    static uint8_t turnParam; // use this flag to turnCW or turnCCW
     static uint8_t stuckCounter; // use this to see if we are stuck!
-    static uint8_t pivotFlag; // Gradual turns when pivotFLag is high have extra condition (this should really probably be sep state)
+    static uint8_t tapeSide; 
+    static uint8_t forwardTimeoutFlag;
     
     HSMState_t nextState; // <- change type to correct enum
 
@@ -129,6 +130,7 @@ ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
             case BEACON_TRIGGERED:
                 if(ThisEvent.EventParam)
                 {
+                    ES_Timer_InitTimer(TIMER_180, TIMER_180_TICKS);
                     nextState = TankTurn;
                     makeTransition = TRUE;
                     ThisEvent.EventType = ES_NO_EVENT;
@@ -153,32 +155,12 @@ ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
                 if ((!getTrackWireVals()[0] || !getTrackWireVals()[1]) && getLastTape() == NOT_FOLLOWING){
                     break;
                 }else if (ThisEvent.EventParam & TS_FR){
-                    if (turnParam == RIGHT){
-                        stuckCounter++;
-                    }else{
-                        stuckCounter = 0;
-                    }
-                    
-                    if (stuckCounter > STUCK){
-                        turnParam = RIGHT;
-                    }else{
-                        turnParam = LEFT;
-                    }
+                    turnParam = LEFT;
                     nextState = AlignToTape;
                     makeTransition = TRUE;
                     ThisEvent.EventType = ES_NO_EVENT;
                 }else if (ThisEvent.EventParam & TS_FL){   
-                    if (turnParam == LEFT){
-                        stuckCounter++;
-                    }else{
-                        stuckCounter = 0;
-                    }
-                    
-                    if (stuckCounter > STUCK){
-                        turnParam = LEFT;
-                    }else{
-                        turnParam = RIGHT;
-                    }
+                    turnParam = RIGHT;
                     nextState = AlignToTape;
                     makeTransition = TRUE;
                     ThisEvent.EventType = ES_NO_EVENT;
@@ -186,34 +168,16 @@ ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
                 break;
             case BUMPED:
                 // We kinda want to ignore back bumpers when going forward, who cares if a robot hit us
-                if (ThisEvent.EventParam == FL_BUMPER){
-                    if (turnParam == LEFT){
-                        stuckCounter++;
-                    }else{
-                        stuckCounter = 0;
-                    }
-                    
-                    if (stuckCounter > STUCK){
-                        turnParam = LEFT;
-                    }else{
-                        turnParam = RIGHT;
-                    }
-                    nextState = Backward;
-                    makeTransition = TRUE;
-                    ThisEvent.EventType = ES_NO_EVENT;
-                    ES_Timer_InitTimer(MEDIUM_HSM_TIMER, MEDIUM_TIMER_TICKS);
-                }else if (ThisEvent.EventParam == FR_BUMPER){
-                    if (turnParam == RIGHT){
-                        stuckCounter++;
-                    }else{
-                        stuckCounter = 0;
-                    }
-                    
-                    if (stuckCounter > STUCK){
-                        turnParam = RIGHT;
-                    }else{
-                        turnParam = LEFT;
-                    }
+                if(tapeSide == LEFT)
+                {
+                    turnParam = RIGHT;
+                }
+                else
+                {
+                    turnParam = LEFT;
+                }
+                if (ThisEvent.EventParam == FL_BUMPER || ThisEvent.EventParam == FR_BUMPER){
+                    forwardTimeoutFlag = TRUE;
                     nextState = Backward;
                     makeTransition = TRUE;
                     ThisEvent.EventType = ES_NO_EVENT;
@@ -227,6 +191,24 @@ ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
                     makeTransition = TRUE;
                     ThisEvent.EventType = ES_NO_EVENT;
                     ES_Timer_InitTimer(LONG_HSM_TIMER, LONG_TIMER_TICKS);
+                }
+                break;
+            case ES_TIMEOUT:
+                if(tapeSide == LEFT)
+                {
+                    turnParam = LEFT;
+                }
+                else
+                {
+                    turnParam = RIGHT;
+                }
+                if(ThisEvent.EventParam == LONG_HSM_TIMER)
+                {
+                    forwardTimeoutFlag = TRUE;
+                    ES_Timer_InitTimer(TIMER_90, TIMER_90_TICKS);
+                    nextState = TankTurnAvoid;
+                    makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
                 }
                 break;
             case ES_NO_EVENT:
@@ -246,7 +228,12 @@ ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
                 break;
             case ES_TIMEOUT:
                 if (ThisEvent.EventParam == TIMER_45 || ThisEvent.EventParam == TIMER_22 || ThisEvent.EventParam == TIMER_360
-                        || ThisEvent.EventParam == TIMER_180){
+                        || ThisEvent.EventParam == TIMER_180 || ThisEvent.EventParam == TIMER_90){
+                    if (forwardTimeoutFlag)
+                    {
+                        forwardTimeoutFlag = FALSE;
+                        ES_Timer_InitTimer(LONG_HSM_TIMER, 1.5*LONG_TIMER_TICKS); 
+                    }
                     nextState = Forward;
                     makeTransition = TRUE;
                     ThisEvent.EventType = ES_NO_EVENT;
@@ -268,7 +255,6 @@ ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
     case TankTurn:
         switch (ThisEvent.EventType) {  
             case ES_ENTRY:
-                ES_Timer_InitTimer(TIMER_360, TIMER_360_TICKS);
                 if (turnParam == RIGHT){
                     tankTurnRight();
                 }else{
@@ -333,20 +319,25 @@ ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
     case AlignToTape:
         switch (ThisEvent.EventType) {  
             case ES_ENTRY:
+                ES_Timer_InitTimer(LONG_HSM_TIMER, 2.5*LONG_TIMER_TICKS);
                 if (turnParam == RIGHT){
+                    tapeSide = LEFT;
                     tankTurnRight();
                 }else{
+                    tapeSide = RIGHT;
                     tankTurnLeft();
                 }
                 break;
             case TAPE_TRIGGERED:
                 if(!(ThisEvent.EventParam & TS_FR) && (turnParam == LEFT) && !(ThisEvent.EventParam & TS_FL)){
+                    ES_Timer_InitTimer(LONG_HSM_TIMER, 3.5*LONG_TIMER_TICKS);
                     turnParam = RIGHT;
                     gradualTurnRight(10);
                     makeTransition = TRUE;
                     nextState = FollowTape;
                     ThisEvent.EventType = ES_NO_EVENT;
                 } else if(!(ThisEvent.EventParam & TS_FL) && (turnParam == RIGHT) && !(ThisEvent.EventParam & TS_FR)){
+                    ES_Timer_InitTimer(LONG_HSM_TIMER, 3.5*LONG_TIMER_TICKS);
                     turnParam = LEFT;
                     gradualTurnLeft(10);
                     makeTransition = TRUE;
@@ -354,14 +345,43 @@ ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
                     ThisEvent.EventType = ES_NO_EVENT;
                 }
                 break;
+            case ES_TIMEOUT:
+                if (ThisEvent.EventParam == LONG_HSM_TIMER)
+                {
+                    nextState = Forward;
+                    makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
+                }
+                break;
+            case BUMPED:
+                // We kinda want to ignore back bumpers when going forward, who cares if a robot hit us
+                if (ThisEvent.EventParam & FL_BUMPER || ThisEvent.EventParam & FR_BUMPER)
+                {   
+                    if (tapeSide == RIGHT)
+                    {
+                        turnParam = LEFT;
+                    }
+                    else
+                    {
+                        turnParam = RIGHT;
+                    }
+                    nextState = Backward;
+                    makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
+                    ES_Timer_InitTimer(MEDIUM_HSM_TIMER, MEDIUM_TIMER_TICKS);
+                }
+                break;
             case ES_NO_EVENT:
             default:
                 break;
         }
         break;
+        
     case FollowTape:
         switch(ThisEvent.EventType){
             case TAPE_TRIGGERED:
+                ES_Timer_StopTimer(LONG_HSM_TIMER); // If we get another tape event then the sharp gradual turn worked!
+                ES_Timer_InitTimer(MEDIUM_HSM_TIMER, MEDIUM_TIMER_TICKS);
                 if(!(ThisEvent.EventParam & TS_FR) && (turnParam == LEFT)){
                     turnParam = RIGHT;
                     gradualTurnRight(20);
@@ -372,38 +392,28 @@ ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
                 break;
             case BUMPED:
                 // We kinda want to ignore back bumpers when going forward, who cares if a robot hit us
-                if (ThisEvent.EventParam & FL_BUMPER){
-                    if (turnParam == LEFT){
-                        stuckCounter++;
-                    }else{
-                        stuckCounter = 0;
-                    }
-                    
-                    if (stuckCounter > STUCK){
+                if (ThisEvent.EventParam & FL_BUMPER || ThisEvent.EventParam & FR_BUMPER)
+                {   
+                    if (tapeSide == RIGHT)
+                    {
                         turnParam = LEFT;
-                    }else{
+                    }
+                    else
+                    {
                         turnParam = RIGHT;
                     }
                     nextState = Backward;
                     makeTransition = TRUE;
                     ThisEvent.EventType = ES_NO_EVENT;
                     ES_Timer_InitTimer(MEDIUM_HSM_TIMER, MEDIUM_TIMER_TICKS);
-                }else if (ThisEvent.EventParam & FR_BUMPER){
-                    if (turnParam == RIGHT){
-                        stuckCounter++;
-                    }else{
-                        stuckCounter = 0;
-                    }
-                    
-                    if (stuckCounter > STUCK){
-                        turnParam = RIGHT;
-                    }else{
-                        turnParam = LEFT;
-                    }
-                    nextState = Backward;
+                }
+                break;
+            case ES_TIMEOUT:
+                if(ThisEvent.EventParam == LONG_HSM_TIMER || ThisEvent.EventParam == MEDIUM_HSM_TIMER)
+                {
+                    nextState = Forward;
                     makeTransition = TRUE;
                     ThisEvent.EventType = ES_NO_EVENT;
-                    ES_Timer_InitTimer(MEDIUM_HSM_TIMER, MEDIUM_TIMER_TICKS);
                 }
                 break;
             case ES_NO_EVENT:
@@ -422,9 +432,10 @@ ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
                     nextState = TankTurnAvoid;
                     makeTransition = TRUE;
                     ThisEvent.EventType = ES_NO_EVENT;
-                    ES_Timer_InitTimer(TIMER_180, TIMER_180_TICKS);
+                    ES_Timer_InitTimer(TIMER_45, TIMER_45_TICKS/2);
                 }
                 if(ThisEvent.EventParam == LONG_HSM_TIMER){
+                    ES_Timer_InitTimer(TIMER_180, TIMER_180_TICKS);
                     nextState = TankTurn;
                     makeTransition = TRUE;
                     ThisEvent.EventType = ES_NO_EVENT;

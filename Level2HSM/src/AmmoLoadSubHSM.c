@@ -185,7 +185,7 @@ ES_Event RunAmmoLoadSubHSM(ES_Event ThisEvent)
         switch (ThisEvent.EventType) {
             case ES_ENTRY:
                 moveBackward();
-                setMoveSpeed(20);
+                setMoveSpeed(35);
                 ES_Timer_InitTimer(LONG_HSM_TIMER, LONG_TIMER_TICKS+500);
                 break;
             case ES_TIMEOUT:

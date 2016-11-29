@@ -33,6 +33,7 @@
 
 typedef enum {
     InitPState,
+    ForwardScan,
     Backward,
     TankTurn,
     Forward,
@@ -41,6 +42,7 @@ typedef enum {
 
 static const char *StateNames[] = {
 	"InitPState",
+	"ForwardScan",
 	"Backward",
 	"TankTurn",
 	"Forward",
@@ -100,6 +102,8 @@ ES_Event RunSecondTargetApproachSubHSM(ES_Event ThisEvent)
 {
     uint8_t makeTransition = FALSE; 
     HSMState_t nextState; 
+    static uint16_t scanTimer = TIMER_22_TICKS;
+    static uint8_t turnParam;
 
     ES_Tattle(); // trace call stack
 
@@ -113,6 +117,53 @@ ES_Event RunSecondTargetApproachSubHSM(ES_Event ThisEvent)
         }
         break;
 
+    case ForwardScan:
+        switch(ThisEvent.EventType) {
+            case ES_ENTRY:
+                if(turnParam == RIGHT)
+                {
+                    tankTurnRight();
+                    ES_Timer_InitTimer(TIMER_22,scanTimer);
+                    turnParam = LEFT;
+                }
+                else
+                {    
+                    tankTurnLeft();
+                    ES_Timer_InitTimer(TIMER_22,scanTimer);
+                    turnParam = RIGHT;
+                }
+                break;
+            case BEACON_TRIGGERED:
+                scanTimer = TIMER_22_TICKS;
+                nextState = Forward;
+                makeTransition = TRUE;
+                ThisEvent.EventType = ES_NO_EVENT;
+                ES_Timer_StopTimer(TIMER_22);
+                break;
+            case ES_TIMEOUT:
+                if(ThisEvent.EventParam == TIMER_22)
+                {
+                    scanTimer = scanTimer + TIMER_22_TICKS;
+                    if(turnParam == RIGHT)
+                    {
+                        tankTurnRight();
+                        ES_Timer_InitTimer(TIMER_22,scanTimer);
+                        turnParam = LEFT;
+                    }
+                    else
+                    {    
+                        tankTurnLeft();
+                        ES_Timer_InitTimer(TIMER_22,scanTimer);
+                        turnParam = RIGHT;
+                    }
+                }
+                break;
+            case ES_NO_EVENT:
+            default:
+                break;
+        }
+        break;
+        
     case Forward:
         switch(ThisEvent.EventType){
             case ES_ENTRY:
@@ -134,7 +185,14 @@ ES_Event RunSecondTargetApproachSubHSM(ES_Event ThisEvent)
                 ES_Timer_InitTimer(MEDIUM_HSM_TIMER, MEDIUM_TIMER_TICKS);
 
                 break;
-
+            case BEACON_TRIGGERED:
+                if(!ThisEvent.EventParam)
+                {
+                    nextState = ForwardScan;
+                    makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
+                }
+                break;
             case ES_TIMEOUT:
                 if(ThisEvent.EventParam & LONG_HSM_TIMER){
                     nextState = Scan;
@@ -213,8 +271,13 @@ ES_Event RunSecondTargetApproachSubHSM(ES_Event ThisEvent)
                 break;
 
             case BEACON_TRIGGERED:
-                stopMoving();
-                ThisEvent.EventType = ES_NO_EVENT;
+                if(ThisEvent.EventParam)
+                {
+                    nextState = Forward;
+                    makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
+                }
+                
                 break;
         }    
         break;

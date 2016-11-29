@@ -37,6 +37,7 @@ typedef enum {
     PivotTurn,
     Forward,
     UnloadOne,
+    UnloadTwo,
     Backward,
     TankTurn,
 } HSMState_t;
@@ -47,6 +48,7 @@ static const char *StateNames[] = {
 	"PivotTurn",
 	"Forward",
 	"UnloadOne",
+	"UnloadTwo",
 	"Backward",
 	"TankTurn",
 };
@@ -225,6 +227,14 @@ ES_Event RunSecondTargetUnloadSubHSM(ES_Event ThisEvent)
                 moveBackward();
                 ES_Timer_InitTimer(LONG_HSM_TIMER,MEDIUM_TIMER_TICKS);
                 break;
+            case TAPE_TRIGGERED:
+                if(ThisEvent.EventParam & TS_BR || ThisEvent.EventParam & TS_BL)
+                {
+                    nextState = TankTurn;
+                    makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;  
+                }
+                break;
             case ES_TIMEOUT:
                 if(ThisEvent.EventParam == MEDIUM_HSM_TIMER)
                 {
@@ -256,7 +266,45 @@ ES_Event RunSecondTargetUnloadSubHSM(ES_Event ThisEvent)
                 break;
         }
         break;
-            
+        
+    case UnloadTwo:
+        switch (ThisEvent.EventType) {
+            case ES_ENTRY:
+                stopMoving();
+                ES_Timer_InitTimer(SERVO_TIMER,SERVO_TIMER_TICKS);
+                setPulseBridgeServo(BRIDGE_OUT_PULSE);
+                setPulseUnloadingServo(servoPulse);
+                break;
+            case ES_TIMEOUT:
+                if (ThisEvent.EventParam == SERVO_TIMER)
+                {
+                    if (servoPulse < UNLOADING_HIGH_PULSE)
+                    {
+                        ES_Timer_InitTimer(SERVO_TIMER,SERVO_TIMER_TICKS);
+                        servoPulse+=10;
+                        setPulseUnloadingServo(servoPulse);
+                    } else {
+                        ES_Timer_InitTimer(LONG_HSM_TIMER,2.5*LONG_TIMER_TICKS);
+                    }
+                    
+                }
+                else if(ThisEvent.EventParam == LONG_HSM_TIMER)
+                {
+                    servoPulse = UNLOADING_CENTER_PULSE;
+                    setPulseUnloadingServo(servoPulse);
+                    nextState = UnloadOne;
+                    makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
+                }
+                       
+                break;
+               
+            case ES_NO_EVENT:
+            default:
+                break;
+        }
+        break;
+        
     case UnloadOne:
         switch (ThisEvent.EventType) {
             case ES_ENTRY:

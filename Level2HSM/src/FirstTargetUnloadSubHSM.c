@@ -37,6 +37,7 @@ typedef enum {
     UnloadTwo,
     Backward,
     TankTurn,
+    Shimmy,
 } HSMState_t;
 
 static const char *StateNames[] = {
@@ -47,6 +48,7 @@ static const char *StateNames[] = {
 	"UnloadTwo",
 	"Backward",
 	"TankTurn",
+	"Shimmy",
 };
 
 
@@ -217,6 +219,7 @@ ES_Event RunFirstTargetUnloadSubHSM(ES_Event ThisEvent)
                 break;
         }
         break;
+        
     case UnloadTwo:
         switch (ThisEvent.EventType) {
             case ES_ENTRY:
@@ -255,11 +258,20 @@ ES_Event RunFirstTargetUnloadSubHSM(ES_Event ThisEvent)
                 break;
         }
         break;
+        
     case Backward:
         switch (ThisEvent.EventType) {
             case ES_ENTRY:
                 moveBackward();
                 ES_Timer_InitTimer(LONG_HSM_TIMER,MEDIUM_TIMER_TICKS);
+                break;
+            case TAPE_TRIGGERED:
+                if(ThisEvent.EventParam & TS_BR || ThisEvent.EventParam & TS_BL)
+                {
+                    nextState = TankTurn;
+                    makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;  
+                }
                 break;
             case ES_TIMEOUT:
                 if(ThisEvent.EventParam == MEDIUM_HSM_TIMER)
@@ -291,6 +303,10 @@ ES_Event RunFirstTargetUnloadSubHSM(ES_Event ThisEvent)
                
                 break;
         }
+        break;
+    case Shimmy:
+        
+        
         break;
     default: // all unhandled states fall into here
         break;
