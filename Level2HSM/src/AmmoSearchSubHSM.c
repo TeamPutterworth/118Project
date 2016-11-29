@@ -145,6 +145,7 @@ ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
         //NOTE: the SubState Machine runs and responds to events before anything in the this
         //state machine does
         //ThisEvent = RunAmmoSearchHSM(ThisEvent);
+        setLastTape(NOT_FOLLOWING);
         switch (ThisEvent.EventType) {
             case ES_ENTRY:
                 moveForward();
@@ -152,9 +153,10 @@ ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
             // fl triggered then turn right, else if fr triggered turn left
             case TAPE_TRIGGERED:
                 // If tape is triggered after hitting a track wire and we weren't following it, back up a lot
-                if ((!getTrackWireVals()[0] || !getTrackWireVals()[1]) && getLastTape() == NOT_FOLLOWING){
-                    break;
-                }else if (ThisEvent.EventParam & TS_FR){
+//                if ((!getTrackWireVals()[0] || !getTrackWireVals()[1]) && getLastTape() == NOT_FOLLOWING){
+//                    break;
+//                }else 
+                if (ThisEvent.EventParam & TS_FR){
                     turnParam = LEFT;
                     nextState = AlignToTape;
                     makeTransition = TRUE;

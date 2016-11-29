@@ -285,3 +285,9 @@ uint8_t getLastTape()
 {
     return lastTape;
 }
+
+void setLastTape(uint8_t val)
+{
+    lastTape = val;
+    return;
+}

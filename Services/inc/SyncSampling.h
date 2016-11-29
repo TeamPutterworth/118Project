@@ -64,5 +64,7 @@ ES_Event RunSyncSamplingService(ES_Event ThisEvent);
 
 uint8_t getLastTape();
 
+void setLastTape(uint8_t val);
+
 #endif /* SYNC_SAMPLING_H */
 
