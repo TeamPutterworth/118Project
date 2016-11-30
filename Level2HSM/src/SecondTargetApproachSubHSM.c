@@ -169,7 +169,26 @@ ES_Event RunSecondTargetApproachSubHSM(ES_Event ThisEvent)
             case ES_ENTRY:
                 moveForward();
                 break;
-
+                
+            case TAPE_TRIGGERED:
+                if(ThisEvent.EventParam & TS_FR && !getBeaconVal())
+                {
+                    lastBump = RIGHT; // We are just mimicking bump code here to see how well it works
+                    nextState = Backward;
+                    makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;  
+                    ES_Timer_InitTimer(MEDIUM_HSM_TIMER, MEDIUM_TIMER_TICKS);
+                }
+                else if(ThisEvent.EventParam & TS_FL && !getBeaconVal())
+                {
+                    lastBump = LEFT;
+                    nextState = Backward;
+                    makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
+                    ES_Timer_InitTimer(MEDIUM_HSM_TIMER, MEDIUM_TIMER_TICKS);
+                }
+                break;
+                
             case BUMPED:
                 if(ThisEvent.EventParam & FL_BUMPER){
                     lastBump = LEFT;

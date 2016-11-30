@@ -184,6 +184,24 @@ ES_Event RunFirstTargetSearchSubHSM(ES_Event ThisEvent)
                     ThisEvent.EventType = ES_NO_EVENT;
                 }
                 break;
+                
+            case TAPE_TRIGGERED:
+                if(ThisEvent.EventParam & TS_FR && !getBeaconVal())
+                {
+                    lastBump = RIGHT; // We are just mimicking bump code here to see how well it works
+                    nextState = Backward;
+                    makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;  
+                }
+                else if(ThisEvent.EventParam & TS_FL && !getBeaconVal())
+                {
+                    lastBump = LEFT;
+                    nextState = Backward;
+                    makeTransition = TRUE;
+                    ThisEvent.EventType = ES_NO_EVENT;
+                }
+                break;
+                
             case BUMPED:
                 if(ThisEvent.EventParam & FL_BUMPER){
                     lastBump = LEFT;

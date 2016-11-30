@@ -20,8 +20,8 @@
  * MODULE #DEFINES                                                             *
  ******************************************************************************/
 #define DEBUG
-#define LOW_TO_HIGH 0x7FFF
-#define HIGH_TO_LOW 0x8000
+#define LOW_TO_HIGH 0x7F
+#define HIGH_TO_LOW 0x80
 #define BUMPER_DEBOUNCE_TIMER_TICKS 5
 
 /*******************************************************************************
@@ -93,8 +93,8 @@ uint8_t PostBumperDebounceService(ES_Event ThisEvent) {
 ES_Event RunBumperDebounceService(ES_Event ThisEvent)
 {
     int i;
-    static uint16_t bumperState[NUM_BUMPERS] = {0};
-    static uint16_t pastBumperState[NUM_BUMPERS] = {0};
+    static uint8_t bumperState[NUM_BUMPERS] = {0};
+    static uint8_t pastBumperState[NUM_BUMPERS] = {0};
  
     ES_Event ReturnEvent;
     ReturnEvent.EventType = ES_NO_EVENT;
