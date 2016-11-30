@@ -196,13 +196,13 @@ ES_Event RunFirstTargetUnloadSubHSM(ES_Event ThisEvent)
                 moveForward();
                 break;
             case TAPE_TRIGGERED:
-                
-                if(ThisEvent.EventParam & TS_FM){
-                    nextState = UnloadTwo;
-                    makeTransition = TRUE;
-                    ThisEvent.EventType = ES_NO_EVENT;
-                } 
-                else if(ThisEvent.EventParam & TS_FL)
+//                if(ThisEvent.EventParam & TS_FM){
+//                    nextState = UnloadTwo;
+//                    makeTransition = TRUE;
+//                    ThisEvent.EventType = ES_NO_EVENT;
+//                } 
+//                else 
+                if(ThisEvent.EventParam & TS_FL)
                 {
                     turnParam = LEFT;
                     nextState = AlignToTape;
@@ -269,12 +269,12 @@ ES_Event RunFirstTargetUnloadSubHSM(ES_Event ThisEvent)
                 ES_Timer_InitTimer(LONG_HSM_TIMER,MEDIUM_TIMER_TICKS);
                 break;
             case TAPE_TRIGGERED:
-                if(ThisEvent.EventParam & TS_BR || ThisEvent.EventParam & TS_BL)
+                /*if(ThisEvent.EventParam & TS_BR || ThisEvent.EventParam & TS_BL)
                 {
                     nextState = TankTurn;
                     makeTransition = TRUE;
                     ThisEvent.EventType = ES_NO_EVENT;  
-                }
+                }*/
                 break;
             case ES_TIMEOUT:
                 if(ThisEvent.EventParam == MEDIUM_HSM_TIMER)

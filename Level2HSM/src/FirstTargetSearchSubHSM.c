@@ -210,6 +210,7 @@ ES_Event RunFirstTargetSearchSubHSM(ES_Event ThisEvent)
                 break;
             case ES_EXIT:
                 ES_Timer_StopTimer(LONG_HSM_TIMER);
+                ES_Timer_StopTimer(MEDIUM_HSM_TIMER);
                 ES_Timer_StopTimer(SCAN_TIMER);
                 break;
             case ES_NO_EVENT:

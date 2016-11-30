@@ -139,7 +139,7 @@ ES_Event RunSecondTargetUnloadSubHSM(ES_Event ThisEvent)
             case TAPE_TRIGGERED:
                 if(ThisEvent.EventParam & TS_FM)
                 {
-                    nextState = UnloadOne;
+                    nextState = UnloadTwo;
                     makeTransition = TRUE;
                     ThisEvent.EventParam = ES_NO_EVENT;
                 }
@@ -196,7 +196,7 @@ ES_Event RunSecondTargetUnloadSubHSM(ES_Event ThisEvent)
             case TAPE_TRIGGERED:
                 
                 if(ThisEvent.EventParam & TS_FM){
-                    nextState = UnloadOne;
+                    nextState = UnloadTwo;
                     makeTransition = TRUE;
                     ThisEvent.EventType = ES_NO_EVENT;
                 } 
@@ -228,12 +228,12 @@ ES_Event RunSecondTargetUnloadSubHSM(ES_Event ThisEvent)
                 ES_Timer_InitTimer(LONG_HSM_TIMER,MEDIUM_TIMER_TICKS);
                 break;
             case TAPE_TRIGGERED:
-                if(ThisEvent.EventParam & TS_BR || ThisEvent.EventParam & TS_BL)
-                {
-                    nextState = TankTurn;
-                    makeTransition = TRUE;
-                    ThisEvent.EventType = ES_NO_EVENT;  
-                }
+//                if(ThisEvent.EventParam & TS_BR || ThisEvent.EventParam & TS_BL)
+//                {
+//                    nextState = TankTurn;
+//                    makeTransition = TRUE;
+//                    ThisEvent.EventType = ES_NO_EVENT;  
+//                }
                 break;
             case ES_TIMEOUT:
                 if(ThisEvent.EventParam == MEDIUM_HSM_TIMER)

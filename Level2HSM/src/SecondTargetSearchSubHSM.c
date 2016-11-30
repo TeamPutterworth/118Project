@@ -81,6 +81,8 @@ static uint8_t difference = 21;
 uint8_t InitSecondTargetSearchSubHSM(void)
 {
     ES_Event returnEvent;
+    
+    direction = LEFT;
 
     CurrentState = InitPState;
     returnEvent = RunSecondTargetSearchSubHSM(INIT_EVENT);

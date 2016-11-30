@@ -234,7 +234,7 @@ ES_Event RunAmmoSearchSubHSM(ES_Event ThisEvent)
                     if (forwardTimeoutFlag)
                     {
                         forwardTimeoutFlag = FALSE;
-                        ES_Timer_InitTimer(LONG_HSM_TIMER, 1.5*LONG_TIMER_TICKS); 
+                        ES_Timer_InitTimer(LONG_HSM_TIMER, 2.5*LONG_TIMER_TICKS); 
                     }
                     nextState = Forward;
                     makeTransition = TRUE;
