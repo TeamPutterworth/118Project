@@ -121,7 +121,7 @@ ES_Event RunBumperDebounceService(ES_Event ThisEvent)
 
         // event has occurred if any bumper set the param
         if(ReturnEvent.EventParam){
-            #ifdef DEBUG
+                #ifdef DEBUG
                 //LED_SetBank(ledBanks[i],0xF);
                 printf("\r\nEventParam: %x", ReturnEvent.EventParam);
                 #endif 

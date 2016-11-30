@@ -63,7 +63,7 @@ static HSMState_t CurrentState = InitPState; // <- change enum name to match ENU
 static uint8_t MyPriority;
 
 static uint8_t direction = LEFT;
-static uint8_t difference = 21;
+static uint8_t difference = 18;
 
 
 /*******************************************************************************
@@ -83,6 +83,7 @@ uint8_t InitSecondTargetSearchSubHSM(void)
     ES_Event returnEvent;
     
     direction = LEFT;
+    difference = 18;
 
     CurrentState = InitPState;
     returnEvent = RunSecondTargetSearchSubHSM(INIT_EVENT);
