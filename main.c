@@ -170,9 +170,6 @@ void main(void)
         ;
 #else
     while (1) {
-        //RC_SetPulseTime(RC_SERVO_BRIDGE,1750);
-        testServos();
-        /*
         switch(readBumpers()){
             case (0x01): // Front-Right Bumper
                 testMotors();
@@ -190,7 +187,6 @@ void main(void)
             default: // No bumpers or multiple bumpers
                 break;
        }
-       */
     }
 #endif
 };
